@@ -7,23 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FD6A2142BCA2FF33E377819 /* Pods_ipar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848CB93BAD9D2E3DC35D94F2 /* Pods_ipar.framework */; };
 		CA8DBF5723550DDA00A1641B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8DBF5623550DDA00A1641B /* AppDelegate.swift */; };
-		CA8DBF5923550DDA00A1641B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8DBF5823550DDA00A1641B /* SceneDelegate.swift */; };
 		CA8DBF5B23550DDA00A1641B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8DBF5A23550DDA00A1641B /* ViewController.swift */; };
-		CA8DBF5E23550DDA00A1641B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8DBF5C23550DDA00A1641B /* Main.storyboard */; };
 		CA8DBF6023550DDB00A1641B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8DBF5F23550DDB00A1641B /* Assets.xcassets */; };
 		CA8DBF6323550DDB00A1641B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8DBF6123550DDB00A1641B /* LaunchScreen.storyboard */; };
+		F620F0982363C11A006EDE9B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0962363C11A006EDE9B /* AuthViewController.swift */; };
+		F620F0992363C11A006EDE9B /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F620F0972363C11A006EDE9B /* AuthViewController.xib */; };
+		F620F09C2363C4D0006EDE9B /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F09B2363C4D0006EDE9B /* AuthProtocols.swift */; };
+		F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F09D2363C92D006EDE9B /* AuthConfigurator.swift */; };
+		F620F0A02363C94F006EDE9B /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F09F2363C94F006EDE9B /* AuthPresenter.swift */; };
+		F620F0A22363CBD8006EDE9B /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0A12363CBD8006EDE9B /* AuthRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		079A4418A67D83FDB0029B6D /* Pods-ipar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ipar/Pods-ipar.debug.xcconfig"; sourceTree = "<group>"; };
+		848CB93BAD9D2E3DC35D94F2 /* Pods_ipar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ipar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8DBF5323550DDA00A1641B /* ipar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ipar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8DBF5623550DDA00A1641B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CA8DBF5823550DDA00A1641B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CA8DBF5A23550DDA00A1641B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CA8DBF5D23550DDA00A1641B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA8DBF5F23550DDB00A1641B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA8DBF6223550DDB00A1641B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA8DBF6423550DDB00A1641B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F39C205AE438D2316B34194F /* Pods-ipar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipar.release.xcconfig"; path = "Pods/Target Support Files/Pods-ipar/Pods-ipar.release.xcconfig"; sourceTree = "<group>"; };
+		F620F0962363C11A006EDE9B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		F620F0972363C11A006EDE9B /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
+		F620F09B2363C4D0006EDE9B /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
+		F620F09D2363C92D006EDE9B /* AuthConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfigurator.swift; sourceTree = "<group>"; };
+		F620F09F2363C94F006EDE9B /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		F620F0A12363CBD8006EDE9B /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FD6A2142BCA2FF33E377819 /* Pods_ipar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D8A95559FF9D7E19C5D9DAF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				079A4418A67D83FDB0029B6D /* Pods-ipar.debug.xcconfig */,
+				F39C205AE438D2316B34194F /* Pods-ipar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6E74FEFBD7CE6C6508718B31 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				848CB93BAD9D2E3DC35D94F2 /* Pods_ipar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CA8DBF4A23550DDA00A1641B = {
 			isa = PBXGroup;
 			children = (
 				CA8DBF5523550DDA00A1641B /* ipar */,
 				CA8DBF5423550DDA00A1641B /* Products */,
+				1D8A95559FF9D7E19C5D9DAF /* Pods */,
+				6E74FEFBD7CE6C6508718B31 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +89,26 @@
 			isa = PBXGroup;
 			children = (
 				CA8DBF5623550DDA00A1641B /* AppDelegate.swift */,
-				CA8DBF5823550DDA00A1641B /* SceneDelegate.swift */,
+				F620F09A2363C123006EDE9B /* Auth */,
 				CA8DBF5A23550DDA00A1641B /* ViewController.swift */,
-				CA8DBF5C23550DDA00A1641B /* Main.storyboard */,
 				CA8DBF5F23550DDB00A1641B /* Assets.xcassets */,
 				CA8DBF6123550DDB00A1641B /* LaunchScreen.storyboard */,
 				CA8DBF6423550DDB00A1641B /* Info.plist */,
 			);
 			path = ipar;
+			sourceTree = "<group>";
+		};
+		F620F09A2363C123006EDE9B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				F620F0962363C11A006EDE9B /* AuthViewController.swift */,
+				F620F0972363C11A006EDE9B /* AuthViewController.xib */,
+				F620F09D2363C92D006EDE9B /* AuthConfigurator.swift */,
+				F620F09F2363C94F006EDE9B /* AuthPresenter.swift */,
+				F620F09B2363C4D0006EDE9B /* AuthProtocols.swift */,
+				F620F0A12363CBD8006EDE9B /* AuthRouter.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +118,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA8DBF6723550DDB00A1641B /* Build configuration list for PBXNativeTarget "ipar" */;
 			buildPhases = (
+				0058192050365DDB76F755ED /* [CP] Check Pods Manifest.lock */,
 				CA8DBF4F23550DDA00A1641B /* Sources */,
 				CA8DBF5023550DDA00A1641B /* Frameworks */,
 				CA8DBF5123550DDA00A1641B /* Resources */,
+				E93FD805E54759EE7FC882F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,35 +172,78 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA8DBF6323550DDB00A1641B /* LaunchScreen.storyboard in Resources */,
+				F620F0992363C11A006EDE9B /* AuthViewController.xib in Resources */,
 				CA8DBF6023550DDB00A1641B /* Assets.xcassets in Resources */,
-				CA8DBF5E23550DDA00A1641B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0058192050365DDB76F755ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ipar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E93FD805E54759EE7FC882F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CA8DBF4F23550DDA00A1641B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F620F0982363C11A006EDE9B /* AuthViewController.swift in Sources */,
+				F620F0A02363C94F006EDE9B /* AuthPresenter.swift in Sources */,
 				CA8DBF5B23550DDA00A1641B /* ViewController.swift in Sources */,
+				F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */,
 				CA8DBF5723550DDA00A1641B /* AppDelegate.swift in Sources */,
-				CA8DBF5923550DDA00A1641B /* SceneDelegate.swift in Sources */,
+				F620F09C2363C4D0006EDE9B /* AuthProtocols.swift in Sources */,
+				F620F0A22363CBD8006EDE9B /* AuthRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CA8DBF5C23550DDA00A1641B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CA8DBF5D23550DDA00A1641B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CA8DBF6123550DDB00A1641B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,34 +371,38 @@
 		};
 		CA8DBF6823550DDB00A1641B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 079A4418A67D83FDB0029B6D /* Pods-ipar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ipar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.banda.ipar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		CA8DBF6923550DDB00A1641B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F39C205AE438D2316B34194F /* Pods-ipar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ipar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.banda.ipar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
