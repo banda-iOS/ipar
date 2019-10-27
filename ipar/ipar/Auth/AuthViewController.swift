@@ -8,12 +8,20 @@
 
 import UIKit
 
+protocol AuthVCDelegate: class {
+    func sessionStarts()
+}
+
 class AuthViewController: UIViewController, AuthViewProtocol, SignUpVCDelegate {
 
     var presenter: AuthPresenterProtocol!
+    
+    
 
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    
+    weak var delegate: AuthVCDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         let configurator = AuthConfigurator()
@@ -33,7 +41,7 @@ class AuthViewController: UIViewController, AuthViewProtocol, SignUpVCDelegate {
     }
     
     func signedUpSuccesfully() {
-        sleep(3)
         dismiss(animated: true, completion: nil)
+        delegate?.sessionStarts()
     }
 }
