@@ -18,6 +18,16 @@
 		F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F09D2363C92D006EDE9B /* AuthConfigurator.swift */; };
 		F620F0A02363C94F006EDE9B /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F09F2363C94F006EDE9B /* AuthPresenter.swift */; };
 		F620F0A22363CBD8006EDE9B /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0A12363CBD8006EDE9B /* AuthRouter.swift */; };
+		F620F0A72364ABC6006EDE9B /* SignUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0A62364ABC6006EDE9B /* SignUpProtocols.swift */; };
+		F620F0A92364ACBA006EDE9B /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0A82364ACBA006EDE9B /* SignUpPresenter.swift */; };
+		F620F0AB2364ACC9006EDE9B /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0AA2364ACC9006EDE9B /* SignUpInteractor.swift */; };
+		F620F0AD2364ACD3006EDE9B /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0AC2364ACD3006EDE9B /* SignUpRouter.swift */; };
+		F620F0B02364ACFC006EDE9B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0AF2364ACFC006EDE9B /* User.swift */; };
+		F620F0B22364AECD006EDE9B /* SignUpConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0B12364AECD006EDE9B /* SignUpConfigurator.swift */; };
+		F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D20232364B9FB003BBE52 /* SignUpViewController.swift */; };
+		F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D20272364FA35003BBE52 /* HTTPRequest.swift */; };
+		F64D202923650A93003BBE52 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F620F0A42364ABAB006EDE9B /* SignUpViewController.xib */; };
+		F64D202B2365B5D8003BBE52 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D202A2365B5D8003BBE52 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +46,16 @@
 		F620F09D2363C92D006EDE9B /* AuthConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfigurator.swift; sourceTree = "<group>"; };
 		F620F09F2363C94F006EDE9B /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		F620F0A12363CBD8006EDE9B /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		F620F0A42364ABAB006EDE9B /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		F620F0A62364ABC6006EDE9B /* SignUpProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocols.swift; sourceTree = "<group>"; };
+		F620F0A82364ACBA006EDE9B /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
+		F620F0AA2364ACC9006EDE9B /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
+		F620F0AC2364ACD3006EDE9B /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
+		F620F0AF2364ACFC006EDE9B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F620F0B12364AECD006EDE9B /* SignUpConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfigurator.swift; sourceTree = "<group>"; };
+		F64D20232364B9FB003BBE52 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		F64D20272364FA35003BBE52 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		F64D202A2365B5D8003BBE52 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,11 +109,15 @@
 			isa = PBXGroup;
 			children = (
 				CA8DBF5623550DDA00A1641B /* AppDelegate.swift */,
+				F64D20252364F9D2003BBE52 /* Utils */,
 				F620F09A2363C123006EDE9B /* Auth */,
+				F620F0A52364ABAB006EDE9B /* SignUp */,
+				F620F0AE2364ACD8006EDE9B /* Entities */,
 				CA8DBF5A23550DDA00A1641B /* ViewController.swift */,
 				CA8DBF5F23550DDB00A1641B /* Assets.xcassets */,
 				CA8DBF6123550DDB00A1641B /* LaunchScreen.storyboard */,
 				CA8DBF6423550DDB00A1641B /* Info.plist */,
+				F64D202A2365B5D8003BBE52 /* MainViewController.swift */,
 			);
 			path = ipar;
 			sourceTree = "<group>";
@@ -101,14 +125,53 @@
 		F620F09A2363C123006EDE9B /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				F620F09D2363C92D006EDE9B /* AuthConfigurator.swift */,
 				F620F0962363C11A006EDE9B /* AuthViewController.swift */,
 				F620F0972363C11A006EDE9B /* AuthViewController.xib */,
-				F620F09D2363C92D006EDE9B /* AuthConfigurator.swift */,
 				F620F09F2363C94F006EDE9B /* AuthPresenter.swift */,
-				F620F09B2363C4D0006EDE9B /* AuthProtocols.swift */,
 				F620F0A12363CBD8006EDE9B /* AuthRouter.swift */,
+				F620F09B2363C4D0006EDE9B /* AuthProtocols.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		F620F0A52364ABAB006EDE9B /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				F64D20232364B9FB003BBE52 /* SignUpViewController.swift */,
+				F620F0A42364ABAB006EDE9B /* SignUpViewController.xib */,
+				F620F0B12364AECD006EDE9B /* SignUpConfigurator.swift */,
+				F620F0A82364ACBA006EDE9B /* SignUpPresenter.swift */,
+				F620F0AA2364ACC9006EDE9B /* SignUpInteractor.swift */,
+				F620F0AC2364ACD3006EDE9B /* SignUpRouter.swift */,
+				F620F0A62364ABC6006EDE9B /* SignUpProtocols.swift */,
+			);
+			name = SignUp;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		F620F0AE2364ACD8006EDE9B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F620F0AF2364ACFC006EDE9B /* User.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		F64D20252364F9D2003BBE52 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F64D20262364F9DE003BBE52 /* Network */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F64D20262364F9DE003BBE52 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F64D20272364FA35003BBE52 /* HTTPRequest.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +236,7 @@
 			files = (
 				CA8DBF6323550DDB00A1641B /* LaunchScreen.storyboard in Resources */,
 				F620F0992363C11A006EDE9B /* AuthViewController.xib in Resources */,
+				F64D202923650A93003BBE52 /* SignUpViewController.xib in Resources */,
 				CA8DBF6023550DDB00A1641B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,12 +295,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F620F0A92364ACBA006EDE9B /* SignUpPresenter.swift in Sources */,
 				F620F0982363C11A006EDE9B /* AuthViewController.swift in Sources */,
 				F620F0A02363C94F006EDE9B /* AuthPresenter.swift in Sources */,
 				CA8DBF5B23550DDA00A1641B /* ViewController.swift in Sources */,
+				F620F0A72364ABC6006EDE9B /* SignUpProtocols.swift in Sources */,
+				F620F0B22364AECD006EDE9B /* SignUpConfigurator.swift in Sources */,
+				F620F0AD2364ACD3006EDE9B /* SignUpRouter.swift in Sources */,
+				F64D202B2365B5D8003BBE52 /* MainViewController.swift in Sources */,
 				F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */,
+				F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */,
 				CA8DBF5723550DDA00A1641B /* AppDelegate.swift in Sources */,
+				F620F0B02364ACFC006EDE9B /* User.swift in Sources */,
 				F620F09C2363C4D0006EDE9B /* AuthProtocols.swift in Sources */,
+				F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */,
+				F620F0AB2364ACC9006EDE9B /* SignUpInteractor.swift in Sources */,
 				F620F0A22363CBD8006EDE9B /* AuthRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

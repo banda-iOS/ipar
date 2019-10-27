@@ -7,8 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 class AuthPresenter: AuthPresenterProtocol {
+    func openSignUpScreen(vc: UIViewController, delegate: SignUpVCDelegate) {
+        router.goToSignUpScreen(vc: vc, delegate: delegate)
+    }
+    
     weak var view: AuthViewProtocol!
     var router: AuthRouterProtocol!
     
@@ -16,9 +21,6 @@ class AuthPresenter: AuthPresenterProtocol {
         self.view = view
     }
     
-    func openSignUpScreen() {
-        router.goToSignUpScreen()
-    }
     
     func openLoginScreen() {
         router.goToLoginScreen()

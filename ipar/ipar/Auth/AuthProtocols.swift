@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol AuthViewProtocol: class{
     var presenter: AuthPresenterProtocol! { get set }
@@ -19,13 +20,13 @@ protocol AuthPresenterProtocol: class {
     var view: AuthViewProtocol! {get set}
     var router: AuthRouterProtocol! {get set}
     
-    func openSignUpScreen()
+    func openSignUpScreen(vc: UIViewController, delegate: SignUpVCDelegate)
     func openLoginScreen()
     func openMainScreen()
 }
 
 protocol AuthRouterProtocol: class {
-    func goToSignUpScreen()
+    func goToSignUpScreen(vc: UIViewController, delegate: SignUpVCDelegate)
     func goToLoginScreen()
     func goToMainScreen()
 }

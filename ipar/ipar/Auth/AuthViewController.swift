@@ -8,7 +8,8 @@
 
 import UIKit
 
-class AuthViewController: UIViewController, AuthViewProtocol {
+class AuthViewController: UIViewController, AuthViewProtocol, SignUpVCDelegate {
+
     var presenter: AuthPresenterProtocol!
 
     @IBOutlet weak var signUpButton: UIButton!
@@ -17,11 +18,10 @@ class AuthViewController: UIViewController, AuthViewProtocol {
         super.viewDidLoad()
         let configurator = AuthConfigurator()
         configurator.configure(with: self)
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func signUpButtonPressed(_ sender: Any) {
-        presenter.openSignUpScreen()
+        presenter.openSignUpScreen(vc: self, delegate: self)
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
@@ -32,4 +32,8 @@ class AuthViewController: UIViewController, AuthViewProtocol {
         presenter.openMainScreen()
     }
     
+    func signedUpSuccesfully() {
+        sleep(3)
+        dismiss(animated: true, completion: nil)
+    }
 }

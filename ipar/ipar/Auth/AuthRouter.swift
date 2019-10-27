@@ -7,10 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 class AuthRouter: AuthRouterProtocol {
-    func goToSignUpScreen() {
+    func goToSignUpScreen(vc: UIViewController, delegate: SignUpVCDelegate) {
         print("signUp")
+        let signUpViewController = SignUpViewController(nibName: "SignUpViewController", bundle: nil)
+        signUpViewController.delegate = delegate
+        signUpViewController.modalTransitionStyle = .coverVertical
+        vc.present(signUpViewController, animated: true, completion: nil)
     }
     
     func goToLoginScreen() {
