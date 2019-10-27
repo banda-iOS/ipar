@@ -18,14 +18,22 @@ class SignUpInteractor: SignUpInteractorProtocol {
     
     func createAccount(user: User) {
         makeRequest(path: "signup", method: .post, data: user, callback: signUpRequestCallback)
-        
-       
     }
     
     func signUpRequestCallback(response: DataResponse<Any>?) {
         if let response = response {
-                   
+                   if let headerFields = response.response?.allHeaderFields as? [String: String],
+                    let URL = response.request?.url
+                      {
+                        let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: URL)
+                        if cookies.count != 0 {
+                            print(cookies[0].value)
+                        }
+                      }
                    switch response.result {
+                    
+                    
+
                       case .success(let value):
                            if let data = response.data {
                                let user: User = try! JSONDecoder().decode(User.self, from: data)

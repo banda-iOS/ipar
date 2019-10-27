@@ -21,7 +21,6 @@
 		F620F0A72364ABC6006EDE9B /* SignUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0A62364ABC6006EDE9B /* SignUpProtocols.swift */; };
 		F620F0A92364ACBA006EDE9B /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0A82364ACBA006EDE9B /* SignUpPresenter.swift */; };
 		F620F0AB2364ACC9006EDE9B /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0AA2364ACC9006EDE9B /* SignUpInteractor.swift */; };
-		F620F0AD2364ACD3006EDE9B /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0AC2364ACD3006EDE9B /* SignUpRouter.swift */; };
 		F620F0B02364ACFC006EDE9B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0AF2364ACFC006EDE9B /* User.swift */; };
 		F620F0B22364AECD006EDE9B /* SignUpConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0B12364AECD006EDE9B /* SignUpConfigurator.swift */; };
 		F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D20232364B9FB003BBE52 /* SignUpViewController.swift */; };
@@ -50,7 +49,6 @@
 		F620F0A62364ABC6006EDE9B /* SignUpProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocols.swift; sourceTree = "<group>"; };
 		F620F0A82364ACBA006EDE9B /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		F620F0AA2364ACC9006EDE9B /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
-		F620F0AC2364ACD3006EDE9B /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
 		F620F0AF2364ACFC006EDE9B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F620F0B12364AECD006EDE9B /* SignUpConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfigurator.swift; sourceTree = "<group>"; };
 		F64D20232364B9FB003BBE52 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				F620F0B12364AECD006EDE9B /* SignUpConfigurator.swift */,
 				F620F0A82364ACBA006EDE9B /* SignUpPresenter.swift */,
 				F620F0AA2364ACC9006EDE9B /* SignUpInteractor.swift */,
-				F620F0AC2364ACD3006EDE9B /* SignUpRouter.swift */,
 				F620F0A62364ABC6006EDE9B /* SignUpProtocols.swift */,
 			);
 			name = SignUp;
@@ -301,7 +298,6 @@
 				CA8DBF5B23550DDA00A1641B /* ViewController.swift in Sources */,
 				F620F0A72364ABC6006EDE9B /* SignUpProtocols.swift in Sources */,
 				F620F0B22364AECD006EDE9B /* SignUpConfigurator.swift in Sources */,
-				F620F0AD2364ACD3006EDE9B /* SignUpRouter.swift in Sources */,
 				F64D202B2365B5D8003BBE52 /* MainViewController.swift in Sources */,
 				F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */,
 				F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */,

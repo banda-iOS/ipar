@@ -52,6 +52,5 @@ class User: Codable {
         self.name = try container.decode(String.self, forKey: .name)
         self.phone = try container.decode(String.self, forKey: .phone)
         self.email = try container.decode(String.self, forKey: .email)
-
     }
 }

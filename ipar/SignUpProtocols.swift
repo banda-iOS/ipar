@@ -17,7 +17,6 @@ protocol SignUpViewProtocol: class{
 
 protocol SignUpPresenterProtocol: class {
     var view: SignUpViewProtocol! {get set}
-    var router: SignUpRouterProtocol! {get set}
     var interactor: SignUpInteractorProtocol! {get set}
    
     func createAccountWithValidation(surname: String, name: String, email: String, phone: String, password: String, passwordConfirmation: String)
@@ -32,9 +31,6 @@ protocol SignUpInteractorProtocol: class {
     func createAccount(user: User)
 }
 
-protocol SignUpRouterProtocol: class {
-   func goToMainScreen()
-}
 
 protocol SignUpConfiguratorProtocol: class {
     func configure(with viewController: SignUpViewProtocol)

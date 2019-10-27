@@ -24,14 +24,10 @@ class SignUpPresenter: SignUpPresenterProtocol {
     
     var view: SignUpViewProtocol!
     
-    var router: SignUpRouterProtocol!
-    
     var interactor: SignUpInteractorProtocol!
     
     func createAccountWithValidation(surname: String, name: String, email: String, phone: String, password: String, passwordConfirmation: String) {
         var error: String?
-        print(password)
-        print(passwordConfirmation)
         if password != passwordConfirmation {
             if error == nil {
                 error = "Пароли не совпадают"
