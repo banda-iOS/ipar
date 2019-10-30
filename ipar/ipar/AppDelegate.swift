@@ -17,14 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        let homeViewController = MainViewController()
+        let homeViewController = MainTabBarViewController()
         window!.rootViewController = homeViewController
         window!.makeKeyAndVisible()
         return true
     }
-
-
-
 
 }
 

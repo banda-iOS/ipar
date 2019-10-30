@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <Group
-      location = "container:"
-      name = "SignUp">
-      <FileRef
-         location = "group:SignUpViewController.swift">
-      </FileRef>
-      <FileRef
-         location = "group:SignUpViewController.xib">
-      </FileRef>
-   </Group>
    <FileRef
       location = "group:ipar.xcodeproj">
    </FileRef>

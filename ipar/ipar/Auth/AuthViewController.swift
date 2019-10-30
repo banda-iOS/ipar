@@ -12,7 +12,12 @@ protocol AuthVCDelegate: class {
     func sessionStarts()
 }
 
-class AuthViewController: UIViewController, AuthViewProtocol, SignUpVCDelegate {
+class AuthViewController: UIViewController, AuthViewProtocol, SignUpVCDelegate, LoginVCDelegate {
+    func sessionStarts() {
+        dismiss(animated: true, completion: nil)
+        delegate?.sessionStarts()
+    }
+    
 
     var presenter: AuthPresenterProtocol!
     
@@ -33,12 +38,9 @@ class AuthViewController: UIViewController, AuthViewProtocol, SignUpVCDelegate {
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        presenter.openLoginScreen()
+        presenter.openLoginScreen(vc: self, delegate: self)
     }
     
-    @IBAction func continueWithoutAuthButtonPressed(_ sender: Any) {
-        presenter.openMainScreen()
-    }
     
     func signedUpSuccesfully() {
         dismiss(animated: true, completion: nil)

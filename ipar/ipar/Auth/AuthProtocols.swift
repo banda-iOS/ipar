@@ -13,7 +13,6 @@ protocol AuthViewProtocol: class{
     var presenter: AuthPresenterProtocol! { get set }
     func signUpButtonPressed(_ sender: Any)
     func loginButtonPressed(_ sender: Any)
-    func continueWithoutAuthButtonPressed(_ sender: Any)
 }
 
 protocol AuthPresenterProtocol: class {
@@ -21,14 +20,12 @@ protocol AuthPresenterProtocol: class {
     var router: AuthRouterProtocol! {get set}
     
     func openSignUpScreen(vc: UIViewController, delegate: SignUpVCDelegate)
-    func openLoginScreen()
-    func openMainScreen()
+    func openLoginScreen(vc: UIViewController, delegate: LoginVCDelegate)
 }
 
 protocol AuthRouterProtocol: class {
     func goToSignUpScreen(vc: UIViewController, delegate: SignUpVCDelegate)
-    func goToLoginScreen()
-    func goToMainScreen()
+    func goToLoginScreen(vc: UIViewController, delegate: LoginVCDelegate)
 }
 
 protocol AuthConfiguratorProtocol: class {

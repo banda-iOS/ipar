@@ -22,12 +22,8 @@ class AuthPresenter: AuthPresenterProtocol {
     }
     
     
-    func openLoginScreen() {
-        router.goToLoginScreen()
-    }
-    
-    func openMainScreen() {
-        router.goToMainScreen()
+    func openLoginScreen(vc: UIViewController, delegate: LoginVCDelegate) {
+        router.goToLoginScreen(vc: vc, delegate: delegate)
     }
     
     
