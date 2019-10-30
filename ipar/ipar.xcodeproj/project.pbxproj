@@ -34,7 +34,6 @@
 		F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D20232364B9FB003BBE52 /* SignUpViewController.swift */; };
 		F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D20272364FA35003BBE52 /* HTTPRequest.swift */; };
 		F64D202923650A93003BBE52 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F620F0A42364ABAB006EDE9B /* SignUpViewController.xib */; };
-		F64D202B2365B5D8003BBE52 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D202A2365B5D8003BBE52 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +68,6 @@
 		F620F0B12364AECD006EDE9B /* SignUpConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfigurator.swift; sourceTree = "<group>"; };
 		F64D20232364B9FB003BBE52 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F64D20272364FA35003BBE52 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
-		F64D202A2365B5D8003BBE52 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +129,6 @@
 				CA8DBF5F23550DDB00A1641B /* Assets.xcassets */,
 				CA8DBF6123550DDB00A1641B /* LaunchScreen.storyboard */,
 				CA8DBF6423550DDB00A1641B /* Info.plist */,
-				F64D202A2365B5D8003BBE52 /* MainViewController.swift */,
 				F61242B12367306500C18009 /* MainTabBarViewController.swift */,
 			);
 			path = ipar;
@@ -343,7 +340,6 @@
 				F620F0A72364ABC6006EDE9B /* SignUpProtocols.swift in Sources */,
 				F612426B2365E9E400C18009 /* Keychain.swift in Sources */,
 				F620F0B22364AECD006EDE9B /* SignUpConfigurator.swift in Sources */,
-				F64D202B2365B5D8003BBE52 /* MainViewController.swift in Sources */,
 				F61242BC2368DA0300C18009 /* LoginViewController.swift in Sources */,
 				F61242C42368DF5100C18009 /* LoginUser.swift in Sources */,
 				F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */,
