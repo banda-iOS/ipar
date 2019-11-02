@@ -21,6 +21,7 @@ class SignUpInteractor: SignUpInteractorProtocol {
     }
     
     func signUpRequestCallback(response: DataResponse<Any>?) {
+        
         if let response = response {
                    if let headerFields = response.response?.allHeaderFields as? [String: String],
                     let URL = response.request?.url
@@ -41,7 +42,7 @@ class SignUpInteractor: SignUpInteractorProtocol {
                            }
                            
                        case .failure(let error):
-                           presenter.creationFinishedWithError(message: "failure: \(error)")
+                            presenter.creationFinishedWithError(message: "failure: \(error)")
                        
                        default:
                            presenter.creationFinishedWithError(message: "не удаётся получить ответ")
