@@ -27,17 +27,42 @@ class SignUpPresenter: SignUpPresenterProtocol {
     var interactor: SignUpInteractorProtocol!
     
     func createAccountWithValidation(surname: String, name: String, email: String, phone: String, password: String, passwordConfirmation: String) {
-        var error: String?
-        if password != passwordConfirmation {
-            if error == nil {
-                error = "Пароли не совпадают"
+//        var errors = [String]()
+//        var infoPassword = validatePassword(password: password, confirmPassword: passwordConfirmation)
+//        print("password: \(infoPassword)")
+//        if infoPassword.error != nil {
+//            errors.append(infoPassword.error!)
+//        }
+//        var infoPhone = validatePhone(phone: phone)
+//        print("phone: \(infoPhone)")
+//        if infoPhone.error != nil {
+//            errors.append(infoPhone.error!)
+//        }
+//        print(email)
+//        var infoEmail = validateEmail(email: email)
+//        print("email: \(infoEmail)")
+//        if infoEmail.error != nil {
+//            errors.append(infoEmail.error!)
+//        }
+//        if password != passwordConfirmation {
+//            if error == nil {
+//                error = "Пароли не совпадают"
+//            }
+//        }
+        
+//        if let error = error {
+//            view.changeErrorText(text: error)
+//            return
+//        }
+        let (isValid, errors) = validateSignup(email: email, password: password, confirmPassword: passwordConfirmation, phone: phone)
+        if !isValid {
+            var errorsText = ""
+            for error in errors {
+                errorsText = errorsText + "\(error)\n"
             }
-        }
-        if let error = error {
-            view.changeErrorText(text: error)
+            view.changeErrorText(text: errorsText)
             return
         }
-        
         let user = User(surname: surname, name: name, phone: phone, email: email, password: password)
         interactor.createAccount(user: user)
         
