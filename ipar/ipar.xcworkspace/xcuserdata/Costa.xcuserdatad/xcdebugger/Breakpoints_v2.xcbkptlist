@@ -7,32 +7,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E92594CC-AAE6-4B8F-BC85-D8F602A99160"
+            uuid = "68A60EFB-7DC9-48C4-99CD-9144DFA80DDB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SignUpPresenter.swift"
+            filePath = "SignUpInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "createAccountWithValidation(surname:name:email:phone:password:passwordConfirmation:)"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "signUpRequestCallback(response:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E4CFF139-F7A1-40C7-9D25-C74357AAF687"
+            uuid = "180869AF-4310-4B61-89D7-6B115B9A1AF4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SignUpPresenter.swift"
+            filePath = "SignUpInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "createAccountWithValidation(surname:name:email:phone:password:passwordConfirmation:)"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "signUpRequestCallback(response:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F0EDCB36-16BC-430D-A202-69DDE0EDDD3E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SignUpInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "signUpRequestCallback(response:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
