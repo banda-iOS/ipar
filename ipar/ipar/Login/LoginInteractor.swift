@@ -21,7 +21,7 @@ class LoginInteractor: LoginInteractorProtocol {
                          {
                            let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: URL)
                            if cookies.count != 0 {
-                               AddSessionToKeychain(sessionid: cookies[0].value)
+                               addSessionToKeychain(sessionid: cookies[0].value)
                            }
                          }
             
