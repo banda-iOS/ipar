@@ -15,6 +15,10 @@ func addSessionToKeychain(sessionid: String) {
     keychain.set(sessionid, forKey: "sessionid")
 }
 
+func deleteSessionFromKeychain() {
+    keychain.delete("sessionid")
+}
+
 func getSession() -> String? {
     return keychain.get("sessionid")
 }

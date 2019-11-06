@@ -22,6 +22,16 @@
 		F61242C42368DF5100C18009 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242C32368DF5100C18009 /* LoginUser.swift */; };
 		F61242C7236F50B200C18009 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242C6236F50B100C18009 /* UIImage.swift */; };
 		F61242C9236F50DF00C18009 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242C8236F50DF00C18009 /* Encodable.swift */; };
+		F61242D12370CD7E00C18009 /* MeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242CB2370CD7E00C18009 /* MeInteractor.swift */; };
+		F61242D22370CD7E00C18009 /* MeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242CC2370CD7E00C18009 /* MeProtocols.swift */; };
+		F61242D32370CD7E00C18009 /* MePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242CD2370CD7E00C18009 /* MePresenter.swift */; };
+		F61242D42370CD7E00C18009 /* MeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242CE2370CD7E00C18009 /* MeConfigurator.swift */; };
+		F61242D52370CD7E00C18009 /* MeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242CF2370CD7E00C18009 /* MeRouter.swift */; };
+		F61242D62370CD7E00C18009 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242D02370CD7E00C18009 /* MeViewController.swift */; };
+		F61242DB23719EE100C18009 /* MeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242D923719EE100C18009 /* MeTableViewCell.swift */; };
+		F61242DC23719EE100C18009 /* MeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61242DA23719EE100C18009 /* MeTableViewCell.xib */; };
+		F61243002372164C00C18009 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F61242FF2372164C00C18009 /* Me.storyboard */; };
+		F61243022372B0BF00C18009 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61243012372B0BF00C18009 /* UITableView.swift */; };
 		F620F0982363C11A006EDE9B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0962363C11A006EDE9B /* AuthViewController.swift */; };
 		F620F0992363C11A006EDE9B /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F620F0972363C11A006EDE9B /* AuthViewController.xib */; };
 		F620F09C2363C4D0006EDE9B /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F09B2363C4D0006EDE9B /* AuthProtocols.swift */; };
@@ -58,6 +68,16 @@
 		F61242C32368DF5100C18009 /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
 		F61242C6236F50B100C18009 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		F61242C8236F50DF00C18009 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
+		F61242CB2370CD7E00C18009 /* MeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeInteractor.swift; sourceTree = "<group>"; };
+		F61242CC2370CD7E00C18009 /* MeProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeProtocols.swift; sourceTree = "<group>"; };
+		F61242CD2370CD7E00C18009 /* MePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MePresenter.swift; sourceTree = "<group>"; };
+		F61242CE2370CD7E00C18009 /* MeConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeConfigurator.swift; sourceTree = "<group>"; };
+		F61242CF2370CD7E00C18009 /* MeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeRouter.swift; sourceTree = "<group>"; };
+		F61242D02370CD7E00C18009 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		F61242D923719EE100C18009 /* MeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTableViewCell.swift; sourceTree = "<group>"; };
+		F61242DA23719EE100C18009 /* MeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeTableViewCell.xib; sourceTree = "<group>"; };
+		F61242FF2372164C00C18009 /* Me.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
+		F61243012372B0BF00C18009 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		F620F0962363C11A006EDE9B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		F620F0972363C11A006EDE9B /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
 		F620F09B2363C4D0006EDE9B /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
@@ -124,10 +144,11 @@
 		CA8DBF5523550DDA00A1641B /* ipar */ = {
 			isa = PBXGroup;
 			children = (
+				F64D20252364F9D2003BBE52 /* Utils */,
 				F61242C5236F509C00C18009 /* Extensions */,
+				F61242CA2370CD1800C18009 /* Me */,
 				F61242B32368D9EE00C18009 /* Login */,
 				CA8DBF5623550DDA00A1641B /* AppDelegate.swift */,
-				F64D20252364F9D2003BBE52 /* Utils */,
 				F620F09A2363C123006EDE9B /* Auth */,
 				F620F0A52364ABAB006EDE9B /* SignUp */,
 				F620F0AE2364ACD8006EDE9B /* Entities */,
@@ -165,8 +186,25 @@
 			children = (
 				F61242C6236F50B100C18009 /* UIImage.swift */,
 				F61242C8236F50DF00C18009 /* Encodable.swift */,
+				F61243012372B0BF00C18009 /* UITableView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F61242CA2370CD1800C18009 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				F61242CE2370CD7E00C18009 /* MeConfigurator.swift */,
+				F61242CB2370CD7E00C18009 /* MeInteractor.swift */,
+				F61242CD2370CD7E00C18009 /* MePresenter.swift */,
+				F61242CC2370CD7E00C18009 /* MeProtocols.swift */,
+				F61242CF2370CD7E00C18009 /* MeRouter.swift */,
+				F61242D02370CD7E00C18009 /* MeViewController.swift */,
+				F61242FF2372164C00C18009 /* Me.storyboard */,
+				F61242D923719EE100C18009 /* MeTableViewCell.swift */,
+				F61242DA23719EE100C18009 /* MeTableViewCell.xib */,
+			);
+			path = Me;
 			sourceTree = "<group>";
 		};
 		F620F09A2363C123006EDE9B /* Auth */ = {
@@ -287,6 +325,8 @@
 				F620F0992363C11A006EDE9B /* AuthViewController.xib in Resources */,
 				F64D202923650A93003BBE52 /* SignUpViewController.xib in Resources */,
 				CA8DBF6023550DDB00A1641B /* Assets.xcassets in Resources */,
+				F61243002372164C00C18009 /* Me.storyboard in Resources */,
+				F61242DC23719EE100C18009 /* MeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +388,12 @@
 			files = (
 				F61242C9236F50DF00C18009 /* Encodable.swift in Sources */,
 				F620F0A92364ACBA006EDE9B /* SignUpPresenter.swift in Sources */,
+				F61242D22370CD7E00C18009 /* MeProtocols.swift in Sources */,
+				F61242D42370CD7E00C18009 /* MeConfigurator.swift in Sources */,
+				F61242D52370CD7E00C18009 /* MeRouter.swift in Sources */,
+				F61242D12370CD7E00C18009 /* MeInteractor.swift in Sources */,
 				F61242C7236F50B200C18009 /* UIImage.swift in Sources */,
+				F61243022372B0BF00C18009 /* UITableView.swift in Sources */,
 				F620F0982363C11A006EDE9B /* AuthViewController.swift in Sources */,
 				F61242BD2368DA0300C18009 /* LoginInteractor.swift in Sources */,
 				F61242BB2368DA0300C18009 /* LoginConfigurator.swift in Sources */,
@@ -358,13 +403,16 @@
 				F620F0B22364AECD006EDE9B /* SignUpConfigurator.swift in Sources */,
 				F61242BC2368DA0300C18009 /* LoginViewController.swift in Sources */,
 				F61242C42368DF5100C18009 /* LoginUser.swift in Sources */,
+				F61242D32370CD7E00C18009 /* MePresenter.swift in Sources */,
 				F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */,
 				F61242B92368DA0300C18009 /* LoginProtocols.swift in Sources */,
+				F61242DB23719EE100C18009 /* MeTableViewCell.swift in Sources */,
 				F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */,
 				F61242B22367306500C18009 /* MainTabBarViewController.swift in Sources */,
 				CA8DBF5723550DDA00A1641B /* AppDelegate.swift in Sources */,
 				F61242BA2368DA0300C18009 /* LoginPresenter.swift in Sources */,
 				F620F0B02364ACFC006EDE9B /* User.swift in Sources */,
+				F61242D62370CD7E00C18009 /* MeViewController.swift in Sources */,
 				F620F09C2363C4D0006EDE9B /* AuthProtocols.swift in Sources */,
 				F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */,
 				F620F0AB2364ACC9006EDE9B /* SignUpInteractor.swift in Sources */,

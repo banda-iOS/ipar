@@ -10,8 +10,10 @@ import UIKit
 
 
 
-class MainTabBarViewController: UITabBarController, AuthVCDelegate {
+class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate {
 
+    private var button = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,7 +46,37 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate {
         return tabViewControllers
     }
     
-    func createMainTBControllerForAuthorized() -> [UIViewController] {
+    private func createAuthViewController() -> UIViewController {
+        let authViewController = AuthViewController()
+        authViewController.delegate = self
+        let unselectedMeImage = UIImage(named: "unselectedMe")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
+        let selectedMeImage = UIImage(named: "selectedMe")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
+        authViewController.tabBarItem = UITabBarItem(title: "Authorization", image: unselectedMeImage, selectedImage: selectedMeImage)
+        return authViewController
+    }
+    
+    private func createEventsViewController() -> UIViewController {
+        let myEventsViewController = UIViewController()
+        myEventsViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 3)
+        
+        return myEventsViewController
+    }
+    
+    private func createMeViewController() -> UIViewController {
+        let storyboard = UIStoryboard(name: "Me", bundle: nil)
+        let meViewController = storyboard.instantiateViewController(withIdentifier: "MeViewController") as! MeViewController
+        meViewController.delegate = self
+        
+        let meNavigationController = UINavigationController(rootViewController: meViewController)
+        
+        let unselectedMeImage = UIImage(named: "unselectedMe")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
+        let selectedMeImage = UIImage(named: "selectedMe")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
+        meNavigationController.tabBarItem = UITabBarItem(title: "Me", image: unselectedMeImage, selectedImage: selectedMeImage)
+        
+        return meNavigationController
+    }
+    
+    private func createMainTBControllerForAuthorized() -> [UIViewController] {
        
         var tabViewControllers = createDefaultControllers()
         
@@ -53,27 +85,17 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate {
         vc.tabBarItem.isEnabled = false
         tabViewControllers.append(vc)
         
-        let myEventsViewController = UIViewController()
-        myEventsViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 3)
-        tabViewControllers.append(myEventsViewController)
-        
-        let meViewController = UIViewController()
-        let unselectedMeImage = UIImage(named: "unselectedMe")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
-        let selectedMeImage = UIImage(named: "selectedMe")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
-        meViewController.tabBarItem = UITabBarItem(title: "Me", image: unselectedMeImage, selectedImage: selectedMeImage)
-
-        tabViewControllers.append(meViewController)
+        tabViewControllers.append(createEventsViewController())
+                
+        tabViewControllers.append(createMeViewController())
 
         return tabViewControllers
     }
     
-    func createMainTBControllerForUnauthorized() -> [UIViewController] {
+    private func createMainTBControllerForUnauthorized() -> [UIViewController] {
         var tabViewControllers = createDefaultControllers()
-       
-        let authViewController = AuthViewController()
-        authViewController.delegate = self
-        tabViewControllers.append(authViewController)
-
+        
+        tabViewControllers.append(createAuthViewController())
         
         return tabViewControllers
     }
@@ -82,18 +104,20 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate {
         let buttonImage = UIImage(named: "unselectedAddButton")?.resizeImage(targetSize: CGSize(width: 40.0, height: 40.0))
         let highlightImage = UIImage(named: "selectedAddButton")?.resizeImage(targetSize: CGSize(width: 40.0, height: 40.0))
         if let buttonImage = buttonImage {
-            let button = UIButton(type: UIButton.ButtonType.custom)
+            button = UIButton(type: UIButton.ButtonType.custom)
             
             button.frame = CGRect(x: 0.0, y: 0.0, width: buttonImage.size.width, height: buttonImage.size.height)
                         
             button.setBackgroundImage(buttonImage, for: UIControl.State())
             button.setBackgroundImage(highlightImage, for: UIControl.State.highlighted)
                         
-            button.center = self.tabBar.center
+            button.center.x = self.tabBar.center.x
+            button.center.y = UIScreen.main.bounds.height - 25.0
+            
             if #available(iOS 11.0, *) {
                 button.center.y = button.center.y - UIApplication.shared.windows[0].safeAreaInsets.bottom
             }
-
+            
             self.view.addSubview(button)
         }
     }
@@ -105,22 +129,19 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate {
         vc.tabBarItem.isEnabled = false
         viewControllers?[2] = vc
         
-        let myEventsViewController = UIViewController()
-        myEventsViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 3)
-        viewControllers?.append(myEventsViewController)
-       
-        let meViewController = UIViewController()
-        let unselectedMeImage = UIImage(named: "unselectedMe")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
-        let selectedMeImage = UIImage(named: "selectedMe")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
-        meViewController.tabBarItem = UITabBarItem(title: "Me", image: unselectedMeImage, selectedImage: selectedMeImage)
+        viewControllers?.append(createEventsViewController())
 
-        viewControllers?.append(meViewController)
+        viewControllers?.append(createMeViewController())
         addCentralButton()
         
     }
+    
 //    MARK: функция, которая запускается, когда пользователь выходит
-    func sessionEnds() {
-        
+    func sessionFinished() {
+        button.removeFromSuperview()
+        viewControllers?[2] = self.createAuthViewController()
+        viewControllers?.remove(at: 4)
+        viewControllers?.remove(at: 3)
     }
     
 
