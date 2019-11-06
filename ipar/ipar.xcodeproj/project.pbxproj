@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02ED7A102372AE6A00D69DB0 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED7A0F2372AE6A00D69DB0 /* HTTPError.swift */; };
 		02FBA66B2370485C00CF0A23 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FBA66A2370485B00CF0A23 /* Validation.swift */; };
 		0FD6A2142BCA2FF33E377819 /* Pods_ipar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848CB93BAD9D2E3DC35D94F2 /* Pods_ipar.framework */; };
 		CA8DBF5723550DDA00A1641B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8DBF5623550DDA00A1641B /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02ED7A0F2372AE6A00D69DB0 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		02FBA66A2370485B00CF0A23 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		079A4418A67D83FDB0029B6D /* Pods-ipar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ipar/Pods-ipar.debug.xcconfig"; sourceTree = "<group>"; };
 		848CB93BAD9D2E3DC35D94F2 /* Pods_ipar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ipar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +199,7 @@
 			children = (
 				F620F0AF2364ACFC006EDE9B /* User.swift */,
 				F61242C32368DF5100C18009 /* LoginUser.swift */,
+				02ED7A0F2372AE6A00D69DB0 /* HTTPError.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				F61242C42368DF5100C18009 /* LoginUser.swift in Sources */,
 				F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */,
 				F61242B92368DA0300C18009 /* LoginProtocols.swift in Sources */,
+				02ED7A102372AE6A00D69DB0 /* HTTPError.swift in Sources */,
 				F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */,
 				F61242B22367306500C18009 /* MainTabBarViewController.swift in Sources */,
 				CA8DBF5723550DDA00A1641B /* AppDelegate.swift in Sources */,

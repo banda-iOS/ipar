@@ -34,13 +34,18 @@ func validatePhone(phone: String) -> (isValid: Bool, error: String?) {
 
 func validateEmail(email: String) -> (isValid: Bool, error: String?) {
     let range = NSRange(location: 0, length: email.utf16.count)
-    let regex = try! NSRegularExpression(pattern: ".+@.+[.].+")
-    let result = regex.firstMatch(in: email, options: [], range: range)
-    if result == nil {
-        return (isValid: false, error: "error: Doesn't match email scheme")
+    do {
+        let regex = try NSRegularExpression(pattern: ".+@.+[.].+")
+        let result = regex.firstMatch(in: email, options: [], range: range)
+        if result == nil {
+            return (isValid: false, error: "error: Doesn't match email scheme")
+        }
+        return (isValid: true, error: nil)
+    } catch {
+        return (isValid: false, error: "error: Regexp error");
     }
-    return (isValid: true, error: nil)
 }
+
 func validateSignup(email: String, password: String, confirmPassword: String, phone: String) -> (isValid: Bool, errors: [String]) {
     var errors = [String]()
     let infoPhone = validatePhone(phone: phone)

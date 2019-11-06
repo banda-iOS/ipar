@@ -27,33 +27,6 @@ class SignUpPresenter: SignUpPresenterProtocol {
     var interactor: SignUpInteractorProtocol!
     
     func createAccountWithValidation(surname: String, name: String, email: String, phone: String, password: String, passwordConfirmation: String) {
-//        var errors = [String]()
-//        var infoPassword = validatePassword(password: password, confirmPassword: passwordConfirmation)
-//        print("password: \(infoPassword)")
-//        if infoPassword.error != nil {
-//            errors.append(infoPassword.error!)
-//        }
-//        var infoPhone = validatePhone(phone: phone)
-//        print("phone: \(infoPhone)")
-//        if infoPhone.error != nil {
-//            errors.append(infoPhone.error!)
-//        }
-//        print(email)
-//        var infoEmail = validateEmail(email: email)
-//        print("email: \(infoEmail)")
-//        if infoEmail.error != nil {
-//            errors.append(infoEmail.error!)
-//        }
-//        if password != passwordConfirmation {
-//            if error == nil {
-//                error = "Пароли не совпадают"
-//            }
-//        }
-        
-//        if let error = error {
-//            view.changeErrorText(text: error)
-//            return
-//        }
         let (isValid, errors) = validateSignup(email: email, password: password, confirmPassword: passwordConfirmation, phone: phone)
         if !isValid {
             var errorsText = ""
