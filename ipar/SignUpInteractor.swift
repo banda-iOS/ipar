@@ -37,10 +37,22 @@ class SignUpInteractor: SignUpInteractorProtocol {
 
                       case .success(let value):
                            if let data = response.data {
-                               let user: User = try! JSONDecoder().decode(User.self, from: data)
-                               presenter.creationFinishedWithSuccess(user: user)
+                            print(response.data)
+                            do {
+                                let user: User = try JSONDecoder().decode(User.self, from: data)
+                                presenter.creationFinishedWithSuccess(user: user)
+                            } catch {
+                                do {
+                                    let error: HTTPError = try JSONDecoder().decode(HTTPError.self, from: data)
+                                    
+                                    presenter.creationFinishedWithError(message: error.message)
+                                    
+                                } catch {
+                                    print("Can't decode error")
+                                    return
+                                }
+                            }
                            }
-                           
                        case .failure(let error):
                             presenter.creationFinishedWithError(message: "failure: \(error)")
                        

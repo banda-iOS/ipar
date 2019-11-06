@@ -13,14 +13,13 @@ protocol SignUpVCDelegate: class {
 }
 
 class SignUpViewController: UIViewController, SignUpViewProtocol {
+    func changeErrorText(text: String) {
+        errorTextView.text = text
+    }
 
     
     var presenter: SignUpPresenterProtocol!
     let configurator: SignUpConfiguratorProtocol = SignUpConfigurator()
-    
-    func changeErrorText(text: String) {
-        
-    }
     
 
     @IBOutlet var surnameTextField: UITextField!
@@ -58,8 +57,6 @@ class SignUpViewController: UIViewController, SignUpViewProtocol {
         dismiss(animated: true, completion: nil)
         delegate?.signedUpSuccesfully()
     }
-    
-    
     
 
 }
