@@ -11,8 +11,12 @@ import KeychainSwift
 
 let keychain = KeychainSwift()
 
-func AddSessionToKeychain(sessionid: String) {
+func addSessionToKeychain(sessionid: String) {
     keychain.set(sessionid, forKey: "sessionid")
+}
+
+func deleteSessionFromKeychain() {
+    keychain.delete("sessionid")
 }
 
 func getSession() -> String? {

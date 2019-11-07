@@ -12,11 +12,6 @@ import Alamofire
 //let urlAddress = "http://localhost:8080/"
 let urlAddress = "http://82.146.62.124:8080/"
 
-extension Encodable {
-    func toJSONData() -> Data? {
-        return try? JSONEncoder().encode(self)
-    }
-}
 
 func makeRequest(path: String, method: HTTPMethod, data: Encodable?, callback: @escaping((DataResponse<Any>?)->Void)){
     var req = URLRequest(url: URL(string: urlAddress+path)!)
