@@ -20,7 +20,6 @@
 		F61242BB2368DA0300C18009 /* LoginConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242B62368DA0300C18009 /* LoginConfigurator.swift */; };
 		F61242BC2368DA0300C18009 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242B72368DA0300C18009 /* LoginViewController.swift */; };
 		F61242BD2368DA0300C18009 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242B82368DA0300C18009 /* LoginInteractor.swift */; };
-		F61242C22368DD2200C18009 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61242C12368DAAC00C18009 /* SignUpViewController.xib */; };
 		F61242C42368DF5100C18009 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242C32368DF5100C18009 /* LoginUser.swift */; };
 		F61242C7236F50B200C18009 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242C6236F50B100C18009 /* UIImage.swift */; };
 		F61242C9236F50DF00C18009 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242C8236F50DF00C18009 /* Encodable.swift */; };
@@ -48,6 +47,7 @@
 		F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D20232364B9FB003BBE52 /* SignUpViewController.swift */; };
 		F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D20272364FA35003BBE52 /* HTTPRequest.swift */; };
 		F64D202923650A93003BBE52 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F620F0A42364ABAB006EDE9B /* SignUpViewController.xib */; };
+		F66F583E237479A5000D67EF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F66F583D237479A5000D67EF /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +68,6 @@
 		F61242B62368DA0300C18009 /* LoginConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginConfigurator.swift; sourceTree = "<group>"; };
 		F61242B72368DA0300C18009 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F61242B82368DA0300C18009 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
-		F61242C12368DAAC00C18009 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SignUpViewController.xib; path = /Users/iamfrommoscow/Desktop/iOSipar/ipar/SignUpViewController.xib; sourceTree = "<absolute>"; };
 		F61242C32368DF5100C18009 /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
 		F61242C6236F50B100C18009 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		F61242C8236F50DF00C18009 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
@@ -96,6 +95,7 @@
 		F620F0B12364AECD006EDE9B /* SignUpConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfigurator.swift; sourceTree = "<group>"; };
 		F64D20232364B9FB003BBE52 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F64D20272364FA35003BBE52 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		F66F583D237479A5000D67EF /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,11 +183,11 @@
 		F61242B32368D9EE00C18009 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F66F583D237479A5000D67EF /* LoginViewController.xib */,
 				F61242B62368DA0300C18009 /* LoginConfigurator.swift */,
 				F61242B82368DA0300C18009 /* LoginInteractor.swift */,
 				F61242B52368DA0300C18009 /* LoginPresenter.swift */,
 				F61242B42368DA0300C18009 /* LoginProtocols.swift */,
-				F61242C12368DAAC00C18009 /* SignUpViewController.xib */,
 				F61242B72368DA0300C18009 /* LoginViewController.swift */,
 			);
 			path = Login;
@@ -334,12 +334,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F61242C22368DD2200C18009 /* SignUpViewController.xib in Resources */,
 				CA8DBF6323550DDB00A1641B /* LaunchScreen.storyboard in Resources */,
 				F620F0992363C11A006EDE9B /* AuthViewController.xib in Resources */,
 				F64D202923650A93003BBE52 /* SignUpViewController.xib in Resources */,
 				CA8DBF6023550DDB00A1641B /* Assets.xcassets in Resources */,
 				F61243002372164C00C18009 /* Me.storyboard in Resources */,
+				F66F583E237479A5000D67EF /* LoginViewController.xib in Resources */,
 				F61242DC23719EE100C18009 /* MeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
