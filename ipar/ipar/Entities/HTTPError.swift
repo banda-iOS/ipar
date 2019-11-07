@@ -18,7 +18,7 @@ class HTTPError: Codable {
         case message
     }
     
-    func Encode(to encoder: Encoder) throws {
+    func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(status, forKey: .status)
         try container.encode(message, forKey: .message)

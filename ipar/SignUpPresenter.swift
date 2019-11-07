@@ -37,7 +37,7 @@ class SignUpPresenter: SignUpPresenterProtocol {
             return
         }
         let user = User(surname: surname, name: name, phone: phone, email: email, password: password)
-        interactor.createAccount(user: user)
+        interactor.createAccount(withUser: user)
         
     }
     

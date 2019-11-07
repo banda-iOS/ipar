@@ -16,7 +16,7 @@ let urlAddress = "http://82.146.62.124:8080/"
 func makeRequest(path: String, method: HTTPMethod, data: Encodable?, callback: @escaping((DataResponse<Any>?)->Void)){
     var req = URLRequest(url: URL(string: urlAddress+path)!)
     req.httpMethod = method.rawValue
-    if let data=data {
+    if let data = data {
         let jsonData = data.toJSONData()
         req.httpBody = jsonData
     }

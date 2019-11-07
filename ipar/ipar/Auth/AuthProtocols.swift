@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol AuthViewProtocol: class{
-    var presenter: AuthPresenterProtocol! { get set }
+    var presenter: AuthPresenterProtocol! {get set}
     func signUpButtonPressed(_ sender: Any)
     func loginButtonPressed(_ sender: Any)
 }

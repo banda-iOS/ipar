@@ -28,7 +28,7 @@ protocol SignUpPresenterProtocol: class {
 protocol SignUpInteractorProtocol: class {
     var presenter: SignUpPresenterProtocol! { get set }
     
-    func createAccount(user: User)
+    func createAccount(withUser user: User)
 }
 
 

@@ -25,7 +25,7 @@ class User: Codable {
         case password
     }
     
-    func Encode(to encoder: Encoder) throws {
+    func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         if let id = self.id {
             try container.encode(id, forKey: .id)

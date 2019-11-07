@@ -16,7 +16,7 @@ class SignUpInteractor: SignUpInteractorProtocol {
        self.presenter = presenter
    }
     
-    func createAccount(user: User) {
+    func createAccount(withUser user: User) {
         makeRequest(path: "signup", method: .post, data: user, callback: signUpRequestCallback)
     }
     
@@ -24,33 +24,31 @@ class SignUpInteractor: SignUpInteractorProtocol {
         
         if let response = response {
                    if let headerFields = response.response?.allHeaderFields as? [String: String],
-                    let URL = response.request?.url
-                      {
+                    let URL = response.request?.url {
                         let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: URL)
                         if cookies.count != 0 {
                             addSessionToKeychain(sessionid: cookies[0].value)
                         }
-                      }
-                   switch response.result {
+                    }
+                    switch response.result {
                     
                     
 
-                      case .success(let value):
+                    case .success( _):
                            if let data = response.data {
-                            print(response.data)
                             do {
                                 let user: User = try JSONDecoder().decode(User.self, from: data)
                                 presenter.creationFinishedWithSuccess(user: user)
                             } catch {
+                                
                                 do {
                                     let error: HTTPError = try JSONDecoder().decode(HTTPError.self, from: data)
-                                    
                                     presenter.creationFinishedWithError(message: error.message)
-                                    
                                 } catch {
                                     print("Can't decode error")
                                     return
                                 }
+                                
                             }
                            }
                        case .failure(let error):
