@@ -8,13 +8,17 @@ protocol MeVCDelegate:class {
 class MeViewController: UIViewController, MeViewProtocol {
 
     var tableView: UITableView = UITableView()
+    let imagePicker = UIImagePickerController()
     
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var avatarImageButton: UIButton!
     weak var delegate: MeVCDelegate?
     
     override func loadView() {
         super.loadView()
-        
+        self.setupTable()
+    }
+    
+    private func setupTable() {
         tableView = UITableView.init(frame: CGRect.zero, style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self
@@ -24,7 +28,7 @@ class MeViewController: UIViewController, MeViewProtocol {
         
 
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: self.avatarImageView.bottomAnchor, constant: 0.0),
+            tableView.topAnchor.constraint(equalTo: self.avatarImageButton.bottomAnchor, constant: 0.0),
             tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
@@ -56,8 +60,8 @@ class MeViewController: UIViewController, MeViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(with: self)
-        
-//        avatarImageView.image = UIImage(named: "unselectedHome")
+       
+        avatarImageButton.setImage(UIImage(named: "unselectedHome")?.withRenderingMode(.alwaysTemplate), for: .normal)
         self.navigationItem.title = "ФИО пользователя"
         if #available(iOS 13.0, *) {
             self.view.backgroundColor = .systemGroupedBackground
@@ -65,23 +69,42 @@ class MeViewController: UIViewController, MeViewProtocol {
             self.view.backgroundColor = UIColor(red: 238.0/255, green: 239.0/255, blue: 244.0/255, alpha: 1.0)
         }
         
+        avatarImageButton.layer.borderWidth = 1
+        avatarImageButton.layer.borderColor = UIColor(red: 232.0/255, green: 67.0/255, blue: 66.0/255, alpha: 1.0).cgColor
+        avatarImageButton.layer.masksToBounds = false
+        avatarImageButton.layer.cornerRadius = avatarImageButton.frame.height/2
+        avatarImageButton.clipsToBounds = true
         
-        avatarImageView.layer.borderWidth = 1
-        avatarImageView.layer.borderColor = UIColor(red: 232.0/255, green: 67.0/255, blue: 66.0/255, alpha: 1.0).cgColor
-        avatarImageView.layer.masksToBounds = false
-        avatarImageView.layer.cornerRadius = avatarImageView.frame.height/2
-        avatarImageView.clipsToBounds = true
+        imagePicker.delegate = self
+        
+        presenter.getUserInfo()
     }
+    
+    
     
     func showAlert(_ alertController: UIAlertController) {
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func setNavigationItemTitle(_ title: String) {
+        self.navigationItem.title = title
+    }
+    
+    func setAvatar(_ image: UIImage) {
+        avatarImageButton.setImage(image, for: .normal)
     }
     
     func closeVC() {
         self.delegate?.sessionFinished()
     }
      
-
+    @IBAction func avatarImageButtonPressed(_ sender: Any) {
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
 }
 
 extension MeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -164,6 +187,25 @@ extension MeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+}
+
+
+extension MeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            avatarImageButton.contentMode = .scaleAspectFit
+            avatarImageButton.setImage(pickedImage, for: .normal)
+            uploadImage(pickedImage, path: "avatar", method: .put)
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+
 }
 
 

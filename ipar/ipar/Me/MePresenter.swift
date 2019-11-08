@@ -4,6 +4,7 @@ import UIKit
 
 class MePresenter: MePresenterProtocol {
     
+    
     required init(view: MeViewProtocol) {
        self.view = view
     }
@@ -14,6 +15,18 @@ class MePresenter: MePresenterProtocol {
 	
 	var interactor: MeInteractorProtocol!
 	var router: MeRouterProtocol!
+    
+    func getUserInfo() {
+        interactor.getUserInfo()
+    }
+    
+    func presentUserInfo(aboutUser user: User) {
+        view.setNavigationItemTitle("\(user.surname) \(user.name)")
+    }
+    
+    func presentUserImage(avatar: UIImage) {
+        view.setAvatar(avatar)
+    }
     
     
     func showSignOutAlert() {

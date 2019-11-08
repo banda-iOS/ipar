@@ -23,8 +23,8 @@ class AuthViewController: UIViewController, AuthViewProtocol, SignUpVCDelegate, 
     
     
 
-    @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet private weak var signUpButton: UIButton!
+    @IBOutlet private weak var loginButton: UIButton!
     
     weak var delegate: AuthVCDelegate?
     override func viewDidLoad() {

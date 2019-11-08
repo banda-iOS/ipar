@@ -22,3 +22,20 @@ func deleteSessionFromKeychain() {
 func getSession() -> String? {
     return keychain.get("sessionid")
 }
+
+func addUserToKeychain(_ data: Data) {
+    keychain.set(data, forKey: "userData")
+}
+
+func getUserFromKeychain() -> User? {
+    let userData = keychain.getData("userData")
+    if let data = userData {
+        do {
+            let user: User = try JSONDecoder().decode(User.self, from: data)
+            return user
+        } catch {
+            return nil
+        }
+    }
+    return nil
+}

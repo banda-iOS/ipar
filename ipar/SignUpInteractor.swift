@@ -23,6 +23,7 @@ class SignUpInteractor: SignUpInteractorProtocol {
     func signUpRequestCallback(response: DataResponse<Any>?) {
         
         if let response = response {
+            
                    if let headerFields = response.response?.allHeaderFields as? [String: String],
                     let URL = response.request?.url {
                         let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: URL)
@@ -38,6 +39,7 @@ class SignUpInteractor: SignUpInteractorProtocol {
                            if let data = response.data {
                             do {
                                 let user: User = try JSONDecoder().decode(User.self, from: data)
+                                addUserToKeychain(data)
                                 presenter.creationFinishedWithSuccess(user: user)
                             } catch {
                                 
@@ -45,7 +47,7 @@ class SignUpInteractor: SignUpInteractorProtocol {
                                     let error: HTTPError = try JSONDecoder().decode(HTTPError.self, from: data)
                                     presenter.creationFinishedWithError(message: error.message)
                                 } catch {
-                                    print("Can't decode error")
+                                    print("Can't decode error: \(data)")
                                     return
                                 }
                                 

@@ -24,8 +24,8 @@ class LoginViewController: UIViewController, LoginViewProtocol  {
     
     var presenter: LoginPresenterProtocol!
     let configurator: LoginConfiguratorProtocol = LoginConfigurator()
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet private weak var loginTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
     
     weak var delegate: LoginVCDelegate?
     
