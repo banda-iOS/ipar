@@ -30,9 +30,9 @@ class MePresenter: MePresenterProtocol {
     
     
     func showSignOutAlert() {
-        let alert = UIAlertController(title: "Выход", message: "Вы уверены, что хотите выйти?", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Отмена", style: UIAlertAction.Style.cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Выйти", style: UIAlertAction.Style.destructive, handler: { action in
+        let alert = UIAlertController(title: NSLocalizedString("Quit", comment: "Quit button"), message: NSLocalizedString("Are you sure that you want to exit?", comment: "Are you sure that you want to exit question"), preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button"), style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Quit", comment: "Quit button"), style: UIAlertAction.Style.destructive, handler: { action in
             self.interactor.signOut()
         }))
         view.showAlert(alert)

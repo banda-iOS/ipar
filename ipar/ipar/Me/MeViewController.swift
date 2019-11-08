@@ -62,7 +62,6 @@ class MeViewController: UIViewController, MeViewProtocol {
         configurator.configure(with: self)
        
         avatarImageButton.setImage(UIImage(named: "unselectedHome")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        self.navigationItem.title = "ФИО пользователя"
         if #available(iOS 13.0, *) {
             self.view.backgroundColor = .systemGroupedBackground
         } else {
@@ -142,9 +141,9 @@ extension MeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Управление мероприятиями"
+            return NSLocalizedString("Event management", comment: "Event management section")//"Управление мероприятиями"
         case 1:
-            return "Управление аккаунтом"
+            return NSLocalizedString("Account management", comment: "Account management section")//"Управление аккаунтом"
         default:
             return ""
         }
@@ -164,19 +163,19 @@ extension MeViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             switch indexPath.row {
                 case 0:
-                    cell.label.text = "Администрирование"
+                    cell.label.text = NSLocalizedString("Administration", comment: "Administration cell")//"Администрирование"
                 case 1:
-                    cell.label.text = "Избранное"
+                    cell.label.text = NSLocalizedString("Favourites", comment: "Favourites cell")//"Избранное"
                 default:
                     cell.label.text = ""
             }
         case 1:
             switch indexPath.row {
                 case 0:
-                    cell.label.text = "Информация о пользователе"
+                    cell.label.text = NSLocalizedString("Info about user", comment: "Info about user")//"Информация о пользователе"
                 case 1:
                     cell.label.textColor = .red
-                    cell.label.text = "Выйти"
+                    cell.label.text = NSLocalizedString("Quit", comment: "Quit button")//"Выйти"
                 default:
                     cell.label.text = ""
             }

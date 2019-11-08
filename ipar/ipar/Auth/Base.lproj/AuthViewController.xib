@@ -25,7 +25,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="6Mb-w5-XhV"/>
                     </constraints>
-                    <state key="normal" title="Зарегистрироваться"/>
+                    <state key="normal" title="Sign Up"/>
                     <connections>
                         <action selector="signUpButtonPressed:" destination="-1" eventType="touchUpInside" id="W3C-w0-3On"/>
                     </connections>
@@ -35,7 +35,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="9Om-2E-Mlc"/>
                     </constraints>
-                    <state key="normal" title="Войти"/>
+                    <state key="normal" title="Login"/>
                     <connections>
                         <action selector="loginButtonPressed:" destination="-1" eventType="touchUpInside" id="NKa-00-rIB"/>
                     </connections>
