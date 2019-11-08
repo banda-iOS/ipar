@@ -22,15 +22,15 @@ class SignUpViewController: UIViewController, SignUpViewProtocol {
     let configurator: SignUpConfiguratorProtocol = SignUpConfigurator()
     
 
-    @IBOutlet var surnameTextField: UITextField!
-    @IBOutlet var nameTextField: UITextField!
-    @IBOutlet var phoneTextField: UITextField!
-    @IBOutlet var emailTextField: UITextField!
+    @IBOutlet private var surnameTextField: UITextField!
+    @IBOutlet private var nameTextField: UITextField!
+    @IBOutlet private var phoneTextField: UITextField!
+    @IBOutlet private var emailTextField: UITextField!
     
-    @IBOutlet var passwordTextField: UITextField!
-    @IBOutlet var passwordConfirmationTextField: UITextField!
+    @IBOutlet private var passwordTextField: UITextField!
+    @IBOutlet private var passwordConfirmationTextField: UITextField!
     
-    @IBOutlet var errorTextView: UITextView!
+    @IBOutlet private var errorTextView: UITextView!
     
     weak var delegate: SignUpVCDelegate?
     
@@ -41,6 +41,7 @@ class SignUpViewController: UIViewController, SignUpViewProtocol {
     }
     
     @IBAction func signUpButtonPressed(_ sender: Any) {
+        
         if let surname = surnameTextField.text,
                    let name = nameTextField.text,
                    let phone = phoneTextField.text,

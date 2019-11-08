@@ -24,7 +24,4 @@ class AuthRouter: AuthRouterProtocol {
         vc.present(signUpViewController, animated: true, completion: nil)
     }
     
-    
-    
-    
 }

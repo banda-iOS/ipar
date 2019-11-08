@@ -15,6 +15,7 @@ class User: Codable {
     var phone: String
     var email: String
     var password: String?
+    var avatarPath: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -23,6 +24,7 @@ class User: Codable {
         case phone
         case email
         case password
+        case avatar
     }
     
     func encode(to encoder: Encoder) throws {
@@ -48,9 +50,21 @@ class User: Codable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(Int.self, forKey: .id)
+        self.avatarPath = try? container.decode(String.self, forKey: .avatar)
         self.surname = try container.decode(String.self, forKey: .surname)
         self.name = try container.decode(String.self, forKey: .name)
         self.phone = try container.decode(String.self, forKey: .phone)
         self.email = try container.decode(String.self, forKey: .email)
     }
+    
+    func similarTo(user: User) -> Bool {
+        if user.email == self.email,
+        user.name == self.name,
+        user.phone == self.phone,
+        user.surname == self.surname{
+            return true
+        }
+        return false
+    }
+    
 }
