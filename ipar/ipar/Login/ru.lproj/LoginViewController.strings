@@ -1,0 +1,9 @@
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "WDG-00-4qa"; */
+"WDG-00-4qa.placeholder" = "Пароль";
+
+/* Class = "UIButton"; normalTitle = "Войти"; ObjectID = "oKA-Q5-ap9"; */
+"oKA-Q5-ap9.normalTitle" = "Войти";
+
+/* Class = "UITextField"; placeholder = "Login"; ObjectID = "zuN-aw-91w"; */
+"zuN-aw-91w.placeholder" = "Логин";

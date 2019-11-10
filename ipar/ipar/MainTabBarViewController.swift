@@ -36,7 +36,7 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate
         let homeViewController = UIViewController()
         let unselectedHomeImage = UIImage(named: "unselectedHome")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
         let selectedHomeImage = UIImage(named: "selectedHome")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
-        homeViewController.tabBarItem = UITabBarItem(title: "Home", image: unselectedHomeImage, selectedImage: selectedHomeImage)
+        homeViewController.tabBarItem = UITabBarItem(title: NSLocalizedString("Home", comment: "MainPage tab"), image: unselectedHomeImage, selectedImage: selectedHomeImage)
         tabViewControllers.append(homeViewController)
        
         let searchViewController = UIViewController()
@@ -51,7 +51,7 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate
         authViewController.delegate = self
         let unselectedMeImage = UIImage(named: "unselectedMe")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
         let selectedMeImage = UIImage(named: "selectedMe")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
-        authViewController.tabBarItem = UITabBarItem(title: "Authorization", image: unselectedMeImage, selectedImage: selectedMeImage)
+        authViewController.tabBarItem = UITabBarItem(title: NSLocalizedString("Authorization", comment: "Authorization tab"), image: unselectedMeImage, selectedImage: selectedMeImage)
         return authViewController
     }
     
@@ -71,7 +71,7 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate
         
         let unselectedMeImage = UIImage(named: "unselectedMe")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
         let selectedMeImage = UIImage(named: "selectedMe")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
-        meNavigationController.tabBarItem = UITabBarItem(title: "Me", image: unselectedMeImage, selectedImage: selectedMeImage)
+        meNavigationController.tabBarItem = UITabBarItem(title: NSLocalizedString("Me", comment: "Profile tab"), image: unselectedMeImage, selectedImage: selectedMeImage)
         
         return meNavigationController
     }

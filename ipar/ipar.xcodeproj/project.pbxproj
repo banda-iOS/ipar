@@ -31,10 +31,13 @@
 		F61242D62370CD7E00C18009 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242D02370CD7E00C18009 /* MeViewController.swift */; };
 		F61242DB23719EE100C18009 /* MeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242D923719EE100C18009 /* MeTableViewCell.swift */; };
 		F61242DC23719EE100C18009 /* MeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61242DA23719EE100C18009 /* MeTableViewCell.xib */; };
-		F61243002372164C00C18009 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F61242FF2372164C00C18009 /* Me.storyboard */; };
 		F61243022372B0BF00C18009 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61243012372B0BF00C18009 /* UITableView.swift */; };
+		F61680042375D575000B54C5 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F61680062375D575000B54C5 /* Me.storyboard */; };
+		F61680092375D7EF000B54C5 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F616800B2375D7EF000B54C5 /* LoginViewController.xib */; };
+		F616800E2375D8E3000B54C5 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61680102375D8E3000B54C5 /* AuthViewController.xib */; };
+		F61680132375D942000B54C5 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61680152375D942000B54C5 /* SignUpViewController.xib */; };
+		F616801A2376120C000B54C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F61680182376120C000B54C5 /* Localizable.strings */; };
 		F620F0982363C11A006EDE9B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0962363C11A006EDE9B /* AuthViewController.swift */; };
-		F620F0992363C11A006EDE9B /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F620F0972363C11A006EDE9B /* AuthViewController.xib */; };
 		F620F09C2363C4D0006EDE9B /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F09B2363C4D0006EDE9B /* AuthProtocols.swift */; };
 		F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F09D2363C92D006EDE9B /* AuthConfigurator.swift */; };
 		F620F0A02363C94F006EDE9B /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F09F2363C94F006EDE9B /* AuthPresenter.swift */; };
@@ -46,8 +49,6 @@
 		F620F0B22364AECD006EDE9B /* SignUpConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0B12364AECD006EDE9B /* SignUpConfigurator.swift */; };
 		F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D20232364B9FB003BBE52 /* SignUpViewController.swift */; };
 		F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D20272364FA35003BBE52 /* HTTPRequest.swift */; };
-		F64D202923650A93003BBE52 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F620F0A42364ABAB006EDE9B /* SignUpViewController.xib */; };
-		F66F583E237479A5000D67EF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F66F583D237479A5000D67EF /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,15 +80,22 @@
 		F61242D02370CD7E00C18009 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		F61242D923719EE100C18009 /* MeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTableViewCell.swift; sourceTree = "<group>"; };
 		F61242DA23719EE100C18009 /* MeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeTableViewCell.xib; sourceTree = "<group>"; };
-		F61242FF2372164C00C18009 /* Me.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		F61243012372B0BF00C18009 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		F61680032375D56F000B54C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F61680072375D59C000B54C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
+		F61680082375D5A9000B54C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Me.strings; sourceTree = "<group>"; };
+		F616800C2375D7F6000B54C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoginViewController.xib; sourceTree = "<group>"; };
+		F616800D2375D803000B54C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LoginViewController.strings; sourceTree = "<group>"; };
+		F61680112375D8E9000B54C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AuthViewController.xib; sourceTree = "<group>"; };
+		F61680122375D8F0000B54C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AuthViewController.strings; sourceTree = "<group>"; };
+		F61680162375D945000B54C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SignUpViewController.xib; sourceTree = "<group>"; };
+		F61680172375D957000B54C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SignUpViewController.strings; sourceTree = "<group>"; };
+		F61680192376120C000B54C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		F620F0962363C11A006EDE9B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-		F620F0972363C11A006EDE9B /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
 		F620F09B2363C4D0006EDE9B /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
 		F620F09D2363C92D006EDE9B /* AuthConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfigurator.swift; sourceTree = "<group>"; };
 		F620F09F2363C94F006EDE9B /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		F620F0A12363CBD8006EDE9B /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
-		F620F0A42364ABAB006EDE9B /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = SOURCE_ROOT; };
 		F620F0A62364ABC6006EDE9B /* SignUpProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocols.swift; sourceTree = "<group>"; };
 		F620F0A82364ACBA006EDE9B /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		F620F0AA2364ACC9006EDE9B /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
@@ -95,7 +103,6 @@
 		F620F0B12364AECD006EDE9B /* SignUpConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfigurator.swift; sourceTree = "<group>"; };
 		F64D20232364B9FB003BBE52 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F64D20272364FA35003BBE52 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
-		F66F583D237479A5000D67EF /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +163,7 @@
 		CA8DBF5523550DDA00A1641B /* ipar */ = {
 			isa = PBXGroup;
 			children = (
+				F61680182376120C000B54C5 /* Localizable.strings */,
 				F64D20252364F9D2003BBE52 /* Utils */,
 				F61242C5236F509C00C18009 /* Extensions */,
 				F61242CA2370CD1800C18009 /* Me */,
@@ -183,7 +191,7 @@
 		F61242B32368D9EE00C18009 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				F66F583D237479A5000D67EF /* LoginViewController.xib */,
+				F616800B2375D7EF000B54C5 /* LoginViewController.xib */,
 				F61242B62368DA0300C18009 /* LoginConfigurator.swift */,
 				F61242B82368DA0300C18009 /* LoginInteractor.swift */,
 				F61242B52368DA0300C18009 /* LoginPresenter.swift */,
@@ -212,7 +220,7 @@
 				F61242CC2370CD7E00C18009 /* MeProtocols.swift */,
 				F61242CF2370CD7E00C18009 /* MeRouter.swift */,
 				F61242D02370CD7E00C18009 /* MeViewController.swift */,
-				F61242FF2372164C00C18009 /* Me.storyboard */,
+				F61680062375D575000B54C5 /* Me.storyboard */,
 				F61242D923719EE100C18009 /* MeTableViewCell.swift */,
 				F61242DA23719EE100C18009 /* MeTableViewCell.xib */,
 			);
@@ -224,7 +232,7 @@
 			children = (
 				F620F09D2363C92D006EDE9B /* AuthConfigurator.swift */,
 				F620F0962363C11A006EDE9B /* AuthViewController.swift */,
-				F620F0972363C11A006EDE9B /* AuthViewController.xib */,
+				F61680102375D8E3000B54C5 /* AuthViewController.xib */,
 				F620F09F2363C94F006EDE9B /* AuthPresenter.swift */,
 				F620F0A12363CBD8006EDE9B /* AuthRouter.swift */,
 				F620F09B2363C4D0006EDE9B /* AuthProtocols.swift */,
@@ -236,7 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				F64D20232364B9FB003BBE52 /* SignUpViewController.swift */,
-				F620F0A42364ABAB006EDE9B /* SignUpViewController.xib */,
+				F61680152375D942000B54C5 /* SignUpViewController.xib */,
 				F620F0B12364AECD006EDE9B /* SignUpConfigurator.swift */,
 				F620F0A82364ACBA006EDE9B /* SignUpPresenter.swift */,
 				F620F0AA2364ACC9006EDE9B /* SignUpInteractor.swift */,
@@ -318,6 +326,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = CA8DBF4A23550DDA00A1641B;
 			productRefGroup = CA8DBF5423550DDA00A1641B /* Products */;
@@ -335,11 +344,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA8DBF6323550DDB00A1641B /* LaunchScreen.storyboard in Resources */,
-				F620F0992363C11A006EDE9B /* AuthViewController.xib in Resources */,
-				F64D202923650A93003BBE52 /* SignUpViewController.xib in Resources */,
+				F616800E2375D8E3000B54C5 /* AuthViewController.xib in Resources */,
+				F61680132375D942000B54C5 /* SignUpViewController.xib in Resources */,
 				CA8DBF6023550DDB00A1641B /* Assets.xcassets in Resources */,
-				F61243002372164C00C18009 /* Me.storyboard in Resources */,
-				F66F583E237479A5000D67EF /* LoginViewController.xib in Resources */,
+				F61680042375D575000B54C5 /* Me.storyboard in Resources */,
+				F616801A2376120C000B54C5 /* Localizable.strings in Resources */,
+				F61680092375D7EF000B54C5 /* LoginViewController.xib in Resources */,
 				F61242DC23719EE100C18009 /* MeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,8 +453,53 @@
 			isa = PBXVariantGroup;
 			children = (
 				CA8DBF6223550DDB00A1641B /* Base */,
+				F61680032375D56F000B54C5 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F61680062375D575000B54C5 /* Me.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F61680072375D59C000B54C5 /* Base */,
+				F61680082375D5A9000B54C5 /* ru */,
+			);
+			name = Me.storyboard;
+			sourceTree = "<group>";
+		};
+		F616800B2375D7EF000B54C5 /* LoginViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F616800C2375D7F6000B54C5 /* Base */,
+				F616800D2375D803000B54C5 /* ru */,
+			);
+			name = LoginViewController.xib;
+			sourceTree = "<group>";
+		};
+		F61680102375D8E3000B54C5 /* AuthViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F61680112375D8E9000B54C5 /* Base */,
+				F61680122375D8F0000B54C5 /* ru */,
+			);
+			name = AuthViewController.xib;
+			sourceTree = "<group>";
+		};
+		F61680152375D942000B54C5 /* SignUpViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F61680162375D945000B54C5 /* Base */,
+				F61680172375D957000B54C5 /* ru */,
+			);
+			name = SignUpViewController.xib;
+			sourceTree = SOURCE_ROOT;
+		};
+		F61680182376120C000B54C5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F61680192376120C000B54C5 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -454,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -514,6 +570,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
