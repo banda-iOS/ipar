@@ -9,9 +9,10 @@
 import Foundation
 import Alamofire
 
-let urlAddress = "http://localhost:8080/"
-let staticUrlAddress = "http://localhost:8081/"
-//let urlAddress = "http://82.146.62.124:8080/"
+//let urlAddress = "http://localhost:8080/"
+//let staticUrlAddress = "http://localhost:8081/"
+let urlAddress = "http://82.146.62.124:8080/"
+let staticUrlAddress = "http://82.146.62.124:8081/"
 
 
 func makeRequest(path: String, method: HTTPMethod, data: Encodable?, callback: @escaping((DataResponse<Any>?)->Void)){
