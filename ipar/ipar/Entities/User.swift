@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User: Codable {
+final class User: Codable {
     var id: Int?
     var surname: String
     var name: String

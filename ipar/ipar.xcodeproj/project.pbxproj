@@ -37,6 +37,14 @@
 		F616800E2375D8E3000B54C5 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61680102375D8E3000B54C5 /* AuthViewController.xib */; };
 		F61680132375D942000B54C5 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61680152375D942000B54C5 /* SignUpViewController.xib */; };
 		F616801A2376120C000B54C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F61680182376120C000B54C5 /* Localizable.strings */; };
+		F616801F2378B0C2000B54C5 /* CreationTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F616801E2378B0C2000B54C5 /* CreationTabBarViewController.swift */; };
+		F61680272378BC87000B54C5 /* PlaceCreationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61680212378BC86000B54C5 /* PlaceCreationInteractor.swift */; };
+		F61680282378BC87000B54C5 /* PlaceCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61680222378BC86000B54C5 /* PlaceCreationViewController.swift */; };
+		F61680292378BC87000B54C5 /* PlaceCreationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61680232378BC86000B54C5 /* PlaceCreationProtocols.swift */; };
+		F616802A2378BC87000B54C5 /* PlaceCreationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61680242378BC86000B54C5 /* PlaceCreationRouter.swift */; };
+		F616802B2378BC87000B54C5 /* PlaceCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61680252378BC86000B54C5 /* PlaceCreationPresenter.swift */; };
+		F616802C2378BC87000B54C5 /* PlaceCreationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61680262378BC86000B54C5 /* PlaceCreationConfigurator.swift */; };
+		F616802F2379A1C8000B54C5 /* Creation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F616802E2379A1C8000B54C5 /* Creation.storyboard */; };
 		F620F0982363C11A006EDE9B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0962363C11A006EDE9B /* AuthViewController.swift */; };
 		F620F09C2363C4D0006EDE9B /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F09B2363C4D0006EDE9B /* AuthProtocols.swift */; };
 		F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F09D2363C92D006EDE9B /* AuthConfigurator.swift */; };
@@ -91,6 +99,14 @@
 		F61680162375D945000B54C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SignUpViewController.xib; sourceTree = "<group>"; };
 		F61680172375D957000B54C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SignUpViewController.strings; sourceTree = "<group>"; };
 		F61680192376120C000B54C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		F616801E2378B0C2000B54C5 /* CreationTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationTabBarViewController.swift; sourceTree = "<group>"; };
+		F61680212378BC86000B54C5 /* PlaceCreationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCreationInteractor.swift; sourceTree = "<group>"; };
+		F61680222378BC86000B54C5 /* PlaceCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCreationViewController.swift; sourceTree = "<group>"; };
+		F61680232378BC86000B54C5 /* PlaceCreationProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCreationProtocols.swift; sourceTree = "<group>"; };
+		F61680242378BC86000B54C5 /* PlaceCreationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCreationRouter.swift; sourceTree = "<group>"; };
+		F61680252378BC86000B54C5 /* PlaceCreationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCreationPresenter.swift; sourceTree = "<group>"; };
+		F61680262378BC86000B54C5 /* PlaceCreationConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCreationConfigurator.swift; sourceTree = "<group>"; };
+		F616802E2379A1C8000B54C5 /* Creation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Creation.storyboard; sourceTree = "<group>"; };
 		F620F0962363C11A006EDE9B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		F620F09B2363C4D0006EDE9B /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
 		F620F09D2363C92D006EDE9B /* AuthConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfigurator.swift; sourceTree = "<group>"; };
@@ -163,6 +179,7 @@
 		CA8DBF5523550DDA00A1641B /* ipar */ = {
 			isa = PBXGroup;
 			children = (
+				F616801D2378AF81000B54C5 /* CreationModules */,
 				F61680182376120C000B54C5 /* Localizable.strings */,
 				F64D20252364F9D2003BBE52 /* Utils */,
 				F61242C5236F509C00C18009 /* Extensions */,
@@ -225,6 +242,29 @@
 				F61242DA23719EE100C18009 /* MeTableViewCell.xib */,
 			);
 			path = Me;
+			sourceTree = "<group>";
+		};
+		F616801D2378AF81000B54C5 /* CreationModules */ = {
+			isa = PBXGroup;
+			children = (
+				F61680202378BBD9000B54C5 /* PlaceCreation */,
+				F616801E2378B0C2000B54C5 /* CreationTabBarViewController.swift */,
+				F616802E2379A1C8000B54C5 /* Creation.storyboard */,
+			);
+			path = CreationModules;
+			sourceTree = "<group>";
+		};
+		F61680202378BBD9000B54C5 /* PlaceCreation */ = {
+			isa = PBXGroup;
+			children = (
+				F61680262378BC86000B54C5 /* PlaceCreationConfigurator.swift */,
+				F61680212378BC86000B54C5 /* PlaceCreationInteractor.swift */,
+				F61680252378BC86000B54C5 /* PlaceCreationPresenter.swift */,
+				F61680232378BC86000B54C5 /* PlaceCreationProtocols.swift */,
+				F61680242378BC86000B54C5 /* PlaceCreationRouter.swift */,
+				F61680222378BC86000B54C5 /* PlaceCreationViewController.swift */,
+			);
+			path = PlaceCreation;
 			sourceTree = "<group>";
 		};
 		F620F09A2363C123006EDE9B /* Auth */ = {
@@ -349,6 +389,7 @@
 				CA8DBF6023550DDB00A1641B /* Assets.xcassets in Resources */,
 				F61680042375D575000B54C5 /* Me.storyboard in Resources */,
 				F616801A2376120C000B54C5 /* Localizable.strings in Resources */,
+				F616802F2379A1C8000B54C5 /* Creation.storyboard in Resources */,
 				F61680092375D7EF000B54C5 /* LoginViewController.xib in Resources */,
 				F61242DC23719EE100C18009 /* MeTableViewCell.xib in Resources */,
 			);
@@ -390,6 +431,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -397,6 +439,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -413,6 +456,7 @@
 				F61242C9236F50DF00C18009 /* Encodable.swift in Sources */,
 				F620F0A92364ACBA006EDE9B /* SignUpPresenter.swift in Sources */,
 				F61242D22370CD7E00C18009 /* MeProtocols.swift in Sources */,
+				F61680292378BC87000B54C5 /* PlaceCreationProtocols.swift in Sources */,
 				F61242D42370CD7E00C18009 /* MeConfigurator.swift in Sources */,
 				F61242D52370CD7E00C18009 /* MeRouter.swift in Sources */,
 				F61242D12370CD7E00C18009 /* MeInteractor.swift in Sources */,
@@ -424,6 +468,8 @@
 				F61242BB2368DA0300C18009 /* LoginConfigurator.swift in Sources */,
 				F620F0A02363C94F006EDE9B /* AuthPresenter.swift in Sources */,
 				F620F0A72364ABC6006EDE9B /* SignUpProtocols.swift in Sources */,
+				F616802C2378BC87000B54C5 /* PlaceCreationConfigurator.swift in Sources */,
+				F616802B2378BC87000B54C5 /* PlaceCreationPresenter.swift in Sources */,
 				F612426B2365E9E400C18009 /* Keychain.swift in Sources */,
 				F620F0B22364AECD006EDE9B /* SignUpConfigurator.swift in Sources */,
 				F61242BC2368DA0300C18009 /* LoginViewController.swift in Sources */,
@@ -431,14 +477,18 @@
 				F61242D32370CD7E00C18009 /* MePresenter.swift in Sources */,
 				F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */,
 				F61242B92368DA0300C18009 /* LoginProtocols.swift in Sources */,
+				F61680272378BC87000B54C5 /* PlaceCreationInteractor.swift in Sources */,
+				F616802A2378BC87000B54C5 /* PlaceCreationRouter.swift in Sources */,
 				F61242DB23719EE100C18009 /* MeTableViewCell.swift in Sources */,
 				02ED7A102372AE6A00D69DB0 /* HTTPError.swift in Sources */,
 				F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */,
 				F61242B22367306500C18009 /* MainTabBarViewController.swift in Sources */,
+				F616801F2378B0C2000B54C5 /* CreationTabBarViewController.swift in Sources */,
 				CA8DBF5723550DDA00A1641B /* AppDelegate.swift in Sources */,
 				F61242BA2368DA0300C18009 /* LoginPresenter.swift in Sources */,
 				F620F0B02364ACFC006EDE9B /* User.swift in Sources */,
 				F61242D62370CD7E00C18009 /* MeViewController.swift in Sources */,
+				F61680282378BC87000B54C5 /* PlaceCreationViewController.swift in Sources */,
 				F620F09C2363C4D0006EDE9B /* AuthProtocols.swift in Sources */,
 				F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */,
 				F620F0AB2364ACC9006EDE9B /* SignUpInteractor.swift in Sources */,

@@ -100,13 +100,13 @@ class MeViewController: UIViewController, MeViewProtocol {
     @IBAction func avatarImageButtonPressed(_ sender: Any) {
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
-        
+                
         present(imagePicker, animated: true, completion: nil)
     }
     
 }
 
-extension MeViewController: UITableViewDelegate, UITableViewDataSource {
+extension MeViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
@@ -133,6 +133,7 @@ extension MeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let headerView = view as? UITableViewHeaderFooterView
         headerView!.textLabel!.textAlignment = .center
@@ -156,6 +157,8 @@ extension MeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MeTableViewCell", for: indexPath) as! MeTableViewCell
