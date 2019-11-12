@@ -21,7 +21,7 @@ class CreationTabBarViewController: ButtonBarPagerTabStripViewController {
 //        settings.style.buttonBarBackgroundColor = .green
         settings.style.buttonBarItemBackgroundColor = graySpotifyColor
 //        settings.style.buttonBarItemBackgroundColor = .blue
-        settings.style.selectedBarBackgroundColor = UIColor(red: 33/255.0, green: 174/255.0, blue: 67/255.0, alpha: 1.0)
+        settings.style.selectedBarBackgroundColor = UIColor(red: 232.0/255, green: 67.0/255, blue: 66.0/255, alpha: 1.0)
 //        settings.style.selectedBarBackgroundColor = .red
         settings.style.buttonBarItemFont = UIFont(name: "HelveticaNeue-Light", size:14) ?? UIFont.systemFont(ofSize: 14)
         settings.style.selectedBarHeight = 3.0
@@ -50,7 +50,7 @@ class CreationTabBarViewController: ButtonBarPagerTabStripViewController {
             navItemHeight = navHeight
         }
         
-        self.buttonBarView.frame = CGRect(x: 0, y: navItemHeight + UIApplication.shared.statusBarFrame.height, width:  self.buttonBarView.frame.size.width, height: settings.style.buttonBarHeight ?? 44.0)
+        self.buttonBarView.frame = CGRect(x: 0, y: navItemHeight + UIApplication.shared.statusBarFrame.height, width:  self.buttonBarView.frame.size.width, height: 44.0)
         
     }
 
