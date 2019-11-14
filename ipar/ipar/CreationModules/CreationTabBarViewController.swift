@@ -64,6 +64,6 @@ class CreationTabBarViewController: ButtonBarPagerTabStripViewController {
     }
 
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        self.navigationController?.dismiss(animated: true, completion:nil);
+        self.navigationController?.dismiss(animated: true, completion:nil)
     }
 }

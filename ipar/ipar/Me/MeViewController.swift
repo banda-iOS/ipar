@@ -7,7 +7,7 @@ protocol MeVCDelegate:class {
 
 class MeViewController: UIViewController, MeViewProtocol {
 
-    var tableView: UITableView = UITableView()
+    var tableView: UITableView = UITableView(frame: CGRect.zero, style: .grouped)
     let imagePicker = UIImagePickerController()
     
     @IBOutlet private weak var avatarImageButton: UIButton!
@@ -19,7 +19,6 @@ class MeViewController: UIViewController, MeViewProtocol {
     }
     
     private func setupTable() {
-        tableView = UITableView.init(frame: CGRect.zero, style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false

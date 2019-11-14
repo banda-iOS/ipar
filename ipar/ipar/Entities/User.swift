@@ -12,8 +12,8 @@ final class User: Codable {
     var id: Int?
     var surname: String
     var name: String
-    var phone: String
-    var email: String
+    var phone: String?
+    var email: String?
     var password: String?
     var avatarPath: String?
     
@@ -29,13 +29,12 @@ final class User: Codable {
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        if let id = self.id {
-            try container.encode(id, forKey: .id)
-        }
+        try? container.encode(id, forKey: .id)
         try container.encode(surname, forKey: .surname)
         try container.encode(name, forKey: .name)
-        try container.encode(phone, forKey: .phone)
-        try container.encode(email, forKey: .email)
+        try? container.encode(phone, forKey: .phone)
+        try? container.encode(email, forKey: .email)
+        try? container.encode(password, forKey: .password)
     }
     
     init(surname: String, name: String, phone: String, email: String, password: String = "") {
@@ -53,8 +52,8 @@ final class User: Codable {
         self.avatarPath = try? container.decode(String.self, forKey: .avatar)
         self.surname = try container.decode(String.self, forKey: .surname)
         self.name = try container.decode(String.self, forKey: .name)
-        self.phone = try container.decode(String.self, forKey: .phone)
-        self.email = try container.decode(String.self, forKey: .email)
+        self.phone = try? container.decode(String.self, forKey: .phone)
+        self.email = try? container.decode(String.self, forKey: .email)
     }
     
     func similarTo(user: User) -> Bool {

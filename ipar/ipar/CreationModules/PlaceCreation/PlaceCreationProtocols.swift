@@ -1,7 +1,9 @@
 
 import Foundation
+import UIKit
+import MapKit
 
-protocol PlaceCreationViewProtocol: class{
+protocol PlaceCreationViewProtocol: UIViewController, MapSearchDelegate {
     var presenter: PlaceCreationPresenterProtocol! { get set }
    
 }
@@ -17,6 +19,9 @@ protocol PlaceCreationPresenterProtocol: class {
 	var interactor: PlaceCreationInteractorProtocol! {get set}
 	var router: PlaceCreationRouterProtocol! {get set}
    
+    func addPositionButtonPressed()
+    
+    func parseAndSavePlacemarkAndAddress(placemark: MKPlacemark, address: String)
 }
 
 
@@ -26,6 +31,6 @@ protocol PlaceCreationInteractorProtocol: class {
 }
 	
 protocol PlaceCreationRouterProtocol: class {
-
+    func goToMapSearchViewController(vc: PlaceCreationViewProtocol)
 }
 

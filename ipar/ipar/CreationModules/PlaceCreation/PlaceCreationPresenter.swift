@@ -2,6 +2,8 @@
 import Foundation
 
 class PlaceCreationPresenter: PlaceCreationPresenterProtocol {
+    
+    
     required init(view: PlaceCreationViewProtocol) {
        self.view = view
     }
@@ -13,6 +15,9 @@ class PlaceCreationPresenter: PlaceCreationPresenterProtocol {
 	var interactor: PlaceCreationInteractorProtocol!
 	var router: PlaceCreationRouterProtocol!
     
+    func addPositionButtonPressed() {
+        router.goToMapSearchViewController(vc: view)
+    }
     
 }
 

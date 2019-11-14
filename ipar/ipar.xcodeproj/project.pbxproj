@@ -45,6 +45,11 @@
 		F616802B2378BC87000B54C5 /* PlaceCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61680252378BC86000B54C5 /* PlaceCreationPresenter.swift */; };
 		F616802C2378BC87000B54C5 /* PlaceCreationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61680262378BC86000B54C5 /* PlaceCreationConfigurator.swift */; };
 		F616802F2379A1C8000B54C5 /* Creation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F616802E2379A1C8000B54C5 /* Creation.storyboard */; };
+		F6168035237B67F5000B54C5 /* MapSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6168034237B67F5000B54C5 /* MapSearchViewController.swift */; };
+		F6168036237B6A13000B54C5 /* MapSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6168032237B64BF000B54C5 /* MapSearch.storyboard */; };
+		F6168038237B7272000B54C5 /* MapSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6168037237B7272000B54C5 /* MapSearchTableViewController.swift */; };
+		F616803A237DA5C9000B54C5 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6168039237DA5C8000B54C5 /* Place.swift */; };
+		F616803C237DB468000B54C5 /* MKPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = F616803B237DB468000B54C5 /* MKPlacemark.swift */; };
 		F620F0982363C11A006EDE9B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0962363C11A006EDE9B /* AuthViewController.swift */; };
 		F620F09C2363C4D0006EDE9B /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F09B2363C4D0006EDE9B /* AuthProtocols.swift */; };
 		F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F09D2363C92D006EDE9B /* AuthConfigurator.swift */; };
@@ -107,6 +112,11 @@
 		F61680252378BC86000B54C5 /* PlaceCreationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCreationPresenter.swift; sourceTree = "<group>"; };
 		F61680262378BC86000B54C5 /* PlaceCreationConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCreationConfigurator.swift; sourceTree = "<group>"; };
 		F616802E2379A1C8000B54C5 /* Creation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Creation.storyboard; sourceTree = "<group>"; };
+		F6168032237B64BF000B54C5 /* MapSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = MapSearch.storyboard; path = ipar/CreationModules/PlaceCreation/MapSearch/MapSearch.storyboard; sourceTree = SOURCE_ROOT; };
+		F6168034237B67F5000B54C5 /* MapSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchViewController.swift; sourceTree = "<group>"; };
+		F6168037237B7272000B54C5 /* MapSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchTableViewController.swift; sourceTree = "<group>"; };
+		F6168039237DA5C8000B54C5 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		F616803B237DB468000B54C5 /* MKPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPlacemark.swift; sourceTree = "<group>"; };
 		F620F0962363C11A006EDE9B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		F620F09B2363C4D0006EDE9B /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
 		F620F09D2363C92D006EDE9B /* AuthConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfigurator.swift; sourceTree = "<group>"; };
@@ -224,6 +234,7 @@
 				F61242C6236F50B100C18009 /* UIImage.swift */,
 				F61242C8236F50DF00C18009 /* Encodable.swift */,
 				F61243012372B0BF00C18009 /* UITableView.swift */,
+				F616803B237DB468000B54C5 /* MKPlacemark.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -257,6 +268,7 @@
 		F61680202378BBD9000B54C5 /* PlaceCreation */ = {
 			isa = PBXGroup;
 			children = (
+				F6168031237B6327000B54C5 /* MapSearch */,
 				F61680262378BC86000B54C5 /* PlaceCreationConfigurator.swift */,
 				F61680212378BC86000B54C5 /* PlaceCreationInteractor.swift */,
 				F61680252378BC86000B54C5 /* PlaceCreationPresenter.swift */,
@@ -265,6 +277,16 @@
 				F61680222378BC86000B54C5 /* PlaceCreationViewController.swift */,
 			);
 			path = PlaceCreation;
+			sourceTree = "<group>";
+		};
+		F6168031237B6327000B54C5 /* MapSearch */ = {
+			isa = PBXGroup;
+			children = (
+				F6168032237B64BF000B54C5 /* MapSearch.storyboard */,
+				F6168034237B67F5000B54C5 /* MapSearchViewController.swift */,
+				F6168037237B7272000B54C5 /* MapSearchTableViewController.swift */,
+			);
+			path = MapSearch;
 			sourceTree = "<group>";
 		};
 		F620F09A2363C123006EDE9B /* Auth */ = {
@@ -300,6 +322,7 @@
 				F620F0AF2364ACFC006EDE9B /* User.swift */,
 				F61242C32368DF5100C18009 /* LoginUser.swift */,
 				02ED7A0F2372AE6A00D69DB0 /* HTTPError.swift */,
+				F6168039237DA5C8000B54C5 /* Place.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -392,6 +415,7 @@
 				F616802F2379A1C8000B54C5 /* Creation.storyboard in Resources */,
 				F61680092375D7EF000B54C5 /* LoginViewController.xib in Resources */,
 				F61242DC23719EE100C18009 /* MeTableViewCell.xib in Resources */,
+				F6168036237B6A13000B54C5 /* MapSearch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F616803C237DB468000B54C5 /* MKPlacemark.swift in Sources */,
 				F61242C9236F50DF00C18009 /* Encodable.swift in Sources */,
 				F620F0A92364ACBA006EDE9B /* SignUpPresenter.swift in Sources */,
 				F61242D22370CD7E00C18009 /* MeProtocols.swift in Sources */,
@@ -470,9 +495,11 @@
 				F620F0A72364ABC6006EDE9B /* SignUpProtocols.swift in Sources */,
 				F616802C2378BC87000B54C5 /* PlaceCreationConfigurator.swift in Sources */,
 				F616802B2378BC87000B54C5 /* PlaceCreationPresenter.swift in Sources */,
+				F616803A237DA5C9000B54C5 /* Place.swift in Sources */,
 				F612426B2365E9E400C18009 /* Keychain.swift in Sources */,
 				F620F0B22364AECD006EDE9B /* SignUpConfigurator.swift in Sources */,
 				F61242BC2368DA0300C18009 /* LoginViewController.swift in Sources */,
+				F6168038237B7272000B54C5 /* MapSearchTableViewController.swift in Sources */,
 				F61242C42368DF5100C18009 /* LoginUser.swift in Sources */,
 				F61242D32370CD7E00C18009 /* MePresenter.swift in Sources */,
 				F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */,
@@ -493,6 +520,7 @@
 				F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */,
 				F620F0AB2364ACC9006EDE9B /* SignUpInteractor.swift in Sources */,
 				F620F0A22363CBD8006EDE9B /* AuthRouter.swift in Sources */,
+				F6168035237B67F5000B54C5 /* MapSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

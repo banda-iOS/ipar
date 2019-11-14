@@ -4,6 +4,8 @@ import XLPagerTabStrip
 import MapKit
 
 class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, IndicatorInfoProvider  {
+    
+    
 
     var itemInfo = IndicatorInfo(title: "View")
     let scrollView: UIScrollView = {
@@ -134,7 +136,11 @@ class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, 
     }
     
     @objc func addPositionButtonPressed() {
-
+        presenter.addPositionButtonPressed()
+    }
+    
+    func userSelectedPlacemark(_ placemark: MKPlacemark, address: String) {
+        
     }
      
 
@@ -175,7 +181,6 @@ extension PlaceCreationViewController: UITextViewDelegate {
             hashstagsTextField.resignFirstResponder()
         }
     }
-    
    
 }
 
