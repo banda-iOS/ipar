@@ -5,7 +5,17 @@ import MapKit
 
 protocol PlaceCreationViewProtocol: UIViewController, MapSearchDelegate {
     var presenter: PlaceCreationPresenterProtocol! { get set }
-   
+    
+    func getTitleField() -> String?
+    func getDescriptionField() -> String
+    func getHashtagsField() -> String
+
+    func getPlacemark() -> MKPlacemark?
+    
+    func createMapView()
+    func createConfirmButton()
+    
+    func changePlacemarkOnMapView(_ placemark: MKPlacemark)
 }
 
 protocol PlaceCreationConfiguratorProtocol: class {
@@ -22,12 +32,22 @@ protocol PlaceCreationPresenterProtocol: class {
     func addPositionButtonPressed()
     
     func parseAndSavePlacemarkAndAddress(placemark: MKPlacemark, address: String)
+    
+    func createPlace()
+    
+    func creationFinishedWithSuccess(place: Place)
+    func creationFinishedWithError(message: String)
 }
 
 
 
 protocol PlaceCreationInteractorProtocol: class {
 	var presenter: PlaceCreationPresenterProtocol! { get set }
+    
+    func createPlaceWith(placemark: MKPlacemark, address: String)
+    func updatePlaceWith(address: String?, placemark: MKPlacemark?, name: String?, description: String?, hashtags: [String]?)
+    
+    func sendToBackend()
 }
 	
 protocol PlaceCreationRouterProtocol: class {

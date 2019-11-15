@@ -15,7 +15,7 @@ let staticUrlAddress = "http://localhost:8081/"
 //let staticUrlAddress = "http://82.146.62.124:8081/"
 
 
-func makeRequest(path: String, method: HTTPMethod, data: Encodable?, callback: @escaping((DataResponse<Any>?)->Void)){
+func uploadData(path: String, method: HTTPMethod, data: Encodable?, callback: @escaping((DataResponse<Any>?)->Void)){
     var req = URLRequest(url: URL(string: urlAddress + path)!)
     req.httpMethod = method.rawValue
     if let data = data {

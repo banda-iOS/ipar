@@ -87,6 +87,7 @@ class MapSearchViewController: UIViewController, CLLocationManagerDelegate, MKMa
     @IBAction func addPlacemarkAndReturn(_ sender: Any) {
         if let placemark = self.placemark {
             delegate?.userSelectedPlacemark(placemark, address: placemark.parseAddress())
+            self.dismissThisController()
         } else {
             if self.placemark == nil {
                 let alert = UIAlertController(title: NSLocalizedString("Quit without saving?", comment: "Ask for quit without saving in adding placemark to map"), message: NSLocalizedString("Are you sure that you want to quit without saving?", comment: "Ask for quit without saving in adding placemark to map message"), preferredStyle: UIAlertController.Style.alert)

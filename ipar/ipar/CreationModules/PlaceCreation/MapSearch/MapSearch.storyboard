@@ -11,7 +11,7 @@
         <!--Map Search View Controller-->
         <scene sceneID="pPe-ST-tH3">
             <objects>
-                <viewController id="Tkg-BH-ORN" customClass="MapSearchViewController" customModule="ipar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapSearchViewController" id="Tkg-BH-ORN" customClass="MapSearchViewController" customModule="ipar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HTN-YF-WW6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,6 +107,7 @@
         <!--Navigation Controller-->
         <scene sceneID="tJj-68-FEV">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RMV-xZ-v6H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="MapSearchNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Ax2-ec-dgj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CFs-nT-Dsu">
@@ -118,7 +119,6 @@
                         <segue destination="Tkg-BH-ORN" kind="relationship" relationship="rootViewController" id="Wls-Y2-XEb"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RMV-xZ-v6H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-233.33333333333334" y="159.375"/>
         </scene>

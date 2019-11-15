@@ -12,7 +12,7 @@ final class Place: Codable {
     var id: Int?
     var address: String?
     var latitude: Double
-    var longtitude: Double
+    var longitude: Double
     var name: String?
     var description: String?
     var creator: User?
@@ -24,7 +24,7 @@ final class Place: Codable {
         case id
         case address
         case latitude
-        case longtitude
+        case longitude
         case name
         case description
         case creator
@@ -38,7 +38,7 @@ final class Place: Codable {
         try? container.encode(id, forKey: .id)
         try? container.encode(address, forKey: .address)
         try? container.encode(latitude, forKey: .latitude)
-        try? container.encode(longtitude, forKey: .longtitude)
+        try? container.encode(longitude, forKey: .longitude)
         try? container.encode(name, forKey: .name)
         try? container.encode(description, forKey: .description)
         try? container.encode(creator, forKey: .creator)
@@ -47,10 +47,10 @@ final class Place: Codable {
         try? container.encode(images, forKey: .images)
     }
     
-    init(address: String? = nil, latitude: Double, longtitude: Double, name: String? = nil, description: String? = nil, creator: User? = nil, hashtags: [String]? = nil) {
+    init(address: String, latitude: Double, longitude: Double, name: String? = nil, description: String? = nil, creator: User? = nil, hashtags: [String]? = nil) {
         self.address = address
         self.latitude = latitude
-        self.longtitude = longtitude
+        self.longitude = longitude
         self.name = name
         self.description = description
         self.creator = creator
@@ -62,7 +62,7 @@ final class Place: Codable {
         self.id = try? container.decode(Int.self, forKey: .id)
         self.address = try? container.decode(String.self, forKey: .address)
         self.latitude = try container.decode(Double.self, forKey: .latitude)
-        self.longtitude = try container.decode(Double.self, forKey: .longtitude)
+        self.longitude = try container.decode(Double.self, forKey: .longitude)
         self.name = try? container.decode(String.self, forKey: .name)
         self.description = try? container.decode(String.self, forKey: .description)
         self.creator = try? container.decode(User.self, forKey: .creator)

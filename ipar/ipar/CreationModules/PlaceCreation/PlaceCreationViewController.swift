@@ -5,7 +5,6 @@ import MapKit
 
 class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, IndicatorInfoProvider  {
     
-    
 
     var itemInfo = IndicatorInfo(title: "View")
     let scrollView: UIScrollView = {
@@ -37,7 +36,7 @@ class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, 
         return descriptionField
     }()
     
-    let hashstagsTextField: UITextView = {
+    let hashtagsTextField: UITextView = {
         let hashtagsField = UITextView()
         hashtagsField.isEditable = true
         hashtagsField.translatesAutoresizingMaskIntoConstraints = false
@@ -66,8 +65,22 @@ class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, 
         return button
     }()
     
+    let confirmButton: UIButton = {
+        let button = UIButton()
+        button.setTitle(NSLocalizedString("Create place", comment: "Place creation button"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor(red: 0.0/255, green: 53.0/255, blue: 34.0/255, alpha: 1.0)
+        button.addTarget(self, action: #selector(confirmButtonPressed), for: .touchUpInside)
+        button.layer.cornerRadius = 5
+        button.clipsToBounds = true
+        return button
+    }()
+    
+    var placemark: MKPlacemark? = nil
+    
     let margin: CGFloat = 30
     var addPositionButtonTopAnchorConstraint: NSLayoutConstraint?
+    var addPositionButtonBottomAnchorConstraint: NSLayoutConstraint?
     
     init(itemInfo: IndicatorInfo) {
         self.itemInfo = itemInfo
@@ -88,9 +101,9 @@ class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, 
         descriptionTextField.delegate = self
         descriptionTextField.text = NSLocalizedString("Description", comment: "description field placeholder")
         descriptionTextField.textColor = .lightGray
-        hashstagsTextField.delegate = self
-        hashstagsTextField.text = NSLocalizedString("Hashtags", comment: "hashtags field placeholder")
-        hashstagsTextField.textColor = .lightGray
+        hashtagsTextField.delegate = self
+        hashtagsTextField.text = NSLocalizedString("Hashtags", comment: "hashtags field placeholder")
+        hashtagsTextField.textColor = .lightGray
         
         self.view.addSubview(scrollView)
 
@@ -113,21 +126,22 @@ class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, 
         descriptionTextField.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 20.0).isActive = true
         descriptionTextField.heightAnchor.constraint(equalToConstant: 650.0).isActive = true
         
-        scrollView.addSubview(hashstagsTextField)
+        scrollView.addSubview(hashtagsTextField)
 
-        hashstagsTextField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: margin).isActive = true
-        hashstagsTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -margin).isActive = true
-        hashstagsTextField.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor, constant: 20.0).isActive = true
-        hashstagsTextField.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
+        hashtagsTextField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: margin).isActive = true
+        hashtagsTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -margin).isActive = true
+        hashtagsTextField.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor, constant: 20.0).isActive = true
+        hashtagsTextField.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
         
         scrollView.addSubview(addPositionButton)
 
         addPositionButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: margin).isActive = true
         addPositionButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -margin).isActive = true
-        addPositionButtonTopAnchorConstraint = addPositionButton.topAnchor.constraint(equalTo: hashstagsTextField.bottomAnchor, constant: 20.0)
+        addPositionButtonTopAnchorConstraint = addPositionButton.topAnchor.constraint(equalTo: hashtagsTextField.bottomAnchor, constant: 20.0)
         addPositionButtonTopAnchorConstraint?.isActive = true
         addPositionButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
-        addPositionButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80.0).isActive = true
+        addPositionButtonBottomAnchorConstraint = addPositionButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80.0)
+        addPositionButtonBottomAnchorConstraint?.isActive = true
         
     }
     
@@ -140,7 +154,79 @@ class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, 
     }
     
     func userSelectedPlacemark(_ placemark: MKPlacemark, address: String) {
+        presenter.parseAndSavePlacemarkAndAddress(placemark: placemark, address: address)
+    }
+    
+    func getTitleField() -> String? {
+        return self.titleTextField.text
+    }
+    
+    func getDescriptionField() -> String {
+        return self.descriptionTextField.text
+    }
+    
+    func getHashtagsField() -> String {
+        return self.hashtagsTextField.text
+    }
+    
+    func getPlacemark() -> MKPlacemark? {
+        return self.placemark
+    }
+    
+    func createMapView() {
+        addPositionButtonTopAnchorConstraint?.isActive = false
         
+        scrollView.addSubview(mapView)
+        mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: margin).isActive = true
+        mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -margin).isActive = true
+        mapView.topAnchor.constraint(equalTo: hashtagsTextField.bottomAnchor, constant: 20.0).isActive = true
+        mapView.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
+        
+        mapView.isZoomEnabled = false
+        mapView.isScrollEnabled = false
+        mapView.isUserInteractionEnabled = false
+        
+        addPositionButtonTopAnchorConstraint = addPositionButton.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 20.0)
+        addPositionButtonTopAnchorConstraint?.isActive = true
+        
+        addPositionButton.titleLabel?.text = NSLocalizedString("Change geo position", comment: "Change geo position button")
+    }
+    
+    func createConfirmButton() {
+        addPositionButtonBottomAnchorConstraint?.isActive = false
+        scrollView.addSubview(confirmButton)
+        
+        confirmButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: margin).isActive = true
+        confirmButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -margin).isActive = true
+        confirmButton.topAnchor.constraint(equalTo: addPositionButton.bottomAnchor, constant: 20.0).isActive = true
+        confirmButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
+        
+        confirmButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80.0).isActive = true
+    }
+    
+    func changePlacemarkOnMapView(_ placemark: MKPlacemark) {
+        
+        mapView.removeAnnotations(mapView.annotations)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        annotation.title = placemark.name
+       
+        if let city = placemark.locality,
+            let state = placemark.administrativeArea {
+            annotation.subtitle = "\(city) \(state)"
+        }
+        
+        mapView.addAnnotation(annotation)
+        
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
+        mapView.setRegion(region, animated: true)
+        
+        self.placemark = placemark
+    }
+    
+    @objc func confirmButtonPressed(){
+        presenter.createPlace()
     }
      
 
@@ -148,8 +234,7 @@ class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, 
 
 extension PlaceCreationViewController: UITextViewDelegate {
     
-    func textViewDidBeginEditing(_ textView: UITextView)
-    {
+    func textViewDidBeginEditing(_ textView: UITextView){
         if textView === descriptionTextField {
             if (descriptionTextField.text == NSLocalizedString("Description", comment: "description field placeholder") && textView.textColor == .lightGray) {
                 descriptionTextField.text = ""
@@ -157,16 +242,15 @@ extension PlaceCreationViewController: UITextViewDelegate {
             }
             descriptionTextField.becomeFirstResponder()
         } else {
-            if (hashstagsTextField.text == NSLocalizedString("Hashtags", comment: "hashtags field placeholder") && textView.textColor == .lightGray) {
-                hashstagsTextField.text = ""
-                hashstagsTextField.textColor = .black
+            if (hashtagsTextField.text == NSLocalizedString("Hashtags", comment: "hashtags field placeholder") && textView.textColor == .lightGray) {
+                hashtagsTextField.text = ""
+                hashtagsTextField.textColor = .black
             }
-            hashstagsTextField.becomeFirstResponder()
+            hashtagsTextField.becomeFirstResponder()
         }
     }
 
-    func textViewDidEndEditing(_ textView: UITextView)
-    {
+    func textViewDidEndEditing(_ textView: UITextView){
         if textView === descriptionTextField {
             if (descriptionTextField.text == ""){
                 descriptionTextField.text = NSLocalizedString("Description", comment: "description field placeholder")
@@ -174,11 +258,11 @@ extension PlaceCreationViewController: UITextViewDelegate {
             }
             descriptionTextField.resignFirstResponder()
         } else {
-            if (hashstagsTextField.text == ""){
-                hashstagsTextField.text = NSLocalizedString("Hashtags", comment: "hashtags field placeholder")
-                hashstagsTextField.textColor = .lightGray
+            if (hashtagsTextField.text == ""){
+                hashtagsTextField.text = NSLocalizedString("Hashtags", comment: "hashtags field placeholder")
+                hashtagsTextField.textColor = .lightGray
             }
-            hashstagsTextField.resignFirstResponder()
+            hashtagsTextField.resignFirstResponder()
         }
     }
    
