@@ -15,8 +15,14 @@ class LoginPresenter: LoginPresenterProtocol {
         let password = view.getPasswordField()
         if let login = login,
             let password = password{
+            let (isValid, errors) = validateLogin(login: login, password: password)
+            if(!isValid) {
+                print(errors)
+                return
+            }
             let user = LoginUser(login: login, password: password)
             interactor.login(userToLogin: user)
+            
         }
     }
     
