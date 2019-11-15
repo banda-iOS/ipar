@@ -26,14 +26,7 @@ class SignUpPresenter: SignUpPresenterProtocol {
     
     var interactor: SignUpInteractorProtocol!
     
-    func createAccountWithValidation() {
-        let surname = view.getSurnameTextField()
-        let name = view.getNameTextField()
-        let email = view.getEmailTextField()
-        let phone = view.getPhoneTextField()
-        let password = view.getPasswordTextField()
-        let passwordConfirmation = view.getPasswordConfirmationTextField()
-        
+    func createAccountWithValidation(surname: String, name: String, email: String, phone: String, password: String, passwordConfirmation: String) {
         let (isValid, errors) = validateSignup(email: email, password: password, confirmPassword: passwordConfirmation, phone: phone)
         if !isValid {
             var errorsText = ""

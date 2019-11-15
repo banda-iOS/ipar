@@ -65,21 +65,3 @@ func validateSignup(email: String, password: String, confirmPassword: String, ph
     }
     return (isValid: true, errors: [])
 }
-
-func validateLogin(login: String, password: String) -> (isValid: Bool, errors: [String]){
-    var errors = [String]()
-    var isValid = true
-    var infoLogin = validatePhone(phone: login)
-    if !infoLogin.isValid {
-        infoLogin = validateEmail(email: login)
-    }
-    if !infoLogin.isValid {
-       isValid = false
-        errors.append(infoLogin.error!)
-    }
-    if password == "" {
-       isValid = false
-       errors.append("error: You don't have password")
-    }
-    return (isValid: isValid, errors: errors)
-}

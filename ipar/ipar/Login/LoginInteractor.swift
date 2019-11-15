@@ -28,19 +28,8 @@ class LoginInteractor: LoginInteractorProtocol {
              switch response.result {
                 case .success(let value):
                 if let data = response.data {
-                    print(response)
-                    do {
-                        let user: User = try JSONDecoder().decode(User.self, from: data)
-                        presenter.creationFinishedWithSuccess(user: user)
-                    } catch {
-                        do {
-                            let error: HTTPError = try JSONDecoder().decode(HTTPError.self, from: data)
-                            presenter.creationFinishedWithError(message: error.message)
-                        } catch {
-                            print("Can't decode error: \(data)")
-                            return
-                        }
-                    }
+                    let user: User = try! JSONDecoder().decode(User.self, from: data)
+                    presenter.creationFinishedWithSuccess(user: user)
                 }
                 
                  case .failure(let error):
