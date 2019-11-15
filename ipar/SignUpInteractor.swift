@@ -17,7 +17,7 @@ class SignUpInteractor: SignUpInteractorProtocol {
    }
     
     func createAccount(withUser user: User) {
-        makeRequest(path: "signup", method: .post, data: user, callback: signUpRequestCallback)
+        uploadData(path: "signup", method: .post, data: user, callback: signUpRequestCallback)
     }
     
     func signUpRequestCallback(response: DataResponse<Any>?) {

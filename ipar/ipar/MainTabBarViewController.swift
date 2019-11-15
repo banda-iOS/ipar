@@ -119,7 +119,21 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate
             }
             
             self.view.addSubview(button)
+            
+            button.addTarget(self, action: #selector(openCreationTabBarViewController), for: .touchUpInside)
+            
         }
+    }
+    
+    @objc func openCreationTabBarViewController() {
+//        let creationTabBarViewController = CreationTabBarViewController()
+//        let creationNavigationController = UINavigationController(rootViewController: creationTabBarViewController)
+//        creationNavigationController.modalPresentationStyle = .fullScreen
+//        self.present(creationNavigationController, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Creation", bundle: nil)
+        let creationTabBarViewController = storyboard.instantiateViewController(withIdentifier: "CreationTabBarNavigationController") as! UINavigationController
+        creationTabBarViewController.modalPresentationStyle = .fullScreen
+        self.present(creationTabBarViewController, animated: true, completion: nil)
     }
     
 //    MARK: функция, которая запускается, когда сессия стартует

@@ -4,7 +4,7 @@ import Alamofire
 
 class LoginInteractor: LoginInteractorProtocol {
     func login(userToLogin user: LoginUser) {
-        makeRequest(path: "login", method: .post, data: user, callback: loginRequestCallback)
+        uploadData(path: "login", method: .post, data: user, callback: loginRequestCallback)
     }
     
     var presenter: LoginPresenterProtocol!

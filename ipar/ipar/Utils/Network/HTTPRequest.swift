@@ -15,7 +15,7 @@ let urlAddress = "http://82.146.62.124:8080/"
 let staticUrlAddress = "http://82.146.62.124:8081/"
 
 
-func makeRequest(path: String, method: HTTPMethod, data: Encodable?, callback: @escaping((DataResponse<Any>?)->Void)){
+func uploadData(path: String, method: HTTPMethod, data: Encodable?, callback: @escaping((DataResponse<Any>?)->Void)){
     var req = URLRequest(url: URL(string: urlAddress + path)!)
     req.httpMethod = method.rawValue
     if let data = data {
@@ -31,12 +31,12 @@ func makeRequest(path: String, method: HTTPMethod, data: Encodable?, callback: @
    
 }
 
-func uploadImage(_ image: UIImage, path: String, method: HTTPMethod) {
+func uploadImage(_ image: UIImage, path: String, multipartName: String, method: HTTPMethod) {
     let imgData = image.jpegData(compressionQuality: 0.2)!
 
     Alamofire.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(imgData, withName: "avatar", fileName: "file.jpg", mimeType: "image/jpg")
-        }, to: urlAddress + "avatar" )
+            multipartFormData.append(imgData, withName: multipartName, fileName: "file.jpg", mimeType: "image/jpg")
+        }, to: urlAddress + path )
     { (result) in
         switch result {
         case .success(let upload, _, _):

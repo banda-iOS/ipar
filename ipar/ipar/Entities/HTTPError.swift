@@ -9,7 +9,7 @@
 import Foundation
 
 
-class HTTPError: Codable {
+final class HTTPError: Codable {
     var status: Int
     var message: String
     
