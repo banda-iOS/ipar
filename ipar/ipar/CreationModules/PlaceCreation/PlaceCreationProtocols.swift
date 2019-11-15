@@ -16,6 +16,15 @@ protocol PlaceCreationViewProtocol: UIViewController, MapSearchDelegate {
     func createConfirmButton()
     
     func changePlacemarkOnMapView(_ placemark: MKPlacemark)
+    
+    func hidePositionButton()
+    func hideConfirmButton()
+    func makeHashtagsFieldUneditable()
+    func makeDescriptionFieldUneditable()
+    func makeTitleFieldUneditable()
+    
+    func createCollectionView()
+    func createDoneButton()
 }
 
 protocol PlaceCreationConfiguratorProtocol: class {
@@ -37,6 +46,8 @@ protocol PlaceCreationPresenterProtocol: class {
     
     func creationFinishedWithSuccess(place: Place)
     func creationFinishedWithError(message: String)
+    
+    func newImagePicked(_ image: UIImage)
 }
 
 
@@ -48,6 +59,8 @@ protocol PlaceCreationInteractorProtocol: class {
     func updatePlaceWith(address: String?, placemark: MKPlacemark?, name: String?, description: String?, hashtags: [String]?)
     
     func sendToBackend()
+    
+    func uploadPlaceImage(_ image: UIImage)
 }
 	
 protocol PlaceCreationRouterProtocol: class {

@@ -34,7 +34,7 @@ class MapSearchViewController: UIViewController, CLLocationManagerDelegate, MKMa
         
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
-        searchBar.placeholder = "Search for places"
+        searchBar.placeholder = NSLocalizedString("Search for places", comment: "Search for places placeholder")
         
         containerView.addSubview(searchBar)
         

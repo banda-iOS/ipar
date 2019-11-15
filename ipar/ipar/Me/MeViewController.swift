@@ -60,7 +60,7 @@ class MeViewController: UIViewController, MeViewProtocol {
         super.viewDidLoad()
         configurator.configure(with: self)
        
-        avatarImageButton.setImage(UIImage(named: "unselectedHome")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        avatarImageButton.setImage(UIImage(named: "unselectedMe")?.withRenderingMode(.alwaysTemplate), for: .normal)
         if #available(iOS 13.0, *) {
             self.view.backgroundColor = .systemGroupedBackground
         } else {
@@ -197,7 +197,7 @@ extension MeViewController: UIImagePickerControllerDelegate, UINavigationControl
         if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             avatarImageButton.contentMode = .scaleAspectFit
             avatarImageButton.setImage(pickedImage, for: .normal)
-            uploadImage(pickedImage, path: "avatar", method: .put)
+            uploadImage(pickedImage, path: "avatar", multipartName: "avatar", method: .put)
         }
         
         dismiss(animated: true, completion: nil)

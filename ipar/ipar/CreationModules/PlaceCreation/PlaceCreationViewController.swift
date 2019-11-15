@@ -3,9 +3,14 @@ import UIKit
 import XLPagerTabStrip
 import MapKit
 
-class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, IndicatorInfoProvider  {
-    
+protocol PlaceCreationDelegate: class {
+    func placeCreated()
+}
 
+class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, IndicatorInfoProvider  {
+
+    weak var delegate: PlaceCreationDelegate?
+    
     var itemInfo = IndicatorInfo(title: "View")
     let scrollView: UIScrollView = {
         let v = UIScrollView()
@@ -76,11 +81,26 @@ class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, 
         return button
     }()
     
+    fileprivate let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.register(UINib(nibName: "AddPhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "addPhotoCell")
+        cv.register(UINib(nibName: "PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "photoCell")
+        cv.backgroundColor = .none
+        cv.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        return cv
+    }()
+    
+    let imagePicker = UIImagePickerController()
+    var images = [UIImage]()
+    
     var placemark: MKPlacemark? = nil
     
-    let margin: CGFloat = 30
+    let margin: CGFloat = 10
     var addPositionButtonTopAnchorConstraint: NSLayoutConstraint?
-    var addPositionButtonBottomAnchorConstraint: NSLayoutConstraint?
+    var scrollBottomAnchorConstraint: NSLayoutConstraint?
     
     init(itemInfo: IndicatorInfo) {
         self.itemInfo = itemInfo
@@ -140,8 +160,8 @@ class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, 
         addPositionButtonTopAnchorConstraint = addPositionButton.topAnchor.constraint(equalTo: hashtagsTextField.bottomAnchor, constant: 20.0)
         addPositionButtonTopAnchorConstraint?.isActive = true
         addPositionButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
-        addPositionButtonBottomAnchorConstraint = addPositionButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80.0)
-        addPositionButtonBottomAnchorConstraint?.isActive = true
+        scrollBottomAnchorConstraint = addPositionButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80.0)
+        scrollBottomAnchorConstraint?.isActive = true
         
     }
     
@@ -193,7 +213,7 @@ class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, 
     }
     
     func createConfirmButton() {
-        addPositionButtonBottomAnchorConstraint?.isActive = false
+        scrollBottomAnchorConstraint?.isActive = false
         scrollView.addSubview(confirmButton)
         
         confirmButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: margin).isActive = true
@@ -201,7 +221,8 @@ class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, 
         confirmButton.topAnchor.constraint(equalTo: addPositionButton.bottomAnchor, constant: 20.0).isActive = true
         confirmButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
         
-        confirmButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80.0).isActive = true
+        scrollBottomAnchorConstraint = confirmButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80.0)
+        scrollBottomAnchorConstraint?.isActive = true
     }
     
     func changePlacemarkOnMapView(_ placemark: MKPlacemark) {
@@ -228,8 +249,55 @@ class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, 
     @objc func confirmButtonPressed(){
         presenter.createPlace()
     }
-     
-
+    
+    private func presentImagePicker() {
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+                
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func hidePositionButton() {
+        self.addPositionButton.removeFromSuperview()
+    }
+    
+    func hideConfirmButton() {
+        self.confirmButton.removeFromSuperview()
+    }
+    
+    func makeHashtagsFieldUneditable() {
+        self.hashtagsTextField.isEditable = false
+    }
+    
+    func makeDescriptionFieldUneditable() {
+        self.descriptionTextField.isEditable = false
+    }
+    
+    func makeTitleFieldUneditable() {
+        self.titleTextField.isUserInteractionEnabled = false
+    }
+    
+    func createCollectionView() {
+        scrollView.addSubview(collectionView)
+        
+        imagePicker.delegate = self
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        collectionView.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 20.0).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        collectionView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        scrollBottomAnchorConstraint?.isActive = false
+        
+        scrollBottomAnchorConstraint = collectionView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80.0)
+    }
+    
+    func createDoneButton() {
+        delegate?.placeCreated()
+    }
 }
 
 extension PlaceCreationViewController: UITextViewDelegate {
@@ -265,7 +333,54 @@ extension PlaceCreationViewController: UITextViewDelegate {
             hashtagsTextField.resignFirstResponder()
         }
     }
-   
+}
+
+extension PlaceCreationViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            images.insert(pickedImage, at: 0)
+            presenter.newImagePicked(pickedImage)
+        }
+        
+        dismiss(animated: true, completion: nil)
+        collectionView.reloadData()
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+extension PlaceCreationViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count + 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addPhotoCell", for: indexPath) as! AddPhotoCollectionViewCell
+            cell.contentView.clipsToBounds = true
+            cell.contentView.layer.cornerRadius = 10
+            cell.contentView.layer.borderColor = UIColor(red: 51.0/255, green: 51.0/255, blue: 51.0/255, alpha: 1.0).cgColor
+            cell.contentView.layer.borderWidth = 2.0
+            return cell
+        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotoCollectionViewCell
+        cell.imageView.image = images[indexPath.row - 1]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            self.presentImagePicker()
+        }
+    }
 }
 
 

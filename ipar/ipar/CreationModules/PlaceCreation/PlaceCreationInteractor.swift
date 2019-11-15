@@ -44,10 +44,10 @@ class PlaceCreationInteractor: PlaceCreationInteractorProtocol {
         if let response = response {
             switch response.result {
             case .success(_):
-                print("success")
                 if let data = response.data {
                     do {
                         let place: Place = try JSONDecoder().decode(Place.self, from: data)
+                        self.place = place
                         presenter.creationFinishedWithSuccess(place: place)
                     } catch {
                         do {
@@ -68,6 +68,14 @@ class PlaceCreationInteractor: PlaceCreationInteractorProtocol {
             }
         }
     }
+    
+    func uploadPlaceImage(_ image: UIImage) {
+        if let id = self.place?.id {
+            uploadImage(image, path: "places/\(id)/photo", multipartName: "image", method: .post)
+        }
+    }
+    
+    
     
 }
 

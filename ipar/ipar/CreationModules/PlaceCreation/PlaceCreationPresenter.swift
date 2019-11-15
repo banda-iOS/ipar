@@ -43,13 +43,22 @@ class PlaceCreationPresenter: PlaceCreationPresenterProtocol {
     }
     
     func creationFinishedWithSuccess(place: Place) {
-        
+        view.hidePositionButton()
+        view.hideConfirmButton()
+        view.makeHashtagsFieldUneditable()
+        view.makeDescriptionFieldUneditable()
+        view.makeTitleFieldUneditable()
+        view.createCollectionView()
+        view.createDoneButton()
     }
     
     func creationFinishedWithError(message: String) {
         
     }
     
+    func newImagePicked(_ image: UIImage) {
+        interactor.uploadPlaceImage(image)
+    }
     
     
 }

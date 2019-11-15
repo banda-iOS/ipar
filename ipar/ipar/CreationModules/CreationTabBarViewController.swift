@@ -9,7 +9,7 @@
 import Foundation
 import XLPagerTabStrip
 
-class CreationTabBarViewController: ButtonBarPagerTabStripViewController {
+class CreationTabBarViewController: ButtonBarPagerTabStripViewController, PlaceCreationDelegate {
 
     let graySpotifyColor = UIColor(red: 21/255.0, green: 21/255.0, blue: 24/255.0, alpha: 1.0)
 //    let darkGraySpotifyColor = UIColor(red: 19/255.0, green: 20/255.0, blue: 20/255.0, alpha: 1.0)
@@ -57,6 +57,7 @@ class CreationTabBarViewController: ButtonBarPagerTabStripViewController {
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let placeCreationViewController = PlaceCreationViewController(itemInfo: IndicatorInfo(title: NSLocalizedString("EVENT", comment: "Create event tab")))
+        placeCreationViewController.delegate = self
 //        placeCreationViewController.view.backgroundColor = .red
 //        let placeCreationViewController2 = PlaceCreationViewController(itemInfo: IndicatorInfo(title: "IDEA"))
         let placeCreationViewController3 = PlaceCreationViewController(itemInfo: IndicatorInfo(title: NSLocalizedString("PLACE", comment: "Create place tab")))
@@ -64,6 +65,17 @@ class CreationTabBarViewController: ButtonBarPagerTabStripViewController {
     }
 
     @IBAction func cancelButtonPressed(_ sender: Any) {
+        self.dismissVC()
+    }
+    
+    @objc func dismissVC() {
         self.navigationController?.dismiss(animated: true, completion:nil)
     }
+    
+    func placeCreated() {
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
+    }
+    
+    
 }

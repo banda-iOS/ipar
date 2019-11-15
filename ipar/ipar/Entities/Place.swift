@@ -23,8 +23,8 @@ final class Place: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case address
-        case latitude
-        case longitude
+        case latitude = "lat"
+        case longitude = "lon"
         case name
         case description
         case creator

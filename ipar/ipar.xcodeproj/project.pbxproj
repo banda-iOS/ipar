@@ -44,12 +44,16 @@
 		F616802A2378BC87000B54C5 /* PlaceCreationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61680242378BC86000B54C5 /* PlaceCreationRouter.swift */; };
 		F616802B2378BC87000B54C5 /* PlaceCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61680252378BC86000B54C5 /* PlaceCreationPresenter.swift */; };
 		F616802C2378BC87000B54C5 /* PlaceCreationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61680262378BC86000B54C5 /* PlaceCreationConfigurator.swift */; };
-		F616802F2379A1C8000B54C5 /* Creation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F616802E2379A1C8000B54C5 /* Creation.storyboard */; };
 		F6168035237B67F5000B54C5 /* MapSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6168034237B67F5000B54C5 /* MapSearchViewController.swift */; };
-		F6168036237B6A13000B54C5 /* MapSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6168032237B64BF000B54C5 /* MapSearch.storyboard */; };
 		F6168038237B7272000B54C5 /* MapSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6168037237B7272000B54C5 /* MapSearchTableViewController.swift */; };
 		F616803A237DA5C9000B54C5 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6168039237DA5C8000B54C5 /* Place.swift */; };
 		F616803C237DB468000B54C5 /* MKPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = F616803B237DB468000B54C5 /* MKPlacemark.swift */; };
+		F616806B237EF9CB000B54C5 /* AddPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6168067237EF9CB000B54C5 /* AddPhotoCollectionViewCell.xib */; };
+		F616806C237EF9CB000B54C5 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6168068237EF9CB000B54C5 /* PhotoCollectionViewCell.swift */; };
+		F616806D237EF9CB000B54C5 /* AddPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6168069237EF9CB000B54C5 /* AddPhotoCollectionViewCell.swift */; };
+		F616806E237EF9CB000B54C5 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F616806A237EF9CB000B54C5 /* PhotoCollectionViewCell.xib */; };
+		F61CDC2E237F66400062BFD8 /* Creation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F61CDC30237F66400062BFD8 /* Creation.storyboard */; };
+		F61CDC35237F66B40062BFD8 /* MapSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F61CDC37237F66B40062BFD8 /* MapSearch.storyboard */; };
 		F620F0982363C11A006EDE9B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0962363C11A006EDE9B /* AuthViewController.swift */; };
 		F620F09C2363C4D0006EDE9B /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F09B2363C4D0006EDE9B /* AuthProtocols.swift */; };
 		F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F09D2363C92D006EDE9B /* AuthConfigurator.swift */; };
@@ -111,12 +115,28 @@
 		F61680242378BC86000B54C5 /* PlaceCreationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCreationRouter.swift; sourceTree = "<group>"; };
 		F61680252378BC86000B54C5 /* PlaceCreationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCreationPresenter.swift; sourceTree = "<group>"; };
 		F61680262378BC86000B54C5 /* PlaceCreationConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCreationConfigurator.swift; sourceTree = "<group>"; };
-		F616802E2379A1C8000B54C5 /* Creation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Creation.storyboard; sourceTree = "<group>"; };
-		F6168032237B64BF000B54C5 /* MapSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = MapSearch.storyboard; path = ipar/CreationModules/PlaceCreation/MapSearch/MapSearch.storyboard; sourceTree = SOURCE_ROOT; };
 		F6168034237B67F5000B54C5 /* MapSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchViewController.swift; sourceTree = "<group>"; };
 		F6168037237B7272000B54C5 /* MapSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchTableViewController.swift; sourceTree = "<group>"; };
 		F6168039237DA5C8000B54C5 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		F616803B237DB468000B54C5 /* MKPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPlacemark.swift; sourceTree = "<group>"; };
+		F6168067237EF9CB000B54C5 /* AddPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddPhotoCollectionViewCell.xib; path = ipar/XIBs/AddPhotoCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		F6168068237EF9CB000B54C5 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoCollectionViewCell.swift; path = ipar/XIBs/PhotoCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		F6168069237EF9CB000B54C5 /* AddPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPhotoCollectionViewCell.swift; path = ipar/XIBs/AddPhotoCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		F616806A237EF9CB000B54C5 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PhotoCollectionViewCell.xib; path = ipar/XIBs/PhotoCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		F61CDC31237F66460062BFD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Creation.storyboard; sourceTree = "<group>"; };
+		F61CDC33237F66490062BFD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Creation.strings; sourceTree = "<group>"; };
+		F61CDC34237F66530062BFD8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Creation.strings; sourceTree = "<group>"; };
+		F61CDC38237F66B90062BFD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MapSearch.storyboard; sourceTree = "<group>"; };
+		F61CDC3A237F66BD0062BFD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MapSearch.strings; sourceTree = "<group>"; };
+		F61CDC3B237F66C10062BFD8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MapSearch.strings; sourceTree = "<group>"; };
+		F61CDC3C237F678C0062BFD8 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/MapSearch.strings"; sourceTree = "<group>"; };
+		F61CDC3D237F678C0062BFD8 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Creation.strings"; sourceTree = "<group>"; };
+		F61CDC3E237F678C0062BFD8 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Me.strings"; sourceTree = "<group>"; };
+		F61CDC3F237F678C0062BFD8 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LoginViewController.strings"; sourceTree = "<group>"; };
+		F61CDC40237F678C0062BFD8 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/AuthViewController.strings"; sourceTree = "<group>"; };
+		F61CDC41237F678C0062BFD8 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/SignUpViewController.strings"; sourceTree = "<group>"; };
+		F61CDC42237F678C0062BFD8 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		F61CDC43237F678C0062BFD8 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "../en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F620F0962363C11A006EDE9B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		F620F09B2363C4D0006EDE9B /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
 		F620F09D2363C92D006EDE9B /* AuthConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfigurator.swift; sourceTree = "<group>"; };
@@ -189,6 +209,7 @@
 		CA8DBF5523550DDA00A1641B /* ipar */ = {
 			isa = PBXGroup;
 			children = (
+				F6168066237EF69C000B54C5 /* XIBs */,
 				F616801D2378AF81000B54C5 /* CreationModules */,
 				F61680182376120C000B54C5 /* Localizable.strings */,
 				F64D20252364F9D2003BBE52 /* Utils */,
@@ -260,7 +281,7 @@
 			children = (
 				F61680202378BBD9000B54C5 /* PlaceCreation */,
 				F616801E2378B0C2000B54C5 /* CreationTabBarViewController.swift */,
-				F616802E2379A1C8000B54C5 /* Creation.storyboard */,
+				F61CDC30237F66400062BFD8 /* Creation.storyboard */,
 			);
 			path = CreationModules;
 			sourceTree = "<group>";
@@ -282,11 +303,22 @@
 		F6168031237B6327000B54C5 /* MapSearch */ = {
 			isa = PBXGroup;
 			children = (
-				F6168032237B64BF000B54C5 /* MapSearch.storyboard */,
+				F61CDC37237F66B40062BFD8 /* MapSearch.storyboard */,
 				F6168034237B67F5000B54C5 /* MapSearchViewController.swift */,
 				F6168037237B7272000B54C5 /* MapSearchTableViewController.swift */,
 			);
 			path = MapSearch;
+			sourceTree = "<group>";
+		};
+		F6168066237EF69C000B54C5 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				F6168069237EF9CB000B54C5 /* AddPhotoCollectionViewCell.swift */,
+				F6168067237EF9CB000B54C5 /* AddPhotoCollectionViewCell.xib */,
+				F6168068237EF9CB000B54C5 /* PhotoCollectionViewCell.swift */,
+				F616806A237EF9CB000B54C5 /* PhotoCollectionViewCell.xib */,
+			);
+			path = XIBs;
 			sourceTree = "<group>";
 		};
 		F620F09A2363C123006EDE9B /* Auth */ = {
@@ -390,6 +422,7 @@
 				en,
 				Base,
 				ru,
+				"en-GB",
 			);
 			mainGroup = CA8DBF4A23550DDA00A1641B;
 			productRefGroup = CA8DBF5423550DDA00A1641B /* Products */;
@@ -410,12 +443,14 @@
 				F616800E2375D8E3000B54C5 /* AuthViewController.xib in Resources */,
 				F61680132375D942000B54C5 /* SignUpViewController.xib in Resources */,
 				CA8DBF6023550DDB00A1641B /* Assets.xcassets in Resources */,
+				F616806B237EF9CB000B54C5 /* AddPhotoCollectionViewCell.xib in Resources */,
 				F61680042375D575000B54C5 /* Me.storyboard in Resources */,
 				F616801A2376120C000B54C5 /* Localizable.strings in Resources */,
-				F616802F2379A1C8000B54C5 /* Creation.storyboard in Resources */,
+				F61CDC2E237F66400062BFD8 /* Creation.storyboard in Resources */,
 				F61680092375D7EF000B54C5 /* LoginViewController.xib in Resources */,
+				F616806E237EF9CB000B54C5 /* PhotoCollectionViewCell.xib in Resources */,
 				F61242DC23719EE100C18009 /* MeTableViewCell.xib in Resources */,
-				F6168036237B6A13000B54C5 /* MapSearch.storyboard in Resources */,
+				F61CDC35237F66B40062BFD8 /* MapSearch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +526,7 @@
 				02FBA66B2370485C00CF0A23 /* Validation.swift in Sources */,
 				F61242BD2368DA0300C18009 /* LoginInteractor.swift in Sources */,
 				F61242BB2368DA0300C18009 /* LoginConfigurator.swift in Sources */,
+				F616806D237EF9CB000B54C5 /* AddPhotoCollectionViewCell.swift in Sources */,
 				F620F0A02363C94F006EDE9B /* AuthPresenter.swift in Sources */,
 				F620F0A72364ABC6006EDE9B /* SignUpProtocols.swift in Sources */,
 				F616802C2378BC87000B54C5 /* PlaceCreationConfigurator.swift in Sources */,
@@ -518,6 +554,7 @@
 				F61680282378BC87000B54C5 /* PlaceCreationViewController.swift in Sources */,
 				F620F09C2363C4D0006EDE9B /* AuthProtocols.swift in Sources */,
 				F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */,
+				F616806C237EF9CB000B54C5 /* PhotoCollectionViewCell.swift in Sources */,
 				F620F0AB2364ACC9006EDE9B /* SignUpInteractor.swift in Sources */,
 				F620F0A22363CBD8006EDE9B /* AuthRouter.swift in Sources */,
 				F6168035237B67F5000B54C5 /* MapSearchViewController.swift in Sources */,
@@ -532,6 +569,7 @@
 			children = (
 				CA8DBF6223550DDB00A1641B /* Base */,
 				F61680032375D56F000B54C5 /* ru */,
+				F61CDC42237F678C0062BFD8 /* en-GB */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -541,6 +579,7 @@
 			children = (
 				F61680072375D59C000B54C5 /* Base */,
 				F61680082375D5A9000B54C5 /* ru */,
+				F61CDC3E237F678C0062BFD8 /* en-GB */,
 			);
 			name = Me.storyboard;
 			sourceTree = "<group>";
@@ -550,6 +589,7 @@
 			children = (
 				F616800C2375D7F6000B54C5 /* Base */,
 				F616800D2375D803000B54C5 /* ru */,
+				F61CDC3F237F678C0062BFD8 /* en-GB */,
 			);
 			name = LoginViewController.xib;
 			sourceTree = "<group>";
@@ -559,6 +599,7 @@
 			children = (
 				F61680112375D8E9000B54C5 /* Base */,
 				F61680122375D8F0000B54C5 /* ru */,
+				F61CDC40237F678C0062BFD8 /* en-GB */,
 			);
 			name = AuthViewController.xib;
 			sourceTree = "<group>";
@@ -568,6 +609,7 @@
 			children = (
 				F61680162375D945000B54C5 /* Base */,
 				F61680172375D957000B54C5 /* ru */,
+				F61CDC41237F678C0062BFD8 /* en-GB */,
 			);
 			name = SignUpViewController.xib;
 			sourceTree = SOURCE_ROOT;
@@ -576,9 +618,33 @@
 			isa = PBXVariantGroup;
 			children = (
 				F61680192376120C000B54C5 /* ru */,
+				F61CDC43237F678C0062BFD8 /* en-GB */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
+		};
+		F61CDC30237F66400062BFD8 /* Creation.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F61CDC31237F66460062BFD8 /* Base */,
+				F61CDC33237F66490062BFD8 /* en */,
+				F61CDC34237F66530062BFD8 /* ru */,
+				F61CDC3D237F678C0062BFD8 /* en-GB */,
+			);
+			name = Creation.storyboard;
+			sourceTree = "<group>";
+		};
+		F61CDC37237F66B40062BFD8 /* MapSearch.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F61CDC38237F66B90062BFD8 /* Base */,
+				F61CDC3A237F66BD0062BFD8 /* en */,
+				F61CDC3B237F66C10062BFD8 /* ru */,
+				F61CDC3C237F678C0062BFD8 /* en-GB */,
+			);
+			name = MapSearch.storyboard;
+			path = ipar/CreationModules/PlaceCreation/MapSearch;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
 
