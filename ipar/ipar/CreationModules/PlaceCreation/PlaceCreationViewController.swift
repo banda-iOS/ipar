@@ -117,6 +117,9 @@ class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, 
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(with: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(Keyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(Keyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
         
         descriptionTextField.delegate = self
         descriptionTextField.text = NSLocalizedString("Description", comment: "description field placeholder")
@@ -383,4 +386,20 @@ extension PlaceCreationViewController: UICollectionViewDelegateFlowLayout, UICol
     }
 }
 
+extension PlaceCreationViewController {
+    @objc func Keyboard(notification: Notification) {
+        let userInfo = notification.userInfo!
+        
+        let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+        
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            scrollView.contentInset = UIEdgeInsets.zero
+        } else {
+            scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
+        }
+        
+        scrollView.scrollIndicatorInsets = scrollView.contentInset
+    }
+}
 

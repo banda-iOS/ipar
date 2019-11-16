@@ -11,10 +11,10 @@ class LoginPresenter: LoginPresenterProtocol {
     }
     
     func login() {
-        let login = view.getLoginField()
-        let password = view.getPasswordField()
-        if let login = login,
-            let password = password{
+//        let login = view.getLoginField()
+//        let password = view.getPasswordField()
+        if let login = view.getLoginField(),
+            let password = view.getLoginField(){
             let user = LoginUser(login: login, password: password)
             interactor.login(userToLogin: user)
         }

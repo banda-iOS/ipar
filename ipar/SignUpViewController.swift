@@ -37,6 +37,7 @@ class SignUpViewController: UIViewController, SignUpViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(with: self)
+
         
     }
     

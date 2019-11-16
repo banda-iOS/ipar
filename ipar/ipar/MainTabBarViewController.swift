@@ -122,6 +122,15 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate
             
             button.addTarget(self, action: #selector(openCreationTabBarViewController), for: .touchUpInside)
             
+//            if #available(iOS 13.0, *) {
+//                button.backgroundColor = .systemBackground
+//            } else {
+//                button.backgroundColor = .white
+//            }
+//            
+//            button.layer.masksToBounds = true
+//            button.layer.cornerRadius = button.frame.height/2
+            
         }
     }
     
