@@ -15,7 +15,7 @@ func validatePassword(password: String, confirmPassword: String) -> (isValid: Bo
     if password == "" || confirmPassword == "" {
         return (isValid: false, error: "error: You haven't input password")
     }
-    if (password != confirmPassword) {
+    if password != confirmPassword {
         return (isValid: false, error: "error: Your passwords doesn't match")
     }
     return (isValid: true, error: nil)
@@ -51,7 +51,7 @@ func validateSignup(email: String, password: String, confirmPassword: String, ph
     let infoPhone = validatePhone(phone: phone)
     let infoEmail = validateEmail(email: email)
     let infoPassword = validatePassword(password: password, confirmPassword: confirmPassword)
-    if !infoEmail.isValid || !infoEmail.isValid || !infoPassword.isValid {
+    if !infoEmail.isValid || !infoPhone.isValid || !infoPassword.isValid {
         if infoEmail.error != nil {
             errors.append(infoEmail.error!)
         }

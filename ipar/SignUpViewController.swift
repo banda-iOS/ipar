@@ -17,22 +17,22 @@ class SignUpViewController: UIViewController, SignUpViewProtocol {
         errorTextView.text = text
     }
     
-    func getNameTextField() -> String {
-        return nameTextField.text!
+    func getNameTextField() -> String? {
+        return nameTextField.text
     }
-    func getEmailTextField() -> String {
-        return emailTextField.text!
+    func getEmailTextField() -> String? {
+        return emailTextField.text
     }
-    func getPhoneTextField() -> String {
-        return phoneTextField.text!
+    func getPhoneTextField() -> String? {
+        return phoneTextField.text
     }
-    func getSurnameTextField() -> String {
-        return surnameTextField.text!
+    func getSurnameTextField() -> String? {
+        return surnameTextField.text
     }
-    func getPasswordTextField() -> String {
+    func getPasswordTextField() -> String? {
         return passwordTextField.text!
     }
-    func getPasswordConfirmationTextField() -> String {
+    func getPasswordConfirmationTextField() -> String? {
         return passwordTextField.text!
     }
     

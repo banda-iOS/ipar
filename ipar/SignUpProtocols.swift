@@ -14,12 +14,12 @@ protocol SignUpViewProtocol: class{
     func changeErrorText(text: String)
     func dismissVC()
     
-    func getNameTextField() -> String
-    func getSurnameTextField() -> String
-    func getPhoneTextField() -> String
-    func getEmailTextField() -> String
-    func getPasswordTextField() -> String
-    func getPasswordConfirmationTextField() -> String
+    func getNameTextField() -> String?
+    func getSurnameTextField() -> String?
+    func getPhoneTextField() -> String?
+    func getEmailTextField() -> String?
+    func getPasswordTextField() -> String?
+    func getPasswordConfirmationTextField() -> String?
     
 }
 
