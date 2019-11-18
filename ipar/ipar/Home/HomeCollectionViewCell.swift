@@ -23,7 +23,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }
     
     func update(title: String, imageLink: String) {
-        HomeCellImageView.kf.setImage(with: URL(string: imageLink))
+        HomeCellImageView.kf.setImage(with: URL(string: "http://82.146.62.124:8081/"+imageLink))
         HomeCellLabel.text = title
     }
 }

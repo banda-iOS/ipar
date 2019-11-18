@@ -3,8 +3,19 @@ import UIKit
 
 class HomeViewController: UIViewController, HomeViewProtocol  {
 
-    var collectionView: UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
-    
+//    var collectionView: UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
+    fileprivate let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCell")
+//        cv.register(UINib(nibName: "AddPhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "addPhotoCell")
+//        cv.register(UINib(nibName: "PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "photoCell")
+        cv.backgroundColor = .none
+        cv.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        return cv
+    }()
     var presenter: HomePresenterProtocol!
     let configurator: HomeConfiguratorProtocol = HomeConfigurator()
     var events = [Event]()
@@ -23,10 +34,17 @@ class HomeViewController: UIViewController, HomeViewProtocol  {
     }
     
     private func setupCollection() {
+        
+        self.view.addSubview(collectionView)
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCell")
-        collectionView.contentInset = .zero
+        
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        collectionView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+//        collectionView.contentInset = .zero
     }
      
     func eventsLoaded(events: [Event]) {

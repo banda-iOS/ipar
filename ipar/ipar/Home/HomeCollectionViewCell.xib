@@ -20,19 +20,25 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzu-VK-W76">
                         <rect key="frame" x="0.0" y="0.0" width="356" height="210"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="arQ-j7-VLp">
-                                <rect key="frame" x="58" y="20" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="arQ-j7-VLp">
+                                <rect key="frame" x="0.0" y="0.0" width="356" height="181"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cB3-1i-bk8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cB3-1i-bk8">
                                 <rect key="frame" x="157" y="181" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="arQ-j7-VLp" firstAttribute="top" secondItem="hzu-VK-W76" secondAttribute="top" id="5Dx-DW-zgo"/>
+                            <constraint firstAttribute="trailing" secondItem="arQ-j7-VLp" secondAttribute="trailing" id="H0k-E1-VD7"/>
+                            <constraint firstItem="cB3-1i-bk8" firstAttribute="centerX" secondItem="arQ-j7-VLp" secondAttribute="centerX" id="O8f-HR-MZT"/>
+                            <constraint firstItem="arQ-j7-VLp" firstAttribute="leading" secondItem="hzu-VK-W76" secondAttribute="leading" id="fMt-Yt-3jU"/>
+                            <constraint firstItem="cB3-1i-bk8" firstAttribute="top" secondItem="arQ-j7-VLp" secondAttribute="bottom" id="oYF-1I-8tM"/>
+                            <constraint firstItem="cB3-1i-bk8" firstAttribute="bottom" secondItem="hzu-VK-W76" secondAttribute="bottomMargin" id="obu-Lx-BGK"/>
+                        </constraints>
                     </view>
                 </subviews>
             </view>
