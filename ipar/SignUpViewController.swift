@@ -33,7 +33,7 @@ class SignUpViewController: UIViewController, SignUpViewProtocol {
         return passwordTextField.text
     }
     func getPasswordConfirmationTextField() -> String? {
-        return passwordTextField.text
+        return passwordConfirmationTextField.text
     }
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -56,7 +56,6 @@ class SignUpViewController: UIViewController, SignUpViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(with: self)
-
         
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
     }
