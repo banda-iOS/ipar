@@ -328,7 +328,7 @@ extension PlaceCreationViewController: UITextViewDelegate {
                     if self.traitCollection.userInterfaceStyle == .dark {
                         descriptionTextField.textColor = .white
                     } else {
-                        descriptionTextField.textColor = .white
+                        descriptionTextField.textColor = .black
                     }
                 } else {
                     descriptionTextField.textColor = .black
