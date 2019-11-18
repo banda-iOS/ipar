@@ -19,7 +19,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         backgroundColor = .white
         clipsToBounds = true
         layer.cornerRadius = 4
-        HomeCellLabel.font = UIFont.systemFont(ofSize: 18)
+        HomeCellLabel.font = UIFont.systemFont(ofSize: 14)
     }
     
     func update(title: String, imageLink: String) {
