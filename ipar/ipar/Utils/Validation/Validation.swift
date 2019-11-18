@@ -15,7 +15,7 @@ func validatePassword(password: String, confirmPassword: String) -> (isValid: Bo
     if password == "" || confirmPassword == "" {
         return (isValid: false, error: "error: You haven't input password")
     }
-    if (password != confirmPassword) {
+    if password != confirmPassword {
         return (isValid: false, error: "error: Your passwords doesn't match")
     }
     return (isValid: true, error: nil)
@@ -51,17 +51,36 @@ func validateSignup(email: String, password: String, confirmPassword: String, ph
     let infoPhone = validatePhone(phone: phone)
     let infoEmail = validateEmail(email: email)
     let infoPassword = validatePassword(password: password, confirmPassword: confirmPassword)
-    if !infoEmail.isValid || !infoEmail.isValid || !infoPassword.isValid {
-        if infoEmail.error != nil {
-            errors.append(infoEmail.error!)
+    if !infoEmail.isValid || !infoPhone.isValid || !infoPassword.isValid {
+        if let error = infoEmail.error {
+            errors.append(error)
         }
-        if infoPhone.error != nil {
-            errors.append(infoPhone.error!)
+        if let error = infoPhone.error {
+            errors.append(error)
         }
-        if infoPassword.error != nil {
-            errors.append(infoPassword.error!)
+        if let error = infoPassword.error {
+            errors.append(error)
         }
         return (isValid: false, errors: errors)
     }
     return (isValid: true, errors: [])
+}
+
+func validateLogin(login: String, password: String) -> (isValid: Bool, errors: [String]){
+    var errors = [String]()
+    var isValid = true
+    var infoLogin = validatePhone(phone: login)
+    if !infoLogin.isValid {
+        infoLogin = validateEmail(email: login)
+    }
+    if !infoLogin.isValid,
+        let error = infoLogin.error{
+       isValid = false
+        errors.append(error)
+    }
+    if password == "" {
+       isValid = false
+       errors.append("error: You don't have password")
+    }
+    return (isValid: isValid, errors: errors)
 }

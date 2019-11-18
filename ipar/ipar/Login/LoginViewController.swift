@@ -32,7 +32,6 @@ class LoginViewController: UIViewController, LoginViewProtocol  {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(with: self)
-        
     }
      
     @IBAction func loginButtonPressed(_ sender: Any) {

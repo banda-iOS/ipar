@@ -4,7 +4,7 @@ import Alamofire
 
 class LoginInteractor: LoginInteractorProtocol {
     func login(userToLogin user: LoginUser) {
-        makeRequest(path: "login", method: .post, data: user, callback: loginRequestCallback)
+        uploadData(path: "login", method: .post, data: user, callback: loginRequestCallback)
     }
     
     var presenter: LoginPresenterProtocol!
@@ -28,8 +28,19 @@ class LoginInteractor: LoginInteractorProtocol {
              switch response.result {
                 case .success(let value):
                 if let data = response.data {
-                    let user: User = try! JSONDecoder().decode(User.self, from: data)
-                    presenter.creationFinishedWithSuccess(user: user)
+                    print(response)
+                    do {
+                        let user: User = try JSONDecoder().decode(User.self, from: data)
+                        presenter.creationFinishedWithSuccess(user: user)
+                    } catch {
+                        do {
+                            let error: HTTPError = try JSONDecoder().decode(HTTPError.self, from: data)
+                            presenter.creationFinishedWithError(message: error.message)
+                        } catch {
+                            print("Can't decode error: \(data)")
+                            return
+                        }
+                    }
                 }
                 
                  case .failure(let error):

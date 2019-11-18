@@ -7,7 +7,7 @@ protocol MeVCDelegate:class {
 
 class MeViewController: UIViewController, MeViewProtocol {
 
-    var tableView: UITableView = UITableView()
+    var tableView: UITableView = UITableView(frame: CGRect.zero, style: .grouped)
     let imagePicker = UIImagePickerController()
     
     @IBOutlet private weak var avatarImageButton: UIButton!
@@ -19,7 +19,6 @@ class MeViewController: UIViewController, MeViewProtocol {
     }
     
     private func setupTable() {
-        tableView = UITableView.init(frame: CGRect.zero, style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -61,7 +60,7 @@ class MeViewController: UIViewController, MeViewProtocol {
         super.viewDidLoad()
         configurator.configure(with: self)
        
-        avatarImageButton.setImage(UIImage(named: "unselectedHome")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        avatarImageButton.setImage(UIImage(named: "unselectedMe")?.withRenderingMode(.alwaysTemplate), for: .normal)
         if #available(iOS 13.0, *) {
             self.view.backgroundColor = .systemGroupedBackground
         } else {
@@ -100,13 +99,13 @@ class MeViewController: UIViewController, MeViewProtocol {
     @IBAction func avatarImageButtonPressed(_ sender: Any) {
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
-        
+                
         present(imagePicker, animated: true, completion: nil)
     }
     
 }
 
-extension MeViewController: UITableViewDelegate, UITableViewDataSource {
+extension MeViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
@@ -133,6 +132,7 @@ extension MeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let headerView = view as? UITableViewHeaderFooterView
         headerView!.textLabel!.textAlignment = .center
@@ -156,6 +156,8 @@ extension MeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MeTableViewCell", for: indexPath) as! MeTableViewCell
@@ -195,7 +197,7 @@ extension MeViewController: UIImagePickerControllerDelegate, UINavigationControl
         if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             avatarImageButton.contentMode = .scaleAspectFit
             avatarImageButton.setImage(pickedImage, for: .normal)
-            uploadImage(pickedImage, path: "avatar", method: .put)
+            uploadImage(pickedImage, path: "avatar", multipartName: "avatar", method: .put)
         }
         
         dismiss(animated: true, completion: nil)
