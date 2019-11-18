@@ -30,12 +30,13 @@ class SignUpViewController: UIViewController, SignUpViewProtocol {
         return surnameTextField.text
     }
     func getPasswordTextField() -> String? {
-        return passwordTextField.text!
+        return passwordTextField.text
     }
     func getPasswordConfirmationTextField() -> String? {
-        return passwordTextField.text!
+        return passwordTextField.text
     }
     
+    @IBOutlet weak var scrollView: UIScrollView!
     var presenter: SignUpPresenterProtocol!
     let configurator: SignUpConfiguratorProtocol = SignUpConfigurator()
     
@@ -56,6 +57,7 @@ class SignUpViewController: UIViewController, SignUpViewProtocol {
         super.viewDidLoad()
         configurator.configure(with: self)
         
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
     }
     
     

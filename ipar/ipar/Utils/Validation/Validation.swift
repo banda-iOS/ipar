@@ -52,14 +52,14 @@ func validateSignup(email: String, password: String, confirmPassword: String, ph
     let infoEmail = validateEmail(email: email)
     let infoPassword = validatePassword(password: password, confirmPassword: confirmPassword)
     if !infoEmail.isValid || !infoPhone.isValid || !infoPassword.isValid {
-        if infoEmail.error != nil {
-            errors.append(infoEmail.error!)
+        if let error = infoEmail.error {
+            errors.append(error)
         }
-        if infoPhone.error != nil {
-            errors.append(infoPhone.error!)
+        if let error = infoPhone.error {
+            errors.append(error)
         }
-        if infoPassword.error != nil {
-            errors.append(infoPassword.error!)
+        if let error = infoPassword.error {
+            errors.append(error)
         }
         return (isValid: false, errors: errors)
     }
@@ -73,9 +73,10 @@ func validateLogin(login: String, password: String) -> (isValid: Bool, errors: [
     if !infoLogin.isValid {
         infoLogin = validateEmail(email: login)
     }
-    if !infoLogin.isValid {
+    if !infoLogin.isValid,
+        let error = infoLogin.error{
        isValid = false
-        errors.append(infoLogin.error!)
+        errors.append(error)
     }
     if password == "" {
        isValid = false
