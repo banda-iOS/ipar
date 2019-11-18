@@ -309,13 +309,30 @@ extension PlaceCreationViewController: UITextViewDelegate {
         if textView === descriptionTextField {
             if (descriptionTextField.text == NSLocalizedString("Description", comment: "description field placeholder") && textView.textColor == .lightGray) {
                 descriptionTextField.text = ""
-                descriptionTextField.textColor = .black
+                if #available(iOS 12.0, *) {
+                    if self.traitCollection.userInterfaceStyle == .dark {
+                        descriptionTextField.textColor = .white
+                    } else {
+                        descriptionTextField.textColor = .white
+                    }
+                } else {
+                    descriptionTextField.textColor = .black
+                }
+                
             }
             descriptionTextField.becomeFirstResponder()
         } else {
             if (hashtagsTextField.text == NSLocalizedString("Hashtags", comment: "hashtags field placeholder") && textView.textColor == .lightGray) {
                 hashtagsTextField.text = ""
-                hashtagsTextField.textColor = .black
+                if #available(iOS 12.0, *) {
+                    if self.traitCollection.userInterfaceStyle == .dark {
+                        descriptionTextField.textColor = .white
+                    } else {
+                        descriptionTextField.textColor = .white
+                    }
+                } else {
+                    descriptionTextField.textColor = .black
+                }
             }
             hashtagsTextField.becomeFirstResponder()
         }
