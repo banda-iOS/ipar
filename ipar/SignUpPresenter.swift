@@ -26,19 +26,32 @@ class SignUpPresenter: SignUpPresenterProtocol {
     
     var interactor: SignUpInteractorProtocol!
     
-    func createAccountWithValidation(surname: String, name: String, email: String, phone: String, password: String, passwordConfirmation: String) {
-        let (isValid, errors) = validateSignup(email: email, password: password, confirmPassword: passwordConfirmation, phone: phone)
-        if !isValid {
-            var errorsText = ""
-            for error in errors {
-                errorsText = errorsText + "\(error)\n"
+    func createAccountWithValidation() {
+//        let surname = view.getSurnameTextField()
+//        let name = view.getNameTextField()
+//        let email = view.getEmailTextField()
+//        let phone = view.getPhoneTextField()
+//        let password = view.getPasswordTextField()
+//        let passwordConfirmation = view.getPasswordConfirmationTextField()
+        if let surname = view.getSurnameTextField(),
+           let name = view.getNameTextField(),
+           let email = view.getEmailTextField(),
+           let phone = view.getPhoneTextField(),
+           let password = view.getPasswordTextField(),
+           let passwordConfirmation = view.getPasswordConfirmationTextField() {
+            let (isValid, errors) = validateSignup(email: email, password: password, confirmPassword: passwordConfirmation, phone: phone)
+            if !isValid {
+                var errorsText = ""
+                for error in errors {
+                    errorsText = errorsText + "\(error)\n"
+                }
+                view.changeErrorText(text: errorsText)
+                return
             }
-            view.changeErrorText(text: errorsText)
-            return
+            let user = User(surname: surname, name: name, phone: phone, email: email, password: password)
+            interactor.createAccount(withUser: user)
+            
         }
-        let user = User(surname: surname, name: name, phone: phone, email: email, password: password)
-        interactor.createAccount(withUser: user)
-        
     }
     
     

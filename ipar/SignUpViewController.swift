@@ -16,8 +16,27 @@ class SignUpViewController: UIViewController, SignUpViewProtocol {
     func changeErrorText(text: String) {
         errorTextView.text = text
     }
-
     
+    func getNameTextField() -> String? {
+        return nameTextField.text
+    }
+    func getEmailTextField() -> String? {
+        return emailTextField.text
+    }
+    func getPhoneTextField() -> String? {
+        return phoneTextField.text
+    }
+    func getSurnameTextField() -> String? {
+        return surnameTextField.text
+    }
+    func getPasswordTextField() -> String? {
+        return passwordTextField.text
+    }
+    func getPasswordConfirmationTextField() -> String? {
+        return passwordTextField.text
+    }
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     var presenter: SignUpPresenterProtocol!
     let configurator: SignUpConfiguratorProtocol = SignUpConfigurator()
     
@@ -39,19 +58,13 @@ class SignUpViewController: UIViewController, SignUpViewProtocol {
         configurator.configure(with: self)
 
         
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
     }
     
+    
+    
     @IBAction func signUpButtonPressed(_ sender: Any) {
-        
-        if let surname = surnameTextField.text,
-                   let name = nameTextField.text,
-                   let phone = phoneTextField.text,
-                   let email = emailTextField.text,
-                   let password = passwordTextField.text,
-                   let passwordConfirmation = passwordConfirmationTextField.text
-               {
-                     presenter.createAccountWithValidation(surname: surname, name: name, email: email, phone: phone, password: password, passwordConfirmation: passwordConfirmation)
-               }
+        presenter.createAccountWithValidation()
        
     }
     
