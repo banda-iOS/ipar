@@ -11,6 +11,7 @@ class LoginPresenter: LoginPresenterProtocol {
     }
     
     func login() {
+
         let login = view.getLoginField()
         let password = view.getPasswordField()
         if let login = login,
@@ -20,6 +21,7 @@ class LoginPresenter: LoginPresenterProtocol {
                 print(errors)
                 return
             }
+
             let user = LoginUser(login: login, password: password)
             interactor.login(userToLogin: user)
             

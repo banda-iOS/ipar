@@ -115,7 +115,7 @@
                     <viewLayoutGuide key="frameLayoutGuide" id="3L6-Se-cjq"/>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="VVW-GQ-Aue" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="VoN-8v-eXr"/>
                 <constraint firstItem="VVW-GQ-Aue" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Wwa-jZ-7UH"/>
