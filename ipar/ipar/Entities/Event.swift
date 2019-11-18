@@ -13,11 +13,11 @@ class Event: Codable {
     var name: String
     var description: String?
 //    var places: [Place]
-    var creator: User
+    var creator: User?
     var images: [String]?
     
     enum CodingKeys: String, CodingKey {
-        case id
+        case id = "event_id"
         case name
         case description
         case creator
@@ -50,10 +50,11 @@ class Event: Codable {
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decode(Int.self, forKey: .id)
+        self.id = try? container.decode(Int.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
         self.description = try? container.decode(String.self, forKey: .description)
-        self.creator = try container.decode(User.self, forKey: .creator)
+        self.creator = try? container.decode(User.self, forKey: .creator)
         self.images = try? container.decode([String].self, forKey: .images)
+        print("fucking fuck")
     }
 }

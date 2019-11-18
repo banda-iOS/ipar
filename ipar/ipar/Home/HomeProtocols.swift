@@ -3,7 +3,8 @@ import Foundation
 
 protocol HomeViewProtocol: class {
     var presenter: HomePresenterProtocol! { get set }
-   
+    
+    func eventsLoaded(events: [Event])
 }
 
 protocol HomeConfiguratorProtocol: class {

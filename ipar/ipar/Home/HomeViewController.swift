@@ -3,21 +3,23 @@ import UIKit
 
 class HomeViewController: UIViewController, HomeViewProtocol  {
 
-    var collectionView: UICollectionView = UICollectionView()
+    var collectionView: UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
     
     var presenter: HomePresenterProtocol!
     let configurator: HomeConfiguratorProtocol = HomeConfigurator()
-    var events: [Event]
-    
+    var events = [Event]()
+ 
     override func loadView() {
         super.loadView()
-        self.setupCollection()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(with: self)
         
+        self.setupCollection()
+        presenter.getEvents()
     }
     
     private func setupCollection() {
@@ -27,13 +29,21 @@ class HomeViewController: UIViewController, HomeViewProtocol  {
         collectionView.contentInset = .zero
     }
      
-
+    func eventsLoaded(events: [Event]) {
+        self.events = events
+        self.collectionView.reloadData()
+    }
 }
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // TODO: fix me
-        return 20
+        return self.events.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
+        UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (collectionView.frame.size.width - 40) / 3
+        return CGSize(width: width, height: width)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
