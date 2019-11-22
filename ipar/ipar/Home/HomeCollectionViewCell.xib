@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeCell" id="gTV-IL-0wX" customClass="HomeCollectionViewCell" customModule="ipar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzu-VK-W76">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="arQ-j7-VLp">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="zn3-C7-tHh"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cB3-1i-bk8">
+                                <rect key="frame" x="0.0" y="90" width="300" height="210"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="arQ-j7-VLp" firstAttribute="top" secondItem="hzu-VK-W76" secondAttribute="top" id="5Dx-DW-zgo"/>
+                            <constraint firstItem="cB3-1i-bk8" firstAttribute="leading" secondItem="hzu-VK-W76" secondAttribute="leading" id="EEM-sj-7Jr"/>
+                            <constraint firstAttribute="trailing" secondItem="arQ-j7-VLp" secondAttribute="trailing" id="H0k-E1-VD7"/>
+                            <constraint firstAttribute="bottom" secondItem="cB3-1i-bk8" secondAttribute="bottom" id="HhS-sx-Jts"/>
+                            <constraint firstAttribute="trailing" secondItem="cB3-1i-bk8" secondAttribute="trailing" id="KNU-oj-HeC"/>
+                            <constraint firstItem="cB3-1i-bk8" firstAttribute="centerX" secondItem="arQ-j7-VLp" secondAttribute="centerX" id="O8f-HR-MZT"/>
+                            <constraint firstItem="arQ-j7-VLp" firstAttribute="centerX" secondItem="hzu-VK-W76" secondAttribute="centerX" id="Y3N-Ye-4Ji"/>
+                            <constraint firstItem="arQ-j7-VLp" firstAttribute="leading" secondItem="hzu-VK-W76" secondAttribute="leading" id="fMt-Yt-3jU"/>
+                            <constraint firstItem="cB3-1i-bk8" firstAttribute="top" secondItem="arQ-j7-VLp" secondAttribute="bottom" id="lyF-FM-dfe"/>
+                            <constraint firstItem="cB3-1i-bk8" firstAttribute="top" secondItem="arQ-j7-VLp" secondAttribute="bottom" id="oYF-1I-8tM"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="hzu-VK-W76" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="J8A-rB-Ghu"/>
+                <constraint firstAttribute="trailing" secondItem="hzu-VK-W76" secondAttribute="trailing" id="Xfl-A5-hVK"/>
+                <constraint firstItem="hzu-VK-W76" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fnI-Ny-sqJ"/>
+                <constraint firstAttribute="bottom" secondItem="hzu-VK-W76" secondAttribute="bottom" id="yG2-C1-oK4"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="370" height="379"/>
+            <connections>
+                <outlet property="HomeCellImageView" destination="arQ-j7-VLp" id="fxe-XY-eHm"/>
+                <outlet property="HomeCellLabel" destination="cB3-1i-bk8" id="Qs3-u1-85f"/>
+            </connections>
+            <point key="canvasLocation" x="113.04347826086958" y="111.49553571428571"/>
+        </collectionViewCell>
+    </objects>
+</document>

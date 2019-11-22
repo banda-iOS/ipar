@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,15 @@
 		CA8DBF5723550DDA00A1641B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8DBF5623550DDA00A1641B /* AppDelegate.swift */; };
 		CA8DBF6023550DDB00A1641B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8DBF5F23550DDB00A1641B /* Assets.xcassets */; };
 		CA8DBF6323550DDB00A1641B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8DBF6123550DDB00A1641B /* LaunchScreen.storyboard */; };
+		CAA20B72237A0D6C00832D4A /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA20B6C237A0D6C00832D4A /* HomeRouter.swift */; };
+		CAA20B73237A0D6C00832D4A /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA20B6D237A0D6C00832D4A /* HomeProtocols.swift */; };
+		CAA20B74237A0D6C00832D4A /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA20B6E237A0D6C00832D4A /* HomeConfigurator.swift */; };
+		CAA20B75237A0D6C00832D4A /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA20B6F237A0D6C00832D4A /* HomePresenter.swift */; };
+		CAA20B76237A0D6C00832D4A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA20B70237A0D6C00832D4A /* HomeViewController.swift */; };
+		CAA20B77237A0D6C00832D4A /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA20B71237A0D6C00832D4A /* HomeInteractor.swift */; };
+		CAA20B79237C062700832D4A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA20B78237C062700832D4A /* Event.swift */; };
+		CAA20B7C237C0D0000832D4A /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA20B7A237C0D0000832D4A /* HomeCollectionViewCell.swift */; };
+		CAA20B7D237C0D0000832D4A /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA20B7B237C0D0000832D4A /* HomeCollectionViewCell.xib */; };
 		F612426B2365E9E400C18009 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F612426A2365E9E400C18009 /* Keychain.swift */; };
 		F61242B22367306500C18009 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242B12367306500C18009 /* MainTabBarViewController.swift */; };
 		F61242B92368DA0300C18009 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242B42368DA0300C18009 /* LoginProtocols.swift */; };
@@ -78,6 +87,15 @@
 		CA8DBF5F23550DDB00A1641B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA8DBF6223550DDB00A1641B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA8DBF6423550DDB00A1641B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAA20B6C237A0D6C00832D4A /* HomeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		CAA20B6D237A0D6C00832D4A /* HomeProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		CAA20B6E237A0D6C00832D4A /* HomeConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
+		CAA20B6F237A0D6C00832D4A /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		CAA20B70237A0D6C00832D4A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CAA20B71237A0D6C00832D4A /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		CAA20B78237C062700832D4A /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		CAA20B7A237C0D0000832D4A /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		CAA20B7B237C0D0000832D4A /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		F39C205AE438D2316B34194F /* Pods-ipar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipar.release.xcconfig"; path = "Pods/Target Support Files/Pods-ipar/Pods-ipar.release.xcconfig"; sourceTree = "<group>"; };
 		F612426A2365E9E400C18009 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		F61242B12367306500C18009 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +227,7 @@
 		CA8DBF5523550DDA00A1641B /* ipar */ = {
 			isa = PBXGroup;
 			children = (
+				CAA20B53237A0C0900832D4A /* Home */,
 				F6168066237EF69C000B54C5 /* XIBs */,
 				F616801D2378AF81000B54C5 /* CreationModules */,
 				F61680182376120C000B54C5 /* Localizable.strings */,
@@ -226,6 +245,21 @@
 				F61242B12367306500C18009 /* MainTabBarViewController.swift */,
 			);
 			path = ipar;
+			sourceTree = "<group>";
+		};
+		CAA20B53237A0C0900832D4A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CAA20B6E237A0D6C00832D4A /* HomeConfigurator.swift */,
+				CAA20B71237A0D6C00832D4A /* HomeInteractor.swift */,
+				CAA20B6F237A0D6C00832D4A /* HomePresenter.swift */,
+				CAA20B6D237A0D6C00832D4A /* HomeProtocols.swift */,
+				CAA20B6C237A0D6C00832D4A /* HomeRouter.swift */,
+				CAA20B70237A0D6C00832D4A /* HomeViewController.swift */,
+				CAA20B7A237C0D0000832D4A /* HomeCollectionViewCell.swift */,
+				CAA20B7B237C0D0000832D4A /* HomeCollectionViewCell.xib */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		F612426C2365F00000C18009 /* Keychain */ = {
@@ -354,6 +388,7 @@
 				F620F0AF2364ACFC006EDE9B /* User.swift */,
 				F61242C32368DF5100C18009 /* LoginUser.swift */,
 				02ED7A0F2372AE6A00D69DB0 /* HTTPError.swift */,
+				CAA20B78237C062700832D4A /* Event.swift */,
 				F6168039237DA5C8000B54C5 /* Place.swift */,
 			);
 			path = Entities;
@@ -443,6 +478,7 @@
 				F616800E2375D8E3000B54C5 /* AuthViewController.xib in Resources */,
 				F61680132375D942000B54C5 /* SignUpViewController.xib in Resources */,
 				CA8DBF6023550DDB00A1641B /* Assets.xcassets in Resources */,
+				CAA20B7D237C0D0000832D4A /* HomeCollectionViewCell.xib in Resources */,
 				F616806B237EF9CB000B54C5 /* AddPhotoCollectionViewCell.xib in Resources */,
 				F61680042375D575000B54C5 /* Me.storyboard in Resources */,
 				F616801A2376120C000B54C5 /* Localizable.strings in Resources */,
@@ -485,6 +521,11 @@
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ipar/Pods-ipar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ipar/Pods-ipar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh",
@@ -502,7 +543,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -525,6 +566,7 @@
 				F620F0982363C11A006EDE9B /* AuthViewController.swift in Sources */,
 				02FBA66B2370485C00CF0A23 /* Validation.swift in Sources */,
 				F61242BD2368DA0300C18009 /* LoginInteractor.swift in Sources */,
+				CAA20B73237A0D6C00832D4A /* HomeProtocols.swift in Sources */,
 				F61242BB2368DA0300C18009 /* LoginConfigurator.swift in Sources */,
 				F616806D237EF9CB000B54C5 /* AddPhotoCollectionViewCell.swift in Sources */,
 				F620F0A02363C94F006EDE9B /* AuthPresenter.swift in Sources */,
@@ -534,23 +576,32 @@
 				F616803A237DA5C9000B54C5 /* Place.swift in Sources */,
 				F612426B2365E9E400C18009 /* Keychain.swift in Sources */,
 				F620F0B22364AECD006EDE9B /* SignUpConfigurator.swift in Sources */,
+				CAA20B75237A0D6C00832D4A /* HomePresenter.swift in Sources */,
 				F61242BC2368DA0300C18009 /* LoginViewController.swift in Sources */,
 				F6168038237B7272000B54C5 /* MapSearchTableViewController.swift in Sources */,
 				F61242C42368DF5100C18009 /* LoginUser.swift in Sources */,
 				F61242D32370CD7E00C18009 /* MePresenter.swift in Sources */,
+				CAA20B76237A0D6C00832D4A /* HomeViewController.swift in Sources */,
 				F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */,
 				F61242B92368DA0300C18009 /* LoginProtocols.swift in Sources */,
+				CAA20B79237C062700832D4A /* Event.swift in Sources */,
 				F61680272378BC87000B54C5 /* PlaceCreationInteractor.swift in Sources */,
 				F616802A2378BC87000B54C5 /* PlaceCreationRouter.swift in Sources */,
 				F61242DB23719EE100C18009 /* MeTableViewCell.swift in Sources */,
 				02ED7A102372AE6A00D69DB0 /* HTTPError.swift in Sources */,
 				F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */,
 				F61242B22367306500C18009 /* MainTabBarViewController.swift in Sources */,
+				CAA20B72237A0D6C00832D4A /* HomeRouter.swift in Sources */,
 				F616801F2378B0C2000B54C5 /* CreationTabBarViewController.swift in Sources */,
 				CA8DBF5723550DDA00A1641B /* AppDelegate.swift in Sources */,
 				F61242BA2368DA0300C18009 /* LoginPresenter.swift in Sources */,
+				CAA20B7C237C0D0000832D4A /* HomeCollectionViewCell.swift in Sources */,
 				F620F0B02364ACFC006EDE9B /* User.swift in Sources */,
 				F61242D62370CD7E00C18009 /* MeViewController.swift in Sources */,
+				CAA20B77237A0D6C00832D4A /* HomeInteractor.swift in Sources */,
+				F620F09C2363C4D0006EDE9B /* AuthProtocols.swift in Sources */,
+				F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */,
+				CAA20B74237A0D6C00832D4A /* HomeConfigurator.swift in Sources */,
 				F61680282378BC87000B54C5 /* PlaceCreationViewController.swift in Sources */,
 				F620F09C2363C4D0006EDE9B /* AuthProtocols.swift in Sources */,
 				F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */,
