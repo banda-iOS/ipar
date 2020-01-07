@@ -100,6 +100,7 @@
 		F678676023C3E2C2008080A2 /* AddCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F678675E23C3E2C2008080A2 /* AddCommentViewController.xib */; };
 		F6928F0823BEB41F00661BDF /* PlacesSearchParamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6928F0723BEB41F00661BDF /* PlacesSearchParamsView.swift */; };
 		F6928F0A23BFF91300661BDF /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6928F0923BFF91300661BDF /* UIStackView.swift */; };
+		F6D218EE23C4D28000DE708A /* BindableGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D218ED23C4D28000DE708A /* BindableGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -217,6 +218,7 @@
 		F678675E23C3E2C2008080A2 /* AddCommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AddCommentViewController.xib; path = ipar/Place/AddComment/AddCommentViewController.xib; sourceTree = SOURCE_ROOT; };
 		F6928F0723BEB41F00661BDF /* PlacesSearchParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesSearchParamsView.swift; sourceTree = "<group>"; };
 		F6928F0923BFF91300661BDF /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		F6D218ED23C4D28000DE708A /* BindableGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableGestureRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +333,7 @@
 				F65D1CEF23912A8C0021179F /* String.swift */,
 				F6928F0923BFF91300661BDF /* UIStackView.swift */,
 				F678672723C0046A008080A2 /* UIColor.swift */,
+				F6D218ED23C4D28000DE708A /* BindableGestureRecognizer.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				F678672B23C0F7AB008080A2 /* HashtagsParser.swift in Sources */,
 				F620F0A72364ABC6006EDE9B /* SignUpProtocols.swift in Sources */,
 				F616802C2378BC87000B54C5 /* PlaceCreationConfigurator.swift in Sources */,
+				F6D218EE23C4D28000DE708A /* BindableGestureRecognizer.swift in Sources */,
 				F616802B2378BC87000B54C5 /* PlaceCreationPresenter.swift in Sources */,
 				F678673723C27B67008080A2 /* PlaceViewController.swift in Sources */,
 				F616803A237DA5C9000B54C5 /* Place.swift in Sources */,
