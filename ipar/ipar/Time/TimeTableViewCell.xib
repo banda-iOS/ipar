@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeTableViewCell" rowHeight="44" id="KGk-i7-Jjw" customClass="TimeTableViewCell" customModule="ipar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Begins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ff-Le-ihO">
+                        <rect key="frame" x="10" y="0.0" width="80" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="gTZ-Gg-zIp"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:52 AM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZS-LK-RLo">
+                        <rect key="frame" x="230" y="0.0" width="80" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="VUD-U5-k3h"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27 November" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFz-GL-JxP">
+                        <rect key="frame" x="-230" y="0.0" width="780" height="44"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="IFz-GL-JxP" secondAttribute="trailing" constant="-230" id="3db-ih-Wqr"/>
+                    <constraint firstAttribute="bottom" secondItem="fZS-LK-RLo" secondAttribute="bottom" id="8EJ-Y6-qfn"/>
+                    <constraint firstAttribute="bottom" secondItem="0Ff-Le-ihO" secondAttribute="bottom" id="HDt-Q6-I4u"/>
+                    <constraint firstItem="0Ff-Le-ihO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="J27-Iu-P1b"/>
+                    <constraint firstItem="fZS-LK-RLo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="OWD-a0-pkI"/>
+                    <constraint firstItem="0Ff-Le-ihO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="XG5-ON-ClU"/>
+                    <constraint firstItem="IFz-GL-JxP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="-230" id="XU9-pZ-Lf0"/>
+                    <constraint firstAttribute="bottom" secondItem="IFz-GL-JxP" secondAttribute="bottom" id="aXC-dn-qZT"/>
+                    <constraint firstAttribute="trailing" secondItem="fZS-LK-RLo" secondAttribute="trailing" constant="10" id="ueX-Fk-WLj"/>
+                    <constraint firstItem="IFz-GL-JxP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="yFr-hy-ugC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="actionLabel" destination="0Ff-Le-ihO" id="7Kf-8j-ulI"/>
+                <outlet property="dateLabel" destination="IFz-GL-JxP" id="eeb-dU-lbD"/>
+                <outlet property="timeLabel" destination="fZS-LK-RLo" id="z4T-1B-8JL"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="141"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -30,24 +30,12 @@ class PlaceCreationPresenter: PlaceCreationPresenterProtocol {
         interactor.updatePlaceWith(address: address, placemark: placemark, name: nil, description: nil, hashtags: nil)
     }
     
-    func parseHashTags(hashtagString: String) -> [String]{
-        if hashtagString.prefix(1) != "#" {
-            return []
-        }
-        var hashtags: [String] = []
-        for hashtag in hashtagString.split(separator: "#") {
-            hashtags.append(String(hashtag).trimmingCharacters(in: .whitespacesAndNewlines))
-        }
-        return hashtags
-
-    }
-    
     func createPlace() {
         let name = view.getTitleField()
         let description = view.getDescriptionField()
         let hashtags = view.getHashtagsField()
         
-        let hashtagsArray = self.parseHashTags(hashtagString: hashtags)
+        let hashtagsArray = parseHashTags(hashtagString: hashtags)
         
         interactor.updatePlaceWith(address: nil, placemark: nil, name: name, description: description, hashtags: hashtagsArray)
         

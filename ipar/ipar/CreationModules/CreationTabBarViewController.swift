@@ -60,9 +60,9 @@ class CreationTabBarViewController: ButtonBarPagerTabStripViewController, PlaceC
         placeCreationViewController.delegate = self
 //        placeCreationViewController.view.backgroundColor = .red
 //        let placeCreationViewController2 = PlaceCreationViewController(itemInfo: IndicatorInfo(title: "IDEA"))
-//        let placeCreationViewController3 = PlaceCreationViewController(itemInfo: IndicatorInfo(title: NSLocalizedString("PLACE", comment: "Create place tab")))
+        let eventCreationViewController = EventCreationViewController(itemInfo: IndicatorInfo(title: NSLocalizedString("EVENT", comment: "Create event tab")))
         
-        return [placeCreationViewController/*, placeCreationViewController3*/]
+        return [eventCreationViewController, placeCreationViewController]
     }
 
     @IBAction func cancelButtonPressed(_ sender: Any) {

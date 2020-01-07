@@ -32,6 +32,14 @@
 		F61242DB23719EE100C18009 /* MeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242D923719EE100C18009 /* MeTableViewCell.swift */; };
 		F61242DC23719EE100C18009 /* MeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61242DA23719EE100C18009 /* MeTableViewCell.xib */; };
 		F61243022372B0BF00C18009 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61243012372B0BF00C18009 /* UITableView.swift */; };
+		F615812123BD6FC8009D8542 /* PlacesSearchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F615811B23BD6FC8009D8542 /* PlacesSearchConfigurator.swift */; };
+		F615812223BD6FC8009D8542 /* PlacesSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F615811C23BD6FC8009D8542 /* PlacesSearchRouter.swift */; };
+		F615812323BD6FC8009D8542 /* PlacesSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F615811D23BD6FC8009D8542 /* PlacesSearchPresenter.swift */; };
+		F615812423BD6FC8009D8542 /* PlacesSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F615811E23BD6FC8009D8542 /* PlacesSearchInteractor.swift */; };
+		F615812523BD6FC8009D8542 /* PlacesSearchProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F615811F23BD6FC8009D8542 /* PlacesSearchProtocols.swift */; };
+		F615812623BD6FC8009D8542 /* PlacesSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F615812023BD6FC8009D8542 /* PlacesSearchViewController.swift */; };
+		F615812923BE375D009D8542 /* PlacesSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F615812723BE375D009D8542 /* PlacesSearchTableViewCell.swift */; };
+		F615812A23BE375D009D8542 /* PlacesSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F615812823BE375D009D8542 /* PlacesSearchTableViewCell.xib */; };
 		F61680042375D575000B54C5 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F61680062375D575000B54C5 /* Me.storyboard */; };
 		F61680092375D7EF000B54C5 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F616800B2375D7EF000B54C5 /* LoginViewController.xib */; };
 		F616800E2375D8E3000B54C5 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61680102375D8E3000B54C5 /* AuthViewController.xib */; };
@@ -66,6 +74,32 @@
 		F620F0B22364AECD006EDE9B /* SignUpConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0B12364AECD006EDE9B /* SignUpConfigurator.swift */; };
 		F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D20232364B9FB003BBE52 /* SignUpViewController.swift */; };
 		F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D20272364FA35003BBE52 /* HTTPRequest.swift */; };
+		F65D1CD82389722C0021179F /* EventCreationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D1CD22389722C0021179F /* EventCreationInteractor.swift */; };
+		F65D1CD92389722C0021179F /* EventCreationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D1CD32389722C0021179F /* EventCreationRouter.swift */; };
+		F65D1CDA2389722C0021179F /* EventCreationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D1CD42389722C0021179F /* EventCreationConfigurator.swift */; };
+		F65D1CDB2389722C0021179F /* EventCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D1CD52389722C0021179F /* EventCreationPresenter.swift */; };
+		F65D1CDC2389722C0021179F /* EventCreationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D1CD62389722C0021179F /* EventCreationProtocols.swift */; };
+		F65D1CDD2389722C0021179F /* EventCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D1CD72389722C0021179F /* EventCreationViewController.swift */; };
+		F65D1CE3238C2B680021179F /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D1CE1238C2B680021179F /* TimeViewController.swift */; };
+		F65D1CE4238C2B680021179F /* TimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65D1CE2238C2B680021179F /* TimeViewController.xib */; };
+		F65D1CE7238DD4760021179F /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D1CE5238DD4760021179F /* TimeTableViewCell.swift */; };
+		F65D1CE8238DD4760021179F /* TimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65D1CE6238DD4760021179F /* TimeTableViewCell.xib */; };
+		F65D1CEA238E54F30021179F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D1CE9238E54F30021179F /* Date.swift */; };
+		F65D1CEC238E6EF00021179F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D1CEB238E6EF00021179F /* Event.swift */; };
+		F65D1CF023912A8C0021179F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D1CEF23912A8C0021179F /* String.swift */; };
+		F675B29123C3F411005DC9CE /* PlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F675B29023C3F411005DC9CE /* PlacesView.swift */; };
+		F678672823C0046A008080A2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678672723C0046A008080A2 /* UIColor.swift */; };
+		F678672B23C0F7AB008080A2 /* HashtagsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678672A23C0F7AB008080A2 /* HashtagsParser.swift */; };
+		F678673323C27B67008080A2 /* PlaceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678672D23C27B67008080A2 /* PlaceInteractor.swift */; };
+		F678673423C27B67008080A2 /* PlaceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678672E23C27B67008080A2 /* PlaceProtocols.swift */; };
+		F678673523C27B67008080A2 /* PlaceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678672F23C27B67008080A2 /* PlaceConfigurator.swift */; };
+		F678673623C27B67008080A2 /* PlaceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678673023C27B67008080A2 /* PlaceRouter.swift */; };
+		F678673723C27B67008080A2 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678673123C27B67008080A2 /* PlaceViewController.swift */; };
+		F678673823C27B67008080A2 /* PlacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678673223C27B67008080A2 /* PlacePresenter.swift */; };
+		F678675F23C3E2C2008080A2 /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678675D23C3E2C2008080A2 /* AddCommentViewController.swift */; };
+		F678676023C3E2C2008080A2 /* AddCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F678675E23C3E2C2008080A2 /* AddCommentViewController.xib */; };
+		F6928F0823BEB41F00661BDF /* PlacesSearchParamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6928F0723BEB41F00661BDF /* PlacesSearchParamsView.swift */; };
+		F6928F0A23BFF91300661BDF /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6928F0923BFF91300661BDF /* UIStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +132,14 @@
 		F61242D923719EE100C18009 /* MeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTableViewCell.swift; sourceTree = "<group>"; };
 		F61242DA23719EE100C18009 /* MeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeTableViewCell.xib; sourceTree = "<group>"; };
 		F61243012372B0BF00C18009 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		F615811B23BD6FC8009D8542 /* PlacesSearchConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesSearchConfigurator.swift; sourceTree = "<group>"; };
+		F615811C23BD6FC8009D8542 /* PlacesSearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesSearchRouter.swift; sourceTree = "<group>"; };
+		F615811D23BD6FC8009D8542 /* PlacesSearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesSearchPresenter.swift; sourceTree = "<group>"; };
+		F615811E23BD6FC8009D8542 /* PlacesSearchInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesSearchInteractor.swift; sourceTree = "<group>"; };
+		F615811F23BD6FC8009D8542 /* PlacesSearchProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesSearchProtocols.swift; sourceTree = "<group>"; };
+		F615812023BD6FC8009D8542 /* PlacesSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesSearchViewController.swift; sourceTree = "<group>"; };
+		F615812723BE375D009D8542 /* PlacesSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesSearchTableViewCell.swift; sourceTree = "<group>"; };
+		F615812823BE375D009D8542 /* PlacesSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PlacesSearchTableViewCell.xib; path = ipar/XIBs/PlacesSearchTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		F61680032375D56F000B54C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F61680072375D59C000B54C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		F61680082375D5A9000B54C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Me.strings; sourceTree = "<group>"; };
@@ -149,6 +191,32 @@
 		F620F0B12364AECD006EDE9B /* SignUpConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfigurator.swift; sourceTree = "<group>"; };
 		F64D20232364B9FB003BBE52 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F64D20272364FA35003BBE52 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		F65D1CD22389722C0021179F /* EventCreationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreationInteractor.swift; sourceTree = "<group>"; };
+		F65D1CD32389722C0021179F /* EventCreationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreationRouter.swift; sourceTree = "<group>"; };
+		F65D1CD42389722C0021179F /* EventCreationConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreationConfigurator.swift; sourceTree = "<group>"; };
+		F65D1CD52389722C0021179F /* EventCreationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreationPresenter.swift; sourceTree = "<group>"; };
+		F65D1CD62389722C0021179F /* EventCreationProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreationProtocols.swift; sourceTree = "<group>"; };
+		F65D1CD72389722C0021179F /* EventCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreationViewController.swift; sourceTree = "<group>"; };
+		F65D1CE1238C2B680021179F /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
+		F65D1CE2238C2B680021179F /* TimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeViewController.xib; sourceTree = "<group>"; };
+		F65D1CE5238DD4760021179F /* TimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
+		F65D1CE6238DD4760021179F /* TimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeTableViewCell.xib; sourceTree = "<group>"; };
+		F65D1CE9238E54F30021179F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		F65D1CEB238E6EF00021179F /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		F65D1CEF23912A8C0021179F /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		F675B29023C3F411005DC9CE /* PlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesView.swift; sourceTree = "<group>"; };
+		F678672723C0046A008080A2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		F678672A23C0F7AB008080A2 /* HashtagsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsParser.swift; sourceTree = "<group>"; };
+		F678672D23C27B67008080A2 /* PlaceInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceInteractor.swift; sourceTree = "<group>"; };
+		F678672E23C27B67008080A2 /* PlaceProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceProtocols.swift; sourceTree = "<group>"; };
+		F678672F23C27B67008080A2 /* PlaceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceConfigurator.swift; sourceTree = "<group>"; };
+		F678673023C27B67008080A2 /* PlaceRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceRouter.swift; sourceTree = "<group>"; };
+		F678673123C27B67008080A2 /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
+		F678673223C27B67008080A2 /* PlacePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacePresenter.swift; sourceTree = "<group>"; };
+		F678675D23C3E2C2008080A2 /* AddCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentViewController.swift; sourceTree = "<group>"; };
+		F678675E23C3E2C2008080A2 /* AddCommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AddCommentViewController.xib; path = ipar/Place/AddComment/AddCommentViewController.xib; sourceTree = SOURCE_ROOT; };
+		F6928F0723BEB41F00661BDF /* PlacesSearchParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesSearchParamsView.swift; sourceTree = "<group>"; };
+		F6928F0923BFF91300661BDF /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +277,9 @@
 		CA8DBF5523550DDA00A1641B /* ipar */ = {
 			isa = PBXGroup;
 			children = (
+				F678672C23C27B51008080A2 /* Place */,
+				F615811A23BD6F75009D8542 /* PlacesSearch */,
+				F65D1CDE238C2A080021179F /* Time */,
 				F6168066237EF69C000B54C5 /* XIBs */,
 				F616801D2378AF81000B54C5 /* CreationModules */,
 				F61680182376120C000B54C5 /* Localizable.strings */,
@@ -256,6 +327,10 @@
 				F61242C8236F50DF00C18009 /* Encodable.swift */,
 				F61243012372B0BF00C18009 /* UITableView.swift */,
 				F616803B237DB468000B54C5 /* MKPlacemark.swift */,
+				F65D1CE9238E54F30021179F /* Date.swift */,
+				F65D1CEF23912A8C0021179F /* String.swift */,
+				F6928F0923BFF91300661BDF /* UIStackView.swift */,
+				F678672723C0046A008080A2 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -276,9 +351,24 @@
 			path = Me;
 			sourceTree = "<group>";
 		};
+		F615811A23BD6F75009D8542 /* PlacesSearch */ = {
+			isa = PBXGroup;
+			children = (
+				F615811B23BD6FC8009D8542 /* PlacesSearchConfigurator.swift */,
+				F615811E23BD6FC8009D8542 /* PlacesSearchInteractor.swift */,
+				F615811D23BD6FC8009D8542 /* PlacesSearchPresenter.swift */,
+				F615811F23BD6FC8009D8542 /* PlacesSearchProtocols.swift */,
+				F615811C23BD6FC8009D8542 /* PlacesSearchRouter.swift */,
+				F615812023BD6FC8009D8542 /* PlacesSearchViewController.swift */,
+				F6928F0423BEB3D600661BDF /* PlacesSearchParamsView */,
+			);
+			path = PlacesSearch;
+			sourceTree = "<group>";
+		};
 		F616801D2378AF81000B54C5 /* CreationModules */ = {
 			isa = PBXGroup;
 			children = (
+				F65D1CD1238971F40021179F /* EventCreation */,
 				F61680202378BBD9000B54C5 /* PlaceCreation */,
 				F616801E2378B0C2000B54C5 /* CreationTabBarViewController.swift */,
 				F61CDC30237F66400062BFD8 /* Creation.storyboard */,
@@ -313,6 +403,8 @@
 		F6168066237EF69C000B54C5 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				F615812723BE375D009D8542 /* PlacesSearchTableViewCell.swift */,
+				F615812823BE375D009D8542 /* PlacesSearchTableViewCell.xib */,
 				F6168069237EF9CB000B54C5 /* AddPhotoCollectionViewCell.swift */,
 				F6168067237EF9CB000B54C5 /* AddPhotoCollectionViewCell.xib */,
 				F6168068237EF9CB000B54C5 /* PhotoCollectionViewCell.swift */,
@@ -351,6 +443,7 @@
 		F620F0AE2364ACD8006EDE9B /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				F65D1CEB238E6EF00021179F /* Event.swift */,
 				F620F0AF2364ACFC006EDE9B /* User.swift */,
 				F61242C32368DF5100C18009 /* LoginUser.swift */,
 				02ED7A0F2372AE6A00D69DB0 /* HTTPError.swift */,
@@ -362,6 +455,7 @@
 		F64D20252364F9D2003BBE52 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F678672923C0F79B008080A2 /* Parsers */,
 				02FBA6692370480200CF0A23 /* Validation */,
 				F612426C2365F00000C18009 /* Keychain */,
 				F64D20262364F9DE003BBE52 /* Network */,
@@ -375,6 +469,78 @@
 				F64D20272364FA35003BBE52 /* HTTPRequest.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		F65D1CD1238971F40021179F /* EventCreation */ = {
+			isa = PBXGroup;
+			children = (
+				F65D1CD42389722C0021179F /* EventCreationConfigurator.swift */,
+				F65D1CD22389722C0021179F /* EventCreationInteractor.swift */,
+				F65D1CD52389722C0021179F /* EventCreationPresenter.swift */,
+				F65D1CD62389722C0021179F /* EventCreationProtocols.swift */,
+				F65D1CD32389722C0021179F /* EventCreationRouter.swift */,
+				F65D1CD72389722C0021179F /* EventCreationViewController.swift */,
+				F675B28F23C3F3F4005DC9CE /* PlacesView */,
+			);
+			path = EventCreation;
+			sourceTree = "<group>";
+		};
+		F65D1CDE238C2A080021179F /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				F65D1CE1238C2B680021179F /* TimeViewController.swift */,
+				F65D1CE2238C2B680021179F /* TimeViewController.xib */,
+				F65D1CE5238DD4760021179F /* TimeTableViewCell.swift */,
+				F65D1CE6238DD4760021179F /* TimeTableViewCell.xib */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
+		F675B28F23C3F3F4005DC9CE /* PlacesView */ = {
+			isa = PBXGroup;
+			children = (
+				F675B29023C3F411005DC9CE /* PlacesView.swift */,
+			);
+			path = PlacesView;
+			sourceTree = "<group>";
+		};
+		F678672923C0F79B008080A2 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				F678672A23C0F7AB008080A2 /* HashtagsParser.swift */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		F678672C23C27B51008080A2 /* Place */ = {
+			isa = PBXGroup;
+			children = (
+				F678672F23C27B67008080A2 /* PlaceConfigurator.swift */,
+				F678672D23C27B67008080A2 /* PlaceInteractor.swift */,
+				F678673223C27B67008080A2 /* PlacePresenter.swift */,
+				F678672E23C27B67008080A2 /* PlaceProtocols.swift */,
+				F678673023C27B67008080A2 /* PlaceRouter.swift */,
+				F678673123C27B67008080A2 /* PlaceViewController.swift */,
+				F678676123C3E2CB008080A2 /* AddComment */,
+			);
+			path = Place;
+			sourceTree = "<group>";
+		};
+		F678676123C3E2CB008080A2 /* AddComment */ = {
+			isa = PBXGroup;
+			children = (
+				F678675D23C3E2C2008080A2 /* AddCommentViewController.swift */,
+				F678675E23C3E2C2008080A2 /* AddCommentViewController.xib */,
+			);
+			path = AddComment;
+			sourceTree = "<group>";
+		};
+		F6928F0423BEB3D600661BDF /* PlacesSearchParamsView */ = {
+			isa = PBXGroup;
+			children = (
+				F6928F0723BEB41F00661BDF /* PlacesSearchParamsView.swift */,
+			);
+			path = PlacesSearchParamsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,13 +609,17 @@
 				F616800E2375D8E3000B54C5 /* AuthViewController.xib in Resources */,
 				F61680132375D942000B54C5 /* SignUpViewController.xib in Resources */,
 				CA8DBF6023550DDB00A1641B /* Assets.xcassets in Resources */,
+				F65D1CE4238C2B680021179F /* TimeViewController.xib in Resources */,
 				F616806B237EF9CB000B54C5 /* AddPhotoCollectionViewCell.xib in Resources */,
 				F61680042375D575000B54C5 /* Me.storyboard in Resources */,
 				F616801A2376120C000B54C5 /* Localizable.strings in Resources */,
+				F678676023C3E2C2008080A2 /* AddCommentViewController.xib in Resources */,
 				F61CDC2E237F66400062BFD8 /* Creation.storyboard in Resources */,
+				F615812A23BE375D009D8542 /* PlacesSearchTableViewCell.xib in Resources */,
 				F61680092375D7EF000B54C5 /* LoginViewController.xib in Resources */,
 				F616806E237EF9CB000B54C5 /* PhotoCollectionViewCell.xib in Resources */,
 				F61242DC23719EE100C18009 /* MeTableViewCell.xib in Resources */,
+				F65D1CE8238DD4760021179F /* TimeTableViewCell.xib in Resources */,
 				F61CDC35237F66B40062BFD8 /* MapSearch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +660,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -498,6 +669,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,11 +684,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F615812223BD6FC8009D8542 /* PlacesSearchRouter.swift in Sources */,
+				F65D1CF023912A8C0021179F /* String.swift in Sources */,
 				F616803C237DB468000B54C5 /* MKPlacemark.swift in Sources */,
 				F61242C9236F50DF00C18009 /* Encodable.swift in Sources */,
 				F620F0A92364ACBA006EDE9B /* SignUpPresenter.swift in Sources */,
 				F61242D22370CD7E00C18009 /* MeProtocols.swift in Sources */,
 				F61680292378BC87000B54C5 /* PlaceCreationProtocols.swift in Sources */,
+				F6928F0823BEB41F00661BDF /* PlacesSearchParamsView.swift in Sources */,
+				F65D1CDC2389722C0021179F /* EventCreationProtocols.swift in Sources */,
 				F61242D42370CD7E00C18009 /* MeConfigurator.swift in Sources */,
 				F61242D52370CD7E00C18009 /* MeRouter.swift in Sources */,
 				F61242D12370CD7E00C18009 /* MeInteractor.swift in Sources */,
@@ -524,37 +700,63 @@
 				F61243022372B0BF00C18009 /* UITableView.swift in Sources */,
 				F620F0982363C11A006EDE9B /* AuthViewController.swift in Sources */,
 				02FBA66B2370485C00CF0A23 /* Validation.swift in Sources */,
+				F65D1CD92389722C0021179F /* EventCreationRouter.swift in Sources */,
+				F615812323BD6FC8009D8542 /* PlacesSearchPresenter.swift in Sources */,
 				F61242BD2368DA0300C18009 /* LoginInteractor.swift in Sources */,
 				F61242BB2368DA0300C18009 /* LoginConfigurator.swift in Sources */,
 				F616806D237EF9CB000B54C5 /* AddPhotoCollectionViewCell.swift in Sources */,
+				F615812623BD6FC8009D8542 /* PlacesSearchViewController.swift in Sources */,
 				F620F0A02363C94F006EDE9B /* AuthPresenter.swift in Sources */,
+				F678672B23C0F7AB008080A2 /* HashtagsParser.swift in Sources */,
 				F620F0A72364ABC6006EDE9B /* SignUpProtocols.swift in Sources */,
 				F616802C2378BC87000B54C5 /* PlaceCreationConfigurator.swift in Sources */,
 				F616802B2378BC87000B54C5 /* PlaceCreationPresenter.swift in Sources */,
+				F678673723C27B67008080A2 /* PlaceViewController.swift in Sources */,
 				F616803A237DA5C9000B54C5 /* Place.swift in Sources */,
 				F612426B2365E9E400C18009 /* Keychain.swift in Sources */,
+				F65D1CDB2389722C0021179F /* EventCreationPresenter.swift in Sources */,
 				F620F0B22364AECD006EDE9B /* SignUpConfigurator.swift in Sources */,
 				F61242BC2368DA0300C18009 /* LoginViewController.swift in Sources */,
+				F6928F0A23BFF91300661BDF /* UIStackView.swift in Sources */,
 				F6168038237B7272000B54C5 /* MapSearchTableViewController.swift in Sources */,
 				F61242C42368DF5100C18009 /* LoginUser.swift in Sources */,
+				F678673423C27B67008080A2 /* PlaceProtocols.swift in Sources */,
 				F61242D32370CD7E00C18009 /* MePresenter.swift in Sources */,
 				F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */,
 				F61242B92368DA0300C18009 /* LoginProtocols.swift in Sources */,
+				F678673523C27B67008080A2 /* PlaceConfigurator.swift in Sources */,
+				F65D1CD82389722C0021179F /* EventCreationInteractor.swift in Sources */,
 				F61680272378BC87000B54C5 /* PlaceCreationInteractor.swift in Sources */,
+				F678675F23C3E2C2008080A2 /* AddCommentViewController.swift in Sources */,
 				F616802A2378BC87000B54C5 /* PlaceCreationRouter.swift in Sources */,
+				F65D1CDD2389722C0021179F /* EventCreationViewController.swift in Sources */,
+				F675B29123C3F411005DC9CE /* PlacesView.swift in Sources */,
+				F678673323C27B67008080A2 /* PlaceInteractor.swift in Sources */,
 				F61242DB23719EE100C18009 /* MeTableViewCell.swift in Sources */,
 				02ED7A102372AE6A00D69DB0 /* HTTPError.swift in Sources */,
 				F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */,
 				F61242B22367306500C18009 /* MainTabBarViewController.swift in Sources */,
+				F615812923BE375D009D8542 /* PlacesSearchTableViewCell.swift in Sources */,
+				F678673623C27B67008080A2 /* PlaceRouter.swift in Sources */,
 				F616801F2378B0C2000B54C5 /* CreationTabBarViewController.swift in Sources */,
+				F65D1CEC238E6EF00021179F /* Event.swift in Sources */,
 				CA8DBF5723550DDA00A1641B /* AppDelegate.swift in Sources */,
+				F65D1CEA238E54F30021179F /* Date.swift in Sources */,
 				F61242BA2368DA0300C18009 /* LoginPresenter.swift in Sources */,
+				F615812523BD6FC8009D8542 /* PlacesSearchProtocols.swift in Sources */,
 				F620F0B02364ACFC006EDE9B /* User.swift in Sources */,
+				F615812123BD6FC8009D8542 /* PlacesSearchConfigurator.swift in Sources */,
+				F615812423BD6FC8009D8542 /* PlacesSearchInteractor.swift in Sources */,
 				F61242D62370CD7E00C18009 /* MeViewController.swift in Sources */,
 				F61680282378BC87000B54C5 /* PlaceCreationViewController.swift in Sources */,
 				F620F09C2363C4D0006EDE9B /* AuthProtocols.swift in Sources */,
+				F678672823C0046A008080A2 /* UIColor.swift in Sources */,
+				F65D1CE3238C2B680021179F /* TimeViewController.swift in Sources */,
 				F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */,
+				F65D1CDA2389722C0021179F /* EventCreationConfigurator.swift in Sources */,
+				F678673823C27B67008080A2 /* PlacePresenter.swift in Sources */,
 				F616806C237EF9CB000B54C5 /* PhotoCollectionViewCell.swift in Sources */,
+				F65D1CE7238DD4760021179F /* TimeTableViewCell.swift in Sources */,
 				F620F0AB2364ACC9006EDE9B /* SignUpInteractor.swift in Sources */,
 				F620F0A22363CBD8006EDE9B /* AuthRouter.swift in Sources */,
 				F6168035237B67F5000B54C5 /* MapSearchViewController.swift in Sources */,

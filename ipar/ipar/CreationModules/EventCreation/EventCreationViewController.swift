@@ -1,0 +1,330 @@
+
+import UIKit
+import XLPagerTabStrip
+
+class EventCreationViewController: UIViewController, IndicatorInfoProvider  {
+
+    var presenter: EventCreationPresenterProtocol!
+    let configurator: EventCreationConfiguratorProtocol = EventCreationConfigurator()
+    
+    var itemInfo = IndicatorInfo(title: "View")
+    
+    let scrollView: UIScrollView = {
+        let v = UIScrollView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        return v
+    }()
+    
+    let titleTextField: UITextField = {
+        let sampleTextField =  UITextField()
+        sampleTextField.placeholder = NSLocalizedString("Event title", comment: "event title field placeholder")
+        sampleTextField.font = UIFont.systemFont(ofSize: 15)
+        sampleTextField.borderStyle = UITextField.BorderStyle.roundedRect
+        sampleTextField.translatesAutoresizingMaskIntoConstraints = false
+
+        sampleTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        return sampleTextField
+    }()
+    
+    let descriptionTextField: UITextView = {
+        let descriptionField = UITextView()
+        descriptionField.isEditable = true
+        descriptionField.translatesAutoresizingMaskIntoConstraints = false
+        descriptionField.font = UIFont.systemFont(ofSize: 15)
+        descriptionField.layer.cornerRadius = 5
+        descriptionField.layer.borderColor = UIColor.gray.withAlphaComponent(0.5).cgColor
+        descriptionField.layer.borderWidth = 0.5
+        descriptionField.clipsToBounds = true
+        return descriptionField
+    }()
+    
+    let hashtagsTextField: UITextView = {
+        let hashtagsField = UITextView()
+        hashtagsField.isEditable = true
+        hashtagsField.translatesAutoresizingMaskIntoConstraints = false
+        hashtagsField.font = UIFont.systemFont(ofSize: 15)
+        hashtagsField.layer.cornerRadius = 5
+        hashtagsField.layer.borderColor = UIColor.gray.withAlphaComponent(0.5).cgColor
+        hashtagsField.layer.borderWidth = 0.5
+        hashtagsField.clipsToBounds = true
+        return hashtagsField
+    }()
+    
+    let timeTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.isScrollEnabled = false
+        tableView.register(UINib(nibName: "TimeTableViewCell", bundle: nil), forCellReuseIdentifier: "TimeTableViewCell")
+        return tableView
+    }()
+    
+    let blurEffectView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.alpha = 0.7
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return blurEffectView
+    }()
+    
+    let addPlaceButton: UIButton = {
+        let button = UIButton()
+        button.setTitle(NSLocalizedString("Add place to event", comment: "Place adding to event button"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor(red: 232.0/255, green: 67.0/255, blue: 66.0/255, alpha: 1.0)
+        button.addTarget(self, action: #selector(addPlaceButtonPressed), for: .touchUpInside)
+        button.layer.cornerRadius = 5
+        button.clipsToBounds = true
+        return button
+    }()
+    
+    var placesView = PlacesView()
+    
+    init(itemInfo: IndicatorInfo) {
+        self.itemInfo = itemInfo
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return itemInfo
+    }
+    
+    
+    let margin: CGFloat = 10
+    
+    var scrollBottomAnchorConstraint: NSLayoutConstraint?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configurator.configure(with: self)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(Keyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(Keyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        descriptionTextField.delegate = self
+        descriptionTextField.text = NSLocalizedString("Description", comment: "description field placeholder")
+        descriptionTextField.textColor = .lightGray
+        hashtagsTextField.delegate = self
+        hashtagsTextField.text = NSLocalizedString("Hashtags", comment: "hashtags field placeholder")
+        hashtagsTextField.textColor = .lightGray
+        
+        self.view.addSubview(scrollView)
+        scrollView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0.0).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50.0).isActive = true
+        scrollView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -0.0).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -0.0).isActive = true
+        
+        scrollView.addSubview(titleTextField)
+        
+        titleTextField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: margin).isActive = true
+        titleTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -margin).isActive = true
+        titleTextField.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 50.0).isActive = true
+        titleTextField.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+        
+        scrollView.addSubview(descriptionTextField)
+        
+        descriptionTextField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: margin).isActive = true
+        descriptionTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -margin).isActive = true
+        descriptionTextField.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 20.0).isActive = true
+        descriptionTextField.heightAnchor.constraint(equalToConstant: 250.0).isActive = true
+        
+        scrollView.addSubview(hashtagsTextField)
+
+        hashtagsTextField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: margin).isActive = true
+        hashtagsTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -margin).isActive = true
+        hashtagsTextField.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor, constant: 20.0).isActive = true
+        hashtagsTextField.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
+        
+        scrollView.addSubview(addPlaceButton)
+        
+        addPlaceButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: margin).isActive = true
+        addPlaceButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -margin).isActive = true
+        addPlaceButton.topAnchor.constraint(equalTo: hashtagsTextField.bottomAnchor, constant: 125.0).isActive = true
+        addPlaceButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
+        
+        
+    }
+    
+    @objc func addPlaceButtonPressed() {
+        presenter.addPlaceButtonPressed()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+
+        scrollView.addSubview(timeTableView)
+        timeTableView.dataSource = self
+        timeTableView.delegate = self
+        timeTableView.frame = CGRect(x: 0, y: hashtagsTextField.frame.maxY + 20, width: self.view.frame.width, height: 85.0)
+        
+        scrollBottomAnchorConstraint = hashtagsTextField.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -680.0)
+        scrollBottomAnchorConstraint?.isActive = true
+        
+        placesView = PlacesView(frame: CGRect(x: 0, y: addPlaceButton.frame.maxY + 20, width: self.view.frame.width, height: 250.0))
+    }
+
+}
+
+
+extension EventCreationViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TimeTableViewCell", for: indexPath) as! TimeTableViewCell
+        if indexPath.row == 0 {
+            cell.actionLabel.text = NSLocalizedString("Begins", comment: "time of event beginnning")
+        } else {
+            cell.actionLabel.text = NSLocalizedString("Ends", comment: "time of event ending")
+        }
+        cell.dateLabel.text = Date(timeIntervalSinceNow: 0).toDateString()
+        cell.timeLabel.text = Date(timeIntervalSinceNow: 0).toTimeString()
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        timeTableView.deselectAllRows()
+        let timeViewController = TimeViewController(withDatePickerType: .any)
+        if indexPath.row == 0 {
+            timeViewController.datePickerType = .from
+        } else {
+            timeViewController.datePickerType = .to
+        }
+        timeViewController.delegate = self
+        present(timeViewController, animated: true, completion: nil)
+        
+        blurEffectView.frame = view.bounds
+        view.addSubview(self.blurEffectView)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+}
+
+extension EventCreationViewController: TimeViewDelegate {
+    func addFromTime(_ time: Date) {
+        presenter.fromTimeAdded(date: time)
+        self.blurEffectView.removeFromSuperview()
+    }
+    
+    func addToTime(_ time: Date) {
+        presenter.toTimeAdded(date: time)
+        self.blurEffectView.removeFromSuperview()
+    }
+}
+
+extension EventCreationViewController: EventCreationViewProtocol {
+    
+    func changeDate(_ dateString: String, withTime timeString: String, type: DatePickerType) {
+        var indexPath: IndexPath?
+        if type == .from {
+            indexPath = IndexPath(row: 0, section: 0)
+        } else {
+            indexPath = IndexPath(row: 1, section: 0)
+        }
+        if let indexPath = indexPath {
+            let cell = timeTableView.cellForRow(at: indexPath) as! TimeTableViewCell
+            cell.dateLabel.text = dateString
+            cell.timeLabel.text = timeString
+        }
+    }
+}
+
+extension EventCreationViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView){
+        if textView === descriptionTextField {
+            if (descriptionTextField.text == NSLocalizedString("Description", comment: "description field placeholder") && textView.textColor == .lightGray) {
+                descriptionTextField.text = ""
+                if #available(iOS 12.0, *) {
+                    if self.traitCollection.userInterfaceStyle == .dark {
+                        descriptionTextField.textColor = .white
+                    } else {
+                        descriptionTextField.textColor = .white
+                    }
+                } else {
+                    descriptionTextField.textColor = .black
+                }
+                
+            }
+            descriptionTextField.becomeFirstResponder()
+        } else {
+            if (hashtagsTextField.text == NSLocalizedString("Hashtags", comment: "hashtags field placeholder") && textView.textColor == .lightGray) {
+                hashtagsTextField.text = ""
+                if #available(iOS 12.0, *) {
+                    if self.traitCollection.userInterfaceStyle == .dark {
+                        descriptionTextField.textColor = .white
+                    } else {
+                        descriptionTextField.textColor = .black
+                    }
+                } else {
+                    descriptionTextField.textColor = .black
+                }
+            }
+            hashtagsTextField.becomeFirstResponder()
+        }
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView){
+        if textView === descriptionTextField {
+            if (descriptionTextField.text == ""){
+                descriptionTextField.text = NSLocalizedString("Description", comment: "description field placeholder")
+                descriptionTextField.textColor = .lightGray
+            }
+            descriptionTextField.resignFirstResponder()
+        } else {
+            if (hashtagsTextField.text == ""){
+                hashtagsTextField.text = NSLocalizedString("Hashtags", comment: "hashtags field placeholder")
+                hashtagsTextField.textColor = .lightGray
+            }
+            hashtagsTextField.resignFirstResponder()
+        }
+    }
+}
+
+extension EventCreationViewController {
+    @objc func Keyboard(notification: Notification) {
+        let userInfo = notification.userInfo!
+        
+        let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+        
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            scrollView.contentInset = UIEdgeInsets.zero
+        } else {
+            scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
+        }
+        
+        scrollView.scrollIndicatorInsets = scrollView.contentInset
+    }
+}
+
+extension EventCreationViewController: AddPlaceDelegate {
+    func placeAdded(_ place: Place) {
+        
+        placesView.appendPlace(place)
+        placesView.createFields()
+        if !placesView.isDescendant(of: self.view) {
+            scrollView.addSubview(placesView)
+        }
+        
+        
+//        placesView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: margin).isActive = true
+//        placesView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -margin).isActive = true
+//        placesView.topAnchor.constraint(equalTo: addPlaceButton.bottomAnchor, constant: 10.0).isActive = true
+//        placesView.heightAnchor.constraint(equalToConstant: 120.0).isActive = true
+//
+//        addPlaceButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: margin).isActive = true
+//        addPlaceButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -margin).isActive = true
+//        addPlaceButton.topAnchor.constraint(equalTo: hashtagsTextField.bottomAnchor, constant: 125.0).isActive = true
+//        addPlaceButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
+    }
+}
+
+
+

@@ -101,6 +101,7 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate
     }
     
     private func addCentralButton() {
+        
         let buttonImage = UIImage(named: "unselectedAddButton")?.resizeImage(targetSize: CGSize(width: 40.0, height: 40.0))
         let highlightImage = UIImage(named: "selectedAddButton")?.resizeImage(targetSize: CGSize(width: 40.0, height: 40.0))
         if let buttonImage = buttonImage {
