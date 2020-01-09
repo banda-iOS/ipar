@@ -7,94 +7,7 @@
 //
 
 import UIKit
-
-class PlaceCellView: UIView {
-    let numLabel: UILabel = {
-        let numLabel = UILabel()
-        numLabel.textColor = .backgroundRed
-        numLabel.layer.cornerRadius = 20.0
-        numLabel.layer.borderColor = UIColor.backgroundRed.cgColor
-        numLabel.layer.borderWidth = 3
-        
-        numLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 20.0)
-        numLabel.textAlignment = .center
-        
-        numLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        return numLabel
-    }()
-    
-    let titleLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 20.0)
-        return titleLabel
-    }()
-    
-    let addressLabel: UILabel = {
-        let addressLabel = UILabel()
-        addressLabel.translatesAutoresizingMaskIntoConstraints = false
-        return addressLabel
-    }()
-    
-    func addDefaultSettings() {
-        self.layer.cornerRadius = 5
-        self.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    func createFields(place: Place, i: Int) {
-        self.addSubview(numLabel)
-        
-        NSLayoutConstraint.activate([
-            numLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            numLabel.widthAnchor.constraint(equalToConstant: 40),
-            numLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            numLabel.heightAnchor.constraint(equalToConstant: 40),
-        ])
-        numLabel.text = "\(i)"
-        
-        self.addSubview(titleLabel)
-
-        NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: numLabel.trailingAnchor, constant: 10),
-            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            titleLabel.heightAnchor.constraint(equalToConstant: 20),
-        ])
-        
-        if let name = place.name {
-            titleLabel.text = name
-        }
-        
-        self.addSubview(addressLabel)
-
-        NSLayoutConstraint.activate([
-            addressLabel.leadingAnchor.constraint(equalTo: numLabel.trailingAnchor, constant: 10),
-            addressLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            addressLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
-//                addressLabel.heightAnchor.constraint(equalToConstant: 40),
-        ])
-        
-        if let address = place.address {
-            addressLabel.text = address
-        }
-    }
-    
-    func wasSelected() {
-        if #available(iOS 13.0, *) {
-            self.backgroundColor = .systemBackground
-        } else {
-            self.backgroundColor = .white
-        }
-    }
-    
-    func wasUnselected() {
-        if #available(iOS 13.0, *) {
-            self.backgroundColor = .systemGray
-        } else {
-            self.backgroundColor = UIColor(red: 209/255, green: 209/255, blue: 214/255, alpha: 1.0)
-        }
-    }
-}
+import MapKit
 
 class PlacesView: UIView {
     fileprivate let placesScrollView: UIScrollView = {
@@ -107,11 +20,23 @@ class PlacesView: UIView {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.textAlignment = .justified
+        textView.isEditable = false
         return textView
+    }()
+    
+    let mapView: MKMapView = {
+        let mapView = MKMapView()
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        return mapView
     }()
     
     var places =  [Place]()
     var placesViews = [PlaceCellView]()
+    var pins = [CustomPin]()
+    
+    func getPlaces() -> [Place] {
+        return self.places
+    }
     
     func setPlaces(_ places: [Place]) {
         self.places = places
@@ -138,6 +63,7 @@ class PlacesView: UIView {
         placesScrollView.subviews.forEach { $0.removeFromSuperview() }
         
         placesViews = []
+        
         
         for (i, place) in places.enumerated() {
             let placeView = PlaceCellView()
@@ -176,6 +102,26 @@ class PlacesView: UIView {
             descriptionTextView.heightAnchor.constraint(equalToConstant: 150)
         ])
         
+        mapView.delegate = self
+        self.addSubview(mapView)
+        mapView.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor, constant: 10).isActive = true
+        mapView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
+        mapView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
+        mapView.heightAnchor.constraint(equalToConstant: 250).isActive = true
+        pins = []
+        for i in 0..<places.count - 1 {
+            drawRoute(from: places[i], to: places[i+1], sourceIndex: i)
+        }
+        if places.count == 1 {
+            let place = places[0]
+            let location = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
+            let pin = CustomPin(pinTitle: place.name ?? "", pinSubTitle: place.address ?? "", location: location)
+            pins.append(pin)
+            let sourcePlaceMark = MKPlacemark(coordinate: location)
+            mapView.addAnnotation(pin)
+            mapView.selectAnnotation(pin, animated: true)
+        }
+        
         selectPlaceWith(index: 0)
         
     }
@@ -185,10 +131,73 @@ class PlacesView: UIView {
             if i == index {
                 placeView.wasSelected()
                 descriptionTextView.text = places[index].description
+                self.selectPin(withIndex: index)
             } else {
                 placeView.wasUnselected()
             }
         }
+    }
+    
+    func drawRoute(from sourcePlace: Place, to destinationPlace: Place, sourceIndex: Int) {
+        
+        let directionRequest = MKDirections.Request()
+        
+        let sourceLocation = CLLocationCoordinate2D(latitude: sourcePlace.latitude, longitude: sourcePlace.longitude)
+        let sourcePin = CustomPin(pinTitle: sourcePlace.name ?? "", pinSubTitle: sourcePlace.address ?? "", location: sourceLocation)
+        let sourcePlaceMark = MKPlacemark(coordinate: sourceLocation)
+        mapView.addAnnotation(sourcePin)
+        directionRequest.source = MKMapItem(placemark: sourcePlaceMark)
+        
+        if sourceIndex == 0 {
+            self.pins.append(sourcePin)
+        }
+        
+        let destinationLocation = CLLocationCoordinate2D(latitude: destinationPlace.latitude, longitude: destinationPlace.longitude)
+        let destinationPin = CustomPin(pinTitle: destinationPlace.name ?? "", pinSubTitle: destinationPlace.address ?? "", location: destinationLocation)
+        let destinationPlaceMark = MKPlacemark(coordinate: destinationLocation)
+        mapView.addAnnotation(destinationPin)
+        directionRequest.destination = MKMapItem(placemark: destinationPlaceMark)
+        
+        self.pins.append(destinationPin)
+        
+        directionRequest.transportType = .walking
+        
+        let directions = MKDirections(request: directionRequest)
+        directions.calculate { (response, error) in
+            guard let directionResonse = response else {
+                if let error = error {
+                    print("we have error getting directions==\(error.localizedDescription)")
+                }
+                return
+            }
+
+            let route = directionResonse.routes[0]
+            self.mapView.addOverlay(route.polyline, level: .aboveLabels)
+            
+            let rect = route.polyline.boundingMapRect
+            self.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
+        }
+    }
+    
+    func selectPin(withIndex index: Int) {
+        mapView.selectAnnotation(pins[index], animated: true)
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: places[index].latitude, longitude: places[index].longitude), span: span)
+        mapView.setRegion(region, animated: true)
+    }
+}
+
+extension PlacesView: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
+//        print(type(of: overlay), "\n\n")
+//        if overlay is MKTileOverlay {
+//            return tileRenderer
+//        }
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = UIColor.random
+        renderer.lineWidth = 4.0
+        return renderer
     }
 }
 

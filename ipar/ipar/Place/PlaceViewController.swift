@@ -65,7 +65,7 @@ class PlaceViewController: UIViewController, PlaceViewProtocol  {
         let button = UIButton()
         button.setTitle(NSLocalizedString("Add place", comment: "Add place button"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor(red: 0.0/255, green: 53.0/255, blue: 34.0/255, alpha: 1.0)
+        button.backgroundColor = .midnightGreen
         button.layer.cornerRadius = 5
         button.clipsToBounds = true
         return button

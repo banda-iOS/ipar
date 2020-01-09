@@ -61,14 +61,11 @@ class MeViewController: UIViewController, MeViewProtocol {
         configurator.configure(with: self)
        
         avatarImageButton.setImage(UIImage(named: "unselectedMe")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        if #available(iOS 13.0, *) {
-            self.view.backgroundColor = .systemGroupedBackground
-        } else {
-            self.view.backgroundColor = UIColor(red: 238.0/255, green: 239.0/255, blue: 244.0/255, alpha: 1.0)
-        }
+        self.view.backgroundColor = .groupedBackground
+        
         
         avatarImageButton.layer.borderWidth = 1
-        avatarImageButton.layer.borderColor = UIColor(red: 232.0/255, green: 67.0/255, blue: 66.0/255, alpha: 1.0).cgColor
+        avatarImageButton.layer.borderColor = UIColor.backgroundRed.cgColor
         avatarImageButton.layer.masksToBounds = false
         avatarImageButton.layer.cornerRadius = avatarImageButton.frame.height/2
         avatarImageButton.clipsToBounds = true

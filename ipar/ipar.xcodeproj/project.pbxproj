@@ -101,6 +101,8 @@
 		F6928F0823BEB41F00661BDF /* PlacesSearchParamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6928F0723BEB41F00661BDF /* PlacesSearchParamsView.swift */; };
 		F6928F0A23BFF91300661BDF /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6928F0923BFF91300661BDF /* UIStackView.swift */; };
 		F6D218EE23C4D28000DE708A /* BindableGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D218ED23C4D28000DE708A /* BindableGestureRecognizer.swift */; };
+		F6D218F023C4DF9700DE708A /* PlacesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D218EF23C4DF9700DE708A /* PlacesCellView.swift */; };
+		F6D218F223C4F0CA00DE708A /* CustomPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D218F123C4F0CA00DE708A /* CustomPin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -219,6 +221,8 @@
 		F6928F0723BEB41F00661BDF /* PlacesSearchParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesSearchParamsView.swift; sourceTree = "<group>"; };
 		F6928F0923BFF91300661BDF /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		F6D218ED23C4D28000DE708A /* BindableGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableGestureRecognizer.swift; sourceTree = "<group>"; };
+		F6D218EF23C4DF9700DE708A /* PlacesCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCellView.swift; sourceTree = "<group>"; };
+		F6D218F123C4F0CA00DE708A /* CustomPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,7 +290,7 @@
 				F616801D2378AF81000B54C5 /* CreationModules */,
 				F61680182376120C000B54C5 /* Localizable.strings */,
 				F64D20252364F9D2003BBE52 /* Utils */,
-				F61242C5236F509C00C18009 /* Extensions */,
+				F61242C5236F509C00C18009 /* Extensions and Classes */,
 				F61242CA2370CD1800C18009 /* Me */,
 				F61242B32368D9EE00C18009 /* Login */,
 				CA8DBF5623550DDA00A1641B /* AppDelegate.swift */,
@@ -322,7 +326,7 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		F61242C5236F509C00C18009 /* Extensions */ = {
+		F61242C5236F509C00C18009 /* Extensions and Classes */ = {
 			isa = PBXGroup;
 			children = (
 				F61242C6236F50B100C18009 /* UIImage.swift */,
@@ -334,8 +338,9 @@
 				F6928F0923BFF91300661BDF /* UIStackView.swift */,
 				F678672723C0046A008080A2 /* UIColor.swift */,
 				F6D218ED23C4D28000DE708A /* BindableGestureRecognizer.swift */,
+				F6D218F123C4F0CA00DE708A /* CustomPin.swift */,
 			);
-			path = Extensions;
+			path = "Extensions and Classes";
 			sourceTree = "<group>";
 		};
 		F61242CA2370CD1800C18009 /* Me */ = {
@@ -503,6 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				F675B29023C3F411005DC9CE /* PlacesView.swift */,
+				F6D218EF23C4DF9700DE708A /* PlacesCellView.swift */,
 			);
 			path = PlacesView;
 			sourceTree = "<group>";
@@ -732,6 +738,7 @@
 				F65D1CD82389722C0021179F /* EventCreationInteractor.swift in Sources */,
 				F61680272378BC87000B54C5 /* PlaceCreationInteractor.swift in Sources */,
 				F678675F23C3E2C2008080A2 /* AddCommentViewController.swift in Sources */,
+				F6D218F223C4F0CA00DE708A /* CustomPin.swift in Sources */,
 				F616802A2378BC87000B54C5 /* PlaceCreationRouter.swift in Sources */,
 				F65D1CDD2389722C0021179F /* EventCreationViewController.swift in Sources */,
 				F675B29123C3F411005DC9CE /* PlacesView.swift in Sources */,
@@ -739,6 +746,7 @@
 				F61242DB23719EE100C18009 /* MeTableViewCell.swift in Sources */,
 				02ED7A102372AE6A00D69DB0 /* HTTPError.swift in Sources */,
 				F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */,
+				F6D218F023C4DF9700DE708A /* PlacesCellView.swift in Sources */,
 				F61242B22367306500C18009 /* MainTabBarViewController.swift in Sources */,
 				F615812923BE375D009D8542 /* PlacesSearchTableViewCell.swift in Sources */,
 				F678673623C27B67008080A2 /* PlaceRouter.swift in Sources */,

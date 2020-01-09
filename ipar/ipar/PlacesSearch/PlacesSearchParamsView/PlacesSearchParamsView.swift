@@ -144,11 +144,7 @@ class PlacesSearchParamsView: UIView {
         distanceStackView.spacing = 5
         distanceStackView.translatesAutoresizingMaskIntoConstraints = false
        
-        if #available(iOS 13.0, *) {
-            distanceStackView.addBackground(color: .systemGray5)
-        } else {
-            distanceStackView.addBackground(color: UIColor(red: 238.0/255, green: 239.0/255, blue: 244.0/255, alpha: 1.0))
-        }
+        distanceStackView.addBackground(color: .highlightBackground)
 
         let stackView = UIStackView(arrangedSubviews: [distanceStackView, hashtagsTextField, nameField, wordsInDescriptionField, addressField])
         stackView.axis = .vertical

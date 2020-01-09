@@ -3,6 +3,8 @@ import UIKit
 import XLPagerTabStrip
 
 class EventCreationViewController: UIViewController, IndicatorInfoProvider  {
+    
+    weak var delegate: ObjectCreationDelegate?
 
     var presenter: EventCreationPresenterProtocol!
     let configurator: EventCreationConfiguratorProtocol = EventCreationConfigurator()
@@ -69,12 +71,37 @@ class EventCreationViewController: UIViewController, IndicatorInfoProvider  {
         let button = UIButton()
         button.setTitle(NSLocalizedString("Add place to event", comment: "Place adding to event button"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor(red: 232.0/255, green: 67.0/255, blue: 66.0/255, alpha: 1.0)
+        button.backgroundColor = .backgroundRed
         button.addTarget(self, action: #selector(addPlaceButtonPressed), for: .touchUpInside)
         button.layer.cornerRadius = 5
         button.clipsToBounds = true
         return button
     }()
+    
+    fileprivate let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.register(UINib(nibName: "AddPhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "addPhotoCell")
+        cv.register(UINib(nibName: "PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "photoCell")
+        cv.backgroundColor = .none
+        cv.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        return cv
+    }()
+    
+    let saveEventButton: UIButton = {
+        let button = UIButton()
+        button.setTitle(NSLocalizedString("Save event", comment: "Save event button"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .midnightGreen
+        button.layer.cornerRadius = 5
+        button.clipsToBounds = true
+        return button
+    }()
+    
+    let imagePicker = UIImagePickerController()
+    var images = [UIImage]()
     
     var placesView = PlacesView()
     
@@ -144,6 +171,8 @@ class EventCreationViewController: UIViewController, IndicatorInfoProvider  {
         addPlaceButton.topAnchor.constraint(equalTo: hashtagsTextField.bottomAnchor, constant: 125.0).isActive = true
         addPlaceButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
         
+        scrollBottomAnchorConstraint = addPlaceButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20.0)
+        scrollBottomAnchorConstraint?.isActive = true
         
     }
     
@@ -158,11 +187,48 @@ class EventCreationViewController: UIViewController, IndicatorInfoProvider  {
         timeTableView.delegate = self
         timeTableView.frame = CGRect(x: 0, y: hashtagsTextField.frame.maxY + 20, width: self.view.frame.width, height: 85.0)
         
-        scrollBottomAnchorConstraint = hashtagsTextField.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -680.0)
+       
+        
+        placesView = PlacesView(frame: CGRect(x: 0, y: addPlaceButton.frame.maxY + 20, width: self.view.frame.width, height: 505.0))
+    }
+    
+    private func presentImagePicker() {
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+                
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @objc func saveEventButtonPressed() {
+        presenter.saveEventButtonPressed()
+    }
+    
+    func eventSaved() {
+        
+        saveEventButton.removeFromSuperview()
+        
+        scrollView.addSubview(collectionView)
+        
+        imagePicker.delegate = self
+        collectionView.dataSource = self
+       
+        collectionView.topAnchor.constraint(equalTo: placesView.bottomAnchor, constant: 10.0).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        collectionView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+       
+        collectionView.showsHorizontalScrollIndicator = false
+       
+        collectionView.delegate = self
+       
+        scrollBottomAnchorConstraint?.isActive = false
+        scrollBottomAnchorConstraint = collectionView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -70)
         scrollBottomAnchorConstraint?.isActive = true
         
-        placesView = PlacesView(frame: CGRect(x: 0, y: addPlaceButton.frame.maxY + 20, width: self.view.frame.width, height: 250.0))
+        self.delegate?.objectCreated()
     }
+    
+
 
 }
 
@@ -219,6 +285,22 @@ extension EventCreationViewController: TimeViewDelegate {
 }
 
 extension EventCreationViewController: EventCreationViewProtocol {
+    func getTitle() -> String {
+        return titleTextField.text ?? ""
+    }
+    
+    func getDescription() -> String {
+        return descriptionTextField.text
+    }
+    
+    func getHashtags() -> String {
+        return hashtagsTextField.text
+    }
+    
+    func getPlaces() -> [Place] {
+        placesView.getPlaces()
+    }
+    
     
     func changeDate(_ dateString: String, withTime timeString: String, type: DatePickerType) {
         var indexPath: IndexPath?
@@ -241,30 +323,14 @@ extension EventCreationViewController: UITextViewDelegate {
         if textView === descriptionTextField {
             if (descriptionTextField.text == NSLocalizedString("Description", comment: "description field placeholder") && textView.textColor == .lightGray) {
                 descriptionTextField.text = ""
-                if #available(iOS 12.0, *) {
-                    if self.traitCollection.userInterfaceStyle == .dark {
-                        descriptionTextField.textColor = .white
-                    } else {
-                        descriptionTextField.textColor = .white
-                    }
-                } else {
-                    descriptionTextField.textColor = .black
-                }
+                descriptionTextField.textColor = .defaultTextColor
                 
             }
             descriptionTextField.becomeFirstResponder()
         } else {
             if (hashtagsTextField.text == NSLocalizedString("Hashtags", comment: "hashtags field placeholder") && textView.textColor == .lightGray) {
                 hashtagsTextField.text = ""
-                if #available(iOS 12.0, *) {
-                    if self.traitCollection.userInterfaceStyle == .dark {
-                        descriptionTextField.textColor = .white
-                    } else {
-                        descriptionTextField.textColor = .black
-                    }
-                } else {
-                    descriptionTextField.textColor = .black
-                }
+                hashtagsTextField.textColor = .defaultTextColor
             }
             hashtagsTextField.becomeFirstResponder()
         }
@@ -313,6 +379,22 @@ extension EventCreationViewController: AddPlaceDelegate {
             scrollView.addSubview(placesView)
         }
         
+        if !saveEventButton.isDescendant(of: self.view) {
+            scrollView.addSubview(saveEventButton)
+            saveEventButton.topAnchor.constraint(equalTo: placesView.bottomAnchor, constant: 10).isActive = true
+            saveEventButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+            saveEventButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
+            saveEventButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
+            
+            saveEventButton.addTarget(self, action: #selector(saveEventButtonPressed), for: .touchUpInside)
+        }
+        
+        scrollBottomAnchorConstraint?.isActive = false
+        scrollBottomAnchorConstraint = saveEventButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -70)
+        scrollBottomAnchorConstraint?.isActive = true
+        
+       
+        
         
 //        placesView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: margin).isActive = true
 //        placesView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -margin).isActive = true
@@ -325,6 +407,58 @@ extension EventCreationViewController: AddPlaceDelegate {
 //        addPlaceButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
     }
 }
+
+
+extension EventCreationViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count + 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addPhotoCell", for: indexPath) as! AddPhotoCollectionViewCell
+            cell.contentView.clipsToBounds = true
+            cell.contentView.layer.cornerRadius = 10
+            cell.contentView.layer.borderColor = UIColor.addPhotoColor.cgColor
+            cell.contentView.layer.borderWidth = 2.0
+            return cell
+        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotoCollectionViewCell
+        cell.imageView.image = images[indexPath.row - 1]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            self.presentImagePicker()
+        }
+    }
+}
+
+extension EventCreationViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            images.insert(pickedImage, at: 0)
+            presenter.newImagePicked(pickedImage)
+        }
+        
+        dismiss(animated: true, completion: nil)
+        collectionView.reloadData()
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+
+
 
 
 

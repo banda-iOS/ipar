@@ -3,13 +3,13 @@ import UIKit
 import XLPagerTabStrip
 import MapKit
 
-protocol PlaceCreationDelegate: class {
-    func placeCreated()
+protocol ObjectCreationDelegate: class {
+    func objectCreated()
 }
 
 class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, IndicatorInfoProvider  {
 
-    weak var delegate: PlaceCreationDelegate?
+    weak var delegate: ObjectCreationDelegate?
     
     var itemInfo = IndicatorInfo(title: "View")
     let scrollView: UIScrollView = {
@@ -63,7 +63,7 @@ class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, 
         let button = UIButton()
         button.setTitle(NSLocalizedString("Add geo position", comment: "Add geo position button"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor(red: 232.0/255, green: 67.0/255, blue: 66.0/255, alpha: 1.0)
+        button.backgroundColor = .backgroundRed
         button.addTarget(self, action: #selector(addPositionButtonPressed), for: .touchUpInside)
         button.layer.cornerRadius = 5
         button.clipsToBounds = true
@@ -74,7 +74,7 @@ class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, 
         let button = UIButton()
         button.setTitle(NSLocalizedString("Create place", comment: "Place creation button"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor(red: 0.0/255, green: 53.0/255, blue: 34.0/255, alpha: 1.0)
+        button.backgroundColor = .midnightGreen
         button.addTarget(self, action: #selector(confirmButtonPressed), for: .touchUpInside)
         button.layer.cornerRadius = 5
         button.clipsToBounds = true
@@ -299,7 +299,7 @@ class PlaceCreationViewController: UIViewController, PlaceCreationViewProtocol, 
     }
     
     func createDoneButton() {
-        delegate?.placeCreated()
+        delegate?.objectCreated()
     }
 }
 
@@ -309,30 +309,14 @@ extension PlaceCreationViewController: UITextViewDelegate {
         if textView === descriptionTextField {
             if (descriptionTextField.text == NSLocalizedString("Description", comment: "description field placeholder") && textView.textColor == .lightGray) {
                 descriptionTextField.text = ""
-                if #available(iOS 12.0, *) {
-                    if self.traitCollection.userInterfaceStyle == .dark {
-                        descriptionTextField.textColor = .white
-                    } else {
-                        descriptionTextField.textColor = .white
-                    }
-                } else {
-                    descriptionTextField.textColor = .black
-                }
+                descriptionTextField.textColor = .defaultTextColor
                 
             }
             descriptionTextField.becomeFirstResponder()
         } else {
             if (hashtagsTextField.text == NSLocalizedString("Hashtags", comment: "hashtags field placeholder") && textView.textColor == .lightGray) {
                 hashtagsTextField.text = ""
-                if #available(iOS 12.0, *) {
-                    if self.traitCollection.userInterfaceStyle == .dark {
-                        descriptionTextField.textColor = .white
-                    } else {
-                        descriptionTextField.textColor = .black
-                    }
-                } else {
-                    descriptionTextField.textColor = .black
-                }
+                hashtagsTextField.textColor = .defaultTextColor
             }
             hashtagsTextField.becomeFirstResponder()
         }
@@ -387,7 +371,7 @@ extension PlaceCreationViewController: UICollectionViewDelegateFlowLayout, UICol
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addPhotoCell", for: indexPath) as! AddPhotoCollectionViewCell
             cell.contentView.clipsToBounds = true
             cell.contentView.layer.cornerRadius = 10
-            cell.contentView.layer.borderColor = UIColor(red: 51.0/255, green: 51.0/255, blue: 51.0/255, alpha: 1.0).cgColor
+            cell.contentView.layer.borderColor = UIColor.addPhotoColor.cgColor
             cell.contentView.layer.borderWidth = 2.0
             return cell
         }

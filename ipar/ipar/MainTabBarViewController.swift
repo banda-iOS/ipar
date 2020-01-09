@@ -17,9 +17,9 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tabBar.barTintColor = UIColor(red: 232.0/255, green: 67.0/255, blue: 66.0/255, alpha: 1.0)
+        self.tabBar.barTintColor = .backgroundRed
         self.tabBar.tintColor = .white
-        self.tabBar.unselectedItemTintColor = UIColor(red: 51.0/255, green: 51.0/255, blue: 51.0/255, alpha: 1.0)
+        self.tabBar.unselectedItemTintColor = .addPhotoColor
         
         if getSession() != nil {
             viewControllers = createMainTBControllerForAuthorized()

@@ -12,11 +12,12 @@ class Event: Codable {
     var id: Int?
     var name: String
     var description: String?
-//    var places: [Place]
     var from: Date?
     var to: Date?
     var creator: User?
     var images: [String]?
+    var hashtags: [String]?
+    var places = [Place]()
     
     enum CodingKeys: String, CodingKey {
         case id = "event_id"
@@ -26,6 +27,8 @@ class Event: Codable {
         case to
         case creator
         case images
+        case hashtags
+        case places
     }
     
     func encode(to encoder: Encoder) throws {
@@ -42,13 +45,16 @@ class Event: Codable {
         if let images = self.images {
             try container.encode(images, forKey: .images)
         }
+        if let hashtags = self.hashtags {
+            try container.encode(hashtags, forKey: .hashtags)
+        }
         
         try container.encode(self.from?.toISO8601Full(), forKey: .from)
         try container.encode(self.to?.toISO8601Full(), forKey: .to)
-
+        try container.encode(self.places, forKey: .places)
     }
     
-    init(id: Int, name: String, description: String?, creator: User, images: [String]? = [], from: Date?, to: Date?) {
+    init(id: Int?, name: String, description: String?, creator: User?, images: [String]? = [], from: Date?, to: Date?) {
         self.id = id
         self.name = name
         self.description = description
@@ -66,10 +72,12 @@ class Event: Codable {
         self.description = try? container.decode(String.self, forKey: .description)
         self.creator = try? container.decode(User.self, forKey: .creator)
         self.images = try? container.decode([String].self, forKey: .images)
+        self.hashtags = try? container.decode([String].self, forKey: .hashtags)
         let from = try? container.decode(String.self, forKey: .from)
         self.from = from?.fromISO8601()
         let to = try? container.decode(String.self, forKey: .to)
         self.to = to?.fromISO8601()
+        self.places = try container.decode([Place].self, forKey: .places)
     }
 }
 
