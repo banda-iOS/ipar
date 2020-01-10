@@ -72,6 +72,15 @@
 		F620F0AB2364ACC9006EDE9B /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0AA2364ACC9006EDE9B /* SignUpInteractor.swift */; };
 		F620F0B02364ACFC006EDE9B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0AF2364ACFC006EDE9B /* User.swift */; };
 		F620F0B22364AECD006EDE9B /* SignUpConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F620F0B12364AECD006EDE9B /* SignUpConfigurator.swift */; };
+		F6343E5E23C7DB940084FC60 /* EventsSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E5823C7DB930084FC60 /* EventsSearchInteractor.swift */; };
+		F6343E5F23C7DB940084FC60 /* EventsSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E5923C7DB930084FC60 /* EventsSearchPresenter.swift */; };
+		F6343E6023C7DB940084FC60 /* EventsSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E5A23C7DB930084FC60 /* EventsSearchRouter.swift */; };
+		F6343E6123C7DB940084FC60 /* EventsSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E5B23C7DB940084FC60 /* EventsSearchViewController.swift */; };
+		F6343E6223C7DB940084FC60 /* EventsSearchProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E5C23C7DB940084FC60 /* EventsSearchProtocols.swift */; };
+		F6343E6323C7DB940084FC60 /* EventsSearchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E5D23C7DB940084FC60 /* EventsSearchConfigurator.swift */; };
+		F6343E6623C7DE750084FC60 /* EventsSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E6423C7DE750084FC60 /* EventsSearchTableViewCell.swift */; };
+		F6343E6723C7DE750084FC60 /* EventsSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6343E6523C7DE750084FC60 /* EventsSearchTableViewCell.xib */; };
+		F6343E6A23C897520084FC60 /* EventsSearchParamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E6923C897520084FC60 /* EventsSearchParamsView.swift */; };
 		F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D20232364B9FB003BBE52 /* SignUpViewController.swift */; };
 		F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D20272364FA35003BBE52 /* HTTPRequest.swift */; };
 		F65D1CD82389722C0021179F /* EventCreationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D1CD22389722C0021179F /* EventCreationInteractor.swift */; };
@@ -192,6 +201,15 @@
 		F620F0AA2364ACC9006EDE9B /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
 		F620F0AF2364ACFC006EDE9B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F620F0B12364AECD006EDE9B /* SignUpConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfigurator.swift; sourceTree = "<group>"; };
+		F6343E5823C7DB930084FC60 /* EventsSearchInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsSearchInteractor.swift; sourceTree = "<group>"; };
+		F6343E5923C7DB930084FC60 /* EventsSearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsSearchPresenter.swift; sourceTree = "<group>"; };
+		F6343E5A23C7DB930084FC60 /* EventsSearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsSearchRouter.swift; sourceTree = "<group>"; };
+		F6343E5B23C7DB940084FC60 /* EventsSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsSearchViewController.swift; sourceTree = "<group>"; };
+		F6343E5C23C7DB940084FC60 /* EventsSearchProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsSearchProtocols.swift; sourceTree = "<group>"; };
+		F6343E5D23C7DB940084FC60 /* EventsSearchConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsSearchConfigurator.swift; sourceTree = "<group>"; };
+		F6343E6423C7DE750084FC60 /* EventsSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsSearchTableViewCell.swift; sourceTree = "<group>"; };
+		F6343E6523C7DE750084FC60 /* EventsSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsSearchTableViewCell.xib; sourceTree = "<group>"; };
+		F6343E6923C897520084FC60 /* EventsSearchParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsSearchParamsView.swift; sourceTree = "<group>"; };
 		F64D20232364B9FB003BBE52 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F64D20272364FA35003BBE52 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		F65D1CD22389722C0021179F /* EventCreationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreationInteractor.swift; sourceTree = "<group>"; };
@@ -283,6 +301,7 @@
 		CA8DBF5523550DDA00A1641B /* ipar */ = {
 			isa = PBXGroup;
 			children = (
+				F6343E5723C7DB7B0084FC60 /* EventsSearch */,
 				F678672C23C27B51008080A2 /* Place */,
 				F615811A23BD6F75009D8542 /* PlacesSearch */,
 				F65D1CDE238C2A080021179F /* Time */,
@@ -417,6 +436,8 @@
 				F6168067237EF9CB000B54C5 /* AddPhotoCollectionViewCell.xib */,
 				F6168068237EF9CB000B54C5 /* PhotoCollectionViewCell.swift */,
 				F616806A237EF9CB000B54C5 /* PhotoCollectionViewCell.xib */,
+				F6343E6423C7DE750084FC60 /* EventsSearchTableViewCell.swift */,
+				F6343E6523C7DE750084FC60 /* EventsSearchTableViewCell.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -458,6 +479,28 @@
 				F6168039237DA5C8000B54C5 /* Place.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		F6343E5723C7DB7B0084FC60 /* EventsSearch */ = {
+			isa = PBXGroup;
+			children = (
+				F6343E5D23C7DB940084FC60 /* EventsSearchConfigurator.swift */,
+				F6343E5823C7DB930084FC60 /* EventsSearchInteractor.swift */,
+				F6343E5923C7DB930084FC60 /* EventsSearchPresenter.swift */,
+				F6343E5C23C7DB940084FC60 /* EventsSearchProtocols.swift */,
+				F6343E5A23C7DB930084FC60 /* EventsSearchRouter.swift */,
+				F6343E5B23C7DB940084FC60 /* EventsSearchViewController.swift */,
+				F6343E6823C8973C0084FC60 /* EventsSearchParamsView */,
+			);
+			path = EventsSearch;
+			sourceTree = "<group>";
+		};
+		F6343E6823C8973C0084FC60 /* EventsSearchParamsView */ = {
+			isa = PBXGroup;
+			children = (
+				F6343E6923C897520084FC60 /* EventsSearchParamsView.swift */,
+			);
+			path = EventsSearchParamsView;
 			sourceTree = "<group>";
 		};
 		F64D20252364F9D2003BBE52 /* Utils */ = {
@@ -624,6 +667,7 @@
 				F616801A2376120C000B54C5 /* Localizable.strings in Resources */,
 				F678676023C3E2C2008080A2 /* AddCommentViewController.xib in Resources */,
 				F61CDC2E237F66400062BFD8 /* Creation.storyboard in Resources */,
+				F6343E6723C7DE750084FC60 /* EventsSearchTableViewCell.xib in Resources */,
 				F615812A23BE375D009D8542 /* PlacesSearchTableViewCell.xib in Resources */,
 				F61680092375D7EF000B54C5 /* LoginViewController.xib in Resources */,
 				F616806E237EF9CB000B54C5 /* PhotoCollectionViewCell.xib in Resources */,
@@ -706,9 +750,11 @@
 				F61242D52370CD7E00C18009 /* MeRouter.swift in Sources */,
 				F61242D12370CD7E00C18009 /* MeInteractor.swift in Sources */,
 				F61242C7236F50B200C18009 /* UIImage.swift in Sources */,
+				F6343E5E23C7DB940084FC60 /* EventsSearchInteractor.swift in Sources */,
 				F61243022372B0BF00C18009 /* UITableView.swift in Sources */,
 				F620F0982363C11A006EDE9B /* AuthViewController.swift in Sources */,
 				02FBA66B2370485C00CF0A23 /* Validation.swift in Sources */,
+				F6343E5F23C7DB940084FC60 /* EventsSearchPresenter.swift in Sources */,
 				F65D1CD92389722C0021179F /* EventCreationRouter.swift in Sources */,
 				F615812323BD6FC8009D8542 /* PlacesSearchPresenter.swift in Sources */,
 				F61242BD2368DA0300C18009 /* LoginInteractor.swift in Sources */,
@@ -720,21 +766,27 @@
 				F620F0A72364ABC6006EDE9B /* SignUpProtocols.swift in Sources */,
 				F616802C2378BC87000B54C5 /* PlaceCreationConfigurator.swift in Sources */,
 				F6D218EE23C4D28000DE708A /* BindableGestureRecognizer.swift in Sources */,
+				F6343E6023C7DB940084FC60 /* EventsSearchRouter.swift in Sources */,
 				F616802B2378BC87000B54C5 /* PlaceCreationPresenter.swift in Sources */,
 				F678673723C27B67008080A2 /* PlaceViewController.swift in Sources */,
+				F6343E6623C7DE750084FC60 /* EventsSearchTableViewCell.swift in Sources */,
 				F616803A237DA5C9000B54C5 /* Place.swift in Sources */,
+				F6343E6323C7DB940084FC60 /* EventsSearchConfigurator.swift in Sources */,
 				F612426B2365E9E400C18009 /* Keychain.swift in Sources */,
 				F65D1CDB2389722C0021179F /* EventCreationPresenter.swift in Sources */,
 				F620F0B22364AECD006EDE9B /* SignUpConfigurator.swift in Sources */,
 				F61242BC2368DA0300C18009 /* LoginViewController.swift in Sources */,
+				F6343E6A23C897520084FC60 /* EventsSearchParamsView.swift in Sources */,
 				F6928F0A23BFF91300661BDF /* UIStackView.swift in Sources */,
 				F6168038237B7272000B54C5 /* MapSearchTableViewController.swift in Sources */,
+				F6343E6123C7DB940084FC60 /* EventsSearchViewController.swift in Sources */,
 				F61242C42368DF5100C18009 /* LoginUser.swift in Sources */,
 				F678673423C27B67008080A2 /* PlaceProtocols.swift in Sources */,
 				F61242D32370CD7E00C18009 /* MePresenter.swift in Sources */,
 				F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */,
 				F61242B92368DA0300C18009 /* LoginProtocols.swift in Sources */,
 				F678673523C27B67008080A2 /* PlaceConfigurator.swift in Sources */,
+				F6343E6223C7DB940084FC60 /* EventsSearchProtocols.swift in Sources */,
 				F65D1CD82389722C0021179F /* EventCreationInteractor.swift in Sources */,
 				F61680272378BC87000B54C5 /* PlaceCreationInteractor.swift in Sources */,
 				F678675F23C3E2C2008080A2 /* AddCommentViewController.swift in Sources */,

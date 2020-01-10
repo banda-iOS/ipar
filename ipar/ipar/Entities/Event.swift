@@ -19,6 +19,9 @@ class Event: Codable {
     var hashtags: [String]?
     var places = [Place]()
     
+    var fromString: String?
+    var toString: String?
+    
     enum CodingKeys: String, CodingKey {
         case id = "event_id"
         case name
@@ -66,6 +69,9 @@ class Event: Codable {
     
     
     required init(from decoder: Decoder) throws {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try? container.decode(Int.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
@@ -73,10 +79,12 @@ class Event: Codable {
         self.creator = try? container.decode(User.self, forKey: .creator)
         self.images = try? container.decode([String].self, forKey: .images)
         self.hashtags = try? container.decode([String].self, forKey: .hashtags)
-        let from = try? container.decode(String.self, forKey: .from)
-        self.from = from?.fromISO8601()
-        let to = try? container.decode(String.self, forKey: .to)
-        self.to = to?.fromISO8601()
+        self.fromString = try? container.decode(String.self, forKey: .from)
+//        var translatedFrom = from?.fromISO8601()
+////        translatedFrom = formatter.date(from: from!)
+//        self.from = translatedFrom
+        self.toString = try? container.decode(String.self, forKey: .to)
+//        self.to = to?.fromISO8601()
         self.places = try container.decode([Place].self, forKey: .places)
     }
 }

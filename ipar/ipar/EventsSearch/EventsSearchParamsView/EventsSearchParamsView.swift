@@ -1,20 +1,21 @@
 //
-//  PlacesSearchParamsView.swift
+//  EventsSearchParamsView.swift
 //  ipar
 //
-//  Created by Vitaly on 03/01/2020.
+//  Created by Vitaly on 10/01/2020.
 //  Copyright © 2020 banda. All rights reserved.
 //
 
 import UIKit
 
-protocol PlacesSearchParamsDelegate: class {
-    func updateFields(_ fields: PlacesSearchFields)
+protocol EventsSearchParamsDelegate: class {
+    func updateFields(_ fields: EventsSearchFields)
+    func presentTimeVC(_ vc: UIViewController)
 }
 
-class PlacesSearchParamsView: UIView {
+class EventsSearchParamsView: UIView {
     
-    weak var delegate: PlacesSearchParamsDelegate?
+    weak var delegate: EventsSearchParamsDelegate?
     
     let scrollView: UIScrollView = {
         let v = UIScrollView()
@@ -98,29 +99,37 @@ class PlacesSearchParamsView: UIView {
         return textField
     }()
     
-    let addressField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = NSLocalizedString("Address of the place (or part of it)", comment: "place address field placeholder")
-        textField.font = UIFont.systemFont(ofSize: 15)
-        textField.borderStyle = UITextField.BorderStyle.roundedRect
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        return textField
+    let timeTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.isScrollEnabled = false
+        tableView.register(UINib(nibName: "TimeTableViewCell", bundle: nil), forCellReuseIdentifier: "TimeTableViewCell")
+        return tableView
     }()
     
+    let blurEffectView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.alpha = 0.7
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return blurEffectView
+    }()
+    
+    var stackView = UIStackView()
+    
+    var from = Date()
+    var to = Date()
+    
     func createFields() {
-        
         if UIScreen.main.nativeBounds.height < 1400 {
             self.addSubview(scrollView)
             scrollView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0.0).isActive = true
             scrollView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0.0).isActive = true
             scrollView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -0.0).isActive = true
-            scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100.0).isActive = true
+            scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -0.0).isActive = true
         }
-
-        self.backgroundColor = .backgroundRed
         
+        self.backgroundColor = .backgroundRed
+         
         let distanceHorizontalStackView = UIStackView(arrangedSubviews: [notMoreLabel, distanceField, valueLabel])
         distanceHorizontalStackView.axis = .horizontal
         distanceHorizontalStackView.distribution = .fill
@@ -137,15 +146,18 @@ class PlacesSearchParamsView: UIView {
         distanceStackView.alignment = .fill
         distanceStackView.spacing = 5
         distanceStackView.translatesAutoresizingMaskIntoConstraints = false
-       
+        
         distanceStackView.addBackground(color: .highlightBackground)
-
-        let stackView = UIStackView(arrangedSubviews: [distanceStackView, hashtagsTextField, nameField, wordsInDescriptionField, addressField])
+        
+        timeTableView.heightAnchor.constraint(equalToConstant: 88).isActive = true
+        stackView = UIStackView(arrangedSubviews: [distanceStackView, hashtagsTextField, nameField, wordsInDescriptionField, timeTableView])
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
         stackView.alignment = .fill
         stackView.spacing = 5
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+       
 
         if UIScreen.main.nativeBounds.height < 1400 {
             scrollView.addSubview(stackView)
@@ -155,12 +167,16 @@ class PlacesSearchParamsView: UIView {
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
         } else {
             self.addSubview(stackView)
-            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
+            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive = true
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
         }
         
-        stackView.heightAnchor.constraint(equalToConstant: 250)
+       
+        timeTableView.delegate = self
+        timeTableView.dataSource = self
+        
+        
         
         distanceSlider.addTarget(self, action: #selector(sliderChangedValue), for: .touchUpInside)
         distanceField.addTarget(self, action: #selector(distanceFieldChangedValue), for: .editingDidEnd)
@@ -168,10 +184,17 @@ class PlacesSearchParamsView: UIView {
         //хэштег таргет
         nameField.addTarget(self, action: #selector(anyFieldChangedValue), for: .editingDidEnd)
         wordsInDescriptionField.addTarget(self, action: #selector(anyFieldChangedValue), for: .editingDidEnd)
-        addressField.addTarget(self, action: #selector(anyFieldChangedValue), for: .editingDidEnd)
-
-        
     }
+    
+    func addTimeTable() {
+        print("1234r")
+        print(stackView.frame.height)
+        
+        timeTableView.delegate = self
+        timeTableView.dataSource = self
+    }
+    
+    
     
     @objc func sliderChangedValue() {
         var realValue: Float = 0
@@ -235,7 +258,7 @@ class PlacesSearchParamsView: UIView {
     }
     
     @objc func anyFieldChangedValue() {
-        var fields = PlacesSearchFields()
+        var fields = EventsSearchFields()
         if valueLabel.text == NSLocalizedString("km", comment: "kilometers") {
             fields.maxDistance = Int((Float(distanceField.text ?? "100") ?? 10)*1000)
         } else {
@@ -250,9 +273,70 @@ class PlacesSearchParamsView: UIView {
         if wordsInDescriptionField.text != "" {
             fields.description = wordsInDescriptionField.text
         }
-        if addressField.text != "" {
-            fields.address = addressField.text
-        }
+        fields.from = self.from
+        fields.to = self.to
         self.delegate?.updateFields(fields)
+    }
+}
+
+extension EventsSearchParamsView: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TimeTableViewCell", for: indexPath) as! TimeTableViewCell
+        if indexPath.row == 0 {
+            cell.actionLabel.text = NSLocalizedString("Begins", comment: "time of event beginnning")
+        } else {
+            cell.actionLabel.text = NSLocalizedString("Ends", comment: "time of event ending")
+        }
+        cell.dateLabel.text = Date(timeIntervalSinceNow: 0).toDateString()
+        cell.timeLabel.text = Date(timeIntervalSinceNow: 0).toTimeString()
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        timeTableView.deselectAllRows()
+        let timeViewController = TimeViewController(withDatePickerType: .any)
+        if indexPath.row == 0 {
+            timeViewController.datePickerType = .from
+        } else {
+            timeViewController.datePickerType = .to
+        }
+        timeViewController.delegate = self
+        self.delegate?.presentTimeVC(timeViewController)
+        
+        
+        blurEffectView.frame = self.bounds
+        self.addSubview(self.blurEffectView)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+    
+    
+}
+
+extension EventsSearchParamsView: TimeViewDelegate {
+    func addFromTime(_ time: Date) {
+        self.from = time
+        let cell = self.timeTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! TimeTableViewCell
+        cell.dateLabel.text = time.toDateString()
+        cell.timeLabel.text = time.toTimeString()
+        self.anyFieldChangedValue()
+        self.blurEffectView.removeFromSuperview()
+    }
+    
+    func addToTime(_ time: Date) {
+        self.to = time
+        let cell = self.timeTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! TimeTableViewCell
+        cell.dateLabel.text = time.toDateString()
+        cell.timeLabel.text = time.toTimeString()
+        self.anyFieldChangedValue()
+        self.blurEffectView.removeFromSuperview()
     }
 }
