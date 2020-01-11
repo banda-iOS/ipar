@@ -88,6 +88,7 @@
 		F6343E7623C923D00084FC60 /* EventInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E7023C923D00084FC60 /* EventInteractor.swift */; };
 		F6343E7723C923D00084FC60 /* EventConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E7123C923D00084FC60 /* EventConfigurator.swift */; };
 		F6343E7923CA1BBD0084FC60 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E7823CA1BBD0084FC60 /* Role.swift */; };
+		F6343E7C23CA74AD0084FC60 /* EventCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E7B23CA74AD0084FC60 /* EventCoreData.swift */; };
 		F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D20232364B9FB003BBE52 /* SignUpViewController.swift */; };
 		F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D20272364FA35003BBE52 /* HTTPRequest.swift */; };
 		F65D1CD82389722C0021179F /* EventCreationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D1CD22389722C0021179F /* EventCreationInteractor.swift */; };
@@ -224,6 +225,7 @@
 		F6343E7023C923D00084FC60 /* EventInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInteractor.swift; sourceTree = "<group>"; };
 		F6343E7123C923D00084FC60 /* EventConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventConfigurator.swift; sourceTree = "<group>"; };
 		F6343E7823CA1BBD0084FC60 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
+		F6343E7B23CA74AD0084FC60 /* EventCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCoreData.swift; sourceTree = "<group>"; };
 		F64D20232364B9FB003BBE52 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F64D20272364FA35003BBE52 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		F65D1CD22389722C0021179F /* EventCreationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreationInteractor.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 		CA8DBF5523550DDA00A1641B /* ipar */ = {
 			isa = PBXGroup;
 			children = (
+				F6343E7A23CA72290084FC60 /* CoreData */,
 				F6343E6B23C923980084FC60 /* Event */,
 				F6343E5723C7DB7B0084FC60 /* EventsSearch */,
 				F678672C23C27B51008080A2 /* Place */,
@@ -530,6 +533,14 @@
 				F6343E6F23C923D00084FC60 /* EventViewController.swift */,
 			);
 			path = Event;
+			sourceTree = "<group>";
+		};
+		F6343E7A23CA72290084FC60 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F6343E7B23CA74AD0084FC60 /* EventCoreData.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		F64D20252364F9D2003BBE52 /* Utils */ = {
@@ -860,6 +871,7 @@
 				F620F0A22363CBD8006EDE9B /* AuthRouter.swift in Sources */,
 				F6168035237B67F5000B54C5 /* MapSearchViewController.swift in Sources */,
 				F6343E7323C923D00084FC60 /* EventProtocols.swift in Sources */,
+				F6343E7C23CA74AD0084FC60 /* EventCoreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
