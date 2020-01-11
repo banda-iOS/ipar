@@ -116,13 +116,22 @@ extension EventsSearchViewController: UITableViewDelegate, UITableViewDataSource
         cell.distanceToEventLabel.text = ""
 //        TODO: Localize
         cell.eventTimeLabel.text = "from to"
-        let url = URL(string: "https://russiatrek.org/images/photo/vladimir-city-assumption-cathedral.jpg")
-        cell.eventImageView.kf.setImage(with: url)
+        if  let images = event.images,
+            images.count > 0{
+            cell.eventImageView.kf.setImage(with: URL(string: staticUrlAddress + images[0]))
+        } else {
+            cell.eventImageView.kf.setImage(with: URL(string: "https://russiatrek.org/images/photo/vladimir-city-assumption-cathedral.jpg"))
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.eventCellWasSelectedWith(indexPathRow: indexPath.row)
     }
     
 

@@ -32,6 +32,8 @@ class EventCreationInteractor: EventCreationInteractorProtocol {
             switch response.result {
             case .success(_):
                 if let data = response.data {
+                    print(String(data: data, encoding: .utf8))
+
                     do {
                         let event: Event = try JSONDecoder().decode(Event.self, from: data)
                         self.event = event

@@ -81,6 +81,13 @@
 		F6343E6623C7DE750084FC60 /* EventsSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E6423C7DE750084FC60 /* EventsSearchTableViewCell.swift */; };
 		F6343E6723C7DE750084FC60 /* EventsSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6343E6523C7DE750084FC60 /* EventsSearchTableViewCell.xib */; };
 		F6343E6A23C897520084FC60 /* EventsSearchParamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E6923C897520084FC60 /* EventsSearchParamsView.swift */; };
+		F6343E7223C923D00084FC60 /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E6C23C923D00084FC60 /* EventPresenter.swift */; };
+		F6343E7323C923D00084FC60 /* EventProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E6D23C923D00084FC60 /* EventProtocols.swift */; };
+		F6343E7423C923D00084FC60 /* EventRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E6E23C923D00084FC60 /* EventRouter.swift */; };
+		F6343E7523C923D00084FC60 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E6F23C923D00084FC60 /* EventViewController.swift */; };
+		F6343E7623C923D00084FC60 /* EventInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E7023C923D00084FC60 /* EventInteractor.swift */; };
+		F6343E7723C923D00084FC60 /* EventConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E7123C923D00084FC60 /* EventConfigurator.swift */; };
+		F6343E7923CA1BBD0084FC60 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6343E7823CA1BBD0084FC60 /* Role.swift */; };
 		F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D20232364B9FB003BBE52 /* SignUpViewController.swift */; };
 		F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D20272364FA35003BBE52 /* HTTPRequest.swift */; };
 		F65D1CD82389722C0021179F /* EventCreationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D1CD22389722C0021179F /* EventCreationInteractor.swift */; };
@@ -210,6 +217,13 @@
 		F6343E6423C7DE750084FC60 /* EventsSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsSearchTableViewCell.swift; sourceTree = "<group>"; };
 		F6343E6523C7DE750084FC60 /* EventsSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsSearchTableViewCell.xib; sourceTree = "<group>"; };
 		F6343E6923C897520084FC60 /* EventsSearchParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsSearchParamsView.swift; sourceTree = "<group>"; };
+		F6343E6C23C923D00084FC60 /* EventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
+		F6343E6D23C923D00084FC60 /* EventProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventProtocols.swift; sourceTree = "<group>"; };
+		F6343E6E23C923D00084FC60 /* EventRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRouter.swift; sourceTree = "<group>"; };
+		F6343E6F23C923D00084FC60 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		F6343E7023C923D00084FC60 /* EventInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInteractor.swift; sourceTree = "<group>"; };
+		F6343E7123C923D00084FC60 /* EventConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventConfigurator.swift; sourceTree = "<group>"; };
+		F6343E7823CA1BBD0084FC60 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		F64D20232364B9FB003BBE52 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F64D20272364FA35003BBE52 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		F65D1CD22389722C0021179F /* EventCreationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreationInteractor.swift; sourceTree = "<group>"; };
@@ -301,6 +315,7 @@
 		CA8DBF5523550DDA00A1641B /* ipar */ = {
 			isa = PBXGroup;
 			children = (
+				F6343E6B23C923980084FC60 /* Event */,
 				F6343E5723C7DB7B0084FC60 /* EventsSearch */,
 				F678672C23C27B51008080A2 /* Place */,
 				F615811A23BD6F75009D8542 /* PlacesSearch */,
@@ -477,6 +492,7 @@
 				F61242C32368DF5100C18009 /* LoginUser.swift */,
 				02ED7A0F2372AE6A00D69DB0 /* HTTPError.swift */,
 				F6168039237DA5C8000B54C5 /* Place.swift */,
+				F6343E7823CA1BBD0084FC60 /* Role.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -501,6 +517,19 @@
 				F6343E6923C897520084FC60 /* EventsSearchParamsView.swift */,
 			);
 			path = EventsSearchParamsView;
+			sourceTree = "<group>";
+		};
+		F6343E6B23C923980084FC60 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				F6343E7123C923D00084FC60 /* EventConfigurator.swift */,
+				F6343E7023C923D00084FC60 /* EventInteractor.swift */,
+				F6343E6C23C923D00084FC60 /* EventPresenter.swift */,
+				F6343E6D23C923D00084FC60 /* EventProtocols.swift */,
+				F6343E6E23C923D00084FC60 /* EventRouter.swift */,
+				F6343E6F23C923D00084FC60 /* EventViewController.swift */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 		F64D20252364F9D2003BBE52 /* Utils */ = {
@@ -738,7 +767,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F615812223BD6FC8009D8542 /* PlacesSearchRouter.swift in Sources */,
+				F6343E7623C923D00084FC60 /* EventInteractor.swift in Sources */,
 				F65D1CF023912A8C0021179F /* String.swift in Sources */,
+				F6343E7523C923D00084FC60 /* EventViewController.swift in Sources */,
 				F616803C237DB468000B54C5 /* MKPlacemark.swift in Sources */,
 				F61242C9236F50DF00C18009 /* Encodable.swift in Sources */,
 				F620F0A92364ACBA006EDE9B /* SignUpPresenter.swift in Sources */,
@@ -786,6 +817,7 @@
 				F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */,
 				F61242B92368DA0300C18009 /* LoginProtocols.swift in Sources */,
 				F678673523C27B67008080A2 /* PlaceConfigurator.swift in Sources */,
+				F6343E7223C923D00084FC60 /* EventPresenter.swift in Sources */,
 				F6343E6223C7DB940084FC60 /* EventsSearchProtocols.swift in Sources */,
 				F65D1CD82389722C0021179F /* EventCreationInteractor.swift in Sources */,
 				F61680272378BC87000B54C5 /* PlaceCreationInteractor.swift in Sources */,
@@ -795,6 +827,7 @@
 				F65D1CDD2389722C0021179F /* EventCreationViewController.swift in Sources */,
 				F675B29123C3F411005DC9CE /* PlacesView.swift in Sources */,
 				F678673323C27B67008080A2 /* PlaceInteractor.swift in Sources */,
+				F6343E7923CA1BBD0084FC60 /* Role.swift in Sources */,
 				F61242DB23719EE100C18009 /* MeTableViewCell.swift in Sources */,
 				02ED7A102372AE6A00D69DB0 /* HTTPError.swift in Sources */,
 				F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */,
@@ -811,10 +844,12 @@
 				F620F0B02364ACFC006EDE9B /* User.swift in Sources */,
 				F615812123BD6FC8009D8542 /* PlacesSearchConfigurator.swift in Sources */,
 				F615812423BD6FC8009D8542 /* PlacesSearchInteractor.swift in Sources */,
+				F6343E7723C923D00084FC60 /* EventConfigurator.swift in Sources */,
 				F61242D62370CD7E00C18009 /* MeViewController.swift in Sources */,
 				F61680282378BC87000B54C5 /* PlaceCreationViewController.swift in Sources */,
 				F620F09C2363C4D0006EDE9B /* AuthProtocols.swift in Sources */,
 				F678672823C0046A008080A2 /* UIColor.swift in Sources */,
+				F6343E7423C923D00084FC60 /* EventRouter.swift in Sources */,
 				F65D1CE3238C2B680021179F /* TimeViewController.swift in Sources */,
 				F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */,
 				F65D1CDA2389722C0021179F /* EventCreationConfigurator.swift in Sources */,
@@ -824,6 +859,7 @@
 				F620F0AB2364ACC9006EDE9B /* SignUpInteractor.swift in Sources */,
 				F620F0A22363CBD8006EDE9B /* AuthRouter.swift in Sources */,
 				F6168035237B67F5000B54C5 /* MapSearchViewController.swift in Sources */,
+				F6343E7323C923D00084FC60 /* EventProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

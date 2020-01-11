@@ -121,8 +121,14 @@ extension PlacesSearchViewController: UITableViewDelegate, UITableViewDataSource
         guard let placeName = place.name, let placeAddress = place.address else {return cell}
         cell.placeTitleLabel.text = "\(placeName)"
         cell.placeAddressLabel.text = "\(placeAddress)"
-        let url = URL(string: "https://russiatrek.org/images/photo/vladimir-city-assumption-cathedral.jpg")
-        cell.placeImageView.kf.setImage(with: url)
+        if let images = place.images,
+            images.count > 0 {
+            cell.placeImageView.kf.setImage(with: URL(string: staticUrlAddress + images[0]))
+        } else {
+            cell.placeImageView.kf.setImage(with: URL(string: "https://russiatrek.org/images/photo/vladimir-city-assumption-cathedral.jpg"))
+        }
+        
+        
         return cell
     }
     

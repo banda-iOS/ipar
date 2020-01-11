@@ -9,10 +9,10 @@
 import Foundation
 import Alamofire
 
-let urlAddress = "http://localhost:8080/"
-let staticUrlAddress = "http://localhost:8081/"
-//let urlAddress = "http://82.146.62.124:8080/"
-//let staticUrlAddress = "http://82.146.62.124:8081/"
+//let urlAddress = "http://localhost:8080/"
+//let staticUrlAddress = "http://localhost:8081/"
+let urlAddress = "http://82.146.62.124:8080/"
+let staticUrlAddress = "http://82.146.62.124:8081/"
 
 
 func uploadData(path: String, method: HTTPMethod, data: Encodable?, callback: @escaping((DataResponse<Any>?)->Void)){
@@ -73,5 +73,14 @@ func getData(byPath path: String, callback: @escaping((Data)->Void)) -> DataRequ
        }
     
     return request
+}
+
+func put(byPath path: String, callback: @escaping((Data)->Void)) -> DataRequest {
+    let request = Alamofire.SessionManager.default.request(urlAddress + path, method: .put).response { (responseData) in
+           if let data = responseData.data {
+                callback(data)
+           }
+       }
     
+    return request
 }

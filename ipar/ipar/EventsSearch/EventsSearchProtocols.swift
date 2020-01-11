@@ -3,7 +3,7 @@ import Foundation
 import CoreLocation
 import UIKit
 
-protocol EventsSearchViewProtocol: class{
+protocol EventsSearchViewProtocol: UIViewController {
     var presenter: EventsSearchPresenterProtocol! { get set }
    
     func reloadData()
@@ -29,6 +29,8 @@ protocol EventsSearchPresenterProtocol: class {
     
     func setLocationToInteractor(_ location: CLLocationCoordinate2D)
     func updateFields(_ fields: EventsSearchFields)
+    
+    func eventCellWasSelectedWith(indexPathRow: Int)
 }
 
 
@@ -42,6 +44,6 @@ protocol EventsSearchInteractorProtocol: class {
 }
 	
 protocol EventsSearchRouterProtocol: class {
-
+    func goToEventViewController(vc: EventsSearchViewProtocol, event: Event)
 }
 

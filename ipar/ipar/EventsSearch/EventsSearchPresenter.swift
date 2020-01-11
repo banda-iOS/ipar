@@ -4,7 +4,6 @@ import CoreLocation
 
 class EventsSearchPresenter: EventsSearchPresenterProtocol {
     
-    
     required init(view: EventsSearchViewProtocol) {
        self.view = view
     }
@@ -46,6 +45,9 @@ class EventsSearchPresenter: EventsSearchPresenterProtocol {
         interactor.updateFields(fields)
     }
     
-    
+    func eventCellWasSelectedWith(indexPathRow index: Int) {
+        let event = self.events[index]
+        router.goToEventViewController(vc: view, event: event)
+    }
 }
 
