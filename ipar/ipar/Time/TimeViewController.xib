@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimeViewController" customModule="ipar" customModuleProvider="target">
+            <connections>
+                <outlet property="datePicker" destination="Vbf-cY-QRV" id="ksZ-Yw-qYd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hzk-gs-392">
+                    <rect key="frame" x="0.0" y="124" width="320" height="320"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2g-Ch-crU">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nG-4y-2tl">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.9098039269" green="0.32941177490000001" blue="0.21960784489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="4nG-4y-2tl" firstAttribute="top" secondItem="L2g-Ch-crU" secondAttribute="top" id="44t-js-rf4"/>
+                                <constraint firstAttribute="height" constant="50" id="Plb-sf-w0I"/>
+                                <constraint firstAttribute="bottom" secondItem="4nG-4y-2tl" secondAttribute="bottom" id="ceU-SJ-Z2R"/>
+                                <constraint firstAttribute="trailing" secondItem="4nG-4y-2tl" secondAttribute="trailing" id="dmU-QK-V2h"/>
+                                <constraint firstItem="4nG-4y-2tl" firstAttribute="leading" secondItem="L2g-Ch-crU" secondAttribute="leading" id="uwO-af-weL"/>
+                            </constraints>
+                        </view>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Vbf-cY-QRV">
+                            <rect key="frame" x="0.0" y="90" width="320" height="162"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="162" id="UGl-Av-w2B"/>
+                            </constraints>
+                        </datePicker>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhU-13-e2H">
+                            <rect key="frame" x="0.0" y="252" width="320" height="68"/>
+                            <state key="normal" title="Save time"/>
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="-1" eventType="touchUpInside" id="87M-SM-y5d"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="mhU-13-e2H" firstAttribute="leading" secondItem="Hzk-gs-392" secondAttribute="leading" id="3qd-x5-axm"/>
+                        <constraint firstItem="Vbf-cY-QRV" firstAttribute="leading" secondItem="Hzk-gs-392" secondAttribute="leading" id="8Ad-1W-a0Z"/>
+                        <constraint firstAttribute="bottom" secondItem="mhU-13-e2H" secondAttribute="bottom" id="9vS-bJ-sEj"/>
+                        <constraint firstAttribute="height" constant="320" id="DOV-lS-FCe"/>
+                        <constraint firstAttribute="trailing" secondItem="Vbf-cY-QRV" secondAttribute="trailing" id="IIy-7z-2ZO"/>
+                        <constraint firstAttribute="width" constant="320" id="QNr-2x-trS"/>
+                        <constraint firstItem="Vbf-cY-QRV" firstAttribute="top" secondItem="L2g-Ch-crU" secondAttribute="bottom" constant="40" id="RsB-SO-mop"/>
+                        <constraint firstItem="L2g-Ch-crU" firstAttribute="leading" secondItem="Hzk-gs-392" secondAttribute="leading" id="gSS-LP-3Xy"/>
+                        <constraint firstItem="L2g-Ch-crU" firstAttribute="top" secondItem="Hzk-gs-392" secondAttribute="top" id="hlS-Fg-fAd"/>
+                        <constraint firstItem="mhU-13-e2H" firstAttribute="top" secondItem="Vbf-cY-QRV" secondAttribute="bottom" id="t9d-a8-iUU"/>
+                        <constraint firstAttribute="trailing" secondItem="L2g-Ch-crU" secondAttribute="trailing" id="vtb-Z1-yxl"/>
+                        <constraint firstAttribute="trailing" secondItem="mhU-13-e2H" secondAttribute="trailing" id="yph-vg-gnP"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Hzk-gs-392" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="IzW-d8-HBX"/>
+                <constraint firstItem="Hzk-gs-392" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Nvz-EV-e0x"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.75" y="140.49295774647888"/>
+        </view>
+    </objects>
+</document>

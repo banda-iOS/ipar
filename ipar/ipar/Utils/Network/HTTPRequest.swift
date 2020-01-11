@@ -62,14 +62,25 @@ func getImage(byPath path: String, callback: @escaping((UIImage)->Void)) {
             }
         }
     }
-    print("something went wrong")
+   
 }
 
-func getData(byPath path: String, callback: @escaping((Data)->Void)) {
-    request(urlAddress + path, method: .get).response { (responseData) in
+func getData(byPath path: String, callback: @escaping((Data)->Void)) -> DataRequest {
+    let request = Alamofire.SessionManager.default.request(urlAddress + path, method: .get).response { (responseData) in
            if let data = responseData.data {
                 callback(data)
            }
        }
-    print("something went wrong")
+    
+    return request
+}
+
+func put(byPath path: String, callback: @escaping((Data)->Void)) -> DataRequest {
+    let request = Alamofire.SessionManager.default.request(urlAddress + path, method: .put).response { (responseData) in
+           if let data = responseData.data {
+                callback(data)
+           }
+       }
+    
+    return request
 }

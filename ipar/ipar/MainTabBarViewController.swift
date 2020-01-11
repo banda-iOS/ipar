@@ -17,9 +17,9 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tabBar.barTintColor = UIColor(red: 232.0/255, green: 67.0/255, blue: 66.0/255, alpha: 1.0)
+        self.tabBar.barTintColor = .backgroundRed
         self.tabBar.tintColor = .white
-        self.tabBar.unselectedItemTintColor = UIColor(red: 51.0/255, green: 51.0/255, blue: 51.0/255, alpha: 1.0)
+        self.tabBar.unselectedItemTintColor = .addPhotoColor
         
         if getSession() != nil {
             viewControllers = createMainTBControllerForAuthorized()
@@ -39,9 +39,10 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate
         homeViewController.tabBarItem = UITabBarItem(title: NSLocalizedString("Home", comment: "MainPage tab"), image: unselectedHomeImage, selectedImage: selectedHomeImage)
         tabViewControllers.append(homeViewController)
        
-        let searchViewController = UIViewController()
-        searchViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
-        tabViewControllers.append(searchViewController)
+        let searchViewController = EventsSearchViewController()
+        let searchNavigationVC = UINavigationController(rootViewController: searchViewController)
+        searchNavigationVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
+        tabViewControllers.append(searchNavigationVC)
         
         return tabViewControllers
     }
@@ -101,6 +102,7 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate
     }
     
     private func addCentralButton() {
+        
         let buttonImage = UIImage(named: "unselectedAddButton")?.resizeImage(targetSize: CGSize(width: 40.0, height: 40.0))
         let highlightImage = UIImage(named: "selectedAddButton")?.resizeImage(targetSize: CGSize(width: 40.0, height: 40.0))
         if let buttonImage = buttonImage {
