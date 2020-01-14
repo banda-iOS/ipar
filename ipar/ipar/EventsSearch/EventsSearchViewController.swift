@@ -60,6 +60,7 @@ class EventsSearchViewController: UIViewController, EventsSearchViewProtocol  {
         }
         
         eventsSearchParamsView.createFields()
+        eventsSearchParamsView.button.addTarget(self, action: #selector(objchideOrShowEventsSearchParamsView), for: .touchUpInside)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -82,7 +83,12 @@ class EventsSearchViewController: UIViewController, EventsSearchViewProtocol  {
         }
     }
     
+    @objc func objchideOrShowEventsSearchParamsView() {
+        hideOrShowEventsSearchParamsView()
+    }
+    
     func hideOrShowEventsSearchParamsView() {
+        view.endEditing(true)
         if self.eventsSearchParamsView.isHidden {
             filterButton.setImage(UIImage(named: "selectedFilterButton")?.resizeImage(targetSize: CGSize(width: 40.0, height: 40.0)), for: .normal)
             UIView.transition(with: view, duration: 0.5, options: .transitionCurlDown, animations: {
@@ -104,6 +110,7 @@ class EventsSearchViewController: UIViewController, EventsSearchViewProtocol  {
     
     func reloadData() {
         eventsTableView.reloadData()
+        eventsSearchParamsView.setEventsCount(presenter.getEventsCount())
     }
 }
 

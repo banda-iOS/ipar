@@ -267,6 +267,4 @@ extension EventViewController: PlacesViewDelegate {
         let arVC = ARViewController(place: place)
         present(arVC, animated: true, completion: nil)
     }
-    
-    
 }
