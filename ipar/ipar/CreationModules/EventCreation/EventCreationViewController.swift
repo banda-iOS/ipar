@@ -194,7 +194,7 @@ class EventCreationViewController: UIViewController, IndicatorInfoProvider  {
     }
     
     private func presentImagePicker() {
-        imagePicker.allowsEditing = true
+        imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
                 
         present(imagePicker, animated: true, completion: nil)

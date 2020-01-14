@@ -145,7 +145,9 @@ class PlacesView: UIView {
         for (i, placeView) in placesViews.enumerated() {
             if i == index {
                 placeView.wasSelected()
-                descriptionTextView.text = places[index].description
+                self.descriptionTextView.fadeTransition(0.4)
+                self.descriptionTextView.text = self.places[index].comment?.count ?? 0 > 0 ? self.places[index].comment : self.places[index].description
+                
                 self.selectPin(withIndex: index)
             } else {
                 placeView.wasUnselected()

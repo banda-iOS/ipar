@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tC-XX-aLV">
-                    <rect key="frame" x="0.0" y="68" width="320" height="250"/>
+                    <rect key="frame" x="0.0" y="20" width="320" height="250"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Q5-en-A4O">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -60,7 +60,6 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="140" id="vZI-RK-jzl"/>
                             </constraints>
-                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                             <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -93,7 +92,7 @@
             <constraints>
                 <constraint firstItem="9tC-XX-aLV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JGK-hj-rTv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9tC-XX-aLV" secondAttribute="trailing" id="MEf-fr-wmZ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9tC-XX-aLV" secondAttribute="bottom" constant="250" id="mmS-QX-OrN"/>
+                <constraint firstItem="9tC-XX-aLV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="mSN-ae-oGz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="147"/>

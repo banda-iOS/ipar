@@ -47,9 +47,23 @@ class ARViewController: UIViewController {
         }
     }
     
+    private func format(distance: CLLocationDistance) -> String {
+        return String(format: "%.2f km away", distance / 1000)
+    }
+    
     func addViewWithMyPosition(myLocation: CLLocationCoordinate2D) {
-        let landmarkLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 75, height: 20))
-        landmarkLabel.text = "GUM"
+        let landmarkLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
+        
+        let from = CLLocation(latitude: myLocation.latitude, longitude: myLocation.longitude)
+        let to = CLLocation(latitude: place.latitude, longitude: place.longitude)
+        
+        landmarkLabel.text = "(\(format(distance: from.distance(from: to) ))km) \(place.name ?? "hello world")"
+        landmarkLabel.textAlignment = .center
+        landmarkLabel.backgroundColor = .backgroundRed
+//        let landmarkARView = ARView(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+//        landmarkARView.setFields()
+//        landmarkARView.placeLabel.text = place.name
+        
         let location = CLLocation(coordinate: CLLocationCoordinate2D(latitude: self.place.latitude, longitude: self.place.longitude), altitude: 30, horizontalAccuracy: 5, verticalAccuracy: 5, timestamp: Date())
         landmarker.addLandmark(view: landmarkLabel, at: location, completion: nil)
     }

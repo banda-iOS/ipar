@@ -92,7 +92,7 @@ class PlaceCellView: UIView {
             addressLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2),
         ])
         
-        if !ARConfiguration.isSupported {
+        if ARConfiguration.isSupported {
             self.addSubview(arButton)
             NSLayoutConstraint.activate([
                 arButton.leadingAnchor.constraint(equalTo: addressLabel.trailingAnchor, constant: 10),
