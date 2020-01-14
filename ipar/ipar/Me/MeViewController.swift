@@ -137,6 +137,7 @@ class MeViewController: UIViewController, MeViewProtocol {
 extension MeViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectAllRows()
         switch indexPath.section {
         case 0:
             switch indexPath.row {

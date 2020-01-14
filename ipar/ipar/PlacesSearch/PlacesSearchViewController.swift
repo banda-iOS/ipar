@@ -69,6 +69,7 @@ class PlacesSearchViewController: UIViewController, PlacesSearchViewProtocol  {
         presenter.setLocationToInteractor(locValue)
         
         placesSearchParamsView.createFields()
+        placesSearchParamsView.button.addTarget(self, action: #selector(objchideOrShowPlacesSearchParamsView), for: .touchUpInside)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -92,7 +93,12 @@ class PlacesSearchViewController: UIViewController, PlacesSearchViewProtocol  {
         self.hideOrShowPlacesSearchParamsView()
     }
     
+    @objc func objchideOrShowPlacesSearchParamsView() {
+        hideOrShowPlacesSearchParamsView()
+    }
+    
     func hideOrShowPlacesSearchParamsView() {
+        view.endEditing(true)
         if self.placesSearchParamsView.isHidden {
             filterButton.setImage(UIImage(named: "selectedFilterButton")?.resizeImage(targetSize: CGSize(width: 40.0, height: 40.0)), for: .normal)
             UIView.transition(with: view, duration: 0.5, options: .transitionCurlDown, animations: {
@@ -109,6 +115,7 @@ class PlacesSearchViewController: UIViewController, PlacesSearchViewProtocol  {
     
     func reloadData() {
         self.placesTableView.reloadData()
+        placesSearchParamsView.setPlacesCount(presenter.getPlacesCount())
     }
 }
 
