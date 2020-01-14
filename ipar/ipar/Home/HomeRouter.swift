@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class HomeRouter: HomeRouterProtocol {
-
-
+    func goToEventViewController(vc: HomeViewProtocol, event: Event) {
+        let eventVC = EventViewController(event: event)
+        vc.navigationController?.pushViewController(eventVC, animated: true)
+    }
 } 

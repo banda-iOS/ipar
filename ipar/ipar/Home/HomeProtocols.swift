@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-protocol HomeViewProtocol: class {
+protocol HomeViewProtocol: UIViewController {
     var presenter: HomePresenterProtocol! { get set }
 
     func eventsLoaded(events: [Event])
@@ -27,6 +28,8 @@ protocol HomePresenterProtocol: class {
     func getEvents()
     func gettingEventsFinishedWithSuccess(events: [Event])
     func gettingEventsFinishedWithError(message: String)
+    func set(events: [Event])
+    func eventCellWasSelectedWith(indexPathRow: Int)
 }
 
 protocol HomeInteractorProtocol: class {
@@ -36,5 +39,5 @@ protocol HomeInteractorProtocol: class {
 }
 
 protocol HomeRouterProtocol: class {
-
+    func goToEventViewController(vc: HomeViewProtocol, event: Event)
 }

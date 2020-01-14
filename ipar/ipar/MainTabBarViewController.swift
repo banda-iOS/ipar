@@ -34,10 +34,12 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate
         var tabViewControllers = [UIViewController]()
                
         let homeViewController = HomeViewController()
+        let homeNavigationVC = UINavigationController(rootViewController: homeViewController)
+        
         let unselectedHomeImage = UIImage(named: "unselectedHome")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
         let selectedHomeImage = UIImage(named: "selectedHome")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
-        homeViewController.tabBarItem = UITabBarItem(title: NSLocalizedString("Home", comment: "MainPage tab"), image: unselectedHomeImage, selectedImage: selectedHomeImage)
-        tabViewControllers.append(homeViewController)
+        homeNavigationVC.tabBarItem = UITabBarItem(title: NSLocalizedString("Home", comment: "MainPage tab"), image: unselectedHomeImage, selectedImage: selectedHomeImage)
+        tabViewControllers.append(homeNavigationVC)
        
         let searchViewController = EventsSearchViewController()
         let searchNavigationVC = UINavigationController(rootViewController: searchViewController)

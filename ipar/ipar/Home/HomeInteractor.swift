@@ -26,6 +26,7 @@ class HomeInteractor: HomeInteractorProtocol {
         do {
             let events: [Event] = try JSONDecoder().decode([Event].self, from: data)
             presenter.gettingEventsFinishedWithSuccess(events: events)
+            presenter.set(events: events)
         } catch {
 
             do {

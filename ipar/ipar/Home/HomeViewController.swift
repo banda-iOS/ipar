@@ -23,11 +23,13 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     var presenter: HomePresenterProtocol!
     let configurator: HomeConfiguratorProtocol = HomeConfigurator()
     var events = [Event]()
+    
+    private let numberOfColumns = 2
 
     let titleLabel: UILabel = {
         let label =  UILabel()
-        label.text = "МЕРОПРИЯТИЯ"
-        label.font = UIFont(name:"Helvetica Neue", size: 32)
+        label.text = "Популярное"
+        label.font = UIFont(name:"HelveticaNeue-Bold", size: 34)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -47,10 +49,10 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         }
 
         self.view.addSubview(self.titleLabel)
-        self.titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
+        self.titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
         self.titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         self.titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        self.titleLabel.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        self.titleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         if #available(iOS 12.0, *) {
             if self.traitCollection.userInterfaceStyle == .dark {
                 titleLabel.textColor = .white
@@ -65,6 +67,16 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         presenter.getEvents()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     private func setupCollection() {
 
         self.view.addSubview(collectionView)
@@ -75,9 +87,9 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         collectionView.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 40).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        collectionView.heightAnchor.constraint(equalToConstant: 400).isActive = true
-
-        collectionView.contentInset = .zero
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        collectionView.showsHorizontalScrollIndicator = false
     }
     
     func eventsLoaded(events: [Event]) {
@@ -93,8 +105,9 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
         UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.size.width - 20) / 3
-        return CGSize(width: width, height: width)
+        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / CGFloat(numberOfColumns)
+        let height = itemSize * 1.2
+        return CGSize(width: itemSize, height: height)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -104,6 +117,10 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         let event = events[indexPath.item]
         cell.update(title: event.name, imageLink: event.images![0])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.eventCellWasSelectedWith(indexPathRow: indexPath.row)
     }
 }
 
