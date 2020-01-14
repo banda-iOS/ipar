@@ -117,6 +117,7 @@
 		F678676023C3E2C2008080A2 /* AddCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F678675E23C3E2C2008080A2 /* AddCommentViewController.xib */; };
 		F6928F0823BEB41F00661BDF /* PlacesSearchParamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6928F0723BEB41F00661BDF /* PlacesSearchParamsView.swift */; };
 		F6928F0A23BFF91300661BDF /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6928F0923BFF91300661BDF /* UIStackView.swift */; };
+		F6B2ECE823CB253F00A2B846 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B2ECE723CB253F00A2B846 /* ARViewController.swift */; };
 		F6D218EE23C4D28000DE708A /* BindableGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D218ED23C4D28000DE708A /* BindableGestureRecognizer.swift */; };
 		F6D218F023C4DF9700DE708A /* PlacesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D218EF23C4DF9700DE708A /* PlacesCellView.swift */; };
 		F6D218F223C4F0CA00DE708A /* CustomPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D218F123C4F0CA00DE708A /* CustomPin.swift */; };
@@ -254,6 +255,7 @@
 		F678675E23C3E2C2008080A2 /* AddCommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AddCommentViewController.xib; path = ipar/Place/AddComment/AddCommentViewController.xib; sourceTree = SOURCE_ROOT; };
 		F6928F0723BEB41F00661BDF /* PlacesSearchParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesSearchParamsView.swift; sourceTree = "<group>"; };
 		F6928F0923BFF91300661BDF /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		F6B2ECE723CB253F00A2B846 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		F6D218ED23C4D28000DE708A /* BindableGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableGestureRecognizer.swift; sourceTree = "<group>"; };
 		F6D218EF23C4DF9700DE708A /* PlacesCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCellView.swift; sourceTree = "<group>"; };
 		F6D218F123C4F0CA00DE708A /* CustomPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPin.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 		CA8DBF5523550DDA00A1641B /* ipar */ = {
 			isa = PBXGroup;
 			children = (
+				F6B2ECE623CB252F00A2B846 /* AR */,
 				F6343E7A23CA72290084FC60 /* CoreData */,
 				F6343E6B23C923980084FC60 /* Event */,
 				F6343E5723C7DB7B0084FC60 /* EventsSearch */,
@@ -635,6 +638,14 @@
 			path = PlacesSearchParamsView;
 			sourceTree = "<group>";
 		};
+		F6B2ECE623CB252F00A2B846 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				F6B2ECE723CB253F00A2B846 /* ARViewController.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -751,6 +762,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ARCoreLocation/ARCoreLocation.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -760,6 +772,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARCoreLocation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -863,6 +876,7 @@
 				F6343E7423C923D00084FC60 /* EventRouter.swift in Sources */,
 				F65D1CE3238C2B680021179F /* TimeViewController.swift in Sources */,
 				F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */,
+				F6B2ECE823CB253F00A2B846 /* ARViewController.swift in Sources */,
 				F65D1CDA2389722C0021179F /* EventCreationConfigurator.swift in Sources */,
 				F678673823C27B67008080A2 /* PlacePresenter.swift in Sources */,
 				F616806C237EF9CB000B54C5 /* PhotoCollectionViewCell.swift in Sources */,
@@ -1087,7 +1101,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F6VA36V9B3;
 				INFOPLIST_FILE = ipar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1107,7 +1121,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F6VA36V9B3;
 				INFOPLIST_FILE = ipar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

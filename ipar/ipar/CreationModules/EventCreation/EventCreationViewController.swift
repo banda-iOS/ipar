@@ -190,6 +190,7 @@ class EventCreationViewController: UIViewController, IndicatorInfoProvider  {
        
         
         placesView = PlacesView(frame: CGRect(x: 0, y: addPlaceButton.frame.maxY + 20, width: self.view.frame.width, height: 505.0))
+        placesView.delegate = self
     }
     
     private func presentImagePicker() {
@@ -455,6 +456,15 @@ extension EventCreationViewController: UIImagePickerControllerDelegate, UINaviga
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+}
+
+extension EventCreationViewController: PlacesViewDelegate {
+    func openPlaceInAR(_ place: Place) {
+        let arVC = ARViewController(place: place)
+        present(arVC, animated: true, completion: nil)
+    }
+    
+    
 }
 
 

@@ -34,7 +34,7 @@ class EventsSearchViewController: UIViewController, EventsSearchViewProtocol  {
            eventsTableView.topAnchor.constraint(equalTo: self.view.topAnchor),
            eventsTableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
            eventsTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-           eventsTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+           eventsTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
            ])
     }
     

@@ -9,7 +9,13 @@
 import UIKit
 import MapKit
 
+protocol PlacesViewDelegate: class {
+    func openPlaceInAR(_ place: Place)
+}
+
 class PlacesView: UIView {
+    weak var delegate: PlacesViewDelegate?
+    
     fileprivate let placesScrollView: UIScrollView = {
         let v = UIScrollView()
         v.translatesAutoresizingMaskIntoConstraints = false
@@ -92,6 +98,8 @@ class PlacesView: UIView {
             }
             
             placeView.createFields(place: place, i: i+1)
+            placeView.arButton.addTarget(self, action: #selector(arButtonPressed), for: .touchUpInside)
+            placeView.arButton.tag = i
         }
         
         self.addSubview(descriptionTextView)
@@ -124,6 +132,13 @@ class PlacesView: UIView {
         
         selectPlaceWith(index: 0)
         
+    }
+    
+    @objc func arButtonPressed(sender:UIButton) {
+        let place = self.places[sender.tag]
+        print("hey ar")
+        print(place)
+        self.delegate?.openPlaceInAR(place)
     }
     
     func selectPlaceWith(index: Int) {

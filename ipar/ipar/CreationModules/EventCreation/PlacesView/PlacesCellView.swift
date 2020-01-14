@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ARKit
 
 class PlaceCellView: UIView {
     let numLabel: UILabel = {
@@ -37,6 +38,24 @@ class PlaceCellView: UIView {
         return addressLabel
     }()
     
+    let arButton: UIButton = {
+        let arButton = UIButton()
+        arButton.setTitle("AR", for: .normal)
+        arButton.setTitleColor(.backgroundRed, for: .normal)
+        arButton.layer.cornerRadius = 20.0
+        arButton.layer.borderColor = UIColor.backgroundRed.cgColor
+        arButton.layer.borderWidth = 3
+        
+        arButton.titleLabel?.font = UIFont(name:"HelveticaNeue-Bold", size: 20.0)
+        arButton.titleLabel?.textAlignment = .center
+        
+        arButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        
+        return arButton
+    }()
+    
     func addDefaultSettings() {
         self.layer.cornerRadius = 5
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -58,7 +77,7 @@ class PlaceCellView: UIView {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: numLabel.trailingAnchor, constant: 10),
             titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            titleLabel.heightAnchor.constraint(equalToConstant: 20),
+            titleLabel.heightAnchor.constraint(equalToConstant: 23),
         ])
         
         if let name = place.name {
@@ -69,14 +88,33 @@ class PlaceCellView: UIView {
 
         NSLayoutConstraint.activate([
             addressLabel.leadingAnchor.constraint(equalTo: numLabel.trailingAnchor, constant: 10),
-            addressLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            addressLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+//            addressLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            addressLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2),
         ])
+        
+        if !ARConfiguration.isSupported {
+            self.addSubview(arButton)
+            NSLayoutConstraint.activate([
+                arButton.leadingAnchor.constraint(equalTo: addressLabel.trailingAnchor, constant: 10),
+                arButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+                arButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+                arButton.heightAnchor.constraint(equalToConstant: 40),
+                arButton.widthAnchor.constraint(equalToConstant: 40),
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                addressLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            ])
+        }
         
         if let address = place.address {
             addressLabel.text = address
         }
+        
+       
     }
+    
+    
     
     func wasSelected() {
         if #available(iOS 13.0, *) {
