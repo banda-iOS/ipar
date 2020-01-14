@@ -94,10 +94,42 @@ class MeViewController: UIViewController, MeViewProtocol {
     }
      
     @IBAction func avatarImageButtonPressed(_ sender: Any) {
-        imagePicker.allowsEditing = true
-        imagePicker.sourceType = .photoLibrary
-                
-        present(imagePicker, animated: true, completion: nil)
+//        imagePicker.allowsEditing = true
+//        imagePicker.sourceType = .photoLibrary
+//
+//        present(imagePicker, animated: true, completion: nil)
+        let alert = UIAlertController(title: NSLocalizedString("Choose Image", comment: "Choose image title"), message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Camera", comment: "Camera button"), style: .default, handler: { _ in
+            self.openCamera()
+        }))
+
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Gallery", comment: "Gallery button"), style: .default, handler: { _ in
+            self.openGallery()
+        }))
+
+        alert.addAction(UIAlertAction.init(title: NSLocalizedString("Cancel", comment: "Cancel button"), style: .cancel, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func openCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func openGallery() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        }
     }
     
 }

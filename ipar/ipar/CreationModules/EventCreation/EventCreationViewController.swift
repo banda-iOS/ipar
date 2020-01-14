@@ -194,10 +194,42 @@ class EventCreationViewController: UIViewController, IndicatorInfoProvider  {
     }
     
     private func presentImagePicker() {
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
-                
-        present(imagePicker, animated: true, completion: nil)
+//        imagePicker.allowsEditing = false
+//        imagePicker.sourceType = .photoLibrary
+//
+//        present(imagePicker, animated: true, completion: nil)
+        let alert = UIAlertController(title: NSLocalizedString("Choose Image", comment: "Choose image title"), message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Camera", comment: "Camera button"), style: .default, handler: { _ in
+            self.openCamera()
+        }))
+
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Gallery", comment: "Gallery button"), style: .default, handler: { _ in
+            self.openGallery()
+        }))
+
+        alert.addAction(UIAlertAction.init(title: NSLocalizedString("Cancel", comment: "Cancel button"), style: .cancel, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func openCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func openGallery() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        }
     }
     
     @objc func saveEventButtonPressed() {
@@ -444,7 +476,7 @@ extension EventCreationViewController: UICollectionViewDelegateFlowLayout, UICol
 extension EventCreationViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             images.insert(pickedImage, at: 0)
             presenter.newImagePicked(pickedImage)
         }
