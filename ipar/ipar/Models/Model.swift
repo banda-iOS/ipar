@@ -180,6 +180,43 @@ class RealmManager {
         return serializeEvent(result)
     }
     
+    func getDirectoryPath() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
+    func createDirectory(){
+        let fileManager = FileManager.default
+        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("images")
+        if !fileManager.fileExists(atPath: paths){
+            do {
+                try fileManager.createDirectory(atPath: paths, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                print("Couldn't create document directory")
+            }
+        }else{
+            print("Already directory created.")
+        }
+    }
+    
+    func saveImageToDocumentDirectory(_ url: String) {
+        let fileManager = FileManager.default
+        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(url)
+        let image = UIImage(named: url)
+        let imageData = image!.jpegData(compressionQuality: 0.5)
+        fileManager.createFile(atPath: paths as String, contents: imageData, attributes: nil)
+    }
+    
+    func getImage(imageName : String)-> UIImage?{
+            let fileManager = FileManager.default
+            let imagePath = (self.getDirectoryPath() as NSString).appendingPathComponent(imageName)
+            if fileManager.fileExists(atPath: imagePath){
+                return UIImage(contentsOfFile: imagePath)!
+            }else{
+                return nil
+            }
+        }
     func getAllEvents() -> [Event] {
         let realm = try! Realm()
         
