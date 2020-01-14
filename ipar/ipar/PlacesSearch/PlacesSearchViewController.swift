@@ -67,15 +67,17 @@ class PlacesSearchViewController: UIViewController, PlacesSearchViewProtocol  {
         
         guard let locValue: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { return }
         presenter.setLocationToInteractor(locValue)
+        
+        placesSearchParamsView.createFields()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        placesSearchParamsView = PlacesSearchParamsView(frame: CGRect(x: 0, y: self.navigationController?.navigationBar.frame.size.height ?? 0, width: self.view.frame.width, height: self.view.frame.height - (self.navigationController?.navigationBar.frame.size.height ?? 0)))
+        placesSearchParamsView.frame = CGRect(x: 0, y: self.navigationController?.navigationBar.frame.size.height ?? 0, width: self.view.frame.width, height: self.view.frame.height - (self.navigationController?.navigationBar.frame.size.height ?? 0))
         placesSearchParamsView.delegate = self
         placesSearchParamsView.isHidden = true
-        placesSearchParamsView.createFields()
+        
         view.addSubview(placesSearchParamsView)
     }
     
