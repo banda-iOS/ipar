@@ -65,8 +65,6 @@ class EventsSearchViewController: UIViewController, EventsSearchViewProtocol  {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        print("12345678")
-        print(self.navigationController?.navigationBar.frame.size.height ?? 0)
         let frame = CGRect(x: 0, y: (self.navigationController?.navigationBar.frame.size.height ?? 0), width: self.view.frame.width, height: self.view.frame.height - (self.navigationController?.navigationBar.frame.size.height ?? 0))
 //        eventsSearchParamsView = EventsSearchParamsView(frame: CGRect(x: 0, y: (self.navigationController?.navigationBar.frame.size.height ?? 0), width: self.view.frame.width, height: self.view.frame.height - (self.navigationController?.navigationBar.frame.size.height ?? 0)))
         eventsSearchParamsView.frame = frame

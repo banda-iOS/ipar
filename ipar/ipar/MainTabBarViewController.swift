@@ -57,10 +57,10 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate
     }
     
     private func createEventsViewController() -> UIViewController {
-        let myEventsViewController = UIViewController()
-        myEventsViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 3)
+        let myEventsNavigationVC = UINavigationController(rootViewController: MyEventsViewController())
+        myEventsNavigationVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 3)
         
-        return myEventsViewController
+        return myEventsNavigationVC
     }
     
     private func createMeViewController() -> UIViewController {
