@@ -175,13 +175,22 @@ class RealmManager {
     func getEvent(_ id: Int) -> Event{
         let realm = try! Realm()
         
-        let results2 = realm.objects(EventModel.self)
-        
-        print(results2)
-        
         let result = realm.objects(EventModel.self).filter("id == %@ ", id)[0]
         
         return serializeEvent(result)
+    }
+    
+    func getAllEvents() -> [Event] {
+        let realm = try! Realm()
+        
+        let results = realm.objects(EventModel.self)
+        var allEvents = [Event]()
+        
+        for event in results {
+            allEvents.append(serializeEvent(event))
+        }
+        
+        return allEvents
     }
     
     func serializeUser(_ userCache: UserModel?) -> User? {

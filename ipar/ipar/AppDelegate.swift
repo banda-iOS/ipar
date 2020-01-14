@@ -32,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        RealmManager.shared.cacheEvent(event2)
 //        print(RealmManager.shared.getEvent(14).id)
         
+//        print(RealmManager.shared.getAllEvents())
+        
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let homeViewController = MainTabBarViewController()
