@@ -33,7 +33,7 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate
     private func createDefaultControllers() -> [UIViewController] {
         var tabViewControllers = [UIViewController]()
                
-        let homeViewController = UIViewController()
+        let homeViewController = HomeViewController()
         let unselectedHomeImage = UIImage(named: "unselectedHome")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
         let selectedHomeImage = UIImage(named: "selectedHome")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
         homeViewController.tabBarItem = UITabBarItem(title: NSLocalizedString("Home", comment: "MainPage tab"), image: unselectedHomeImage, selectedImage: selectedHomeImage)

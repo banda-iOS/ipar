@@ -11,7 +11,7 @@ DEPENDENCIES:
   - XLPagerTabStrip (~> 9.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - KeychainSwift
     - Kingfisher
@@ -25,4 +25,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: a90484fe38a57d91924694c3fedd35580d691f18
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
