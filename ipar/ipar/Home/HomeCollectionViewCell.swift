@@ -46,12 +46,19 @@ class HomeCollectionViewCell: UICollectionViewCell {
         homeCellDate.font = UIFont.systemFont(ofSize: 12)
         homeCellDate.textColor = .white
         homeCellDateView.backgroundColor = .backgroundRed
-        homeCellImageView.contentMode = .scaleToFill
+        homeCellImageView.contentMode = .scaleAspectFill
     }
 
-    public func update(title: String, imageLink: String) {
-        homeCellImageView.kf.setImage(with: URL(string: "http://82.146.62.124:8081/" + imageLink))
+    public func update(title: String, imageLink: String?, distance: String?) {
+        if let imageLink = imageLink {
+            homeCellImageView.kf.setImage(with: URL(string: staticUrlAddress + imageLink))
+        }
         homeCellLabel.text = title
-        homeCellDate.text = "Сегодня 14 января" // TODO: сделать удаленность
+        if let distance = distance {
+            homeCellDate.text = distance
+        } else {
+            homeCellDate.text = ""
+        }
+         // TODO: сделать удаленность
     }
 }
