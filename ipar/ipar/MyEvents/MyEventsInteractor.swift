@@ -27,8 +27,20 @@ class MyEventsInteractor: MyEventsInteractorProtocol {
             let events: [Event] = try JSONDecoder().decode([Event].self, from: data)
             presenter.set(events: events)
             DispatchQueue.global(qos: .background).async {
+                
+                
                 for event in events {
-                    RealmManager.shared.cacheEvent(event)
+                    let existedEvents = RealmManager.shared.getAllEvents()
+                    var exists = false
+                    for existedEvent in existedEvents {
+                        if existedEvent.id == event.id {
+                            exists = true
+                        }
+                    }
+                    if !exists {
+                        RealmManager.shared.cacheEvent(event)
+                    }
+                    
                 }
             }
         } catch {
