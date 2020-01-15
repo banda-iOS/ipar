@@ -26,12 +26,11 @@ class MyEventsInteractor: MyEventsInteractorProtocol {
         do {
             let events: [Event] = try JSONDecoder().decode([Event].self, from: data)
             presenter.set(events: events)
-            DispatchQueue.global(qos: .background).async {
-                for event in events {
-                    RealmManager.shared.cacheEvent(event)
-                }
-                
-            }
+//            DispatchQueue.global(qos: .background).async {
+//                for event in events {
+//                    RealmManager.shared.cacheEvent(event)
+//                }
+//            }
         } catch {
               do {
                 let error: HTTPError = try JSONDecoder().decode(HTTPError.self, from: data)
