@@ -18,7 +18,7 @@ class HomeInteractor: HomeInteractorProtocol {
        }
     
     func getEvents() {
-        getData(byPath: "events?distance=610.448&latitude=59.884681&longitude=33.458177&from=2020-01-08T02:09:13.000Z&to=2020-01-29T02:09:22.000Z", callback: eventsCallback(data:))
+        getData(byPath: "events/popular", callback: eventsCallback(data:))
     }
 
 //    func eventsCallback(response: DataResponse<Any>?) {
