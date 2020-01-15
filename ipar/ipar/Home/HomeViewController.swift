@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class HomeViewController: UIViewController, HomeViewProtocol {
     
@@ -23,6 +24,9 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     var presenter: HomePresenterProtocol!
     let configurator: HomeConfiguratorProtocol = HomeConfigurator()
     var events = [Event]()
+    
+    let locationManager = CLLocationManager()
+    var myLocation: CLLocationCoordinate2D?
     
     private let numberOfColumns = 2
 
@@ -47,6 +51,14 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         } else {
             self.view.backgroundColor = .white
         }
+        
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
 
         self.view.addSubview(self.titleLabel)
         self.titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
@@ -64,7 +76,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         }
 
         self.setupCollection()
-        presenter.getEvents()
+//        presenter.getEvents()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,6 +108,10 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         self.events = events
         self.collectionView.reloadData()
     }
+    
+    private func format(distance: CLLocationDistance) -> String {
+        return String(format: "%.2f", distance / 1000)
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -115,12 +131,44 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
             fatalError("Wrong cell")
         }
         let event = events[indexPath.item]
-        cell.update(title: event.name, imageLink: event.images![0])
+        let place = events[indexPath.item].places[0]
+        
+        if let location = myLocation {
+            let from = CLLocation(latitude: location.latitude, longitude: location.longitude)
+            let to = CLLocation(latitude: place.latitude, longitude: place.longitude)
+            let distance = "\(format(distance: from.distance(from: to) )) km"
+            if let images = event.images, images.count > 0 {
+                cell.update(title: event.name, imageLink: images[0], distance: distance)
+            } else {
+                cell.update(title: event.name, imageLink: nil, distance: distance)
+            }
+        } else {
+            if let images = event.images, images.count > 0 {
+                cell.update(title: event.name, imageLink: images[0], distance: nil)
+            } else {
+                cell.update(title: event.name, imageLink: nil, distance: nil)
+            }
+        }
+       
+       
+        
+        
+        
+       
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter.eventCellWasSelectedWith(indexPathRow: indexPath.row)
+    }
+}
+
+extension HomeViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        myLocation = locValue
+        presenter.getEvents()
+        self.locationManager.stopUpdatingLocation()
     }
 }
 
