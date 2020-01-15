@@ -112,6 +112,8 @@
 		F6715F1523CE856B00A9F9A7 /* MyEventsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6715F0F23CE856B00A9F9A7 /* MyEventsPresenter.swift */; };
 		F6715F1623CE856B00A9F9A7 /* MyEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6715F1023CE856B00A9F9A7 /* MyEventsInteractor.swift */; };
 		F6715F1723CE856B00A9F9A7 /* MyEventsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6715F1123CE856B00A9F9A7 /* MyEventsRouter.swift */; };
+		F6715F1A23CE8F5B00A9F9A7 /* ListLandmarksItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6715F1823CE8F5B00A9F9A7 /* ListLandmarksItem.swift */; };
+		F6715F1B23CE8F5B00A9F9A7 /* ListLandmarksItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6715F1923CE8F5B00A9F9A7 /* ListLandmarksItem.xib */; };
 		F675B29123C3F411005DC9CE /* PlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F675B29023C3F411005DC9CE /* PlacesView.swift */; };
 		F678672823C0046A008080A2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678672723C0046A008080A2 /* UIColor.swift */; };
 		F678672B23C0F7AB008080A2 /* HashtagsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678672A23C0F7AB008080A2 /* HashtagsParser.swift */; };
@@ -258,6 +260,8 @@
 		F6715F0F23CE856B00A9F9A7 /* MyEventsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventsPresenter.swift; sourceTree = "<group>"; };
 		F6715F1023CE856B00A9F9A7 /* MyEventsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventsInteractor.swift; sourceTree = "<group>"; };
 		F6715F1123CE856B00A9F9A7 /* MyEventsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventsRouter.swift; sourceTree = "<group>"; };
+		F6715F1823CE8F5B00A9F9A7 /* ListLandmarksItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListLandmarksItem.swift; sourceTree = "<group>"; };
+		F6715F1923CE8F5B00A9F9A7 /* ListLandmarksItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListLandmarksItem.xib; path = ipar/AR/ListLandmarksItem.xib; sourceTree = SOURCE_ROOT; };
 		F675B29023C3F411005DC9CE /* PlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesView.swift; sourceTree = "<group>"; };
 		F678672723C0046A008080A2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		F678672A23C0F7AB008080A2 /* HashtagsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsParser.swift; sourceTree = "<group>"; };
@@ -672,6 +676,8 @@
 		F6B2ECE623CB252F00A2B846 /* AR */ = {
 			isa = PBXGroup;
 			children = (
+				F6715F1823CE8F5B00A9F9A7 /* ListLandmarksItem.swift */,
+				F6715F1923CE8F5B00A9F9A7 /* ListLandmarksItem.xib */,
 				F6B2ECE723CB253F00A2B846 /* ARViewController.swift */,
 				F6715F0723CDF14600A9F9A7 /* ARView.swift */,
 			);
@@ -748,6 +754,7 @@
 				F616806B237EF9CB000B54C5 /* AddPhotoCollectionViewCell.xib in Resources */,
 				F61680042375D575000B54C5 /* Me.storyboard in Resources */,
 				F616801A2376120C000B54C5 /* Localizable.strings in Resources */,
+				F6715F1B23CE8F5B00A9F9A7 /* ListLandmarksItem.xib in Resources */,
 				F678676023C3E2C2008080A2 /* AddCommentViewController.xib in Resources */,
 				F61CDC2E237F66400062BFD8 /* Creation.storyboard in Resources */,
 				F6343E6723C7DE750084FC60 /* EventsSearchTableViewCell.xib in Resources */,
@@ -888,6 +895,7 @@
 				F678673323C27B67008080A2 /* PlaceInteractor.swift in Sources */,
 				F6343E7923CA1BBD0084FC60 /* Role.swift in Sources */,
 				F61242DB23719EE100C18009 /* MeTableViewCell.swift in Sources */,
+				F6715F1A23CE8F5B00A9F9A7 /* ListLandmarksItem.swift in Sources */,
 				02ED7A102372AE6A00D69DB0 /* HTTPError.swift in Sources */,
 				F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */,
 				F6D218F023C4DF9700DE708A /* PlacesCellView.swift in Sources */,

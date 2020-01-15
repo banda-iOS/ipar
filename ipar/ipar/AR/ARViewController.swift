@@ -16,6 +16,9 @@ class ARViewController: UIViewController {
     let locationManager = CLLocationManager()
     let place: Place
     
+    var myLocation: CLLocationCoordinate2D?
+    var reusableMarker = ListLandmarksItem.fromNib()
+    
     var locationDidSet = false
     
     init(place: Place) {
@@ -57,22 +60,33 @@ class ARViewController: UIViewController {
         let from = CLLocation(latitude: myLocation.latitude, longitude: myLocation.longitude)
         let to = CLLocation(latitude: place.latitude, longitude: place.longitude)
         
-        landmarkLabel.text = "(\(format(distance: from.distance(from: to) ))km) \(place.name ?? "")"
-        view.invalidateIntrinsicContentSize()
-        landmarkLabel.textAlignment = .center
-        landmarkLabel.backgroundColor = .backgroundRed
+//        landmarkLabel.text = "(\(format(distance: from.distance(from: to) ))km) \(place.name ?? "")"
+//        view.invalidateIntrinsicContentSize()
+//        landmarkLabel.textAlignment = .center
+//        landmarkLabel.backgroundColor = .backgroundRed
 //        let landmarkARView = ARView(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
 //        landmarkARView.setFields()
 //        landmarkARView.placeLabel.text = place.name
+        let markView = reusableMarker
+        guard let name = place.name else {return }
+        markView.set(name: name, detail: "\(format(distance: from.distance(from: to) )) km")
         
         let location = CLLocation(coordinate: CLLocationCoordinate2D(latitude: self.place.latitude, longitude: self.place.longitude), altitude: 30, horizontalAccuracy: 5, verticalAccuracy: 5, timestamp: Date())
-        landmarker.addLandmark(view: landmarkLabel, at: location, completion: nil)
+        landmarker.addLandmark(view: markView, at: location, completion: nil)
     }
 }
 
 extension ARViewController: ARLandmarkerDelegate {
     func landmarkDisplayer(_ landmarkDisplayer: ARLandmarker, didFailWithError error: Error) {
         print("Failed! Error: \(error)")
+    }
+    
+    func landmarkDisplayer(_ landmarkDisplayer: ARLandmarker, willUpdate landmark: ARLandmark, for location: CLLocation) -> UIView? {
+        guard let name = place.name else {return nil}
+        let markView = reusableMarker
+        markView.set(name: name, detail: "\(format(distance: location.distance(from: landmark.location))) km")
+        
+        return markView
     }
     
     
@@ -84,7 +98,7 @@ extension ARViewController: CLLocationManagerDelegate {
         if !locationDidSet {
             self.addViewWithMyPosition(myLocation: locValue)
             locationDidSet = true
-            
+            myLocation = locValue
         }
         
     }
