@@ -121,9 +121,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
         UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / CGFloat(numberOfColumns)
-        let height = itemSize * 1.2
-        return CGSize(width: itemSize, height: height)
+//        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / CGFloat(numberOfColumns)
+//        let height = itemSize * 1.2
+        let itemSize = (collectionView.frame.height - (collectionView.contentInset.top + collectionView.contentInset.bottom + 10)) / CGFloat(numberOfColumns)
+        let width = itemSize * 0.8
+        return CGSize(width: width, height: itemSize)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -149,12 +151,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
                 cell.update(title: event.name, imageLink: nil, distance: nil)
             }
         }
-       
-       
-        
-        
-        
-       
+
         return cell
     }
     
