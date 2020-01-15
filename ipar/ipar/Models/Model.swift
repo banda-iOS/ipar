@@ -27,7 +27,7 @@ class EventModel: Object {
 }
 
 class PlaceModel: Object {
-    let id = RealmOptional<Int>()
+    @objc dynamic var id = 0
     @objc dynamic var address: String? = ""
     @objc dynamic var latitude: Double = 0.0
     @objc dynamic var longitude: Double = 0.0
@@ -112,7 +112,6 @@ class RealmManager {
         try! realm.write {
             realm.add(eventCache)
         }
-
         
     }
 
@@ -133,29 +132,41 @@ class RealmManager {
     }
     
     func createPlace(_ placeObj: Place) -> PlaceModel {
-        let place = PlaceModel()
+        let id = placeObj.id!
+        
+        let realm = try! Realm()
+        
+        let placeCaches = realm.objects(PlaceModel.self).filter("id ==  %@", id)
+        
+        if placeCaches.count == 0 {
+            let place = PlaceModel()
 
-        place.address = placeObj.address
-        place.longitude = placeObj.longitude
-        place.latitude = placeObj.latitude
-        place.name = placeObj.name
-        place.info = placeObj.description
-        
-        if let creator = placeObj.creator {
-            place.creator = self.createUser(creator)
-        }
-        if let hashtags = placeObj.hashtags {
-            for hashtag in hashtags {
-                place.hashtags.append(self.createHashtag(hashtag))
+            place.address = placeObj.address
+            place.longitude = placeObj.longitude
+            place.latitude = placeObj.latitude
+            place.name = placeObj.name
+            place.info = placeObj.description
+            place.id = id
+            
+            if let creator = placeObj.creator {
+                place.creator = self.createUser(creator)
             }
-        }
-        if let images = placeObj.images {
-            for image in images {
-                place.images.append(self.createImage(image))
+            if let hashtags = placeObj.hashtags {
+                for hashtag in hashtags {
+                    place.hashtags.append(self.createHashtag(hashtag))
+                }
             }
+            if let images = placeObj.images {
+                for image in images {
+                    place.images.append(self.createImage(image))
+                }
+            }
+            
+            return place
         }
         
-        return place
+        return placeCaches.first!
+        
     }
     
     func createImage(_ imageObj: String) -> ImageModel {
@@ -172,12 +183,12 @@ class RealmManager {
         return hashtag
     }
     
-    func getEvent(_ id: Int) -> Event{
+    func getEvent(_ id: Int) -> Event {
         let realm = try! Realm()
+    
+        let result = realm.objects(EventModel.self).filter("id == %@ ", id)
         
-        let result = realm.objects(EventModel.self).filter("id == %@ ", id)[0]
-        
-        return serializeEvent(result)
+        return serializeEvent(result.first!)
     }
     
     func getDirectoryPath() -> String {
@@ -217,6 +228,7 @@ class RealmManager {
                 return nil
             }
         }
+    
     func getAllEvents() -> [Event] {
         let realm = try! Realm()
         
@@ -255,12 +267,14 @@ class RealmManager {
             let user = serializeUser(place.creator)
             let hashtags = serializeHashtags(place.hashtags)
             let images = serializeImages(place.images)
-            let newPlace = Place(address: place.address ?? "", latitude: place.latitude, longitude: place.longitude, name: place.name, description: place.info, creator: user, hashtags: hashtags)
+            let newPlace = Place( address: place.address ?? "", latitude: place.latitude, longitude: place.longitude, name: place.name, description: place.info, creator: user, hashtags: hashtags)
             newPlace.images = images
+            newPlace.id = place.id
             
             placesObj.append(newPlace)
         }
-        return [Place]()
+        
+        return placesObj
     }
         
     func serializeImages(_ images: List<ImageModel>) -> [String]? {
@@ -272,11 +286,11 @@ class RealmManager {
     }
     
     func serializeEvent(_ event: EventModel) -> Event {
-        
+
         let user = serializeUser(event.creator)
         
         let eventObj = Event(id: event.id, name: event.name ?? "", description: event.info, creator: user, from: event.from, to: event.to)
-        
+
         eventObj.places = serializePlaces(event.places)
         eventObj.hashtags = serializeHashtags(event.hashtags)
         eventObj.images = serializeImages(event.images)
