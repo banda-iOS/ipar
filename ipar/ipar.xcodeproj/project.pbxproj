@@ -282,6 +282,14 @@
 		F6715F1823CE8F5B00A9F9A7 /* ListLandmarksItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListLandmarksItem.swift; sourceTree = "<group>"; };
 		F6715F1923CE8F5B00A9F9A7 /* ListLandmarksItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListLandmarksItem.xib; path = ipar/AR/ListLandmarksItem.xib; sourceTree = SOURCE_ROOT; };
 		F6715F1D23CF00BC00A9F9A7 /* Almofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Almofire.swift; sourceTree = "<group>"; };
+		F6715F1F23CF4A1F00A9F9A7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MapSearch.strings"; sourceTree = "<group>"; };
+		F6715F2023CF4A1F00A9F9A7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Creation.strings"; sourceTree = "<group>"; };
+		F6715F2123CF4A1F00A9F9A7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Me.strings"; sourceTree = "<group>"; };
+		F6715F2223CF4A1F00A9F9A7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LoginViewController.strings"; sourceTree = "<group>"; };
+		F6715F2323CF4A2000A9F9A7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AuthViewController.strings"; sourceTree = "<group>"; };
+		F6715F2423CF4A2000A9F9A7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SignUpViewController.strings"; sourceTree = "<group>"; };
+		F6715F2523CF4A2000A9F9A7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		F6715F2623CF4A2000A9F9A7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "../zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F675B29023C3F411005DC9CE /* PlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesView.swift; sourceTree = "<group>"; };
 		F678672723C0046A008080A2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		F678672A23C0F7AB008080A2 /* HashtagsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsParser.swift; sourceTree = "<group>"; };
@@ -784,6 +792,7 @@
 				Base,
 				ru,
 				"en-GB",
+				"zh-Hans",
 			);
 			mainGroup = CA8DBF4A23550DDA00A1641B;
 			productRefGroup = CA8DBF5423550DDA00A1641B /* Products */;
@@ -1014,6 +1023,7 @@
 				CA8DBF6223550DDB00A1641B /* Base */,
 				F61680032375D56F000B54C5 /* ru */,
 				F61CDC42237F678C0062BFD8 /* en-GB */,
+				F6715F2523CF4A2000A9F9A7 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1024,6 +1034,7 @@
 				F61680072375D59C000B54C5 /* Base */,
 				F61680082375D5A9000B54C5 /* ru */,
 				F61CDC3E237F678C0062BFD8 /* en-GB */,
+				F6715F2123CF4A1F00A9F9A7 /* zh-Hans */,
 			);
 			name = Me.storyboard;
 			sourceTree = "<group>";
@@ -1034,6 +1045,7 @@
 				F616800C2375D7F6000B54C5 /* Base */,
 				F616800D2375D803000B54C5 /* ru */,
 				F61CDC3F237F678C0062BFD8 /* en-GB */,
+				F6715F2223CF4A1F00A9F9A7 /* zh-Hans */,
 			);
 			name = LoginViewController.xib;
 			sourceTree = "<group>";
@@ -1044,6 +1056,7 @@
 				F61680112375D8E9000B54C5 /* Base */,
 				F61680122375D8F0000B54C5 /* ru */,
 				F61CDC40237F678C0062BFD8 /* en-GB */,
+				F6715F2323CF4A2000A9F9A7 /* zh-Hans */,
 			);
 			name = AuthViewController.xib;
 			sourceTree = "<group>";
@@ -1054,6 +1067,7 @@
 				F61680162375D945000B54C5 /* Base */,
 				F61680172375D957000B54C5 /* ru */,
 				F61CDC41237F678C0062BFD8 /* en-GB */,
+				F6715F2423CF4A2000A9F9A7 /* zh-Hans */,
 			);
 			name = SignUpViewController.xib;
 			sourceTree = SOURCE_ROOT;
@@ -1063,6 +1077,7 @@
 			children = (
 				F61680192376120C000B54C5 /* ru */,
 				F61CDC43237F678C0062BFD8 /* en-GB */,
+				F6715F2623CF4A2000A9F9A7 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1074,6 +1089,7 @@
 				F61CDC33237F66490062BFD8 /* en */,
 				F61CDC34237F66530062BFD8 /* ru */,
 				F61CDC3D237F678C0062BFD8 /* en-GB */,
+				F6715F2023CF4A1F00A9F9A7 /* zh-Hans */,
 			);
 			name = Creation.storyboard;
 			sourceTree = "<group>";
@@ -1085,6 +1101,7 @@
 				F61CDC3A237F66BD0062BFD8 /* en */,
 				F61CDC3B237F66C10062BFD8 /* ru */,
 				F61CDC3C237F678C0062BFD8 /* en-GB */,
+				F6715F1F23CF4A1F00A9F9A7 /* zh-Hans */,
 			);
 			name = MapSearch.storyboard;
 			path = ipar/CreationModules/PlaceCreation/MapSearch;
