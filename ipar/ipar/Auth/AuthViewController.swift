@@ -31,6 +31,16 @@ class AuthViewController: UIViewController, AuthViewProtocol, SignUpVCDelegate, 
         super.viewDidLoad()
         let configurator = AuthConfigurator()
         configurator.configure(with: self)
+        
+        signUpButton.translatesAutoresizingMaskIntoConstraints = false
+        signUpButton.layer.cornerRadius = 5
+        signUpButton.backgroundColor = .midnightGreen
+        signUpButton.clipsToBounds = true
+        
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        loginButton.layer.cornerRadius = 5
+        loginButton.backgroundColor = .midnightGreen
+        loginButton.clipsToBounds = true
     }
 
     @IBAction func signUpButtonPressed(_ sender: Any) {

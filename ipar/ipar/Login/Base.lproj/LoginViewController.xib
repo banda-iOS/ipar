@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="ipar" customModuleProvider="target">
             <connections>
+                <outlet property="loginButton" destination="oKA-Q5-ap9" id="6tK-IR-y4n"/>
                 <outlet property="loginTextField" destination="zuN-aw-91w" id="3Ff-2l-RTa"/>
                 <outlet property="passwordTextField" destination="WDG-00-4qa" id="n5a-OP-X4m"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -21,27 +22,29 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zuN-aw-91w">
-                    <rect key="frame" x="20" y="84" width="374" height="30"/>
+                    <rect key="frame" x="60" y="164" width="294" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="4TV-lG-OrZ"/>
+                        <constraint firstAttribute="height" constant="40" id="4TV-lG-OrZ"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WDG-00-4qa">
-                    <rect key="frame" x="20" y="134" width="374" height="30"/>
+                    <rect key="frame" x="60" y="224" width="294" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="FMU-h3-6YW"/>
+                        <constraint firstAttribute="height" constant="40" id="FMU-h3-6YW"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKA-Q5-ap9">
-                    <rect key="frame" x="188" y="204" width="38" height="30"/>
+                    <rect key="frame" x="60" y="304" width="294" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="akI-1U-ckH"/>
+                        <constraint firstAttribute="height" constant="40" id="akI-1U-ckH"/>
                     </constraints>
-                    <state key="normal" title="Login"/>
+                    <state key="normal" title="Login">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                     <connections>
                         <action selector="loginButtonPressed:" destination="-1" eventType="touchUpInside" id="lwr-bc-9Ek"/>
                     </connections>
@@ -50,12 +53,14 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="WDG-00-4qa" firstAttribute="top" secondItem="zuN-aw-91w" secondAttribute="bottom" constant="20" id="2GD-N2-O70"/>
-                <constraint firstItem="WDG-00-4qa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="BB3-yR-DIQ"/>
-                <constraint firstItem="zuN-aw-91w" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Nr7-BB-CCc"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zuN-aw-91w" secondAttribute="trailing" constant="20" id="Nx1-fE-EoS"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WDG-00-4qa" secondAttribute="trailing" constant="20" id="PIz-FB-5fu"/>
-                <constraint firstItem="zuN-aw-91w" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="WhI-mc-262"/>
+                <constraint firstItem="WDG-00-4qa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="BB3-yR-DIQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oKA-Q5-ap9" secondAttribute="trailing" constant="60" id="L1P-c5-eZI"/>
+                <constraint firstItem="zuN-aw-91w" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="Nr7-BB-CCc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zuN-aw-91w" secondAttribute="trailing" constant="60" id="Nx1-fE-EoS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WDG-00-4qa" secondAttribute="trailing" constant="60" id="PIz-FB-5fu"/>
+                <constraint firstItem="zuN-aw-91w" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="WhI-mc-262"/>
                 <constraint firstItem="oKA-Q5-ap9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="X9e-Nn-Uhd"/>
+                <constraint firstItem="oKA-Q5-ap9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="epF-HS-km5"/>
                 <constraint firstItem="oKA-Q5-ap9" firstAttribute="top" secondItem="WDG-00-4qa" secondAttribute="bottom" constant="40" id="ie4-L5-tz7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
