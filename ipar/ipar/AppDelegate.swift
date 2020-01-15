@@ -34,6 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        print(RealmManager.shared.getAllEvents())
         
+        if Connectivity.isConnectedToInternet {
+             print("Connected")
+         } else {
+             print("No Internet")
+        }
+        
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let homeViewController = MainTabBarViewController()
