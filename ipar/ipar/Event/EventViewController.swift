@@ -170,6 +170,7 @@ class EventViewController: UIViewController, EventViewProtocol  {
     
     override func viewDidAppear(_ animated: Bool) {
         placesView = PlacesView(frame: CGRect(x: 0, y: titleLabel.frame.maxY + 20, width: self.view.frame.width, height: 505.0))
+        placesView.delegate = self
         if !placesView.isDescendant(of: self.view) {
             scrollView.addSubview(placesView)
         }
@@ -258,5 +259,12 @@ extension EventViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         }
         
         return cell
+    }
+}
+
+extension EventViewController: PlacesViewDelegate {
+    func openPlaceInAR(_ place: Place) {
+        let arVC = ARViewController(place: place)
+        present(arVC, animated: true, completion: nil)
     }
 }

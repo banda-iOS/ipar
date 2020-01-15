@@ -22,7 +22,7 @@ func uploadData(path: String, method: HTTPMethod, data: Encodable?, callback: @e
         let jsonData = data.toJSONData()
         req.httpBody = jsonData
     }
-  
+    
     request(req).responseJSON { response in
         callback(response)
     }

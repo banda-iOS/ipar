@@ -67,15 +67,18 @@ class PlacesSearchViewController: UIViewController, PlacesSearchViewProtocol  {
         
         guard let locValue: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { return }
         presenter.setLocationToInteractor(locValue)
+        
+        placesSearchParamsView.createFields()
+        placesSearchParamsView.button.addTarget(self, action: #selector(objchideOrShowPlacesSearchParamsView), for: .touchUpInside)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        placesSearchParamsView = PlacesSearchParamsView(frame: CGRect(x: 0, y: self.navigationController?.navigationBar.frame.size.height ?? 0, width: self.view.frame.width, height: self.view.frame.height - (self.navigationController?.navigationBar.frame.size.height ?? 0)))
+        placesSearchParamsView.frame = CGRect(x: 0, y: self.navigationController?.navigationBar.frame.size.height ?? 0, width: self.view.frame.width, height: self.view.frame.height - (self.navigationController?.navigationBar.frame.size.height ?? 0))
         placesSearchParamsView.delegate = self
         placesSearchParamsView.isHidden = true
-        placesSearchParamsView.createFields()
+        
         view.addSubview(placesSearchParamsView)
     }
     
@@ -90,7 +93,12 @@ class PlacesSearchViewController: UIViewController, PlacesSearchViewProtocol  {
         self.hideOrShowPlacesSearchParamsView()
     }
     
+    @objc func objchideOrShowPlacesSearchParamsView() {
+        hideOrShowPlacesSearchParamsView()
+    }
+    
     func hideOrShowPlacesSearchParamsView() {
+        view.endEditing(true)
         if self.placesSearchParamsView.isHidden {
             filterButton.setImage(UIImage(named: "selectedFilterButton")?.resizeImage(targetSize: CGSize(width: 40.0, height: 40.0)), for: .normal)
             UIView.transition(with: view, duration: 0.5, options: .transitionCurlDown, animations: {
@@ -107,6 +115,7 @@ class PlacesSearchViewController: UIViewController, PlacesSearchViewProtocol  {
     
     func reloadData() {
         self.placesTableView.reloadData()
+        placesSearchParamsView.setPlacesCount(presenter.getPlacesCount())
     }
 }
 

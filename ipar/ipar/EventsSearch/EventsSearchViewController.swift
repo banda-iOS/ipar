@@ -34,7 +34,7 @@ class EventsSearchViewController: UIViewController, EventsSearchViewProtocol  {
            eventsTableView.topAnchor.constraint(equalTo: self.view.topAnchor),
            eventsTableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
            eventsTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-           eventsTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+           eventsTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
            ])
     }
     
@@ -58,16 +58,19 @@ class EventsSearchViewController: UIViewController, EventsSearchViewProtocol  {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        
+        eventsSearchParamsView.createFields()
+        eventsSearchParamsView.button.addTarget(self, action: #selector(objchideOrShowEventsSearchParamsView), for: .touchUpInside)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        print("12345678")
-        print(self.navigationController?.navigationBar.frame.size.height ?? 0)
-        eventsSearchParamsView = EventsSearchParamsView(frame: CGRect(x: 0, y: (self.navigationController?.navigationBar.frame.size.height ?? 0), width: self.view.frame.width, height: self.view.frame.height - (self.navigationController?.navigationBar.frame.size.height ?? 0)))
+        let frame = CGRect(x: 0, y: (self.navigationController?.navigationBar.frame.size.height ?? 0), width: self.view.frame.width, height: self.view.frame.height - (self.navigationController?.navigationBar.frame.size.height ?? 0))
+//        eventsSearchParamsView = EventsSearchParamsView(frame: CGRect(x: 0, y: (self.navigationController?.navigationBar.frame.size.height ?? 0), width: self.view.frame.width, height: self.view.frame.height - (self.navigationController?.navigationBar.frame.size.height ?? 0)))
+        eventsSearchParamsView.frame = frame
         eventsSearchParamsView.delegate = self
         eventsSearchParamsView.isHidden = true
-        eventsSearchParamsView.createFields()
+        
         view.addSubview(eventsSearchParamsView)
     }
     
@@ -78,7 +81,12 @@ class EventsSearchViewController: UIViewController, EventsSearchViewProtocol  {
         }
     }
     
+    @objc func objchideOrShowEventsSearchParamsView() {
+        hideOrShowEventsSearchParamsView()
+    }
+    
     func hideOrShowEventsSearchParamsView() {
+        view.endEditing(true)
         if self.eventsSearchParamsView.isHidden {
             filterButton.setImage(UIImage(named: "selectedFilterButton")?.resizeImage(targetSize: CGSize(width: 40.0, height: 40.0)), for: .normal)
             UIView.transition(with: view, duration: 0.5, options: .transitionCurlDown, animations: {
@@ -100,6 +108,7 @@ class EventsSearchViewController: UIViewController, EventsSearchViewProtocol  {
     
     func reloadData() {
         eventsTableView.reloadData()
+        eventsSearchParamsView.setEventsCount(presenter.getEventsCount())
     }
 }
 
