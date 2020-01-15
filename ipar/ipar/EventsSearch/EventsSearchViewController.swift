@@ -124,7 +124,7 @@ extension EventsSearchViewController: UITableViewDelegate, UITableViewDataSource
         cell.eventTitleLabel.text = event.name
         cell.distanceToEventLabel.text = ""
 //        TODO: Localize
-        cell.eventTimeLabel.text = "from to"
+        cell.eventTimeLabel.text = ""
         if  let images = event.images,
             images.count > 0{
             cell.eventImageView.kf.setImage(with: URL(string: staticUrlAddress + images[0]))

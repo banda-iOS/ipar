@@ -76,7 +76,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         }
 
         self.setupCollection()
-//        presenter.getEvents()
+        presenter.getEvents()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -162,7 +162,7 @@ extension HomeViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         myLocation = locValue
-        presenter.getEvents()
+//        presenter.getEvents()
         self.locationManager.stopUpdatingLocation()
     }
 }
