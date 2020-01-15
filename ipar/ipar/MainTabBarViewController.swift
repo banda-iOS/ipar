@@ -91,7 +91,7 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate
         tabViewControllers.append(createEventsViewController())
                 
         tabViewControllers.append(createMeViewController())
-
+        
         return tabViewControllers
     }
     
@@ -161,6 +161,7 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate
         viewControllers?.append(createMeViewController())
         addCentralButton()
         
+        self.selectedIndex = 0
     }
     
 //    MARK: функция, которая запускается, когда пользователь выходит
