@@ -6,4 +6,4 @@
 "oKA-Q5-ap9.normalTitle" = "Войти";
 
 /* Class = "UITextField"; placeholder = "Login"; ObjectID = "zuN-aw-91w"; */
-"zuN-aw-91w.placeholder" = "Логин";
+"zuN-aw-91w.placeholder" = "Email/Телефон";

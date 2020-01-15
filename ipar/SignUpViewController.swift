@@ -51,13 +51,50 @@ class SignUpViewController: UIViewController, SignUpViewProtocol {
     
     @IBOutlet private var errorTextView: UITextView!
     
+    @IBOutlet weak var signUpButton: UIButton!
+    
     weak var delegate: SignUpVCDelegate?
+    
+    let titleLabel: UILabel = {
+        let label =  UILabel()
+        label.text = "Регистрация"
+        label.font = UIFont(name: "HelveticaNeue-Bold", size: 34)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(with: self)
         
-        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
+        if #available(iOS 13.0, *) {
+            self.view.backgroundColor = .systemBackground
+        } else {
+            self.view.backgroundColor = .white
+        }
+        
+        self.scrollView.addSubview(self.titleLabel)
+        self.titleLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 30).isActive = true
+        self.titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        self.titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        self.titleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        if #available(iOS 12.0, *) {
+            if self.traitCollection.userInterfaceStyle == .dark {
+                self.titleLabel.textColor = .white
+            } else {
+                self.titleLabel.textColor = .black
+            }
+        } else {
+            self.titleLabel.textColor = .black
+        }
+        self.titleLabel.textAlignment = .center
+        
+        signUpButton.translatesAutoresizingMaskIntoConstraints = false
+        signUpButton.layer.cornerRadius = 5
+        signUpButton.backgroundColor = .midnightGreen
+        signUpButton.clipsToBounds = true
+        
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 100)
     }
     
     

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,21 +21,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHg-FI-YGt">
-                    <rect key="frame" x="30" y="94" width="354" height="30"/>
+                    <rect key="frame" x="60" y="144" width="294" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="6Mb-w5-XhV"/>
+                        <constraint firstAttribute="height" constant="40" id="6Mb-w5-XhV"/>
                     </constraints>
-                    <state key="normal" title="Sign Up"/>
+                    <state key="normal" title="Sign Up">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                     <connections>
                         <action selector="signUpButtonPressed:" destination="-1" eventType="touchUpInside" id="W3C-w0-3On"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzC-WK-3Ir">
-                    <rect key="frame" x="30" y="154" width="354" height="30"/>
+                    <rect key="frame" x="60" y="214" width="294" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="9Om-2E-Mlc"/>
+                        <constraint firstAttribute="height" constant="40" id="9Om-2E-Mlc"/>
                     </constraints>
-                    <state key="normal" title="Login"/>
+                    <state key="normal" title="Login">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                     <connections>
                         <action selector="loginButtonPressed:" destination="-1" eventType="touchUpInside" id="NKa-00-rIB"/>
                     </connections>
@@ -43,15 +47,15 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UzC-WK-3Ir" secondAttribute="trailing" constant="30" id="1eG-Q6-3XG"/>
-                <constraint firstItem="UzC-WK-3Ir" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="efc-zl-2Ua"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UzC-WK-3Ir" secondAttribute="trailing" constant="60" id="1eG-Q6-3XG"/>
+                <constraint firstItem="UzC-WK-3Ir" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="efc-zl-2Ua"/>
                 <constraint firstItem="UzC-WK-3Ir" firstAttribute="top" secondItem="rHg-FI-YGt" secondAttribute="bottom" constant="30" id="hYw-De-kUg"/>
-                <constraint firstItem="rHg-FI-YGt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="hen-P0-j3t"/>
-                <constraint firstItem="rHg-FI-YGt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="ldU-5V-dZc"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rHg-FI-YGt" secondAttribute="trailing" constant="30" id="ooe-SB-tgd"/>
+                <constraint firstItem="rHg-FI-YGt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="hen-P0-j3t"/>
+                <constraint firstItem="rHg-FI-YGt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="ldU-5V-dZc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rHg-FI-YGt" secondAttribute="trailing" constant="60" id="ooe-SB-tgd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="88" y="87"/>
+            <point key="canvasLocation" x="86.956521739130437" y="86.383928571428569"/>
         </view>
     </objects>
 </document>

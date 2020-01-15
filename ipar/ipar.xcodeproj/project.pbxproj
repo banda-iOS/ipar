@@ -831,6 +831,11 @@
 			files = (
 			);
 			inputFileListPaths = (
+
+				"${PODS_ROOT}/Target Support Files/Pods-ipar/Pods-ipar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			
+			
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh",
@@ -844,6 +849,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ipar/Pods-ipar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARCoreLocation.framework",
@@ -856,7 +862,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8AA868B737E094119B5551A1 /* [CP] Check Pods Manifest.lock */ = {
@@ -1215,15 +1221,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F6VA36V9B3;
+				DEVELOPMENT_TEAM = JJHZSQGURH;
 				INFOPLIST_FILE = ipar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.banda.ipar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banda.ipar1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1235,15 +1242,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F6VA36V9B3;
+				DEVELOPMENT_TEAM = JJHZSQGURH;
 				INFOPLIST_FILE = ipar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.banda.ipar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banda.ipar1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
