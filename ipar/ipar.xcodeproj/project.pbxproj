@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		026B263623CDF43A00ABBBC6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B263523CDF43A00ABBBC6 /* Model.swift */; };
 		02ED7A102372AE6A00D69DB0 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED7A0F2372AE6A00D69DB0 /* HTTPError.swift */; };
 		02FBA66B2370485C00CF0A23 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FBA66A2370485B00CF0A23 /* Validation.swift */; };
 		3E54DB9323CD1D1C0073AEEF /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54DB9123CD1D1C0073AEEF /* HomeCollectionViewCell.swift */; };
@@ -142,6 +143,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		026B263523CDF43A00ABBBC6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		02ED7A0F2372AE6A00D69DB0 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		02FBA66A2370485B00CF0A23 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		3E54DB9123CD1D1C0073AEEF /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -309,6 +311,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		026B263423CDF40400ABBBC6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				026B263523CDF43A00ABBBC6 /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		02FBA6692370480200CF0A23 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +381,7 @@
 		CA8DBF5523550DDA00A1641B /* ipar */ = {
 			isa = PBXGroup;
 			children = (
+				026B263423CDF40400ABBBC6 /* Models */,
 				F6715F0B23CE855600A9F9A7 /* MyEvents */,
 				F6B2ECE623CB252F00A2B846 /* AR */,
 				3E54DB8C23CD1BDB0073AEEF /* Home */,
@@ -849,6 +860,13 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
@@ -856,6 +874,12 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 				"$(DERIVED_FILE_DIR)/Pods-ipar-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -974,6 +998,7 @@
 				F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */,
 				F6B2ECE823CB253F00A2B846 /* ARViewController.swift in Sources */,
 				F65D1CDA2389722C0021179F /* EventCreationConfigurator.swift in Sources */,
+				026B263623CDF43A00ABBBC6 /* Model.swift in Sources */,
 				F678673823C27B67008080A2 /* PlacePresenter.swift in Sources */,
 				F616806C237EF9CB000B54C5 /* PhotoCollectionViewCell.swift in Sources */,
 				F65D1CE7238DD4760021179F /* TimeTableViewCell.swift in Sources */,
