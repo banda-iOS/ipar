@@ -27,6 +27,12 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>This app wants to take pictures.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Need for data</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Need for data</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Need for data</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app wants to use your photos.</string>
 	<key>UILaunchStoryboardName</key>
@@ -46,13 +52,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Need for data</string>
-
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>Need for data</string>
-
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>Need for data</string>
 </dict>
 </plist>

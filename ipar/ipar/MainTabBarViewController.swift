@@ -33,11 +33,13 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate
     private func createDefaultControllers() -> [UIViewController] {
         var tabViewControllers = [UIViewController]()
                
-        let homeViewController = UIViewController()
+        let homeViewController = HomeViewController()
+        let homeNavigationVC = UINavigationController(rootViewController: homeViewController)
+        
         let unselectedHomeImage = UIImage(named: "unselectedHome")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
         let selectedHomeImage = UIImage(named: "selectedHome")?.resizeImage(targetSize: CGSize(width: 30.0, height: 25.0))
-        homeViewController.tabBarItem = UITabBarItem(title: NSLocalizedString("Home", comment: "MainPage tab"), image: unselectedHomeImage, selectedImage: selectedHomeImage)
-        tabViewControllers.append(homeViewController)
+        homeNavigationVC.tabBarItem = UITabBarItem(title: NSLocalizedString("Home", comment: "MainPage tab"), image: unselectedHomeImage, selectedImage: selectedHomeImage)
+        tabViewControllers.append(homeNavigationVC)
        
         let searchViewController = EventsSearchViewController()
         let searchNavigationVC = UINavigationController(rootViewController: searchViewController)
@@ -57,10 +59,10 @@ class MainTabBarViewController: UITabBarController, AuthVCDelegate, MeVCDelegate
     }
     
     private func createEventsViewController() -> UIViewController {
-        let myEventsViewController = UIViewController()
-        myEventsViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 3)
+        let myEventsNavigationVC = UINavigationController(rootViewController: MyEventsViewController())
+        myEventsNavigationVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 3)
         
-        return myEventsViewController
+        return myEventsNavigationVC
     }
     
     private func createMeViewController() -> UIViewController {

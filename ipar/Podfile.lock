@@ -1,28 +1,42 @@
 PODS:
-  - Alamofire (4.9.0)
+  - Alamofire (4.9.1)
+  - ARCoreLocation (0.1.9)
   - KeychainSwift (17.0.0)
   - Kingfisher (4.10.1)
+  - Realm (4.3.0):
+    - Realm/Headers (= 4.3.0)
+  - Realm/Headers (4.3.0)
+  - RealmSwift (4.3.0):
+    - Realm (= 4.3.0)
   - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
   - Alamofire
+  - ARCoreLocation
   - KeychainSwift (~> 17.0)
   - Kingfisher (~> 4.0)
+  - RealmSwift
   - XLPagerTabStrip (~> 9.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
+    - ARCoreLocation
     - KeychainSwift
     - Kingfisher
+    - Realm
+    - RealmSwift
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
-  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  ARCoreLocation: 40055217f8339952689fae363f54a7f015088a83
   KeychainSwift: 9f43f562dffc88af6efadb57d74b14c598eb337f
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  Realm: 9357c3589555793e1860a7104a7412bca4a48d99
+  RealmSwift: 402f1e379a8ef82c635313037b043f0f06de880c
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: a90484fe38a57d91924694c3fedd35580d691f18
+PODFILE CHECKSUM: 879a7223ca0904bca02bad3808d4a4888c032080
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4

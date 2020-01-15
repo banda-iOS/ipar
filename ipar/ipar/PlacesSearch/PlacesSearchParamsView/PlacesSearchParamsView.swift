@@ -109,9 +109,18 @@ class PlacesSearchParamsView: UIView {
         return textField
     }()
     
+    let button: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 5
+        button.backgroundColor = .midnightGreen
+        button.clipsToBounds = true
+        return button
+    }()
+    
     func createFields() {
         
-        if UIScreen.main.nativeBounds.height < 1400 {
+        if UIScreen.main.nativeBounds.height < 4000 {
             self.addSubview(scrollView)
             scrollView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0.0).isActive = true
             scrollView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0.0).isActive = true
@@ -140,17 +149,18 @@ class PlacesSearchParamsView: UIView {
        
         distanceStackView.addBackground(color: .highlightBackground)
 
-        let stackView = UIStackView(arrangedSubviews: [distanceStackView, hashtagsTextField, nameField, wordsInDescriptionField, addressField])
+        let stackView = UIStackView(arrangedSubviews: [distanceStackView, hashtagsTextField, nameField, wordsInDescriptionField, addressField, button])
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
         stackView.alignment = .fill
         stackView.spacing = 5
         stackView.translatesAutoresizingMaskIntoConstraints = false
 
-        if UIScreen.main.nativeBounds.height < 1400 {
+        if UIScreen.main.nativeBounds.height < 4000 {
             scrollView.addSubview(stackView)
+            scrollView.showsVerticalScrollIndicator = false
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 50).isActive = true
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -200).isActive = true
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -250).isActive = true
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
         } else {
@@ -165,12 +175,20 @@ class PlacesSearchParamsView: UIView {
         distanceSlider.addTarget(self, action: #selector(sliderChangedValue), for: .touchUpInside)
         distanceField.addTarget(self, action: #selector(distanceFieldChangedValue), for: .editingDidEnd)
         
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        button.isHidden = true
+        
         //хэштег таргет
         nameField.addTarget(self, action: #selector(anyFieldChangedValue), for: .editingDidEnd)
         wordsInDescriptionField.addTarget(self, action: #selector(anyFieldChangedValue), for: .editingDidEnd)
         addressField.addTarget(self, action: #selector(anyFieldChangedValue), for: .editingDidEnd)
 
         
+    }
+    
+    func setPlacesCount(_ count: Int) {
+        button.isHidden = false
+        button.setTitle(NSLocalizedString("Number of places", comment: "Places number button")+": \(count)", for: .normal)
     }
     
     @objc func sliderChangedValue() {

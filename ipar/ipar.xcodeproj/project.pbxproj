@@ -7,12 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		026B263623CDF43A00ABBBC6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B263523CDF43A00ABBBC6 /* Model.swift */; };
 		02ED7A102372AE6A00D69DB0 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED7A0F2372AE6A00D69DB0 /* HTTPError.swift */; };
 		02FBA66B2370485C00CF0A23 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FBA66A2370485B00CF0A23 /* Validation.swift */; };
-		0FD6A2142BCA2FF33E377819 /* Pods_ipar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848CB93BAD9D2E3DC35D94F2 /* Pods_ipar.framework */; };
+		3E54DB9323CD1D1C0073AEEF /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54DB9123CD1D1C0073AEEF /* HomeCollectionViewCell.swift */; };
+		3E54DB9423CD1D1C0073AEEF /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E54DB9223CD1D1C0073AEEF /* HomeCollectionViewCell.xib */; };
+		3E54DB9623CD1D560073AEEF /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54DB9523CD1D560073AEEF /* HomeConfigurator.swift */; };
+		3E54DB9823CD1D7B0073AEEF /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54DB9723CD1D7A0073AEEF /* HomeInteractor.swift */; };
+		3E54DB9A23CD1DAD0073AEEF /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54DB9923CD1DAD0073AEEF /* HomePresenter.swift */; };
+		3E54DB9C23CD1DDB0073AEEF /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54DB9B23CD1DDB0073AEEF /* HomeProtocols.swift */; };
+		3E54DB9E23CD1DFA0073AEEF /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54DB9D23CD1DFA0073AEEF /* HomeRouter.swift */; };
+		3E54DBA023CD1E570073AEEF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54DB9F23CD1E570073AEEF /* HomeViewController.swift */; };
 		CA8DBF5723550DDA00A1641B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8DBF5623550DDA00A1641B /* AppDelegate.swift */; };
 		CA8DBF6023550DDB00A1641B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8DBF5F23550DDB00A1641B /* Assets.xcassets */; };
 		CA8DBF6323550DDB00A1641B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8DBF6123550DDB00A1641B /* LaunchScreen.storyboard */; };
+		D8F50BC69BD0E29AB7A97FAC /* Pods_ipar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C9736D01DB1983A975A008 /* Pods_ipar.framework */; };
 		F612426B2365E9E400C18009 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F612426A2365E9E400C18009 /* Keychain.swift */; };
 		F61242B22367306500C18009 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242B12367306500C18009 /* MainTabBarViewController.swift */; };
 		F61242B92368DA0300C18009 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61242B42368DA0300C18009 /* LoginProtocols.swift */; };
@@ -104,6 +113,17 @@
 		F65D1CEA238E54F30021179F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D1CE9238E54F30021179F /* Date.swift */; };
 		F65D1CEC238E6EF00021179F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D1CEB238E6EF00021179F /* Event.swift */; };
 		F65D1CF023912A8C0021179F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D1CEF23912A8C0021179F /* String.swift */; };
+		F6715F0823CDF14600A9F9A7 /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6715F0723CDF14600A9F9A7 /* ARView.swift */; };
+		F6715F0A23CE560900A9F9A7 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6715F0923CE560900A9F9A7 /* UIView.swift */; };
+		F6715F1223CE856B00A9F9A7 /* MyEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6715F0C23CE856B00A9F9A7 /* MyEventsViewController.swift */; };
+		F6715F1323CE856B00A9F9A7 /* MyEventsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6715F0D23CE856B00A9F9A7 /* MyEventsConfigurator.swift */; };
+		F6715F1423CE856B00A9F9A7 /* MyEventsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6715F0E23CE856B00A9F9A7 /* MyEventsProtocols.swift */; };
+		F6715F1523CE856B00A9F9A7 /* MyEventsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6715F0F23CE856B00A9F9A7 /* MyEventsPresenter.swift */; };
+		F6715F1623CE856B00A9F9A7 /* MyEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6715F1023CE856B00A9F9A7 /* MyEventsInteractor.swift */; };
+		F6715F1723CE856B00A9F9A7 /* MyEventsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6715F1123CE856B00A9F9A7 /* MyEventsRouter.swift */; };
+		F6715F1A23CE8F5B00A9F9A7 /* ListLandmarksItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6715F1823CE8F5B00A9F9A7 /* ListLandmarksItem.swift */; };
+		F6715F1B23CE8F5B00A9F9A7 /* ListLandmarksItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6715F1923CE8F5B00A9F9A7 /* ListLandmarksItem.xib */; };
+		F6715F1E23CF00BC00A9F9A7 /* Almofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6715F1D23CF00BC00A9F9A7 /* Almofire.swift */; };
 		F675B29123C3F411005DC9CE /* PlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F675B29023C3F411005DC9CE /* PlacesView.swift */; };
 		F678672823C0046A008080A2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678672723C0046A008080A2 /* UIColor.swift */; };
 		F678672B23C0F7AB008080A2 /* HashtagsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678672A23C0F7AB008080A2 /* HashtagsParser.swift */; };
@@ -117,22 +137,32 @@
 		F678676023C3E2C2008080A2 /* AddCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F678675E23C3E2C2008080A2 /* AddCommentViewController.xib */; };
 		F6928F0823BEB41F00661BDF /* PlacesSearchParamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6928F0723BEB41F00661BDF /* PlacesSearchParamsView.swift */; };
 		F6928F0A23BFF91300661BDF /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6928F0923BFF91300661BDF /* UIStackView.swift */; };
+		F6B2ECE823CB253F00A2B846 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B2ECE723CB253F00A2B846 /* ARViewController.swift */; };
 		F6D218EE23C4D28000DE708A /* BindableGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D218ED23C4D28000DE708A /* BindableGestureRecognizer.swift */; };
 		F6D218F023C4DF9700DE708A /* PlacesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D218EF23C4DF9700DE708A /* PlacesCellView.swift */; };
 		F6D218F223C4F0CA00DE708A /* CustomPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D218F123C4F0CA00DE708A /* CustomPin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		026B263523CDF43A00ABBBC6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		02ED7A0F2372AE6A00D69DB0 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		02FBA66A2370485B00CF0A23 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		079A4418A67D83FDB0029B6D /* Pods-ipar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ipar/Pods-ipar.debug.xcconfig"; sourceTree = "<group>"; };
-		848CB93BAD9D2E3DC35D94F2 /* Pods_ipar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ipar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E54DB9123CD1D1C0073AEEF /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		3E54DB9223CD1D1C0073AEEF /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		3E54DB9523CD1D560073AEEF /* HomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
+		3E54DB9723CD1D7A0073AEEF /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		3E54DB9923CD1DAD0073AEEF /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		3E54DB9B23CD1DDB0073AEEF /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		3E54DB9D23CD1DFA0073AEEF /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		3E54DB9F23CD1E570073AEEF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		444C1A5CBF4B5810F20A7552 /* Pods-ipar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ipar/Pods-ipar.debug.xcconfig"; sourceTree = "<group>"; };
+		7FA528CCC420BBBD9F80AB71 /* Pods-ipar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipar.release.xcconfig"; path = "Pods/Target Support Files/Pods-ipar/Pods-ipar.release.xcconfig"; sourceTree = "<group>"; };
+		A1C9736D01DB1983A975A008 /* Pods_ipar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ipar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8DBF5323550DDA00A1641B /* ipar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ipar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8DBF5623550DDA00A1641B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA8DBF5F23550DDB00A1641B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA8DBF6223550DDB00A1641B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA8DBF6423550DDB00A1641B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F39C205AE438D2316B34194F /* Pods-ipar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipar.release.xcconfig"; path = "Pods/Target Support Files/Pods-ipar/Pods-ipar.release.xcconfig"; sourceTree = "<group>"; };
 		F612426A2365E9E400C18009 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		F61242B12367306500C18009 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		F61242B42368DA0300C18009 /* LoginProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
@@ -241,6 +271,17 @@
 		F65D1CE9238E54F30021179F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		F65D1CEB238E6EF00021179F /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F65D1CEF23912A8C0021179F /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		F6715F0723CDF14600A9F9A7 /* ARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
+		F6715F0923CE560900A9F9A7 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		F6715F0C23CE856B00A9F9A7 /* MyEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventsViewController.swift; sourceTree = "<group>"; };
+		F6715F0D23CE856B00A9F9A7 /* MyEventsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventsConfigurator.swift; sourceTree = "<group>"; };
+		F6715F0E23CE856B00A9F9A7 /* MyEventsProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventsProtocols.swift; sourceTree = "<group>"; };
+		F6715F0F23CE856B00A9F9A7 /* MyEventsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventsPresenter.swift; sourceTree = "<group>"; };
+		F6715F1023CE856B00A9F9A7 /* MyEventsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventsInteractor.swift; sourceTree = "<group>"; };
+		F6715F1123CE856B00A9F9A7 /* MyEventsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventsRouter.swift; sourceTree = "<group>"; };
+		F6715F1823CE8F5B00A9F9A7 /* ListLandmarksItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListLandmarksItem.swift; sourceTree = "<group>"; };
+		F6715F1923CE8F5B00A9F9A7 /* ListLandmarksItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListLandmarksItem.xib; path = ipar/AR/ListLandmarksItem.xib; sourceTree = SOURCE_ROOT; };
+		F6715F1D23CF00BC00A9F9A7 /* Almofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Almofire.swift; sourceTree = "<group>"; };
 		F675B29023C3F411005DC9CE /* PlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesView.swift; sourceTree = "<group>"; };
 		F678672723C0046A008080A2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		F678672A23C0F7AB008080A2 /* HashtagsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsParser.swift; sourceTree = "<group>"; };
@@ -254,6 +295,7 @@
 		F678675E23C3E2C2008080A2 /* AddCommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AddCommentViewController.xib; path = ipar/Place/AddComment/AddCommentViewController.xib; sourceTree = SOURCE_ROOT; };
 		F6928F0723BEB41F00661BDF /* PlacesSearchParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesSearchParamsView.swift; sourceTree = "<group>"; };
 		F6928F0923BFF91300661BDF /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		F6B2ECE723CB253F00A2B846 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		F6D218ED23C4D28000DE708A /* BindableGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableGestureRecognizer.swift; sourceTree = "<group>"; };
 		F6D218EF23C4DF9700DE708A /* PlacesCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCellView.swift; sourceTree = "<group>"; };
 		F6D218F123C4F0CA00DE708A /* CustomPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPin.swift; sourceTree = "<group>"; };
@@ -264,13 +306,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FD6A2142BCA2FF33E377819 /* Pods_ipar.framework in Frameworks */,
+				D8F50BC69BD0E29AB7A97FAC /* Pods_ipar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		026B263423CDF40400ABBBC6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				026B263523CDF43A00ABBBC6 /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		02FBA6692370480200CF0A23 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,21 +329,36 @@
 			path = Validation;
 			sourceTree = "<group>";
 		};
-		1D8A95559FF9D7E19C5D9DAF /* Pods */ = {
+		250B84AA0AF0A06576C255E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				079A4418A67D83FDB0029B6D /* Pods-ipar.debug.xcconfig */,
-				F39C205AE438D2316B34194F /* Pods-ipar.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		6E74FEFBD7CE6C6508718B31 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				848CB93BAD9D2E3DC35D94F2 /* Pods_ipar.framework */,
+				A1C9736D01DB1983A975A008 /* Pods_ipar.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E54DB8C23CD1BDB0073AEEF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3E54DB9123CD1D1C0073AEEF /* HomeCollectionViewCell.swift */,
+				3E54DB9223CD1D1C0073AEEF /* HomeCollectionViewCell.xib */,
+				3E54DB9523CD1D560073AEEF /* HomeConfigurator.swift */,
+				3E54DB9723CD1D7A0073AEEF /* HomeInteractor.swift */,
+				3E54DB9923CD1DAD0073AEEF /* HomePresenter.swift */,
+				3E54DB9B23CD1DDB0073AEEF /* HomeProtocols.swift */,
+				3E54DB9D23CD1DFA0073AEEF /* HomeRouter.swift */,
+				3E54DB9F23CD1E570073AEEF /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C793042F43C897FFA8AA1687 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				444C1A5CBF4B5810F20A7552 /* Pods-ipar.debug.xcconfig */,
+				7FA528CCC420BBBD9F80AB71 /* Pods-ipar.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		CA8DBF4A23550DDA00A1641B = {
@@ -301,8 +366,9 @@
 			children = (
 				CA8DBF5523550DDA00A1641B /* ipar */,
 				CA8DBF5423550DDA00A1641B /* Products */,
-				1D8A95559FF9D7E19C5D9DAF /* Pods */,
-				6E74FEFBD7CE6C6508718B31 /* Frameworks */,
+				F6715F1C23CE936500A9F9A7 /* Recovered References */,
+				C793042F43C897FFA8AA1687 /* Pods */,
+				250B84AA0AF0A06576C255E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -317,6 +383,10 @@
 		CA8DBF5523550DDA00A1641B /* ipar */ = {
 			isa = PBXGroup;
 			children = (
+				026B263423CDF40400ABBBC6 /* Models */,
+				F6715F0B23CE855600A9F9A7 /* MyEvents */,
+				F6B2ECE623CB252F00A2B846 /* AR */,
+				3E54DB8C23CD1BDB0073AEEF /* Home */,
 				F6343E7A23CA72290084FC60 /* CoreData */,
 				F6343E6B23C923980084FC60 /* Event */,
 				F6343E5723C7DB7B0084FC60 /* EventsSearch */,
@@ -376,6 +446,8 @@
 				F678672723C0046A008080A2 /* UIColor.swift */,
 				F6D218ED23C4D28000DE708A /* BindableGestureRecognizer.swift */,
 				F6D218F123C4F0CA00DE708A /* CustomPin.swift */,
+				F6715F0923CE560900A9F9A7 /* UIView.swift */,
+				F6715F1D23CF00BC00A9F9A7 /* Almofire.swift */,
 			);
 			path = "Extensions and Classes";
 			sourceTree = "<group>";
@@ -587,6 +659,26 @@
 			path = Time;
 			sourceTree = "<group>";
 		};
+		F6715F0B23CE855600A9F9A7 /* MyEvents */ = {
+			isa = PBXGroup;
+			children = (
+				F6715F0D23CE856B00A9F9A7 /* MyEventsConfigurator.swift */,
+				F6715F1023CE856B00A9F9A7 /* MyEventsInteractor.swift */,
+				F6715F0F23CE856B00A9F9A7 /* MyEventsPresenter.swift */,
+				F6715F0E23CE856B00A9F9A7 /* MyEventsProtocols.swift */,
+				F6715F1123CE856B00A9F9A7 /* MyEventsRouter.swift */,
+				F6715F0C23CE856B00A9F9A7 /* MyEventsViewController.swift */,
+			);
+			path = MyEvents;
+			sourceTree = "<group>";
+		};
+		F6715F1C23CE936500A9F9A7 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		F675B28F23C3F3F4005DC9CE /* PlacesView */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,6 +727,17 @@
 			path = PlacesSearchParamsView;
 			sourceTree = "<group>";
 		};
+		F6B2ECE623CB252F00A2B846 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				F6715F1823CE8F5B00A9F9A7 /* ListLandmarksItem.swift */,
+				F6715F1923CE8F5B00A9F9A7 /* ListLandmarksItem.xib */,
+				F6B2ECE723CB253F00A2B846 /* ARViewController.swift */,
+				F6715F0723CDF14600A9F9A7 /* ARView.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -642,11 +745,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA8DBF6723550DDB00A1641B /* Build configuration list for PBXNativeTarget "ipar" */;
 			buildPhases = (
-				0058192050365DDB76F755ED /* [CP] Check Pods Manifest.lock */,
+				8AA868B737E094119B5551A1 /* [CP] Check Pods Manifest.lock */,
 				CA8DBF4F23550DDA00A1641B /* Sources */,
 				CA8DBF5023550DDA00A1641B /* Frameworks */,
 				CA8DBF5123550DDA00A1641B /* Resources */,
-				E93FD805E54759EE7FC882F7 /* [CP] Embed Pods Frameworks */,
+				46B80A7298AA9D7A097C9451 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -705,11 +808,13 @@
 				F616806B237EF9CB000B54C5 /* AddPhotoCollectionViewCell.xib in Resources */,
 				F61680042375D575000B54C5 /* Me.storyboard in Resources */,
 				F616801A2376120C000B54C5 /* Localizable.strings in Resources */,
+				F6715F1B23CE8F5B00A9F9A7 /* ListLandmarksItem.xib in Resources */,
 				F678676023C3E2C2008080A2 /* AddCommentViewController.xib in Resources */,
 				F61CDC2E237F66400062BFD8 /* Creation.storyboard in Resources */,
 				F6343E6723C7DE750084FC60 /* EventsSearchTableViewCell.xib in Resources */,
 				F615812A23BE375D009D8542 /* PlacesSearchTableViewCell.xib in Resources */,
 				F61680092375D7EF000B54C5 /* LoginViewController.xib in Resources */,
+				3E54DB9423CD1D1C0073AEEF /* HomeCollectionViewCell.xib in Resources */,
 				F616806E237EF9CB000B54C5 /* PhotoCollectionViewCell.xib in Resources */,
 				F61242DC23719EE100C18009 /* MeTableViewCell.xib in Resources */,
 				F65D1CE8238DD4760021179F /* TimeTableViewCell.xib in Resources */,
@@ -720,7 +825,47 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0058192050365DDB76F755ED /* [CP] Check Pods Manifest.lock */ = {
+		46B80A7298AA9D7A097C9451 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+
+				"${PODS_ROOT}/Target Support Files/Pods-ipar/Pods-ipar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			
+			
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ARCoreLocation/ARCoreLocation.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ipar/Pods-ipar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARCoreLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AA868B737E094119B5551A1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -742,34 +887,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E93FD805E54759EE7FC882F7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -789,10 +906,12 @@
 				F6928F0823BEB41F00661BDF /* PlacesSearchParamsView.swift in Sources */,
 				F65D1CDC2389722C0021179F /* EventCreationProtocols.swift in Sources */,
 				F61242D42370CD7E00C18009 /* MeConfigurator.swift in Sources */,
+				3E54DB9E23CD1DFA0073AEEF /* HomeRouter.swift in Sources */,
 				F61242D52370CD7E00C18009 /* MeRouter.swift in Sources */,
 				F61242D12370CD7E00C18009 /* MeInteractor.swift in Sources */,
 				F61242C7236F50B200C18009 /* UIImage.swift in Sources */,
 				F6343E5E23C7DB940084FC60 /* EventsSearchInteractor.swift in Sources */,
+				3E54DB9C23CD1DDB0073AEEF /* HomeProtocols.swift in Sources */,
 				F61243022372B0BF00C18009 /* UITableView.swift in Sources */,
 				F620F0982363C11A006EDE9B /* AuthViewController.swift in Sources */,
 				02FBA66B2370485C00CF0A23 /* Validation.swift in Sources */,
@@ -807,17 +926,21 @@
 				F678672B23C0F7AB008080A2 /* HashtagsParser.swift in Sources */,
 				F620F0A72364ABC6006EDE9B /* SignUpProtocols.swift in Sources */,
 				F616802C2378BC87000B54C5 /* PlaceCreationConfigurator.swift in Sources */,
+				F6715F0823CDF14600A9F9A7 /* ARView.swift in Sources */,
+				F6715F1323CE856B00A9F9A7 /* MyEventsConfigurator.swift in Sources */,
 				F6D218EE23C4D28000DE708A /* BindableGestureRecognizer.swift in Sources */,
 				F6343E6023C7DB940084FC60 /* EventsSearchRouter.swift in Sources */,
 				F616802B2378BC87000B54C5 /* PlaceCreationPresenter.swift in Sources */,
 				F678673723C27B67008080A2 /* PlaceViewController.swift in Sources */,
 				F6343E6623C7DE750084FC60 /* EventsSearchTableViewCell.swift in Sources */,
 				F616803A237DA5C9000B54C5 /* Place.swift in Sources */,
+				F6715F1E23CF00BC00A9F9A7 /* Almofire.swift in Sources */,
 				F6343E6323C7DB940084FC60 /* EventsSearchConfigurator.swift in Sources */,
 				F612426B2365E9E400C18009 /* Keychain.swift in Sources */,
 				F65D1CDB2389722C0021179F /* EventCreationPresenter.swift in Sources */,
 				F620F0B22364AECD006EDE9B /* SignUpConfigurator.swift in Sources */,
 				F61242BC2368DA0300C18009 /* LoginViewController.swift in Sources */,
+				3E54DB9823CD1D7B0073AEEF /* HomeInteractor.swift in Sources */,
 				F6343E6A23C897520084FC60 /* EventsSearchParamsView.swift in Sources */,
 				F6928F0A23BFF91300661BDF /* UIStackView.swift in Sources */,
 				F6168038237B7272000B54C5 /* MapSearchTableViewController.swift in Sources */,
@@ -828,6 +951,7 @@
 				F620F09E2363C92D006EDE9B /* AuthConfigurator.swift in Sources */,
 				F61242B92368DA0300C18009 /* LoginProtocols.swift in Sources */,
 				F678673523C27B67008080A2 /* PlaceConfigurator.swift in Sources */,
+				F6715F0A23CE560900A9F9A7 /* UIView.swift in Sources */,
 				F6343E7223C923D00084FC60 /* EventPresenter.swift in Sources */,
 				F6343E6223C7DB940084FC60 /* EventsSearchProtocols.swift in Sources */,
 				F65D1CD82389722C0021179F /* EventCreationInteractor.swift in Sources */,
@@ -840,17 +964,25 @@
 				F678673323C27B67008080A2 /* PlaceInteractor.swift in Sources */,
 				F6343E7923CA1BBD0084FC60 /* Role.swift in Sources */,
 				F61242DB23719EE100C18009 /* MeTableViewCell.swift in Sources */,
+				F6715F1A23CE8F5B00A9F9A7 /* ListLandmarksItem.swift in Sources */,
 				02ED7A102372AE6A00D69DB0 /* HTTPError.swift in Sources */,
 				F64D20242364B9FB003BBE52 /* SignUpViewController.swift in Sources */,
 				F6D218F023C4DF9700DE708A /* PlacesCellView.swift in Sources */,
 				F61242B22367306500C18009 /* MainTabBarViewController.swift in Sources */,
 				F615812923BE375D009D8542 /* PlacesSearchTableViewCell.swift in Sources */,
+				F6715F1623CE856B00A9F9A7 /* MyEventsInteractor.swift in Sources */,
+				3E54DBA023CD1E570073AEEF /* HomeViewController.swift in Sources */,
 				F678673623C27B67008080A2 /* PlaceRouter.swift in Sources */,
 				F616801F2378B0C2000B54C5 /* CreationTabBarViewController.swift in Sources */,
+				F6715F1523CE856B00A9F9A7 /* MyEventsPresenter.swift in Sources */,
+				F6715F1723CE856B00A9F9A7 /* MyEventsRouter.swift in Sources */,
 				F65D1CEC238E6EF00021179F /* Event.swift in Sources */,
+				3E54DB9323CD1D1C0073AEEF /* HomeCollectionViewCell.swift in Sources */,
 				CA8DBF5723550DDA00A1641B /* AppDelegate.swift in Sources */,
+				F6715F1423CE856B00A9F9A7 /* MyEventsProtocols.swift in Sources */,
 				F65D1CEA238E54F30021179F /* Date.swift in Sources */,
 				F61242BA2368DA0300C18009 /* LoginPresenter.swift in Sources */,
+				F6715F1223CE856B00A9F9A7 /* MyEventsViewController.swift in Sources */,
 				F615812523BD6FC8009D8542 /* PlacesSearchProtocols.swift in Sources */,
 				F620F0B02364ACFC006EDE9B /* User.swift in Sources */,
 				F615812123BD6FC8009D8542 /* PlacesSearchConfigurator.swift in Sources */,
@@ -860,10 +992,14 @@
 				F61680282378BC87000B54C5 /* PlaceCreationViewController.swift in Sources */,
 				F620F09C2363C4D0006EDE9B /* AuthProtocols.swift in Sources */,
 				F678672823C0046A008080A2 /* UIColor.swift in Sources */,
+				3E54DB9623CD1D560073AEEF /* HomeConfigurator.swift in Sources */,
 				F6343E7423C923D00084FC60 /* EventRouter.swift in Sources */,
+				3E54DB9A23CD1DAD0073AEEF /* HomePresenter.swift in Sources */,
 				F65D1CE3238C2B680021179F /* TimeViewController.swift in Sources */,
 				F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */,
+				F6B2ECE823CB253F00A2B846 /* ARViewController.swift in Sources */,
 				F65D1CDA2389722C0021179F /* EventCreationConfigurator.swift in Sources */,
+				026B263623CDF43A00ABBBC6 /* Model.swift in Sources */,
 				F678673823C27B67008080A2 /* PlacePresenter.swift in Sources */,
 				F616806C237EF9CB000B54C5 /* PhotoCollectionViewCell.swift in Sources */,
 				F65D1CE7238DD4760021179F /* TimeTableViewCell.swift in Sources */,
@@ -1081,19 +1217,20 @@
 		};
 		CA8DBF6823550DDB00A1641B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 079A4418A67D83FDB0029B6D /* Pods-ipar.debug.xcconfig */;
+			baseConfigurationReference = 444C1A5CBF4B5810F20A7552 /* Pods-ipar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F6VA36V9B3;
+				DEVELOPMENT_TEAM = JJHZSQGURH;
 				INFOPLIST_FILE = ipar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.banda.ipar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banda.ipar1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1101,19 +1238,20 @@
 		};
 		CA8DBF6923550DDB00A1641B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F39C205AE438D2316B34194F /* Pods-ipar.release.xcconfig */;
+			baseConfigurationReference = 7FA528CCC420BBBD9F80AB71 /* Pods-ipar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F6VA36V9B3;
+				DEVELOPMENT_TEAM = JJHZSQGURH;
 				INFOPLIST_FILE = ipar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.banda.ipar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banda.ipar1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

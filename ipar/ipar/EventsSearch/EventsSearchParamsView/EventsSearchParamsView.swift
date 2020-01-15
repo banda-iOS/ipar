@@ -114,13 +114,22 @@ class EventsSearchParamsView: UIView {
         return blurEffectView
     }()
     
+    let button: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 5
+        button.backgroundColor = .midnightGreen
+        button.clipsToBounds = true
+        return button
+    }()
+    
     var stackView = UIStackView()
     
     var from = Date()
     var to = Date()
     
     func createFields() {
-        if UIScreen.main.nativeBounds.height < 1400 {
+        if UIScreen.main.nativeBounds.height < 4000 {
             self.addSubview(scrollView)
             scrollView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0.0).isActive = true
             scrollView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0.0).isActive = true
@@ -150,7 +159,7 @@ class EventsSearchParamsView: UIView {
         distanceStackView.addBackground(color: .highlightBackground)
         
         timeTableView.heightAnchor.constraint(equalToConstant: 88).isActive = true
-        stackView = UIStackView(arrangedSubviews: [distanceStackView, hashtagsTextField, nameField, wordsInDescriptionField, timeTableView])
+        stackView = UIStackView(arrangedSubviews: [distanceStackView, hashtagsTextField, nameField, wordsInDescriptionField, timeTableView, button])
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
         stackView.alignment = .fill
@@ -159,10 +168,11 @@ class EventsSearchParamsView: UIView {
         
        
 
-        if UIScreen.main.nativeBounds.height < 1400 {
+        if UIScreen.main.nativeBounds.height < 4000 {
             scrollView.addSubview(stackView)
+            scrollView.showsVerticalScrollIndicator = false
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 50).isActive = true
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -200).isActive = true
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -400).isActive = true
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
         } else {
@@ -176,7 +186,8 @@ class EventsSearchParamsView: UIView {
         timeTableView.delegate = self
         timeTableView.dataSource = self
         
-        
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        button.isHidden = true
         
         distanceSlider.addTarget(self, action: #selector(sliderChangedValue), for: .touchUpInside)
         distanceField.addTarget(self, action: #selector(distanceFieldChangedValue), for: .editingDidEnd)
@@ -187,8 +198,6 @@ class EventsSearchParamsView: UIView {
     }
     
     func addTimeTable() {
-        print("1234r")
-        print(stackView.frame.height)
         
         timeTableView.delegate = self
         timeTableView.dataSource = self
@@ -276,6 +285,11 @@ class EventsSearchParamsView: UIView {
         fields.from = self.from
         fields.to = self.to
         self.delegate?.updateFields(fields)
+    }
+    
+    func setEventsCount(_ count: Int) {
+        button.isHidden = false
+        button.setTitle(NSLocalizedString("Number of events", comment: "Events number button")+": \(count)", for: .normal)
     }
 }
 
