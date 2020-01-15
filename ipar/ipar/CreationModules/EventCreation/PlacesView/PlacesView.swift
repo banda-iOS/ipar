@@ -9,7 +9,13 @@
 import UIKit
 import MapKit
 
+protocol PlacesViewDelegate: class {
+    func openPlaceInAR(_ place: Place)
+}
+
 class PlacesView: UIView {
+    weak var delegate: PlacesViewDelegate?
+    
     fileprivate let placesScrollView: UIScrollView = {
         let v = UIScrollView()
         v.translatesAutoresizingMaskIntoConstraints = false
@@ -21,12 +27,14 @@ class PlacesView: UIView {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.textAlignment = .justified
         textView.isEditable = false
+        textView.layer.cornerRadius = 4.0
         return textView
     }()
     
     let mapView: MKMapView = {
         let mapView = MKMapView()
         mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.layer.cornerRadius = 4.0
         return mapView
     }()
     
@@ -92,6 +100,8 @@ class PlacesView: UIView {
             }
             
             placeView.createFields(place: place, i: i+1)
+            placeView.arButton.addTarget(self, action: #selector(arButtonPressed), for: .touchUpInside)
+            placeView.arButton.tag = i
         }
         
         self.addSubview(descriptionTextView)
@@ -126,11 +136,20 @@ class PlacesView: UIView {
         
     }
     
+    @objc func arButtonPressed(sender:UIButton) {
+        let place = self.places[sender.tag]
+        print("hey ar")
+        print(place)
+        self.delegate?.openPlaceInAR(place)
+    }
+    
     func selectPlaceWith(index: Int) {
         for (i, placeView) in placesViews.enumerated() {
             if i == index {
                 placeView.wasSelected()
-                descriptionTextView.text = places[index].description
+                self.descriptionTextView.fadeTransition(0.4)
+                self.descriptionTextView.text = self.places[index].comment?.count ?? 0 > 0 ? self.places[index].comment : self.places[index].description
+                
                 self.selectPin(withIndex: index)
             } else {
                 placeView.wasUnselected()

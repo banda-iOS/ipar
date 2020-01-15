@@ -38,6 +38,7 @@ class EventsSearchFields {
         path += "&from=\(dateFormatter.string(from: self.from))"
         path += "&to=\(dateFormatter.string(from: self.to))"
         print(path)
+        path = path.filter{!"PM ".contains($0)}
         return path
     }
 }
