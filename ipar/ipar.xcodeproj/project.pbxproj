@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		026B263623CDF43A00ABBBC6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B263523CDF43A00ABBBC6 /* Model.swift */; };
 		02ED7A102372AE6A00D69DB0 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED7A0F2372AE6A00D69DB0 /* HTTPError.swift */; };
 		02FBA66B2370485C00CF0A23 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FBA66A2370485B00CF0A23 /* Validation.swift */; };
 		3E54DB9323CD1D1C0073AEEF /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54DB9123CD1D1C0073AEEF /* HomeCollectionViewCell.swift */; };
@@ -122,6 +123,7 @@
 		F6715F1723CE856B00A9F9A7 /* MyEventsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6715F1123CE856B00A9F9A7 /* MyEventsRouter.swift */; };
 		F6715F1A23CE8F5B00A9F9A7 /* ListLandmarksItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6715F1823CE8F5B00A9F9A7 /* ListLandmarksItem.swift */; };
 		F6715F1B23CE8F5B00A9F9A7 /* ListLandmarksItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6715F1923CE8F5B00A9F9A7 /* ListLandmarksItem.xib */; };
+		F6715F1E23CF00BC00A9F9A7 /* Almofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6715F1D23CF00BC00A9F9A7 /* Almofire.swift */; };
 		F675B29123C3F411005DC9CE /* PlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F675B29023C3F411005DC9CE /* PlacesView.swift */; };
 		F678672823C0046A008080A2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678672723C0046A008080A2 /* UIColor.swift */; };
 		F678672B23C0F7AB008080A2 /* HashtagsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678672A23C0F7AB008080A2 /* HashtagsParser.swift */; };
@@ -142,6 +144,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		026B263523CDF43A00ABBBC6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		02ED7A0F2372AE6A00D69DB0 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		02FBA66A2370485B00CF0A23 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		3E54DB9123CD1D1C0073AEEF /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -278,6 +281,7 @@
 		F6715F1123CE856B00A9F9A7 /* MyEventsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventsRouter.swift; sourceTree = "<group>"; };
 		F6715F1823CE8F5B00A9F9A7 /* ListLandmarksItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListLandmarksItem.swift; sourceTree = "<group>"; };
 		F6715F1923CE8F5B00A9F9A7 /* ListLandmarksItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListLandmarksItem.xib; path = ipar/AR/ListLandmarksItem.xib; sourceTree = SOURCE_ROOT; };
+		F6715F1D23CF00BC00A9F9A7 /* Almofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Almofire.swift; sourceTree = "<group>"; };
 		F675B29023C3F411005DC9CE /* PlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesView.swift; sourceTree = "<group>"; };
 		F678672723C0046A008080A2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		F678672A23C0F7AB008080A2 /* HashtagsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsParser.swift; sourceTree = "<group>"; };
@@ -309,6 +313,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		026B263423CDF40400ABBBC6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				026B263523CDF43A00ABBBC6 /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		02FBA6692370480200CF0A23 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +383,7 @@
 		CA8DBF5523550DDA00A1641B /* ipar */ = {
 			isa = PBXGroup;
 			children = (
+				026B263423CDF40400ABBBC6 /* Models */,
 				F6715F0B23CE855600A9F9A7 /* MyEvents */,
 				F6B2ECE623CB252F00A2B846 /* AR */,
 				3E54DB8C23CD1BDB0073AEEF /* Home */,
@@ -434,6 +447,7 @@
 				F6D218ED23C4D28000DE708A /* BindableGestureRecognizer.swift */,
 				F6D218F123C4F0CA00DE708A /* CustomPin.swift */,
 				F6715F0923CE560900A9F9A7 /* UIView.swift */,
+				F6715F1D23CF00BC00A9F9A7 /* Almofire.swift */,
 			);
 			path = "Extensions and Classes";
 			sourceTree = "<group>";
@@ -817,11 +831,34 @@
 			files = (
 			);
 			inputFileListPaths = (
+
 				"${PODS_ROOT}/Target Support Files/Pods-ipar/Pods-ipar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			
+			
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ARCoreLocation/ARCoreLocation.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ipar/Pods-ipar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARCoreLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -897,6 +934,7 @@
 				F678673723C27B67008080A2 /* PlaceViewController.swift in Sources */,
 				F6343E6623C7DE750084FC60 /* EventsSearchTableViewCell.swift in Sources */,
 				F616803A237DA5C9000B54C5 /* Place.swift in Sources */,
+				F6715F1E23CF00BC00A9F9A7 /* Almofire.swift in Sources */,
 				F6343E6323C7DB940084FC60 /* EventsSearchConfigurator.swift in Sources */,
 				F612426B2365E9E400C18009 /* Keychain.swift in Sources */,
 				F65D1CDB2389722C0021179F /* EventCreationPresenter.swift in Sources */,
@@ -961,6 +999,7 @@
 				F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */,
 				F6B2ECE823CB253F00A2B846 /* ARViewController.swift in Sources */,
 				F65D1CDA2389722C0021179F /* EventCreationConfigurator.swift in Sources */,
+				026B263623CDF43A00ABBBC6 /* Model.swift in Sources */,
 				F678673823C27B67008080A2 /* PlacePresenter.swift in Sources */,
 				F616806C237EF9CB000B54C5 /* PhotoCollectionViewCell.swift in Sources */,
 				F65D1CE7238DD4760021179F /* TimeTableViewCell.swift in Sources */,
