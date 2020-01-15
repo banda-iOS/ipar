@@ -27,12 +27,14 @@ class PlacesView: UIView {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.textAlignment = .justified
         textView.isEditable = false
+        textView.layer.cornerRadius = 4.0
         return textView
     }()
     
     let mapView: MKMapView = {
         let mapView = MKMapView()
         mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.layer.cornerRadius = 4.0
         return mapView
     }()
     

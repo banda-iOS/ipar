@@ -3,12 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		02ED7A102372AE6A00D69DB0 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED7A0F2372AE6A00D69DB0 /* HTTPError.swift */; };
 		02FBA66B2370485C00CF0A23 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FBA66A2370485B00CF0A23 /* Validation.swift */; };
+
+		0FD6A2142BCA2FF33E377819 /* Pods_ipar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848CB93BAD9D2E3DC35D94F2 /* Pods_ipar.framework */; };
+		3E54DB9323CD1D1C0073AEEF /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54DB9123CD1D1C0073AEEF /* HomeCollectionViewCell.swift */; };
+		3E54DB9423CD1D1C0073AEEF /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E54DB9223CD1D1C0073AEEF /* HomeCollectionViewCell.xib */; };
+		3E54DB9623CD1D560073AEEF /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54DB9523CD1D560073AEEF /* HomeConfigurator.swift */; };
+		3E54DB9823CD1D7B0073AEEF /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54DB9723CD1D7A0073AEEF /* HomeInteractor.swift */; };
+		3E54DB9A23CD1DAD0073AEEF /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54DB9923CD1DAD0073AEEF /* HomePresenter.swift */; };
+		3E54DB9C23CD1DDB0073AEEF /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54DB9B23CD1DDB0073AEEF /* HomeProtocols.swift */; };
+		3E54DB9E23CD1DFA0073AEEF /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54DB9D23CD1DFA0073AEEF /* HomeRouter.swift */; };
+		3E54DBA023CD1E570073AEEF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54DB9F23CD1E570073AEEF /* HomeViewController.swift */; };
 		CA8DBF5723550DDA00A1641B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8DBF5623550DDA00A1641B /* AppDelegate.swift */; };
 		CA8DBF6023550DDB00A1641B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8DBF5F23550DDB00A1641B /* Assets.xcassets */; };
 		CA8DBF6323550DDB00A1641B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8DBF6123550DDB00A1641B /* LaunchScreen.storyboard */; };
@@ -136,8 +146,20 @@
 /* Begin PBXFileReference section */
 		02ED7A0F2372AE6A00D69DB0 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		02FBA66A2370485B00CF0A23 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+
 		53C79B8F8F886E153B54ACF0 /* Pods-ipar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ipar/Pods-ipar.debug.xcconfig"; sourceTree = "<group>"; };
 		B8731CF0D501195FD830B034 /* Pods-ipar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipar.release.xcconfig"; path = "Pods/Target Support Files/Pods-ipar/Pods-ipar.release.xcconfig"; sourceTree = "<group>"; };
+
+		3E54DB9123CD1D1C0073AEEF /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		3E54DB9223CD1D1C0073AEEF /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		3E54DB9523CD1D560073AEEF /* HomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
+		3E54DB9723CD1D7A0073AEEF /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		3E54DB9923CD1DAD0073AEEF /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		3E54DB9B23CD1DDB0073AEEF /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		3E54DB9D23CD1DFA0073AEEF /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		3E54DB9F23CD1E570073AEEF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		848CB93BAD9D2E3DC35D94F2 /* Pods_ipar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ipar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+
 		CA8DBF5323550DDA00A1641B /* ipar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ipar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8DBF5623550DDA00A1641B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA8DBF5F23550DDB00A1641B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -310,7 +332,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		997DF48D7C67D22C38107B56 /* Frameworks */ = {
+
+		3E54DB8C23CD1BDB0073AEEF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3E54DB9123CD1D1C0073AEEF /* HomeCollectionViewCell.swift */,
+				3E54DB9223CD1D1C0073AEEF /* HomeCollectionViewCell.xib */,
+				3E54DB9523CD1D560073AEEF /* HomeConfigurator.swift */,
+				3E54DB9723CD1D7A0073AEEF /* HomeInteractor.swift */,
+				3E54DB9923CD1DAD0073AEEF /* HomePresenter.swift */,
+				3E54DB9B23CD1DDB0073AEEF /* HomeProtocols.swift */,
+				3E54DB9D23CD1DFA0073AEEF /* HomeRouter.swift */,
+				3E54DB9F23CD1E570073AEEF /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		6E74FEFBD7CE6C6508718B31 /* Frameworks */ = {
+
 			isa = PBXGroup;
 			children = (
 				CB242415F02C65C631D176C5 /* Pods_ipar.framework */,
@@ -339,8 +378,12 @@
 		CA8DBF5523550DDA00A1641B /* ipar */ = {
 			isa = PBXGroup;
 			children = (
+
 				F6715F0B23CE855600A9F9A7 /* MyEvents */,
 				F6B2ECE623CB252F00A2B846 /* AR */,
+
+				3E54DB8C23CD1BDB0073AEEF /* Home */,
+
 				F6343E7A23CA72290084FC60 /* CoreData */,
 				F6343E6B23C923980084FC60 /* Event */,
 				F6343E5723C7DB7B0084FC60 /* EventsSearch */,
@@ -760,6 +803,7 @@
 				F6343E6723C7DE750084FC60 /* EventsSearchTableViewCell.xib in Resources */,
 				F615812A23BE375D009D8542 /* PlacesSearchTableViewCell.xib in Resources */,
 				F61680092375D7EF000B54C5 /* LoginViewController.xib in Resources */,
+				3E54DB9423CD1D1C0073AEEF /* HomeCollectionViewCell.xib in Resources */,
 				F616806E237EF9CB000B54C5 /* PhotoCollectionViewCell.xib in Resources */,
 				F61242DC23719EE100C18009 /* MeTableViewCell.xib in Resources */,
 				F65D1CE8238DD4760021179F /* TimeTableViewCell.xib in Resources */,
@@ -798,6 +842,7 @@
 			files = (
 			);
 			inputFileListPaths = (
+      "${PODS_ROOT}/Target Support Files/Pods-ipar/Pods-ipar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh",
@@ -809,6 +854,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ipar/Pods-ipar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARCoreLocation.framework",
@@ -819,7 +865,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ipar/Pods-ipar-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -841,10 +887,12 @@
 				F6928F0823BEB41F00661BDF /* PlacesSearchParamsView.swift in Sources */,
 				F65D1CDC2389722C0021179F /* EventCreationProtocols.swift in Sources */,
 				F61242D42370CD7E00C18009 /* MeConfigurator.swift in Sources */,
+				3E54DB9E23CD1DFA0073AEEF /* HomeRouter.swift in Sources */,
 				F61242D52370CD7E00C18009 /* MeRouter.swift in Sources */,
 				F61242D12370CD7E00C18009 /* MeInteractor.swift in Sources */,
 				F61242C7236F50B200C18009 /* UIImage.swift in Sources */,
 				F6343E5E23C7DB940084FC60 /* EventsSearchInteractor.swift in Sources */,
+				3E54DB9C23CD1DDB0073AEEF /* HomeProtocols.swift in Sources */,
 				F61243022372B0BF00C18009 /* UITableView.swift in Sources */,
 				F620F0982363C11A006EDE9B /* AuthViewController.swift in Sources */,
 				02FBA66B2370485C00CF0A23 /* Validation.swift in Sources */,
@@ -872,6 +920,7 @@
 				F65D1CDB2389722C0021179F /* EventCreationPresenter.swift in Sources */,
 				F620F0B22364AECD006EDE9B /* SignUpConfigurator.swift in Sources */,
 				F61242BC2368DA0300C18009 /* LoginViewController.swift in Sources */,
+				3E54DB9823CD1D7B0073AEEF /* HomeInteractor.swift in Sources */,
 				F6343E6A23C897520084FC60 /* EventsSearchParamsView.swift in Sources */,
 				F6928F0A23BFF91300661BDF /* UIStackView.swift in Sources */,
 				F6168038237B7272000B54C5 /* MapSearchTableViewController.swift in Sources */,
@@ -902,11 +951,13 @@
 				F61242B22367306500C18009 /* MainTabBarViewController.swift in Sources */,
 				F615812923BE375D009D8542 /* PlacesSearchTableViewCell.swift in Sources */,
 				F6715F1623CE856B00A9F9A7 /* MyEventsInteractor.swift in Sources */,
+				3E54DBA023CD1E570073AEEF /* HomeViewController.swift in Sources */,
 				F678673623C27B67008080A2 /* PlaceRouter.swift in Sources */,
 				F616801F2378B0C2000B54C5 /* CreationTabBarViewController.swift in Sources */,
 				F6715F1523CE856B00A9F9A7 /* MyEventsPresenter.swift in Sources */,
 				F6715F1723CE856B00A9F9A7 /* MyEventsRouter.swift in Sources */,
 				F65D1CEC238E6EF00021179F /* Event.swift in Sources */,
+				3E54DB9323CD1D1C0073AEEF /* HomeCollectionViewCell.swift in Sources */,
 				CA8DBF5723550DDA00A1641B /* AppDelegate.swift in Sources */,
 				F6715F1423CE856B00A9F9A7 /* MyEventsProtocols.swift in Sources */,
 				F65D1CEA238E54F30021179F /* Date.swift in Sources */,
@@ -921,7 +972,9 @@
 				F61680282378BC87000B54C5 /* PlaceCreationViewController.swift in Sources */,
 				F620F09C2363C4D0006EDE9B /* AuthProtocols.swift in Sources */,
 				F678672823C0046A008080A2 /* UIColor.swift in Sources */,
+				3E54DB9623CD1D560073AEEF /* HomeConfigurator.swift in Sources */,
 				F6343E7423C923D00084FC60 /* EventRouter.swift in Sources */,
+				3E54DB9A23CD1DAD0073AEEF /* HomePresenter.swift in Sources */,
 				F65D1CE3238C2B680021179F /* TimeViewController.swift in Sources */,
 				F64D20282364FA35003BBE52 /* HTTPRequest.swift in Sources */,
 				F6B2ECE823CB253F00A2B846 /* ARViewController.swift in Sources */,
@@ -1147,14 +1200,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F6VA36V9B3;
+				DEVELOPMENT_TEAM = JJHZSQGURH;
 				INFOPLIST_FILE = ipar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.banda.ipar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banda.ipar1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1167,14 +1220,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F6VA36V9B3;
+				DEVELOPMENT_TEAM = JJHZSQGURH;
 				INFOPLIST_FILE = ipar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.banda.ipar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banda.ipar1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
